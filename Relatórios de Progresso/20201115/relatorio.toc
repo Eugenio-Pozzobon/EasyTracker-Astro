@@ -1,0 +1,12 @@
+\babel@toc {brazil}{}
+\contentsline {section}{\numberline {1}Benchmark}{3}{section.1}
+\contentsline {section}{\numberline {2}Defini\IeC {\c c}\IeC {\~a}o de Objetivos}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Cronograma}{3}{subsection.2.1}
+\contentsline {section}{\numberline {3}Ideias Levantadas}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Github}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Impress\IeC {\~a}o 3D}{4}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Eletr\IeC {\^o}nica}{4}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Malha aberta x Malha fechada}{4}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Aplicativo}{4}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.5}Diagrama do Sistema em blocos}{5}{subsection.3.5}
+\contentsline {section}{\numberline {4}Pr\IeC {\'o}ximas Atividades}{6}{section.4}
