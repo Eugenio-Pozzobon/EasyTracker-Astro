@@ -36,7 +36,7 @@
 \newpage
 \section{Benchmark}
 
-De maneira resumida, existem inúmeros produtos comerciais que cumprem a função de rotacionar a câmera durante a fotografia. Todos eles usam alguma forma visual de alinhamento com as estrelas para realizar o alinhamento da mesa. Normalmente é mais descomplicado executar o alinhamento no hemisfério norte. Mas não é tão simples no hemisfério sul, e usar um aplicativo com sensoreamento se torna uma solução bem mais simplificada, e que deve ser colocada em prática. A tabela comparativo abaixo ilustra a concorrência dos equipamentos. 
+De maneira resumida, existem inúmeros produtos comerciais que cumprem a função de rotacionar a câmera durante a fotografia. Todos eles usam alguma forma visual de alinhamento com as estrelas. Normalmente é mais descomplicado executar o alinhamento no hemisfério norte. Mas não é tão simples no hemisfério sul, e usar um aplicativo com sensoreamento se torna uma solução bem mais simplificada, e que deve ser colocada em prática. A tabela comparativo abaixo ilustra a concorrência dos equipamentos. 
 
 \begin{table}[htb]
 	\begin{tabular}{l|cccc}
@@ -52,7 +52,7 @@ De maneira resumida, existem inúmeros produtos comerciais que cumprem a funçã
 \end{table}
 
 \section{Definição de Objetivos}
-Pelo Benchmark feito acima, podemos estabelecer como objetivos do sistema um produto robusto, visualmente elegante, e que consiga se aproximar das propriedades do modelo comercial mais barato como meta inicial, com erro periódico igual ou inferior a 115 arcsec, peso e volume adequados, para o tripé usado, sendo o menor possível e com preço inferior a 115 dólares. Além de, como diferencial, desenvolver um aplicativo que permita uma fácil interação com o usuário do sistema, descomplicando o processo e barateando-o, seja para o hemisfério sul ou hemisfério norte.
+Pelo Benchmark feito acima, podemos estabelecer como objetivos do sistema um produto robusto, visualmente elegante, e que consiga se aproximar das propriedades do modelo comercial mais barato como meta inicial, com erro periódico igual ou inferior a 115 arcsec, peso e volume adequados para o tripé usado, sendo o menor possível e com preço inferior a 115 dólares. Além de, como diferencial, desenvolver um aplicativo que permita uma fácil interação com o usuário do sistema, descomplicando o processo e barateando-o, seja para o hemisfério sul ou hemisfério norte.
 
 \subsection{Cronograma}
 
@@ -62,7 +62,7 @@ Pelo Benchmark feito acima, podemos estabelecer como objetivos do sistema um pro
 Meta & \textit{Deadline} & Observação \\ \hline\hline
 Definições de Projeto &	Nov 21, 2020&	\\\hline
 Projeto Mecânico (CAD)&	Dec 12, 2020	&\\\hline
-Projeto Elétrico + Integração&	Dec 22, 2020&	\\\hline
+Projeto Elétrico + Integração&	Jan 12, 2021&	\\\hline
 Desenvolvimento de Aplicativo Prévio&	Feb 1, 2021&	Prévia no APP inventor\\\hline
 Fabricação e Montagem& Em aberto & Aceito sugestões. \\\hline
 Validação do Sistema&		Em aberto&\\\hline
@@ -89,15 +89,13 @@ Peças que forem difíceis de serem encontradas podemos fabricar em 3D (avaliand
 
 A parte eletrônica pode ser feita em uma placa ilhada inicialmente para testes, uma vez que o foco é no baixo custo, mas eu gostaria de fazer versão com uma \textit{PCB} mais profissional, o que na verdade não aumenta muito os custos fazendo por exemplo na \textit{JLCPCB} ou em fabricantes similares. 
 
-2. O \textit{Bluetooth} pode ser totalmente descartado se o Arduino for ligado com uma chave tátil e isso apenas for o 'start'/'stop' para o controle do motor. O \textit{Bluetooth} é um módulo que não é um grande gargalo de energia, no entanto é mais uma carga que pode prejudicar o tempo de duração máximo do sistema. Além de que isso torna o sistema mais simples
-
 \subsubsection{Malha aberta x Malha fechada}
 
 O controle do motor sendo feito unicamente por malha aberta eu acredito que não haverá problema, no entanto, se o \textit{smartphone} estiver montado na mesa junto, é possível usar seus sensores, via \textit{Bluetooth}, para informar o Arduino se o controle está sendo feito adequadamente. Essa etapa pode ser avaliada depois que a primeira versão estiver concluída e for possível avaliar o erro do sistema em comparação com os objetivos.
 
 \subsection{Aplicativo}
 
-O aplicativo pode ser o guia para o usuário alinhar sua mesa com o norte, por meio do magnetômetro interno (levando em conta a declinação magnética), acelerômetro e giroscópio
+O aplicativo pode ser o guia para o usuário alinhar sua mesa com o norte, por meio do magnetômetro interno (levando em conta a declinação magnética), acelerômetro e giroscópio; esses canais de dados podem ser do arduino ou do celular. 
 
 \begin{enumerate}
 	\item A declinação magnética pode ser inserida pelo usuário manualmente e o aplicativo apenas fica com a função de relembrar o usuário de re-calibrar a cada x dias (período fixo qualquer).
@@ -111,7 +109,7 @@ Inicialmente, farei uma versão bruta para teste no APP inventor pois eu já ten
 
 \subsection{Diagrama do Sistema em blocos}
 
-A comunicação do sistema e seu modo de funcionamento pode assumir 2 possibilidades, e ambas são implementáveis sem grandes problemas. A primeira é assumindo que o celular não possua sensores internos e será a principal abordagem. (Figura \ref{fig:prjafttcc-page-1})
+A comunicação do sistema e seu modo de funcionamento pode assumir 2 possibilidades, e ambas são implementáveis em paralelo sem problemas. A primeira é assumindo que o celular não possua sensores internos e será a principal abordagem. (Figura \ref{fig:prjafttcc-page-1})
 
 \begin{figure}[!htb]
 	\centering
@@ -130,7 +128,7 @@ A segunda é assumindo que o celular possua sensores.(Figura \ref{fig:prjafttcc-
 	\label{fig:prjafttcc-page-2}
 \end{figure}
 
-Como os sensores do arduino e os sensores do \textit{smartphone} possuem uma forma de funcionamento semelhante (em código), é possível fazer um código de aplicativo que funcione para ambos os cenários e a placa do sistema eletrônico também seja funcional em ambas as situações.
+Como os sensores do Arduino e os sensores do \textit{smartphone} possuam uma forma de funcionamento semelhante (em código), é possível fazer um código de aplicativo que funcione para ambos os cenários e a placa do sistema eletrônico também seja funcional em ambas as situações.
 
 \section{Próximas Atividades}
 

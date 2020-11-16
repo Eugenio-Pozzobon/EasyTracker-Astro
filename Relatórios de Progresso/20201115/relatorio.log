@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2020.11.14)  15 NOV 2020 03:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2020.11.14)  15 NOV 2020 18:43
 entering extended mode
 **./relatorio.tex
 (relatorio.tex
@@ -761,55 +761,55 @@ Package babel Info: Redefining portuges shorthand "|
 Package babel Info: Redefining portuges shorthand "|
 (babel)             in language  on input line 88.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 94.
+(babel)             in language  on input line 92.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 98.
+(babel)             in language  on input line 96.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 110.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 111.
+(babel)             in language  on input line 113.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 113.
 
 [4]
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 112.
 <imagens/PRJ_AFT_TCC-Page-1.png, id=86, 1391.1975pt x 604.2575pt>
 File: imagens/PRJ_AFT_TCC-Page-1.png Graphic file (type png)
 <use imagens/PRJ_AFT_TCC-Page-1.png>
-Package pdftex.def Info: imagens/PRJ_AFT_TCC-Page-1.png  used on input line 118
+Package pdftex.def Info: imagens/PRJ_AFT_TCC-Page-1.png  used on input line 116
 .
 (pdftex.def)             Requested size: 364.19667pt x 158.182pt.
 <imagens/PRJ_AFT_TCC-Page-2.png, id=89, 1391.1975pt x 664.4825pt>
 File: imagens/PRJ_AFT_TCC-Page-2.png Graphic file (type png)
 <use imagens/PRJ_AFT_TCC-Page-2.png>
-Package pdftex.def Info: imagens/PRJ_AFT_TCC-Page-2.png  used on input line 128
+Package pdftex.def Info: imagens/PRJ_AFT_TCC-Page-2.png  used on input line 126
 .
 (pdftex.def)             Requested size: 364.19667pt x 173.94765pt.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 133.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 134.
+(babel)             in language  on input line 137.
+Package babel Info: Redefining portuges shorthand "|
+(babel)             in language  on input line 137.
  [5 <./imagens/PRJ_AFT_TCC-Page-1.png> <./imagens/PRJ_AFT_TCC-Page-2.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 135.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 142.
+(babel)             in language  on input line 140.
 Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 142.
-Package babel Info: Redefining portuges shorthand "|
-(babel)             in language  on input line 142.
+(babel)             in language  on input line 140.
 
 [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 142.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
  (relatorio.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 142.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 142.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 140.
 Package rerunfilecheck Info: File `relatorio.out' has not changed.
 (rerunfilecheck)             Checksum: 1795AD5118C60499FAE54104AC4B0C22;693.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 142.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
  ) 
 Here is how much of TeX's memory you used:
  7332 strings out of 493305
  103458 string characters out of 3138873
- 207654 words of memory out of 3000000
+ 206654 words of memory out of 3000000
  10750 multiletter control sequences out of 15000+200000
  12750 words of font info for 49 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -820,7 +820,7 @@ les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmti12.pfb>
-Output written on relatorio.pdf (6 pages, 205859 bytes).
+Output written on relatorio.pdf (6 pages, 205808 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  24 named destinations out of 1000 (max. 500000)
