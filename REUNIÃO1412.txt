@@ -5,5 +5,25 @@ https://www.ccpvirtual.com.br/dobradica-de-ferro-zincada-11-2-merkel/p?idsku=585
 https://www.ccpvirtual.com.br/dobradica-de-ferro-polido-1-fixo-merkel/p?idsku=58540&gclid=CjwKCAiAt9z-BRBCEiwA_bWv-LmVksSrreFzQaDTq1cgrUTTxj7sINtPnGKmlvLmskrPx0cztck-SBoCUugQAvD_BwE
 
 Engrenagem impressa 2 -> Rosca
+Aumentar furo, desenho de uma porca sextavada e colar 
+
+Manhago -> Porca M6 para madeira
+
+Professor comprou uma porca para tampar e trava movimento da rosca 
 
 Diagrama Elétrico
+Indicar alimentação
+Indicar rastreamento
+Inverter e alimentar os leds-> arduino chaveia (-)
+
+Debounce nos botões -> Resistor/Capacitor ou via software
+verificar para Remover botão
+
+470uF Eletrolítico para cada componente
+100nF Eletrolítico na entrada
+
+PESQUSAR SOBRE bad 
+
+Ver fusível 1A e diodo zenner (Mantêm a tensão estável, fica em paralelo) ~5V
+Organizar os nomes no final
+	Cuidar nomes, sempre sequencial
