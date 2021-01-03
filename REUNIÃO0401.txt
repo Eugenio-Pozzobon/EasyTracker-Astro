@@ -1,0 +1,12 @@
+Manhago:
+Dobradiça
+Porca M6 para madeira
+Porca 1/4 para madeira
+
+Correções no CAD
+Engrenagem impressa 2 -> Rosca
+Aumentar furo, desenho de uma porca sextavada e colar 
+Professor comprou uma porca para tampar e trava movimento da rosca 
+
+Diagrama Elétrico Corrigido v1.1
+Debounce nos botões via software
