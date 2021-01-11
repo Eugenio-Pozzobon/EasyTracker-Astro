@@ -1,0 +1,21 @@
+Correções no CAD:
+	Eixo não bate no tripé, foi preciso cortar. Curso final:
+	Gabarito do Eixo feito. 
+
+Ideia: Fazer engrenagens em MDF, colar com cola de madeira as partes que são formatos diferentes?
+
+Diagrama revisado com testes da protoboard
+Diodo zenner está correto?
+
+Dados enviados na serial: ok
+
+Placa de circuito impresso -> NUPEDEE frezar, ou corroer. Aguardando resposta
+Informações sobre PCB no Nupedee: O que cuidar?
+distâncias, etc.
+
+Verificar possibilidades para impressão 3D
+Prototec, Professor Bayer?, CTISM, Lab solda, tecnoparque 
+
+Chapa 2mm de alumínio 110g, aço carbono 0,5mm 90g, aço inox  0,5mm 90g
+
+
