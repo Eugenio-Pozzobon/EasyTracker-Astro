@@ -21,10 +21,9 @@ int16_t mx, my, mz;
 bool blinkState = false;
 
 // fatores de correção determinados na calibração
-int16_t mxMin, myMin, mxMax, myMax;
+int16_t mxMin, myMin, mzMin, mxMax, myMax, mzMax;
 
-float xC = 0;
-float yC = 0;
+float xC = 0, yC = 0, zC = 0;
 float heading = 0, heading_angle = 0;
 
 long unsigned int t_gy;
@@ -35,7 +34,7 @@ float denomZ_A, denomZ_B, denomZ_C, denomZ_T;
 float angleX, angleY, angleZ;
 
 void setup() {
-  
+
 #ifdef BLUETOOTH
   mySerial.begin(9600);   //Serial Bluetooth
   pinMode(5, INPUT); //Enable pin HC05
@@ -72,6 +71,25 @@ void loop() {
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
     mag.getHeading(&mx, &my, &mz);
 
+    if (mxMax < mx) {
+      mxMax = mx;
+    }
+    if (mxMin > mx) {
+      mxMin = mx;
+    }
+    if (myMax < my) {
+      myMax = my;
+    }
+    if (myMin > my) {
+      myMin = my;
+    }
+    if (mzMax < mz) {
+      mzMax = mz;
+    }
+    if (mzMin > mz) {
+      mzMin = mz;
+    }
+    
     angleCalculation();
     compassCalculation();
 
@@ -79,16 +97,17 @@ void loop() {
     Serial.print(angleX);
     Serial.print("\tY: ");
     Serial.print(angleY);
-    //Serial.print("\tZ: ");
-    //Serial.print(angleZ);
-
-    Serial.print("\t ||  mag:  ");
+    Serial.print("\tZ: ");
+    Serial.print(angleZ);
+    
+    Serial.print("\t");
+    Serial.print(" ||  mag:  ");
     Serial.print(mx); Serial.print("\t");
     Serial.print(my); Serial.print("\t");
     Serial.print(mz); Serial.print("\t");
 
     Serial.print("heading: ");
-    Serial.println(heading * 180 / PI + declination);
+    Serial.println(heading_angle);
 
     // blink LED to indicate activity
     blinkState = !blinkState;
