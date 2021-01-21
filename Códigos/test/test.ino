@@ -20,8 +20,8 @@ void setup() {
 void loop() {
   // Step one revolution in one direction:
   Serial.println("clockwise");
-  myStepper.step(stepsPerRevolution);
-  delay(1);
+  myStepper.step(10);
+  Serial.println("clockwisedddddd");
   
   // Step one revolution in the other direction:
   // Serial.println("counterclockwise");

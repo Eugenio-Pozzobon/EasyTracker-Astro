@@ -47,6 +47,9 @@ void compassCalibration() {
       mzMin = mz;
     }
     Serial.print("Calibrating! Time remaining (s):");
+    #ifdef BLUETOOTH
+    mySerial.print("Calibrating!\n");
+    #endif
     Serial.println(CALIBRATING_TIME - (millis() - t_cal) / 1000);
     delay(100);
   }

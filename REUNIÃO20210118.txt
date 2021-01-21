@@ -1,0 +1,36 @@
+Correções no CAD:
+	Engrenagens foram corrigidas, montagem foi atualizada.
+
+Verificar datasheet sensor para posicionar na PCB:
+
+
+Diodo zenner 1N5338 5V1 250mA
+
+NUPEDEE 
+Corrigir Desenho técnico
+Corrigir PCB
+Bucha standorff
+
+Filtro de kalman não é muito bom
+Usar média móvel
+Deixar sensores independentes. 
+Usar fusível de vidro.
+
+Ver na MIRO zenner ou tvs
+Teste com zenner
+
+SOQUETE ARDUINO E CI
+
+VER BOTÃO EXTERNO
+
+Pensar em como impedir o mtor extrapolar curso máximo
+Chapinha barra roscada, + botão para fim de curso por dentro e por fora. 
+
+Gerar PDF 3D
+
+Imprimir PDF da PCB para conferir todo o circuito
+Ver botão mais comprido + toquinho de madeira
+
+https://www.usinainfo.com.br/pulsadores-push-button/chave-push-button-pbs-102-104-vermelha-nf-1a-4668.html
+
+Configurar Interrupção por estouro de tempo 

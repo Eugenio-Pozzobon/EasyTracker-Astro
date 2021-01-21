@@ -6,8 +6,9 @@
 
 #ifdef BLUETOOTH
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(4, 3); // RX/TX
+SoftwareSerial mySerial(3, 4); // RX/TX
 long unsigned int t_bt;
+#define state_bt 2
 #endif
 
 MPU6050 accelgyro;
@@ -33,11 +34,19 @@ float denomY_A, denomY_B, denomY_C, denomY_T;
 float denomZ_A, denomZ_B, denomZ_C, denomZ_T;
 float angleX, angleY, angleZ;
 
+// Include the Arduino Stepper.h library:
+#include <Stepper.h>
+// Define number of steps per rotation:
+const int stepsPerRevolution = 2048;
+Stepper myStepper = Stepper(stepsPerRevolution, 6, 10, 7, 11);
+boolean stepperState = false;
+#define startbutton 12
+
 void setup() {
 
 #ifdef BLUETOOTH
   mySerial.begin(9600);   //Serial Bluetooth
-  pinMode(5, INPUT); //Enable pin HC05
+  pinMode(state_bt, INPUT); //Enable pin HC05
 #endif
 
   Serial.begin(115200);
@@ -59,12 +68,21 @@ void setup() {
 
   // configure Arduino pins
   pinMode(LED_PIN, OUTPUT);
-
+  pinMode(startbutton, INPUT_PULLUP);
   compassCalibration();
+  myStepper.setSpeed(10);
+  myStepper.step(10);
 }
 
 void loop() {
-  if ((millis() - t_gy) > int(1000 / gy_hz)) {
+  if (!digitalRead(startbutton)) {
+    stepperState = true;
+    myStepper.step(10);
+  }
+  else {
+    stepperState = false;
+  }
+  if (((millis() - t_gy) > int(1000 / gy_hz)) && !stepperState) {
 
     t_gy = millis();
 
@@ -89,7 +107,7 @@ void loop() {
     if (mzMin > mz) {
       mzMin = mz;
     }
-    
+
     angleCalculation();
     compassCalculation();
 
@@ -99,7 +117,7 @@ void loop() {
     Serial.print(angleY);
     Serial.print("\tZ: ");
     Serial.print(angleZ);
-    
+
     Serial.print("\t");
     Serial.print(" ||  mag:  ");
     Serial.print(mx); Serial.print("\t");
@@ -112,16 +130,22 @@ void loop() {
     // blink LED to indicate activity
     blinkState = !blinkState;
     digitalWrite(LED_PIN, blinkState);
+  } else if (stepperState) {
+    Serial.print("Stepper on!\n");
   }
 
 #ifdef BLUETOOTH
-  if (((mySerial.available() && (millis() - t_bt) > 500) || (millis() - t_bt) > 1000) && (digitalRead(5))) {
+  if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState) {
     mySerial.print(angleX); mySerial.print(",");
     mySerial.print(angleY); mySerial.print(",");
     mySerial.println(heading_angle);
     mySerial.flush();
     t_bt = millis();
     Serial.println("Bluetooth Connected!");
+  } else if (stepperState) {
+#ifdef BLUETOOTH
+    mySerial.print("Stepper on!\n");
+#endif
   }
 #endif
 }
