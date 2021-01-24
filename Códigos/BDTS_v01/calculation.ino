@@ -1,4 +1,4 @@
-void angleCalculation() {
+/*void angleCalculation() {
   //X-AXIS
   denomX_A = pow(ay, 2);
   denomX_B = pow(az, 2);
@@ -21,7 +21,36 @@ void angleCalculation() {
   denomZ_C = denomZ_A + denomZ_B;
   denomZ_T = pow(denomZ_C, .5);
   angleZ = atan(az / denomY_T) * 180 / PI;
+  }*/
+
+
+void angleCalculation() {
+  unsigned long cT = micros(); // contar tempo de loop
+  unsigned long dT = cT - pT;
+  pT = cT;
+
+  rate_gyr_x = gx * G_GAIN;
+  rate_gyr_y = gy * G_GAIN;
+  rate_gyr_z = gz * G_GAIN;
+
+  gyroXangle += rate_gyr_x * dT;
+  gyroYangle += rate_gyr_y * dT;
+  gyroZangle += rate_gyr_z * dT;
+
+  AccXangle = (atan2(ax, sqrt(pow(ay, 2) + pow(az, 2))) * 180) / 3.14;
+  AccYangle = (atan2(ay, sqrt(pow(ax, 2) + pow(az, 2))) * 180) / 3.14;
+  AccZangle = (atan2(az, sqrt(pow(ax, 2) + pow(ay, 2))) * 180) / 3.14;
+
+  CFangleX = AA * (CFangleX + rate_gyr_x * (dT / 1000000)) + (1 - AA) * AccXangle;
+  CFangleY = AA * (CFangleY + rate_gyr_y * (dT / 1000000)) + (1 - AA) * AccYangle;
+  CFangleZ = AA * (CFangleZ + rate_gyr_z * (dT / 1000000)) + (1 - AA) * AccZangle;
+
+  angleX = CFangleX;
+  angleY = CFangleY;
+  angleZ = CFangleZ;
 }
+
+
 
 void compassCalibration() {
 
@@ -47,9 +76,9 @@ void compassCalibration() {
       mzMin = mz;
     }
     Serial.print("Calibrating! Time remaining (s):");
-    #ifdef BLUETOOTH
+#ifdef BLUETOOTH
     mySerial.print("Calibrating!\n");
-    #endif
+#endif
     Serial.println(CALIBRATING_TIME - (millis() - t_cal) / 1000);
     delay(100);
   }
@@ -89,8 +118,8 @@ void compassCalculation() {
   yC = my - ((myMax + myMin) / 2.0);
   zC = mz - ((mzMax + mzMin) / 2.0);
 
-  float pitch = angleX * PI/180;
-  float roll = angleY * PI/180;
+  float pitch = angleX * PI / 180;
+  float roll = angleY * PI / 180;
   float xh = xC * cos(pitch) + zC * sin(roll);
   float yh = xC * sin(roll) * sin(pitch) + yC * cos(roll) - zC * sin(roll) * cos(pitch);
   heading = atan(yh / xh);
@@ -103,4 +132,17 @@ void compassCalculation() {
   if (heading_angle < 0) {
     heading_angle += 360;
   }
+
+  for (int i = 0; i < 9; i++) {
+    reads[i] = reads[i + 1];
+  }
+  reads[9] = heading_angle;
+}
+
+float mediaMovel(float *vetor) {
+  float soma = 0;
+  for (int i = 0; i < 10; i++) {
+    soma += vetor[i];
+  }
+  return soma / 10;
 }

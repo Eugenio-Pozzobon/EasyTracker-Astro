@@ -27,12 +27,21 @@ int16_t mxMin, myMin, mzMin, mxMax, myMax, mzMax;
 float xC = 0, yC = 0, zC = 0;
 float heading = 0, heading_angle = 0;
 
+float reads[10] = {0,0,0,0,0,0,0,0,0,0};
+
 long unsigned int t_gy;
 
 float denomX_A, denomX_B, denomX_C, denomX_T;
 float denomY_A, denomY_B, denomY_C, denomY_T;
 float denomZ_A, denomZ_B, denomZ_C, denomZ_T;
 float angleX, angleY, angleZ;
+
+float acelx, acely, acelz, rate_gyr_x, rate_gyr_y, rate_gyr_z, gyroXangle, gyroYangle, gyroZangle;
+float AccXangle, AccYangle, AccZangle, CFangleX, CFangleY, CFangleZ;
+float const_calib = 16071.82;
+float const_gravid = 9.81;
+
+unsigned long pT;
 
 // Include the Arduino Stepper.h library:
 #include <Stepper.h>
@@ -72,6 +81,7 @@ void setup() {
   compassCalibration();
   myStepper.setSpeed(10);
   myStepper.step(10);
+  pT = 0;
 }
 
 void loop() {
@@ -88,25 +98,6 @@ void loop() {
 
     accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
     mag.getHeading(&mx, &my, &mz);
-
-    if (mxMax < mx) {
-      mxMax = mx;
-    }
-    if (mxMin > mx) {
-      mxMin = mx;
-    }
-    if (myMax < my) {
-      myMax = my;
-    }
-    if (myMin > my) {
-      myMin = my;
-    }
-    if (mzMax < mz) {
-      mzMax = mz;
-    }
-    if (mzMin > mz) {
-      mzMin = mz;
-    }
 
     angleCalculation();
     compassCalculation();
@@ -125,7 +116,7 @@ void loop() {
     Serial.print(mz); Serial.print("\t");
 
     Serial.print("heading: ");
-    Serial.println(heading_angle);
+    Serial.println(mediaMovel(reads));
 
     // blink LED to indicate activity
     blinkState = !blinkState;
@@ -135,7 +126,7 @@ void loop() {
   }
 
 #ifdef BLUETOOTH
-  if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState) {
+  if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState)) {
     mySerial.print(angleX); mySerial.print(",");
     mySerial.print(angleY); mySerial.print(",");
     mySerial.println(heading_angle);
