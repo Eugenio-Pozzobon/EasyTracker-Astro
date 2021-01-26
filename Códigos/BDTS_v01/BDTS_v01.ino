@@ -6,7 +6,7 @@
 
 #ifdef BLUETOOTH
 #include <SoftwareSerial.h>
-SoftwareSerial mySerial(3, 4); // RX/TX
+SoftwareSerial mySerial(15, 16); // RX/TX
 long unsigned int t_bt;
 #define state_bt 2
 #endif
@@ -27,7 +27,7 @@ int16_t mxMin, myMin, mzMin, mxMax, myMax, mzMax;
 float xC = 0, yC = 0, zC = 0;
 float heading = 0, heading_angle = 0;
 
-float reads[10] = {0,0,0,0,0,0,0,0,0,0};
+float reads[20] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 long unsigned int t_gy;
 
@@ -46,10 +46,13 @@ unsigned long pT;
 // Include the Arduino Stepper.h library:
 #include <Stepper.h>
 // Define number of steps per rotation:
-const int stepsPerRevolution = 2048;
-Stepper myStepper = Stepper(stepsPerRevolution, 6, 10, 7, 11);
+const int stepsPerRevolution = 4096/2;
+Stepper myStepper = Stepper(stepsPerRevolution, 9, 11, 10, 12);
 boolean stepperState = false;
-#define startbutton 12
+#define startbutton 2
+#define stopbutton 3
+
+#include "TimerOne.h"
 
 void setup() {
 
@@ -58,7 +61,7 @@ void setup() {
   pinMode(state_bt, INPUT); //Enable pin HC05
 #endif
 
-  Serial.begin(115200);
+  Serial.begin(500000);
 
   Wire.begin();
   accelgyro.setI2CMasterModeEnabled(false);
@@ -78,16 +81,33 @@ void setup() {
   // configure Arduino pins
   pinMode(LED_PIN, OUTPUT);
   pinMode(startbutton, INPUT_PULLUP);
-  compassCalibration();
-  myStepper.setSpeed(10);
-  myStepper.step(10);
+  pinMode(stopbutton, INPUT_PULLUP);
+
+  myStepper.setSpeed(2.5);
+
   pT = 0;
+  
+  attachInterrupt(digitalPinToInterrupt(stopbutton), stopbt, CHANGE);
 }
 
+
+void stopbt(){
+}
+
+unsigned long steppertimer = 0, looptimer = 0;
+
 void loop() {
-  if (!digitalRead(startbutton)) {
-    stepperState = true;
+  if (!digitalRead(startbutton) && digitalRead(startbutton)) {
+    stepperState = false;
+    steppertimer = micros();
     myStepper.step(10);
+#ifdef DEBUGTIMER
+    Serial.print("stepper timer: "); Serial.print(micros() - steppertimer);
+    Serial.print("  data timer: "); Serial.print(-looptimer + steppertimer);
+    double a = 1000000/float(micros() - looptimer);
+    Serial.print("  loop timer: "); Serial.println(micros() - looptimer);
+#endif
+    looptimer = micros();
   }
   else {
     stepperState = false;
@@ -102,6 +122,7 @@ void loop() {
     angleCalculation();
     compassCalculation();
 
+#ifdef DEBUGSENSOR
     Serial.print("Angulo em graus: X: ");
     Serial.print(angleX);
     Serial.print("\tY: ");
@@ -117,26 +138,31 @@ void loop() {
 
     Serial.print("heading: ");
     Serial.println(mediaMovel(reads));
-
+#endif
     // blink LED to indicate activity
     blinkState = !blinkState;
     digitalWrite(LED_PIN, blinkState);
-  } else if (stepperState) {
-    Serial.print("Stepper on!\n");
   }
 
 #ifdef BLUETOOTH
   if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState)) {
     mySerial.print(angleX); mySerial.print(",");
     mySerial.print(angleY); mySerial.print(",");
-    mySerial.println(heading_angle);
+    mySerial.println(mediaMovel(reads));
     mySerial.flush();
     t_bt = millis();
+#ifdef DEBUG
     Serial.println("Bluetooth Connected!");
-  } else if (stepperState) {
-#ifdef BLUETOOTH
-    mySerial.print("Stepper on!\n");
 #endif
+  } else if (stepperState) {
+    mySerial.print("Stepper on!\n");
   }
 #endif
+
+  if(Serial.available() > 0 ){
+    if(Serial.read() == 'c'){
+      compassCalibration();
+    }
+  }
+
 }

@@ -28,7 +28,7 @@ void angleCalculation() {
   unsigned long cT = micros(); // contar tempo de loop
   unsigned long dT = cT - pT;
   pT = cT;
-
+  
   rate_gyr_x = gx * G_GAIN;
   rate_gyr_y = gy * G_GAIN;
   rate_gyr_z = gz * G_GAIN;
@@ -53,6 +53,12 @@ void angleCalculation() {
 
 
 void compassCalibration() {
+  mxMax = 0;
+  mxMin = 0;
+  myMax = 0;
+  myMin = 0;
+  mzMax = 0;
+  mzMin = 0;
 
   long unsigned int t_cal = millis();
   while ((millis() - t_cal) < (CALIBRATING_TIME * 1000)) {
@@ -122,9 +128,9 @@ void compassCalculation() {
   float roll = angleY * PI / 180;
   float xh = xC * cos(pitch) + zC * sin(roll);
   float yh = xC * sin(roll) * sin(pitch) + yC * cos(roll) - zC * sin(roll) * cos(pitch);
-  heading = atan(yh / xh);
+  //heading = atan(yh / xh);
 
-  //heading = atan2(yC, xC);
+  heading = atan2(yC, xC);
   heading_angle =  heading * 180 / PI + declination;
   if (heading_angle >= 360) {
     heading_angle -= 360;
@@ -132,17 +138,16 @@ void compassCalculation() {
   if (heading_angle < 0) {
     heading_angle += 360;
   }
-
-  for (int i = 0; i < 9; i++) {
+  for (int i = 0; i < 19; i++) {
     reads[i] = reads[i + 1];
   }
-  reads[9] = heading_angle;
+  reads[19] = heading_angle;
 }
 
 float mediaMovel(float *vetor) {
   float soma = 0;
-  for (int i = 0; i < 10; i++) {
+  for (int i = 0; i < 20; i++) {
     soma += vetor[i];
   }
-  return soma / 10;
+  return soma / 20;
 }

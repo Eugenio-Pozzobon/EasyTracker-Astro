@@ -7,9 +7,10 @@ float declination = 0; //-39; //degree
 
 #define CALIBRATING_TIME 20 //seconds
 #define G_GAIN 0.00875
-#define AA 0.98
+#define AA 0.5
 
 //#Define code operations
-//#define BLUETOOTH
+#define BLUETOOTH
 #define bt_hz 5
-#define DEBUG
+#define DEBUGSENSOR
+#define DEBUGTIMER
