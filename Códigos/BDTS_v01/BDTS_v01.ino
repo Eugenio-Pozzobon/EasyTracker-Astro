@@ -27,7 +27,8 @@ int16_t mxMin, myMin, mzMin, mxMax, myMax, mzMax;
 float xC = 0, yC = 0, zC = 0;
 float heading = 0, heading_angle = 0;
 
-float reads[20] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+#define mediaMovelArray 16
+float reads[mediaMovelArray];
 
 long unsigned int t_gy;
 
@@ -43,10 +44,9 @@ float const_gravid = 9.81;
 
 unsigned long pT;
 
-// Include the Arduino Stepper.h library:
-#include <Stepper.h>
+#include "stp.h"
 // Define number of steps per rotation:
-const int stepsPerRevolution = 4096/2;
+const int stepsPerRevolution = 4096 / 2;
 Stepper myStepper = Stepper(stepsPerRevolution, 9, 11, 10, 12);
 boolean stepperState = false;
 #define startbutton 2
@@ -55,6 +55,10 @@ boolean stepperState = false;
 #include "TimerOne.h"
 
 void setup() {
+
+  for (int i = 0; i < mediaMovelArray; i++) {
+    reads[i] = 0;
+  }
 
 #ifdef BLUETOOTH
   mySerial.begin(9600);   //Serial Bluetooth
@@ -86,12 +90,12 @@ void setup() {
   myStepper.setSpeed(2.5);
 
   pT = 0;
-  
+
   attachInterrupt(digitalPinToInterrupt(stopbutton), stopbt, CHANGE);
 }
 
 
-void stopbt(){
+void stopbt() {
 }
 
 unsigned long steppertimer = 0, looptimer = 0;
@@ -104,7 +108,7 @@ void loop() {
 #ifdef DEBUGTIMER
     Serial.print("stepper timer: "); Serial.print(micros() - steppertimer);
     Serial.print("  data timer: "); Serial.print(-looptimer + steppertimer);
-    double a = 1000000/float(micros() - looptimer);
+    double a = 1000000 / float(micros() - looptimer);
     Serial.print("  loop timer: "); Serial.println(micros() - looptimer);
 #endif
     looptimer = micros();
@@ -159,8 +163,8 @@ void loop() {
   }
 #endif
 
-  if(Serial.available() > 0 ){
-    if(Serial.read() == 'c'){
+  if (Serial.available() > 0 ) {
+    if (Serial.read() == 'c') {
       compassCalibration();
     }
   }

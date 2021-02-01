@@ -28,7 +28,7 @@ void angleCalculation() {
   unsigned long cT = micros(); // contar tempo de loop
   unsigned long dT = cT - pT;
   pT = cT;
-  
+
   rate_gyr_x = gx * G_GAIN;
   rate_gyr_y = gy * G_GAIN;
   rate_gyr_z = gz * G_GAIN;
@@ -86,7 +86,7 @@ void compassCalibration() {
     mySerial.print("Calibrating!\n");
 #endif
     Serial.println(CALIBRATING_TIME - (millis() - t_cal) / 1000);
-    delay(100);
+    delay(10);
   }
 
   Serial.println("Calibration Infos:");
@@ -138,16 +138,16 @@ void compassCalculation() {
   if (heading_angle < 0) {
     heading_angle += 360;
   }
-  for (int i = 0; i < 19; i++) {
+  for (int i = 0; i < mediaMovelArray- 1; i++) {
     reads[i] = reads[i + 1];
   }
-  reads[19] = heading_angle;
+  reads[mediaMovelArray - 1] = heading_angle;
 }
 
 float mediaMovel(float *vetor) {
   float soma = 0;
-  for (int i = 0; i < 20; i++) {
+  for (int i = 0; i < mediaMovelArray; i++) {
     soma += vetor[i];
   }
-  return soma / 20;
+  return soma / mediaMovelArray;
 }

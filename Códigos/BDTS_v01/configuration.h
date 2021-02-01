@@ -5,7 +5,7 @@
 float declination = 0; //-39; //degree
 #define gy_hz 5
 
-#define CALIBRATING_TIME 20 //seconds
+#define CALIBRATING_TIME 30 //seconds
 #define G_GAIN 0.00875
 #define AA 0.5
 
