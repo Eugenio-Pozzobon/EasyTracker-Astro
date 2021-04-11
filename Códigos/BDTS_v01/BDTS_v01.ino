@@ -65,7 +65,7 @@ void setup() {
   pinMode(state_bt, INPUT); //Enable pin HC05
 #endif
 
-  Serial.begin(500000);
+  Serial.begin(115200);
 
   Wire.begin();
   accelgyro.setI2CMasterModeEnabled(false);
@@ -87,7 +87,7 @@ void setup() {
   pinMode(startbutton, INPUT_PULLUP);
   pinMode(stopbutton, INPUT_PULLUP);
 
-  myStepper.setSpeed(2.5);
+  myStepper.setSpeed(STEPEERSPEED);
 
   pT = 0;
 
@@ -101,7 +101,7 @@ void stopbt() {
 unsigned long steppertimer = 0, looptimer = 0;
 
 void loop() {
-  if (!digitalRead(startbutton) && digitalRead(startbutton)) {
+  if (!digitalRead(startbutton) && digitalRead(stopbutton)) {
     stepperState = false;
     steppertimer = micros();
     myStepper.step(10);
