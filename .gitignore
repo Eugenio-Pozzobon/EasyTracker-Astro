@@ -1,0 +1,9 @@
+Library/
+Electronics/CADs/
+CAD/Imported/
+*.pdsbak
+*.err
+*.LOG
+*.RGN
+*.pdsprj
+*.workspace
