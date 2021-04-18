@@ -82,8 +82,7 @@
  * two-wire constructor.
  * Sets which wires should control the motor.
  */
-Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2)
-{
+Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2){
   this->step_number = 0;    // which step the motor is on
   this->direction = 0;      // motor direction
   this->last_step_time = 0; // time stamp in us of the last step taken
@@ -111,9 +110,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2)
  *   constructor for four-pin version
  *   Sets which wires should control the motor.
  */
-Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
-                                      int motor_pin_3, int motor_pin_4)
-{
+Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int motor_pin_3, int motor_pin_4){
   this->step_number = 0;    // which step the motor is on
   this->direction = 0;      // motor direction
   this->last_step_time = 0; // time stamp in us of the last step taken
@@ -144,8 +141,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
  */
 Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
                                       int motor_pin_3, int motor_pin_4,
-                                      int motor_pin_5)
-{
+                                      int motor_pin_5){
   this->step_number = 0;    // which step the motor is on
   this->direction = 0;      // motor direction
   this->last_step_time = 0; // time stamp in us of the last step taken
@@ -172,8 +168,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
 /*
  * Sets the speed in revs per minute
  */
-void Stepper::setSpeed(double whatSpeed)
-{
+void Stepper::setSpeed(double whatSpeed){
   this->step_delay = 60L * 1000L * 1000L / this->number_of_steps / whatSpeed;
 }
 
@@ -181,8 +176,7 @@ void Stepper::setSpeed(double whatSpeed)
  * Moves the motor steps_to_move steps.  If the number is negative,
  * the motor moves in the reverse direction.
  */
-void Stepper::step(int steps_to_move)
-{
+void Stepper::step(int steps_to_move){
   int steps_left = abs(steps_to_move);  // how many steps to take
 
   // determine direction based on whether steps_to_mode is + or -:
@@ -229,8 +223,7 @@ void Stepper::step(int steps_to_move)
 /*
  * Moves the motor forward or backwards.
  */
-void Stepper::stepMotor(int thisStep)
-{
+void Stepper::stepMotor(int thisStep){
   if (this->pin_count == 2) {
     switch (thisStep) {
       case 0:  // 01
@@ -354,12 +347,4 @@ void Stepper::stepMotor(int thisStep)
         break;
     }
   }
-}
-
-/*
-  version() returns the version of the library:
-*/
-int Stepper::version(void)
-{
-  return 5;
 }

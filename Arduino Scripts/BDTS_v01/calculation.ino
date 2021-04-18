@@ -96,25 +96,6 @@ void compassCalibration() {
   Serial.print("myMin: "); Serial.println(myMin);
   Serial.print("mzMax: "); Serial.println(mzMax);
   Serial.print("mzMin: "); Serial.println(mzMin);
-
-  //mxMax: 172
-  //mxMin: -173
-  //myMax: 381
-  //myMin: 0
-  /*
-    mxMax = 172;
-    mxMin = -173;
-    myMax = 381;
-    myMin = 0;
-
-    00:02:59.247 -> mxMax: 475
-    00:02:59.247 -> mxMin: 0
-    00:02:59.247 -> myMax: 5
-    00:02:59.247 -> myMin: -361
-
-    FIO PRÓXIMO -> 5° DE ERRRO!!!!!!
-
-  */
 }
 
 void compassCalculation() {

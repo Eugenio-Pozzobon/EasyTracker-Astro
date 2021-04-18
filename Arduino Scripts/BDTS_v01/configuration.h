@@ -4,14 +4,17 @@
 // Find yours here: http://www.magnetic-declination.com/
 float declination = 0; //-39; //degree
 #define gy_hz 5
+#define MPU_FILTER
+#define MPU6050_ADDRESS 0x68
 
 #define CALIBRATING_TIME 30 //seconds
 #define G_GAIN 0.00875
 #define AA 0.5
-float STEPEERSPEED=5;//2.5;
+float STP_SPEED=5;//2.5;
 
-//#Define code operations
+//Define code operations
+
 //#define BLUETOOTH
 //#define bt_hz 5
-#define DEBUGSENSOR
-#define DEBUGTIMER
+//#define DEBUGSENSOR
+//#define DEBUGTIMER

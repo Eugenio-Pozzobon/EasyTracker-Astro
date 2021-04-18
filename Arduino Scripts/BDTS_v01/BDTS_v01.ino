@@ -1,7 +1,7 @@
 #include "configuration.h"
 
 #include "Wire.h"
-#include "MPU6050.h"
+#include "MPU6050_bdt.h"
 #include "HMC5883L.h"
 
 #ifdef BLUETOOTH
@@ -44,11 +44,13 @@ float const_gravid = 9.81;
 
 unsigned long pT;
 
+
 #include "stp.h"
 // Define number of steps per rotation:
 const int stepsPerRevolution = 4096 / 2;
 Stepper myStepper = Stepper(stepsPerRevolution, 9, 11, 10, 12);
 boolean stepperState = false;
+
 #define startbutton 2
 #define stopbutton 3
 
@@ -59,43 +61,20 @@ void setup() {
   for (int i = 0; i < mediaMovelArray; i++) {
     reads[i] = 0;
   }
+    pT = 0;
 
-#ifdef BLUETOOTH
-  mySerial.begin(9600);   //Serial Bluetooth
-  pinMode(state_bt, INPUT); //Enable pin HC05
-#endif
+  BtSart();
 
   Serial.begin(115200);
 
-  Wire.begin();
-  accelgyro.setI2CMasterModeEnabled(false);
-  accelgyro.setI2CBypassEnabled(true) ;
-  accelgyro.setSleepEnabled(false);
 
-  // initialize device
-  Serial.println("Initializing I2C devices...");
-  accelgyro.initialize();
-  mag.initialize();
-  Serial.println(mag.testConnection() ? "HMC5883L connection successful" : "HMC5883L connection failed");
-
-  // verify connection
-  Serial.println("Testing device connections...");
-  Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
 
   // configure Arduino pins
   pinMode(LED_PIN, OUTPUT);
   pinMode(startbutton, INPUT_PULLUP);
   pinMode(stopbutton, INPUT_PULLUP);
 
-  myStepper.setSpeed(STEPEERSPEED);
-
-  pT = 0;
-
-  attachInterrupt(digitalPinToInterrupt(stopbutton), stopbt, CHANGE);
-}
-
-
-void stopbt() {
+  myStepper.setSpeed(STP_SPEED);
 }
 
 unsigned long steppertimer = 0, looptimer = 0;
@@ -106,61 +85,46 @@ void loop() {
     steppertimer = micros();
     myStepper.step(10);
 #ifdef DEBUGTIMER
-    Serial.print("stepper timer: "); Serial.print(micros() - steppertimer);
-    Serial.print("  data timer: "); Serial.print(-looptimer + steppertimer);
-    double a = 1000000 / float(micros() - looptimer);
-    Serial.print("  loop timer: "); Serial.println(micros() - looptimer);
+    Serial.print("stepper timer: ");  Serial.print(micros() - steppertimer);
+    Serial.print("  data timer: ");   Serial.print(-looptimer + steppertimer);
+    Serial.print("  loop timer: ");   Serial.println(micros() - looptimer);
 #endif
+    //double a = 1000000 / float(micros() - looptimer);
     looptimer = micros();
   }
   else {
     stepperState = false;
   }
+  
+  
   if (((millis() - t_gy) > int(1000 / gy_hz)) && !stepperState) {
 
     t_gy = millis();
 
-    accelgyro.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
+    accelgyro.readScaledAccel();
+    accelgyro.readNormalizeGyro();
+
+    ax = accelgyro.nax;
+    ay = accelgyro.nay;
+    az = accelgyro.naz;
+    gx = accelgyro.ngx;
+    gy = accelgyro.ngy;
+    gz = accelgyro.ngz;
+
     mag.getHeading(&mx, &my, &mz);
 
     angleCalculation();
     compassCalculation();
-
-#ifdef DEBUGSENSOR
-    Serial.print("Angulo em graus: X: ");
-    Serial.print(angleX);
-    Serial.print("\tY: ");
-    Serial.print(angleY);
-    Serial.print("\tZ: ");
-    Serial.print(angleZ);
-
-    Serial.print("\t");
-    Serial.print(" ||  mag:  ");
-    Serial.print(mx); Serial.print("\t");
-    Serial.print(my); Serial.print("\t");
-    Serial.print(mz); Serial.print("\t");
-
-    Serial.print("heading: ");
-    Serial.println(mediaMovel(reads));
-#endif
+    
     // blink LED to indicate activity
     blinkState = !blinkState;
     digitalWrite(LED_PIN, blinkState);
+
+    debugSensor();
   }
 
 #ifdef BLUETOOTH
-  if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState)) {
-    mySerial.print(angleX); mySerial.print(",");
-    mySerial.print(angleY); mySerial.print(",");
-    mySerial.println(mediaMovel(reads));
-    mySerial.flush();
-    t_bt = millis();
-#ifdef DEBUG
-    Serial.println("Bluetooth Connected!");
-#endif
-  } else if (stepperState) {
-    mySerial.print("Stepper on!\n");
-  }
+  sendBtData()
 #endif
 
   if (Serial.available() > 0 ) {
@@ -168,5 +132,4 @@ void loop() {
       compassCalibration();
     }
   }
-
 }
