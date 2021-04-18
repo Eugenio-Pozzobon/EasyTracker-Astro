@@ -1,39 +1,35 @@
 //Código referente à inicialização da rede I2C e do MPU, junto com uma checagem. 
-boolean accelgyroStatus = false;
 void setupi2c() {
   beginWire();
+
   Wire.begin();
-  accelgyro.setI2CMasterModeEnabled(false);
-  accelgyro.setI2CBypassEnabled(true);
-  accelgyro.setSleepEnabled(false);
 
   // initialize device
   Serial.println("Initializing I2C devices...");
 
-  mag.initialize();
-  Serial.println(mag.testConnection() ? "HMC5883L connection successful" : "HMC5883L connection failed");
-
   if (accelgyro.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G, MPU6050_NORMAL, WIRE_3400KhZ)) {
-    Serial.println("\t \t accelgyro connection successful");
+    Serial.println("\t \t MPU6050 connection successful");
     delay(100);
-    accelgyroStatus = true;
+    accelgyro.setI2CMasterModeEnabled(false);
+    accelgyro.setI2CBypassEnabled(true);
+    accelgyro.setSleepEnabled(false);
+    Serial.println("\t \t MPU6050 configurate successful");
   } else {
-    Serial.println("\t \t *accelgyro connection failed*");
-    accelgyroStatus = false;
+    Serial.println("\t \t *MPU6050 connection failed*");
   }
 
 #ifdef MPU_FILTER
-  if (accelgyroStatus) {
-    accelgyro.setDHPFMode(MPU6050_DHPF_5HZ);
-    accelgyro.setDLPFMode(MPU6050_DLPF_4);
-  }
+  accelgyro.setDHPFMode(MPU6050_DHPF_5HZ);
+  accelgyro.setDLPFMode(MPU6050_DLPF_4);
 #endif
-  checkSettings();
+  //checkSettings();
+
+  mag.initialize();
+  Serial.println(mag.testConnection() ? "\t \t HMC5883L connection successful" : "*HMC5883L connection failed*");
 
 }
 
 void checkSettings() {
-  if (accelgyroStatus) {
 #ifdef MPU_FILTER
     Serial.println("\t \t FILTRO DEFINED");
 #endif
@@ -82,10 +78,10 @@ void checkSettings() {
     Serial.print(accelgyro.getGyroOffsetY());
     Serial.print(" / ");
     Serial.println(accelgyro.getGyroOffsetZ());
-  }
 }
 
 void beginWire() {
+  Serial.println("Initializing I2C Bus...");
   int rtn = I2C_ClearBus(); // clear the I2C bus first before calling Wire.begin()
   if (rtn != 0) {
     Serial.println(("\t I2C bus error. Could not clear"));
@@ -177,7 +173,7 @@ void scanI2C() {
   byte error, address;
   int nDevices;
 
-  Serial.print("\t Scanning...  ");
+  Serial.println("Scanning I2C Bus...  ");
 
   nDevices = 0;
   for (address = 1; address < 127; address++ ){
@@ -191,8 +187,7 @@ void scanI2C() {
       Serial.print("\t I2C device found at address 0x");
       if (address < 16)
         Serial.print("0");
-      Serial.print(address, HEX);
-      Serial.println(" !");
+      Serial.println(address, HEX);
 
       nDevices++;
     }
@@ -206,7 +201,7 @@ void scanI2C() {
   if (nDevices == 0){
     Serial.println("\t No I2C devices found");
   }else{
-    Serial.println("\t Done scanner i2c");
+    Serial.println("\t Done scanner I2C\n");
   }
 }
 

@@ -2,13 +2,18 @@
 
 #include "Wire.h"
 #include "MPU6050_bdt.h"
-#include "HMC5883L.h"
+#include "HMC5883L_bdt.h"
 
 #ifdef BLUETOOTH
 #include <SoftwareSerial.h>
 SoftwareSerial mySerial(15, 16); // RX/TX
 long unsigned int t_bt;
 #define state_bt 2
+
+#ifndef bt_hz
+#define bt_hz 5
+#endif
+
 #endif
 
 MPU6050 accelgyro;
@@ -44,7 +49,6 @@ float const_gravid = 9.81;
 
 unsigned long pT;
 
-
 #include "stp.h"
 // Define number of steps per rotation:
 const int stepsPerRevolution = 4096 / 2;
@@ -54,7 +58,9 @@ boolean stepperState = false;
 #define startbutton 2
 #define stopbutton 3
 
-#include "TimerOne.h"
+#ifdef DEBUGTIMER
+unsigned long steppertimer = 0, looptimer = 0;
+#endif
 
 void setup() {
 
@@ -67,7 +73,7 @@ void setup() {
 
   Serial.begin(115200);
 
-
+  setupi2c();
 
   // configure Arduino pins
   pinMode(LED_PIN, OUTPUT);
@@ -77,20 +83,20 @@ void setup() {
   myStepper.setSpeed(STP_SPEED);
 }
 
-unsigned long steppertimer = 0, looptimer = 0;
-
 void loop() {
   if (!digitalRead(startbutton) && digitalRead(stopbutton)) {
     stepperState = false;
+#ifdef DEBUGTIMER
     steppertimer = micros();
+#endif
     myStepper.step(10);
 #ifdef DEBUGTIMER
     Serial.print("stepper timer: ");  Serial.print(micros() - steppertimer);
-    Serial.print("  data timer: ");   Serial.print(-looptimer + steppertimer);
-    Serial.print("  loop timer: ");   Serial.println(micros() - looptimer);
-#endif
+    Serial.print("\t\tdata timer: ");   Serial.print(-looptimer + steppertimer);
+    Serial.print("\t\tloop timer: ");   Serial.println(micros() - looptimer);
     //double a = 1000000 / float(micros() - looptimer);
     looptimer = micros();
+#endif
   }
   else {
     stepperState = false;
@@ -101,7 +107,7 @@ void loop() {
 
     t_gy = millis();
 
-    accelgyro.readScaledAccel();
+    accelgyro.readNormalizeAccel();
     accelgyro.readNormalizeGyro();
 
     ax = accelgyro.nax;

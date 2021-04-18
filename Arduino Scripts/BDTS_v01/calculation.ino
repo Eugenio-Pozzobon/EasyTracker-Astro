@@ -1,29 +1,3 @@
-/*void angleCalculation() {
-  //X-AXIS
-  denomX_A = pow(ay, 2);
-  denomX_B = pow(az, 2);
-  denomX_C = denomX_A + denomX_B;
-  denomX_T = pow(denomX_C, .5);                   //pow returns base raised to the power exponent
-  angleX = atan(ax / denomX_T) * 180 / PI;       //should calculate the angle on the X axis in
-  //degrees based on raw data
-
-  //Y-AXIS
-  denomY_A = pow(ax, 2);
-  denomY_B = pow(az, 2);
-  denomY_C = denomY_A + denomY_B;
-  denomY_T = pow(denomY_C, .5);                   //pow returns base raised to the power exponent
-  angleY = atan(ay / denomY_T) * 180 / PI;       //should calculate the angle on the Y axis in degrees based
-  // on raw data
-
-  //Z-AXIS
-  denomZ_A = pow(ax, 2);
-  denomZ_B = pow(ay, 2);
-  denomZ_C = denomZ_A + denomZ_B;
-  denomZ_T = pow(denomZ_C, .5);
-  angleZ = atan(az / denomY_T) * 180 / PI;
-  }*/
-
-
 void angleCalculation() {
   unsigned long cT = micros(); // contar tempo de loop
   unsigned long dT = cT - pT;
@@ -41,9 +15,9 @@ void angleCalculation() {
   AccYangle = (atan2(ay, sqrt(pow(ax, 2) + pow(az, 2))) * 180) / 3.14;
   AccZangle = (atan2(az, sqrt(pow(ax, 2) + pow(ay, 2))) * 180) / 3.14;
 
-  CFangleX = AA * (CFangleX + rate_gyr_x * (dT / 1000000)) + (1 - AA) * AccXangle;
-  CFangleY = AA * (CFangleY + rate_gyr_y * (dT / 1000000)) + (1 - AA) * AccYangle;
-  CFangleZ = AA * (CFangleZ + rate_gyr_z * (dT / 1000000)) + (1 - AA) * AccZangle;
+  CFangleX = AA * (CFangleX + rate_gyr_x * (double(dT) / 1000000)) + (1 - AA) * AccXangle;
+  CFangleY = AA * (CFangleY + rate_gyr_y * (double(dT) / 1000000)) + (1 - AA) * AccYangle;
+  CFangleZ = AA * (CFangleZ + rate_gyr_z * (double(dT) / 1000000)) + (1 - AA) * AccZangle;
 
   angleX = CFangleX;
   angleY = CFangleY;
@@ -107,8 +81,8 @@ void compassCalculation() {
 
   float pitch = angleX * PI / 180;
   float roll = angleY * PI / 180;
-  float xh = xC * cos(pitch) + zC * sin(roll);
-  float yh = xC * sin(roll) * sin(pitch) + yC * cos(roll) - zC * sin(roll) * cos(pitch);
+  //float xh = xC * cos(pitch) + zC * sin(roll);
+  //float yh = xC * sin(roll) * sin(pitch) + yC * cos(roll) - zC * sin(roll) * cos(pitch);
   //heading = atan(yh / xh);
 
   heading = atan2(yC, xC);

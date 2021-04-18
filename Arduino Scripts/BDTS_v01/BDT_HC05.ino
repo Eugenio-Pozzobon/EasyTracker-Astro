@@ -1,5 +1,3 @@
-
-
 void BtSart(){
   #ifdef BLUETOOTH
   mySerial.begin(9600);   //Serial Bluetooth
