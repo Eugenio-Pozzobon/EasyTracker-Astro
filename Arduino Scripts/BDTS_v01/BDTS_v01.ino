@@ -1,3 +1,45 @@
+double STP_SPEED=1.89363;
+
+//test 1: speed -> 2.5
+//initial angle -> 61.3, 02:47  | Ok
+//*****   angle -> 61.6, 02:48  | Ok
+//*****   angle -> 61.9, 02:49  | Not Ok
+//*****   angle -> 62.2, 02:50  | Not Ok
+//*****   angle -> 63.1, 02:53  | Not Ok
+//*****   angle -> 64.0, 02:56  | Not Ok
+
+//test 2: speed -> 2.083
+//initial angle -> 64.4, 02:57  | ok
+//        angle -> 64.9, 02:59  | ok
+//*****   angle -> 65.4, 03:01  | ok
+//*****   angle -> 67.7, 03:09  | Not Ok
+
+//test 2: speed -> 1.89363
+//*****   angle -> 70.3, 03:19  | ok
+//*****   angle -> 71.3, 03:23  | ok
+//*****   angle -> 72.3, 03:27  | ok
+//*****   angle -> 73.3, 03:31  | ok
+//*****   angle -> 74.3, 03:35  | ok?
+//*****   angle -> 75.3, 03:39  | ok?
+//*****   angle -> 76.3, 03:43  | ok?
+//*****   angle -> 77.3, 03:47  | ok
+//*****   angle -> 78.3, 03:51  | ok
+//*****   angle -> 79.4, 03:55  | Not ok
+//*****   angle -> 80.4, 03:59  | Not ok
+//--------------------------------------
+//*****   angle -> 11.9, 04:08  | ok
+//*****   angle -> 13.0, 04:12  | Not ok
+//*****   angle -> 14.0, 04:16  | ok
+//*****   angle -> 15.0, 04:20  | ok?
+//*****   angle -> 16.0, 04:24  | ok?
+//*****   angle -> 17.0, 04:28  | ok
+//*****   angle -> 18.1, 04:32  | Not ok
+//*****   angle -> 19.0, 04:36  | ok
+//*****   angle -> 20.0, 04:40  | ok
+//*****   angle -> 21.1, 04:44  | Not ok
+
+
+
 #include "configuration.h"
 
 #include "Wire.h"

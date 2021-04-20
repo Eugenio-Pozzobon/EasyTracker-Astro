@@ -9,7 +9,7 @@ float declination = 0; //-39; //degree
 #define CALIBRATING_TIME 30 //seconds
 #define G_GAIN 0.00875
 #define AA 0.5
-float STP_SPEED=2.5;
+
 
 //Define code operations
 
