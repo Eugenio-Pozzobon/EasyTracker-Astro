@@ -1,6 +1,6 @@
 double STP_SPEED=1.89363;
 
-//test 1: speed -> 2.5
+//test 1: speed -> 2.5 rpm
 //initial angle -> 61.3, 02:47  | Ok
 //*****   angle -> 61.6, 02:48  | Ok
 //*****   angle -> 61.9, 02:49  | Not Ok
@@ -8,14 +8,14 @@ double STP_SPEED=1.89363;
 //*****   angle -> 63.1, 02:53  | Not Ok
 //*****   angle -> 64.0, 02:56  | Not Ok
 
-//test 2: speed -> 2.083
+//test 2: speed -> 2.083 rpm
 //initial angle -> 64.4, 02:57  | ok
 //        angle -> 64.9, 02:59  | ok
 //*****   angle -> 65.4, 03:01  | ok
 //*****   angle -> 67.7, 03:09  | Not Ok
 
-//test 2: speed -> 1.89363
-//*****   angle -> 70.3, 03:19  | ok
+//test 3: speed -> 1.89363 rpm
+//*****   angle -> 70.3,03 :19  | ok
 //*****   angle -> 71.3, 03:23  | ok
 //*****   angle -> 72.3, 03:27  | ok
 //*****   angle -> 73.3, 03:31  | ok
