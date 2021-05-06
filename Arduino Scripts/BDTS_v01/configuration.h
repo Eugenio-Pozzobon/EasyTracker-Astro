@@ -13,7 +13,7 @@ float declination = 0; //-39; //degree
 
 //Define code operations
 
-//#define BLUETOOTH
-//#define bt_hz 5
+#define BLUETOOTH
+#define bt_hz 5
 #define DEBUGSENSOR
 //#define DEBUGTIMER

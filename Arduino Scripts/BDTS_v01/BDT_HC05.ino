@@ -8,9 +8,12 @@ void BtSart(){
 void sendBtData(){
   #ifdef BLUETOOTH
   if ((((mySerial.available() && ((millis() - t_bt) > int(1000 / bt_hz))) || ((millis() - t_bt) > 1000) && (digitalRead(state_bt))) && !stepperState)) {
-    mySerial.print(angleX); mySerial.print(",");
-    mySerial.print(angleY); mySerial.print(",");
-    mySerial.println(mediaMovel(reads));
+    mySerial.print(int(angleX*10)); mySerial.print(",");
+    mySerial.print(int(angleY*10)); mySerial.print(",");
+    int MM = int(mediaMovel(reads)*10);
+    mySerial.print(int(MM)); mySerial.print(",");
+    mySerial.print(int(MM + angleY*10 + angleX*10));
+    mySerial.print("\n");
     mySerial.flush();
     t_bt = millis();
 #ifdef DEBUG

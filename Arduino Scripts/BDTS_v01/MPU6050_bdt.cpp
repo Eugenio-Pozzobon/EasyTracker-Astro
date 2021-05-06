@@ -408,10 +408,10 @@ void MPU6050::readNormalizeGyro(void){
     }
 }
 
-double MPU6050::readTemperature(void){
+float MPU6050::readTemperature(void){
     int16_t T;
     T = readRegister16(MPU6050_REG_TEMP_OUT_H);
-    return (double)T/340 + 36.53;
+    return (float)T/340 + 36.53;
 }
 
 int16_t MPU6050::getGyroOffsetX(void){
@@ -468,12 +468,12 @@ void MPU6050::calibrateGyro(int16_t samples){
     useCalibrate = true;
 
     // Reset values
-    double sumX = 0;
-    double sumY = 0;
-    double sumZ = 0;
-    double sigmaX = 0;
-    double sigmaY = 0;
-    double sigmaZ = 0;
+    float sumX = 0;
+    float sumY = 0;
+    float sumZ = 0;
+    float sigmaX = 0;
+    float sigmaY = 0;
+    float sigmaZ = 0;
 
     // Read n-samples
     for (int16_t i = 0; i < samples; ++i)

@@ -94,7 +94,7 @@ unsigned long pT;
 #include "stp.h"
 // Define number of steps per rotation:
 const int stepsPerRevolution = 4096 / 2;
-Stepper myStepper = Stepper(stepsPerRevolution, 9, 11, 10, 12);
+Stepper myStepper = Stepper(stepsPerRevolution, 5, 11, 10, 12); //5 -> 9
 boolean stepperState = false;
 
 #define startbutton 2
@@ -172,7 +172,7 @@ void loop() {
   }
 
 #ifdef BLUETOOTH
-  sendBtData()
+  sendBtData();
 #endif
 
   if (Serial.available() > 0 ) {

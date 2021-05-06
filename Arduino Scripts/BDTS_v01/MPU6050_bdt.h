@@ -199,7 +199,7 @@ class MPU6050{
 	bool getI2CBypassEnabled(void);
 	void setI2CBypassEnabled(bool state);
 
-	double readTemperature(void);
+	float readTemperature(void);
 	Activites readActivites(void);
 
 	int16_t getGyroOffsetX(void);
@@ -230,17 +230,17 @@ class MPU6050{
 	int16_t rax, rgx; // Raw vectors
 	int16_t ray, rgy; // Raw vectors
 	int16_t raz, rgz; // Raw vectors
-	double nax, ngx; // Normalized vectors
-	double nay, ngy; // Normalized vectors
-	double naz, ngz; // Normalized vectors
+	float nax, ngx; // Normalized vectors
+	float nay, ngy; // Normalized vectors
+	float naz, ngz; // Normalized vectors
 			
-	double tgx, dgx; // Threshold and Delta for Gyro
-	double tgy, dgy; // Threshold and Delta for Gyro
-	double tgz, dgz; // Threshold and Delta for Gyro
+	float tgx, dgx; // Threshold and Delta for Gyro
+	float tgy, dgy; // Threshold and Delta for Gyro
+	float tgz, dgz; // Threshold and Delta for Gyro
 			
-	double thx;     // Threshold
-	double thy;     // Threshold
-	double thz;     // Threshold
+	float thx;     // Threshold
+	float thy;     // Threshold
+	float thz;     // Threshold
 	
 	Activites a;   // Activities
 	
