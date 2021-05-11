@@ -82,13 +82,9 @@
 // library interface description
 class Stepper {
   public:
-    // constructors:
-    Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2);
+    // constructors
     Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
                                  int motor_pin_3, int motor_pin_4);
-    Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
-                                 int motor_pin_3, int motor_pin_4,
-                                 int motor_pin_5);
 
     // speed setter method:
     void setSpeed(double whatSpeed);
@@ -118,4 +114,3 @@ class Stepper {
 };
 
 #endif
-

@@ -1,27 +1,21 @@
-void angleCalculation() {
+void angleCalculation() { //676us usando int_16t e 1100us usando float
   unsigned long cT = micros(); // contar tempo de loop
-  unsigned long dT = cT - pT;
+  int dT = cT - pT; //Variable for measure angle with gps and make integration of values
   pT = cT;
 
-  rate_gyr_x = gx * G_GAIN;
-  rate_gyr_y = gy * G_GAIN;
-  rate_gyr_z = gz * G_GAIN;
+  //  rate_gyr_x = accelgyro.ngx * G_GAIN;
+  //  rate_gyr_y = accelgyro.ngy * G_GAIN;
+  //  rate_gyr_z = accelgyro.ngz * G_GAIN;
+  //  gyroXangle += rate_gyr_x * dT;
+  //  gyroYangle += rate_gyr_y * dT;
+  //  gyroZangle += rate_gyr_z * dT;
 
-  gyroXangle += rate_gyr_x * dT;
-  gyroYangle += rate_gyr_y * dT;
-  gyroZangle += rate_gyr_z * dT;
-
-  AccXangle = (atan2(ax, sqrt(pow(ay, 2) + pow(az, 2))) * 180) / 3.14;
-  AccYangle = (atan2(ay, sqrt(pow(ax, 2) + pow(az, 2))) * 180) / 3.14;
-  AccZangle = (atan2(az, sqrt(pow(ax, 2) + pow(ay, 2))) * 180) / 3.14;
-
-  CFangleX = AA * (CFangleX + rate_gyr_x * (double(dT) / 1000000)) + (1 - AA) * AccXangle;
-  CFangleY = AA * (CFangleY + rate_gyr_y * (double(dT) / 1000000)) + (1 - AA) * AccYangle;
-  CFangleZ = AA * (CFangleZ + rate_gyr_z * (double(dT) / 1000000)) + (1 - AA) * AccZangle;
-
-  angleX = CFangleX;
-  angleY = CFangleY;
-  angleZ = CFangleZ;
+  angleX = AA * (angleX + accelgyro.ngx * G_GAIN * (float(dT) / 1000000)) + (1 - AA) *
+           (atan2(accelgyro.nax, sqrt(pow(accelgyro.nay, 2) + pow(accelgyro.naz, 2))) * 180) / 3.14;
+  angleY = AA * (angleY + accelgyro.ngy * G_GAIN * (float(dT) / 1000000)) + (1 - AA) *
+           (atan2(accelgyro.nay, sqrt(pow(accelgyro.nax, 2) + pow(accelgyro.naz, 2))) * 180) / 3.14;
+  angleZ = AA * (angleZ + accelgyro.ngz * G_GAIN * (float(dT) / 1000000)) + (1 - AA) *
+           (atan2(accelgyro.naz, sqrt(pow(accelgyro.nax, 2) + pow(accelgyro.nay, 2))) * 180) / 3.14;
 }
 
 
@@ -36,6 +30,9 @@ void compassCalibration() {
 
   long unsigned int t_cal = millis();
   while ((millis() - t_cal) < (CALIBRATING_TIME * 1000)) {
+#ifdef WHATCHDOG
+    wdt_reset();
+#endif
     mag.getHeading(&mx, &my, &mz);
     if (mxMax < mx) {
       mxMax = mx;
@@ -55,50 +52,55 @@ void compassCalibration() {
     if (mzMin > mz) {
       mzMin = mz;
     }
+
+#ifdef DEBUG
     Serial.print("Calibrating! Time remaining (s):");
-#ifdef BLUETOOTH
-    mySerial.print("Calibrating!\n");
-#endif
     Serial.println(CALIBRATING_TIME - (millis() - t_cal) / 1000);
+#endif
     delay(10);
   }
 
-  Serial.println("Calibration Infos:");
-  Serial.print("mxMax: "); Serial.println(mxMax);
-  Serial.print("mxMin: "); Serial.println(mxMin);
-  Serial.print("myMax: "); Serial.println(myMax);
-  Serial.print("myMin: "); Serial.println(myMin);
-  Serial.print("mzMax: "); Serial.println(mzMax);
-  Serial.print("mzMin: "); Serial.println(mzMin);
+  EEPROM.write(0, mxMin >> 8);  EEPROM.write(1, mxMin % 256);
+  EEPROM.write(2, myMin >> 8);  EEPROM.write(3, myMin % 256);
+  EEPROM.write(4, mzMin >> 8);  EEPROM.write(5, mzMin % 256);
+  EEPROM.write(6, mxMax >> 8);  EEPROM.write(7, mxMax % 256);
+  EEPROM.write(8, myMax >> 8);  EEPROM.write(9, myMax % 256);
+  EEPROM.write(10, mzMax >> 8);  EEPROM.write(11, mzMax % 256);
+
+#ifdef DEBUG
+  printCalibrationInfo();
+#endif
 }
 
-void compassCalculation() {
-  // To calculate heading in degrees. 0 degree indicates North
-  // corrige e calcula o angulo em radianos
-  xC = mx - ((mxMax + mxMin) / 2.0);
-  yC = my - ((myMax + myMin) / 2.0);
-  zC = mz - ((mzMax + mzMin) / 2.0);
+/* To calculate heading in degrees. 0 degree indicates North
+   Calculate in radians
+   xC = mx - ((mxMax + mxMin) / 2.0);
+   yC = my - ((myMax + myMin) / 2.0);
+   zC = mz - ((mzMax + mzMin) / 2.0);
+*/
+void compassCalculation() { //256us
+  //calculation
+  heading_angle =  atan2(my - ((myMax + myMin) / 2.0), mx - ((mxMax + mxMin) / 2.0)) * (180 / PI);
 
-  float pitch = angleX * PI / 180;
-  float roll = angleY * PI / 180;
-  //float xh = xC * cos(pitch) + zC * sin(roll);
-  //float yh = xC * sin(roll) * sin(pitch) + yC * cos(roll) - zC * sin(roll) * cos(pitch);
-  //heading = atan(yh / xh);
-
-  heading = atan2(yC, xC);
-  heading_angle =  heading * 180 / PI + declination;
+  //check if it north
   if (heading_angle >= 360) {
     heading_angle -= 360;
   }
   if (heading_angle < 0) {
     heading_angle += 360;
   }
-  for (int i = 0; i < mediaMovelArray- 1; i++) {
+
+  //pass it for an array to stabilizate the data
+  for (int i = 0; i < mediaMovelArray - 1; i++) {
     reads[i] = reads[i + 1];
   }
   reads[mediaMovelArray - 1] = heading_angle;
+
 }
 
+/*
+   Calculate the media of an array
+*/
 float mediaMovel(float *vetor) {
   float soma = 0;
   for (int i = 0; i < mediaMovelArray; i++) {

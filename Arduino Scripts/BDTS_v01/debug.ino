@@ -1,19 +1,21 @@
-void debugSensor(){  
-  #ifdef DEBUGSENSOR    
-  Serial.print("Angulo em graus: X: ");
+void debugSensor() {
+#ifdef DEBUG
+  Serial.print("\tPitch: ");
   Serial.print(angleX);
-  Serial.print("\tY: ");
+  Serial.print("\tRoll: ");
   Serial.print(angleY);
-  Serial.print("\tZ: ");
-  Serial.print(angleZ);
-
-  Serial.print("\t");
-  Serial.print(" ||  mag:  ");
-  Serial.print(mx); Serial.print("\t");
-  Serial.print(my); Serial.print("\t");
-  Serial.print(mz); Serial.print("\t");
-  Serial.print("heading: ");
+  Serial.print("\tYaw: ");
   Serial.println(mediaMovel(reads));
-  
-  #endif
+#endif
+}
+void printCalibrationInfo() {
+  #ifdef DEBUG
+  Serial.println("Calibration Infos:");
+  Serial.print("mxMax: "); Serial.println(mxMax);
+  Serial.print("mxMin: "); Serial.println(mxMin);
+  Serial.print("myMax: "); Serial.println(myMax);
+  Serial.print("myMin: "); Serial.println(myMin);
+  Serial.print("mzMax: "); Serial.println(mzMax);
+  Serial.print("mzMin: "); Serial.println(mzMin);
+#endif
 }

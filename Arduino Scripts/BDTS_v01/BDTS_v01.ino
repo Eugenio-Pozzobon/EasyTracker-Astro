@@ -1,5 +1,3 @@
-double STP_SPEED=1.89363;
-
 //test 1: speed -> 2.5 rpm
 //initial angle -> 61.3, 02:47  | Ok
 //*****   angle -> 61.6, 02:48  | Ok
@@ -38,83 +36,79 @@ double STP_SPEED=1.89363;
 //*****   angle -> 20.0, 04:40  | ok
 //*****   angle -> 21.1, 04:44  | Not ok
 
-
-
 #include "configuration.h"
 
+//librarys includes
 #include "Wire.h"
 #include "MPU6050_bdt.h"
 #include "HMC5883L_bdt.h"
+#include "stp.h"
 
-#ifdef BLUETOOTH
 #include <SoftwareSerial.h>
+#include <EEPROM.h>
+#include <avr/wdt.h>
+
+//bluetooth variables
 SoftwareSerial mySerial(15, 16); // RX/TX
-long unsigned int t_bt;
-#define state_bt 2
+unsigned long t_bt;
+unsigned long t_counter = 0;
+#define state_bt 14
 
-#ifndef bt_hz
-#define bt_hz 5
-#endif
-
-#endif
-
+// acelerometer variables
 MPU6050 accelgyro;
-HMC5883L mag;
+float angleX, angleY, angleZ;
+unsigned long pT = 0;
 
-int16_t ax, ay, az;
-int16_t gx, gy, gz;
+// magnetometer variables
+HMC5883L mag;
 int16_t mx, my, mz;
 
+// blinking led
 #define LED_PIN 13
 bool blinkState = false;
 
-// fatores de correção determinados na calibração
-int16_t mxMin, myMin, mzMin, mxMax, myMax, mzMax;
+// Calibration factors
+int16_t mxMin = EEPROM.read(0) << 8 | EEPROM.read(1);
+int16_t myMin = EEPROM.read(2) << 8 | EEPROM.read(3);
+int16_t mzMin = EEPROM.read(4) << 8 | EEPROM.read(5);
+int16_t mxMax = EEPROM.read(6) << 8 | EEPROM.read(7);
+int16_t myMax = EEPROM.read(8) << 8 | EEPROM.read(9);
+int16_t mzMax = EEPROM.read(10) << 8 | EEPROM.read(11);
 
-float xC = 0, yC = 0, zC = 0;
-float heading = 0, heading_angle = 0;
-
-#define mediaMovelArray 16
+// Calculation variables
+#define mediaMovelArray 8
+float heading_angle = 0;
 float reads[mediaMovelArray];
 
-long unsigned int t_gy;
+// timer variables
+unsigned long t_gy, steppertimer = 0, looptimer = 0;
 
-float denomX_A, denomX_B, denomX_C, denomX_T;
-float denomY_A, denomY_B, denomY_C, denomY_T;
-float denomZ_A, denomZ_B, denomZ_C, denomZ_T;
-float angleX, angleY, angleZ;
-
-float acelx, acely, acelz, rate_gyr_x, rate_gyr_y, rate_gyr_z, gyroXangle, gyroYangle, gyroZangle;
-float AccXangle, AccYangle, AccZangle, CFangleX, CFangleY, CFangleZ;
-float const_calib = 16071.82;
-float const_gravid = 9.81;
-
-unsigned long pT;
-
-#include "stp.h"
-// Define number of steps per rotation:
-const int stepsPerRevolution = 4096 / 2;
-Stepper myStepper = Stepper(stepsPerRevolution, 5, 11, 10, 12); //5 -> 9
-boolean stepperState = false;
-
+// stepper variables
 #define startbutton 2
 #define stopbutton 3
-
-#ifdef DEBUGTIMER
-unsigned long steppertimer = 0, looptimer = 0;
-#endif
+const int stepsPerRevolution = 4096 / 2;
+boolean stepperState = false;
+Stepper myStepper = Stepper(stepsPerRevolution, 5, 11, 10, 12); //5 -> 9
 
 void setup() {
-
+#ifdef WHATCHDOG
+  wdt_enable(WDTO_1S);
+#endif
+  //Initializate Variables
   for (int i = 0; i < mediaMovelArray; i++) {
     reads[i] = 0;
   }
-    pT = 0;
 
-  BtSart();
-
+  //Initializate Serial
+#ifdef DEBUG
   Serial.begin(115200);
+  printCalibrationInfo();
+#endif
 
+  //Initializate Bluetooth
+  bluetoothSart();
+
+  //Initializate I2C Bus
   setupi2c();
 
   // configure Arduino pins
@@ -122,62 +116,66 @@ void setup() {
   pinMode(startbutton, INPUT_PULLUP);
   pinMode(stopbutton, INPUT_PULLUP);
 
+  // Setup Stepper
   myStepper.setSpeed(STP_SPEED);
 }
 
 void loop() {
-  if (!digitalRead(startbutton) && digitalRead(stopbutton)) {
-    stepperState = false;
-#ifdef DEBUGTIMER
-    steppertimer = micros();
+  
+#ifdef WHATCHDOG
+  wdt_reset();
 #endif
+
+  if (!digitalRead(startbutton) && digitalRead(stopbutton)) {
+    stepperState = true;
+#ifdef DEBUG
+    steppertimer = micros();
     myStepper.step(10);
-#ifdef DEBUGTIMER
-    Serial.print("stepper timer: ");  Serial.print(micros() - steppertimer);
-    Serial.print("\t\tdata timer: ");   Serial.print(-looptimer + steppertimer);
-    Serial.print("\t\tloop timer: ");   Serial.println(micros() - looptimer);
-    //double a = 1000000 / float(micros() - looptimer);
-    looptimer = micros();
+    Serial.print("stepper timer: ");  Serial.println(micros() - steppertimer);
+#else
+    myStepper.step(10);
 #endif
   }
   else {
     stepperState = false;
   }
-  
-  
-  if (((millis() - t_gy) > int(1000 / gy_hz)) && !stepperState) {
 
+
+  if (((millis() - t_gy) > 10) && !stepperState) {
     t_gy = millis();
 
     accelgyro.readNormalizeAccel();
     accelgyro.readNormalizeGyro();
 
-    ax = accelgyro.nax;
-    ay = accelgyro.nay;
-    az = accelgyro.naz;
-    gx = accelgyro.ngx;
-    gy = accelgyro.ngy;
-    gz = accelgyro.ngz;
-
     mag.getHeading(&mx, &my, &mz);
 
     angleCalculation();
     compassCalculation();
-    
-    // blink LED to indicate activity
-    blinkState = !blinkState;
-    digitalWrite(LED_PIN, blinkState);
-
     debugSensor();
   }
 
-#ifdef BLUETOOTH
-  sendBtData();
-#endif
+  serialCommunication();
+  bluetoothCommunication();
+  manageUserOption();
 
-  if (Serial.available() > 0 ) {
+
+  // blink LED to indicate activity
+  blinkState = !blinkState;
+  digitalWrite(LED_PIN, blinkState);
+}
+
+void serialCommunication() {
+#ifdef DEBUG
+  if (Serial.available()) {
     if (Serial.read() == 'c') {
       compassCalibration();
     }
+  }
+#endif
+}
+
+void manageUserOption() {
+  if (mySerial.read() == 'c') {
+    compassCalibration();
   }
 }
