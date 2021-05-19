@@ -5,7 +5,7 @@ void debugSensor() {
   Serial.print("\tRoll: ");
   Serial.print(angleY);
   Serial.print("\tYaw: ");
-  Serial.println(mediaMovel(reads));
+  Serial.println(angleZ);
 #endif
 }
 void printCalibrationInfo() {

@@ -1,19 +1,14 @@
-//Código referente à inicialização da rede I2C e do MPU, junto com uma checagem.
-void setupi2c() {
-#ifdef WHATCHDOG
-  wdt_reset();
-#endif
-  beginWire();
+
+
+void initializeDevicesI2c() {
+
 #ifdef DEBUG
   Serial.println("Initializing I2C devices...");
 #endif
 
-  // initialize device
 
-#ifdef WHATCHDOG
   wdt_reset();
-#endif
-  if (accelgyro.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G, MPU6050_NORMAL, WIRE_3400KhZ)) {
+  if (accelgyro.begin(MPU6050_SCALE_2000DPS, MPU6050_RANGE_2G, MPU6050_NORMAL, WIRE_400kHz)) {
 #ifdef DEBUG
     Serial.print("\t MPU6050 connection successful \n");
 #endif
@@ -21,12 +16,12 @@ void setupi2c() {
     accelgyro.setI2CMasterModeEnabled(false);
     accelgyro.setI2CBypassEnabled(true);
     accelgyro.setSleepEnabled(false);
-    accelgyro.setDHPFMode(MPU6050_DHPF_5HZ);
-    accelgyro.setDLPFMode(MPU6050_DLPF_4);
+    //accelgyro.setDHPFMode(MPU6050_DHPF_5HZ);
+    accelgyro.setDLPFMode(MPU6050_DLPF_6);
 
 
 #ifdef DEBUG
-    Serial.print("\t MPU6050 configurate successful \n"); //checkSettings(); //it requires alot of variable memory!
+    Serial.print("\t MPU6050 configurate successful \n");
 #endif
 
   } else {
@@ -42,70 +37,12 @@ void setupi2c() {
 }
 
 /*
-   Check acelerometer settings
-   Not recomended because it requires alot of memory data
-*/
-void checkSettings() {
-
-#ifdef WHATCHDOG
-  wdt_reset();
-#endif
-  Serial.print("\t *Check Settings \n");
-
-  Serial.print("\t \t * Sleep Mode:            ");
-  Serial.println(accelgyro.getSleepEnabled() ? "Enabled" : "Disabled");
-
-  Serial.print("\t \t * Clock Source:          ");
-  switch (accelgyro.getClockSource()) {
-    case MPU6050_CLOCK_KEEP_RESET:     Serial.print("Stops the clock and keeps the timing generator in reset\n"); break;
-    case MPU6050_CLOCK_EXTERNAL_19MHZ: Serial.print("PLL with external 19.2MHz reference\n"); break;
-    case MPU6050_CLOCK_EXTERNAL_32KHZ: Serial.print("PLL with external 32.768kHz reference\n"); break;
-    case MPU6050_CLOCK_PLL_ZGYRO:      Serial.print("PLL with Z axis gyroscope reference\n"); break;
-    case MPU6050_CLOCK_PLL_YGYRO:      Serial.print("PLL with Y axis gyroscope reference\n"); break;
-    case MPU6050_CLOCK_PLL_XGYRO:      Serial.print("PLL with X axis gyroscope reference\n"); break;
-    case MPU6050_CLOCK_INTERNAL_8MHZ:  Serial.print("Internal 8MHz oscillator\n"); break;
-  }
-
-  Serial.print("\t \t * Accelerometer:         ");
-  switch (accelgyro.getRange()) {
-    case MPU6050_RANGE_16G:            Serial.print("+/- 16 g\n"); break;
-    case MPU6050_RANGE_8G:             Serial.print("+/- 8 g\n"); break;
-    case MPU6050_RANGE_4G:             Serial.print("+/- 4 g\n"); break;
-    case MPU6050_RANGE_2G:             Serial.print("+/- 2 g\n"); break;
-  }
-
-  Serial.print("\t \t * Accelerometer offsets: ");
-  Serial.print(accelgyro.getAccelOffsetX());
-  Serial.print(" / ");
-  Serial.print(accelgyro.getAccelOffsetY());
-  Serial.print(" / ");
-  Serial.println(accelgyro.getAccelOffsetZ());
-
-  Serial.print("\t \t * Gyroscope:         ");
-  switch (accelgyro.getScale())
-  {
-    case MPU6050_SCALE_2000DPS:        Serial.print("2000 dps\n"); break;
-    case MPU6050_SCALE_1000DPS:        Serial.print("1000 dps\n"); break;
-    case MPU6050_SCALE_500DPS:         Serial.print("500 dps\n"); break;
-    case MPU6050_SCALE_250DPS:         Serial.print("250 dps\n"); break;
-  }
-
-  Serial.print("\t \t * Gyroscope offsets: ");
-  Serial.print(accelgyro.getGyroOffsetX());
-  Serial.print(" / ");
-  Serial.print(accelgyro.getGyroOffsetY());
-  Serial.print(" / ");
-  Serial.println(accelgyro.getGyroOffsetZ());
-}
-
-/*
    Check I2C Lines, start bus and get device list
 */
-void beginWire() {
+void beginI2cBus() {
 
-#ifdef WHATCHDOG
   wdt_reset();
-#endif
+
   int rtn = I2C_ClearBus(); // clear the I2C bus first before calling Wire.begin()
   if (rtn != 0) {
 #ifdef DEBUG
@@ -142,9 +79,8 @@ void beginWire() {
 */
 int I2C_ClearBus() {
 
-#ifdef WHATCHDOG
   wdt_reset();
-#endif
+  
 #if defined(TWCR) && defined(TWEN)
   TWCR &= ~(_BV(TWEN)); //Disable the Atmel 2-Wire interface so we can control the SDA and SCL pins directly
 #endif
@@ -154,9 +90,7 @@ int I2C_ClearBus() {
 
   unsigned long timerI2c = millis();
   while (millis() - timerI2c < 2500) {
-#ifdef WHATCHDOG
-    wdt_reset();
-#endif// Wait 2.5 secs. This is strictly only necessary on the first power
+    wdt_reset(); // Wait 2.5 secs. This is strictly only necessary on the first power
   }
   // up of the DS3231 module to allow it to initialize properly,
   // but is also assists in reliable programming of FioV3 boards as it gives the
@@ -173,9 +107,9 @@ int I2C_ClearBus() {
 
   while (SDA_LOW && (clockCount > 0)) { //  vii. If SDA is Low,
 
-#ifdef WHATCHDOG
+
     wdt_reset();
-#endif
+    
     clockCount--;
     // Note: I2C bus is open collector so do NOT drive SCL or SDA high.
     pinMode(SCL, INPUT); // release SCL pullup so that when made output it will be LOW
@@ -189,9 +123,9 @@ int I2C_ClearBus() {
     SCL_LOW = (digitalRead(SCL) == LOW); // Check if SCL is Low.
     int counter = 20;
     while (SCL_LOW && (counter > 0)) {  //  loop waiting for SCL to become High only wait 2sec.
-#ifdef WHATCHDOG
+
       wdt_reset();
-#endif
+
       counter--;
       delay(100);
       SCL_LOW = (digitalRead(SCL) == LOW);
@@ -230,9 +164,9 @@ void scanI2C() {
 
   nDevices = 0;
   for (address = 1; address < 127; address++ ) {
-#ifdef WHATCHDOG
+
     wdt_reset();
-#endif
+    
     // The i2c_scanner uses the return value of
     // the Write.endTransmisstion to see if
     // a device did acknowledge to the address.

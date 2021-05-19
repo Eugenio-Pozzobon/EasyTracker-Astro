@@ -148,7 +148,7 @@ typedef enum{
     WIRE_100kHz                	  = 100000,
     WIRE_400kHz                	  = 400000,
     WIRE_1000kHz                  = 1000000,
-    WIRE_3400KhZ                  = 3400000,
+    WIRE_3400kHz                  = 3400000,
 } wire_speed;
 
 class MPU6050{
