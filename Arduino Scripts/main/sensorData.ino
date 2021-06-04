@@ -30,13 +30,15 @@ void angleCalculation() { //900us usando int_16t e 1300us usando float
   //  gyroZangle += rate_gyr_z * dT;
 
   // Roll angle
-  angleX = accelGyroRelation * (angleX + accelgyro.ngx * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
+  angleX = accelGyroRelation * (-angleX + accelgyro.ngx * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
            (atan2(accelgyro.nax, sqrt(pow(accelgyro.nay, 2) + pow(accelgyro.naz, 2))) * 180) / 3.14;
+  angleX = - angleX;
 
   // Pitch angle
-  angleY = accelGyroRelation * (angleY + accelgyro.ngy * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
+  angleY = accelGyroRelation * (-angleY + accelgyro.ngy * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
            (atan2(accelgyro.nay, sqrt(pow(accelgyro.nax, 2) + pow(accelgyro.naz, 2))) * 180) / 3.14;
-           //(atan2(accelgyro.nay, accelgyro.naz) * 180) / 3.14;
+  angleY = - angleY;
+  //(atan2(accelgyro.nay, accelgyro.naz) * 180) / 3.14;
 
   // Yaw Angle based on acelerometer
   //angleZ = accelGyroRelation * (angleZ + accelgyro.ngz * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
@@ -63,7 +65,8 @@ void angleCalculation() { //900us usando int_16t e 1300us usando float
 */
 void compassCalculation() { //256us
   //calculation
-  compassAngle =  atan2(my - ((myMax + myMin) / 2.0), mx - ((mxMax + mxMin) / 2.0)) * (180 / PI);
+  compassAngle = atan2(my - ((myMax + myMin) / 2.0), mx - ((mxMax + mxMin) / 2.0)) * (180 / PI);
+  compassAngle = compassAngle + 180;
 
   //check if it north
   if (compassAngle >= 360) {
@@ -104,6 +107,10 @@ void compassCalibration() {
   long unsigned int t_cal = millis();
   while ((millis() - t_cal) < (CALIBRATING_TIME * 1000)) {
     wdt_reset();
+    if (bluetoothSerial.available() > 0) {
+      bluetoothSerial.read(); //flush buffer11
+      bluetoothSerial.print("c,c\n");
+    }
     mag.getHeading(&mx, &my, &mz);
     if (mxMax < mx) {
       mxMax = mx;
@@ -143,7 +150,7 @@ void compassCalibration() {
 #endif
 }
 
-void ressetCalibration() {  
+void ressetCalibration() {
   mxMax = 0;
   mxMin = 0;
   myMax = 0;

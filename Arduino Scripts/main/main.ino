@@ -11,15 +11,17 @@
 #include <avr/wdt.h>
 
 // Bluetooth variables
-SoftwareSerial bluetoothSerial(15, 16); // RX/TX
+SoftwareSerial bluetoothSerial(16, 15); // RX/TX
 unsigned long timerBluetoothRestartMessages = 0;
 unsigned long timerBluetoothRecieveMessages = 0;
 unsigned long timerBluetoothSendMessages = 0;
-const byte bluetoothStatePin = 14;
+const byte bluetoothStatePin = 13;
 
 //User Input Variables
-byte availableUserOption = 0;
-bool userSelectedStart = false;
+char availableUserOption = '0';
+bool manualDeactivation = true, remoteDeactivation = false;
+bool manualActivation = false, lastManualActivation = false;
+bool remoteActivation = false;
 
 // Acelerometer variables
 MPU6050 accelgyro;
@@ -31,10 +33,6 @@ const float accelGyroRelation = 0.5; //How mucth Gyro and Accel is consider for 
 HMC5883L mag;
 int mx, my, mz;
 float mxCalibrated, myCalibrated, mzCalibrated;
-
-// Blinking led
-const byte ledPin = 13;
-bool blinkState = false;
 
 // Calibration factors
 int mxMin = EEPROM.read(0) << 8 | EEPROM.read(1);
@@ -55,10 +53,11 @@ unsigned long timerMpuData, timerStepperMicros = 0, timerLoop = 0;
 // Stepper variables
 boolean stepperState = false;
 byte runningSteps = 10;
-const int startButtonPin = 2;
-const int stopButtonPin = 3;
+const int startButtonPin = 14;
+const int stopButtonPin = 2;
+const int stopButtonPin_sec = 3;
 const int stepsPerRevolution = 4096 / 2;
-Stepper myStepper = Stepper(stepsPerRevolution, 5, 11, 10, 12); //5 -> 9
+Stepper myStepper = Stepper(stepsPerRevolution, 12, 10, 11, 9);
 
 void setup() {
   //Initializate Whatchdog
@@ -83,9 +82,10 @@ void setup() {
   initializeDevicesI2c();
 
   // Initializate Arduino pins
-  pinMode(ledPin, OUTPUT);
+  //  pinMode(ledPin, OUTPUT);
   pinMode(startButtonPin, INPUT_PULLUP);
   pinMode(stopButtonPin, INPUT_PULLUP);
+  pinMode(stopButtonPin_sec, INPUT_PULLUP);
 
   // Setup Stepper
   myStepper.setSpeed(STP_SPEED);
@@ -98,23 +98,58 @@ void loop() {
   stepperState = checkStepperCondition();
   if (stepperState == true) {
     myStepper.step(runningSteps); //runs Stepper motor and elevate the plataform
+    if (bluetoothSerial.available() > 0) {
+      if (manualActivation && !remoteActivation) {
+        bluetoothSerial.print("s,s\n");
+      }
+      availableUserOption = bluetoothSerial.read(); //flush buffer
+    }
+  } else {
+    if (bluetoothSerial.available() > 0) {
+      if (remoteActivation) {
+        bluetoothSerial.print("n,n\n");
+        remoteActivation = false;
+      }
+    }
   }
 
   if (stepperState == false) {
     getData();
     serialCommunication();
     bluetoothCommunication();
-    manageUserOption();
   }
 
-  // blink LED to indicate activity
-  blinkState = !blinkState;
-  digitalWrite(ledPin, blinkState);
+  manageUserOption();
+
+#ifdef DEBUG
+//  Serial.print("manualActivation "); Serial.println(manualActivation);
+//  Serial.print("manualDeactivation "); Serial.println(manualDeactivation);
+//  Serial.print("remoteActivation "); Serial.println(remoteActivation);
+//  Serial.print("remoteDeactivation "); Serial.println(remoteDeactivation); Serial.println();
+#endif
 }
 
 
 bool checkStepperCondition() {
-  return ((!digitalRead(startButtonPin) || userSelectedStart) && digitalRead(stopButtonPin));
+  int nullvar = analogRead(startButtonPin); //não tem função nenhuma, não serve pra nada, porém o código só funciona se estiver aqui!
+  if (millis() > 5000) {// dont get the starting set of pullup as a true value
+    if (!manualActivation && !digitalRead(startButtonPin)) {
+      manualActivation = true;
+      manualDeactivation = false;
+      remoteDeactivation = false;
+    }
+    if (manualActivation && digitalRead(startButtonPin)) {
+      manualActivation = false;
+      manualDeactivation = true;
+      remoteActivation = false;
+    }
+  }
+  bool stopState = (!digitalRead(stopButtonPin) || !digitalRead(stopButtonPin_sec));
+  if(stopState){
+    manualActivation = false;
+    remoteActivation = false;
+  }
+  return ((manualActivation || remoteActivation) && (!manualDeactivation && !remoteDeactivation && !stopState));
 }
 
 bool checkBluetoothCondition() {
@@ -140,13 +175,23 @@ void manageUserOption() {
   if (availableUserOption == 'c') {
     compassCalibration();
   }
-
   if (availableUserOption == 's') {
-    //userSelectedStart = true;
+    remoteActivation = true;
+    remoteDeactivation = false;
+    manualDeactivation = false;
+    bluetoothSerial.print("s,s\n"); //while writebuffer isnt clean in android, send the buffer that trigger an internal clean
   }
-
+  if (availableUserOption == 'n') {
+    remoteDeactivation = true;
+    remoteActivation = false;
+    bluetoothSerial.print("n,n\n"); //while writebuffer isnt clean in android, send the buffer that trigger an internal clean
+  }
   if (availableUserOption == 'r') {
     ressetCalibration();
+  }
+  if (availableUserOption == '1') {
+    remoteActivation = true;
+    remoteDeactivation = false;
   }
   availableUserOption = '0';
 }

@@ -21,6 +21,7 @@ void bluetoothCommunication() {
         timerBluetoothRecieveMessages = millis(); // resset timer to countdown for get ACK response.
         timerBluetoothRestartMessages = millis();
         availableUserOption = bluetoothSerial.read(); //2ms for recieve a single char
+        Serial.println(availableUserOption);
       }
       
       if ((millis() - timerBluetoothRecieveMessages) < 1000) { //it takes 16ms for send all angle buffer
@@ -40,8 +41,8 @@ void bluetoothCommunication() {
 }
 
 void printDataBluetoothSerial() { //it takes 16ms for send this messages buffer
-  bluetoothSerial.print(int(angleX * 10)); bluetoothSerial.print(",");
   bluetoothSerial.print(int(angleY * 10)); bluetoothSerial.print(",");
+  bluetoothSerial.print(int(angleX * 10)); bluetoothSerial.print(",");
   bluetoothSerial.print(int(angleZ * 10)); bluetoothSerial.print(",");
   bluetoothSerial.print(int(angleX * 10) + int(angleY * 10) + int(angleZ * 10));
   bluetoothSerial.print("\n");

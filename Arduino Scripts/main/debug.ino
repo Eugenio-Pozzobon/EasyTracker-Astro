@@ -1,9 +1,9 @@
 void debugSensor() {
 #ifdef DEBUG
-  Serial.print("\tPitch: ");
-  Serial.print(angleX);
   Serial.print("\tRoll: ");
   Serial.print(angleY);
+  Serial.print("\tPitch: ");
+  Serial.print(angleX);
   Serial.print("\tYaw: ");
   Serial.println(angleZ);
 #endif
