@@ -1,6 +1,7 @@
 Library/
 Electronics/CADs/
 CAD/Imported/
+Validação/
 *.pdsbak
 *.err
 *.LOG
