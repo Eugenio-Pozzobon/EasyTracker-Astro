@@ -343,9 +343,9 @@ void MPU6050::readNormalizeAccel(void) {
 void MPU6050::readScaledAccel(void) {
   readRawAccel();
 
-  nax = rax * rangePerDigit;
-  nay = ray * rangePerDigit;
-  naz = raz * rangePerDigit;
+  sax = rax * rangePerDigit;
+  say = ray * rangePerDigit;
+  saz = raz * rangePerDigit;
 }
 
 

@@ -230,9 +230,9 @@ class MPU6050{
 	int16_t rax, rgx; // Raw vectors
 	int16_t ray, rgy; // Raw vectors
 	int16_t raz, rgz; // Raw vectors
-	float nax, ngx; // Normalized vectors
-	float nay, ngy; // Normalized vectors
-	float naz, ngz; // Normalized vectors
+	float nax, sax, ngx; // Normalized vectors
+	float nay, say, ngy; // Normalized vectors
+	float naz, saz, ngz; // Normalized vectors
 			
 	float tgx, dgx; // Threshold and Delta for Gyro
 	float tgy, dgy; // Threshold and Delta for Gyro
