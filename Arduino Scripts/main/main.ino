@@ -1,3 +1,5 @@
+
+
 #include "configuration.h"
 
 // Librarys includes
@@ -5,6 +7,7 @@
 #include "MPU6050_bdt.h"
 #include "HMC5883L_bdt.h"
 #include "stp.h"
+//#include <Stepper.h>
 
 #include <SoftwareSerial.h>
 #include <EEPROM.h>
@@ -52,16 +55,15 @@ unsigned long timerMpuData, timerStepperMicros = 0, timerLoop = 0;
 
 // Stepper variables
 boolean stepperState = false;
-byte runningSteps = 10;
 const int startButtonPin = 14;
 const int stopButtonPin = 2;
 const int stopButtonPin_sec = 3;
 const int stepsPerRevolution = 4096 / 2;
-Stepper myStepper = Stepper(stepsPerRevolution, 12, 10, 11, 9);
+HalfStepper myStepper = HalfStepper(stepsPerRevolution, 12, 10, 11, 9);
 
 void setup() {
   //Initializate Whatchdog
-  wdt_enable(WDTO_1S);
+  wdt_enable(WDTO_8S);
 
   // Initializate Variables
   for (int i = 0; i < mediaMovelArray; i++) {
