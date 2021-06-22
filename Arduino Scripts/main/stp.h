@@ -165,7 +165,7 @@ public:
 
   // ACCESSORS & MUTATORS
 
-  word GetSpeedRPMs() const;
+  double GetSpeedRPMs() const;
   void SetSteppingMode(SteppingMode);
   SteppingMode GetSteppingMode() const;
   void SetPhasingMode(PhasingMode);
@@ -224,7 +224,7 @@ protected:
 
   // SPEED & DIRECTION
   Direction _Direction = Direction::FORWARD;
-  word _SpeedRPMs = 0;
+  double _SpeedRPMs = 0;
   dword _DelayMS = _DELAY_MS_DEFAULT_SPEED;
 
   // STATE TRACKING

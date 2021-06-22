@@ -106,7 +106,7 @@ void HalfStepper::SetPosition(dword position) { _Position = position; }
 
 dword HalfStepper::GetPosition() const { return _Position; }
 
-word HalfStepper::GetSpeedRPMs() const { return _SpeedRPMs; }
+double HalfStepper::GetSpeedRPMs() const { return _SpeedRPMs; }
 
 #pragma endregion ACCESSORS & MUTATORS
 
@@ -116,8 +116,10 @@ word HalfStepper::GetSpeedRPMs() const { return _SpeedRPMs; }
 
 void HalfStepper::setSpeed(double rpms)
 {
-  if (rpms < 0)
+  if (rpms < 0){
     _Direction = Direction::REVERSE;
+    rpms = - rpms;
+  }
 
   _SpeedRPMs = abs(rpms);
   _DelayMS = 60L * 1000L / _TotalSteps / _SpeedRPMs;
