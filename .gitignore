@@ -1,7 +1,9 @@
 Library/
 Electronics/CADs/
 CAD/Imported/
-Documentação/
+Documentação/Fotos/
+Documentação/Teste Vibração/
+*.csv
 *.pdsbak
 *.err
 *.LOG
