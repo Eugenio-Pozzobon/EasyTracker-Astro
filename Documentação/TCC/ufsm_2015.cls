@@ -14,7 +14,7 @@
 \RequirePackage[utf8]{inputenc}
 \RequirePackage{setspace}
 \RequirePackage[dvipsnames,pdf]{pstricks}
-\RequirePackage{auto-pst-pdf}
+%\RequirePackage{auto-pst-pdf}
 \RequirePackage{rotating} 
 \RequirePackage{pstricks-add}
 \RequirePackage{epstopdf}
