@@ -24,6 +24,14 @@
 
 % % % % % % % % PACOTES PESSOAIS % % % % % % % %  
 
+\usepackage{minted}
+
+\newcommand{\kotlinminted}[1]{\inputminted[breaklines=true]{kotlin}{E:/Git/Easy-Tracker-Android-App/app/src/main/java/com/example/startracker/#1}}
+
+\newcommand{\arduinominted}[1]{\inputminted[breaklines=true]{arduino}{E:/Git/Easy-Tracker-System/src/main/#1}}
+
+\newcommand{\xmlminted}[1]{\inputminted[breaklines=true]{xml}{E:/Git/Easy-Tracker-Android-App/app/src/main/res/layout/activity_main.xml}}
+
 
 
 
@@ -37,6 +45,13 @@
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+
+
+
+
+
+
+
 
 
 
@@ -70,7 +85,7 @@
 \grauobtido{Bacharel}    %%%%% TITULO OBTIDO
 \email{eugeniopp00@gmail.com}   %%%% E-MAIL PARA CATALOGRAFICA (COPYRIGHT) - OBRIGATORIO
 %\endereco{Rua das abobrinhas, n. 666} %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
-%\fone{11 2222 3333}   %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
+\fone{+55 55 99620-2527}   %%%% TELEFONE PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
 %\fax{11 2222 3333}   %%%% FAX PARA CATALOGRAFICA (COPYRIGHT) FORMATO {11 2222 3333} (CAMPO OPICIONAL -- CASO NAO POSSUA OU NAO QUEIRA DIVULGAR COMENTE A LINHA)
 
 
@@ -132,34 +147,34 @@
 %     \concordagenerico{o}
 %     \graugenerico{Engenheiro Eletricista}
 % % % DATA DA DEFESA 
-\data{31}{06}{2022} %% FORMATO {DD}{MM}{AAAA}
+\data{00}{00}{2022} %% FORMATO {DD}{MM}{AAAA}
 
 
 
 % % % % %  ALGUMAS ENTRADAS PRE-TEXTUAIS
 % % % % CASO NAO QUEIRA UTILIZA-LAS COMENTE A LINHA DE COMANDO
 % % % EPIGRAFE
-% \epigrafe{Winter is coming!}{Família Stark} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
+%\epigrafe{"Se você tem uma maçã e eu tenho uma maçã e formos trocar essas maçãs, você e eu ainda teremos uma maçã cada um. Mas se você tem uma ideia e eu tenho uma ideia e formos trocar essas ideias, cada um de nós terá duas ideias."}{George Bernard Shaw} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
 % % % DEDICATORIA
-% \dedicatoria{Aos que virão depois de nós}
+%\dedicatoria{Dedico este trabalho a todos os astrofotógrafos que carecem de recursos para investir em equipamentos, na esperança de que isso possa ajudá-los a produzir fotografias de qualidade, alcançando ainda mais longe no céu profundo.}
 % % % %  AGRADECIMENTOS
 % \agradecimentos{A mim!}
 
 % % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 \resumo{
 % \singlespacing
-Escreva seu resumo aqui! Você pode digitá-lo diretamente neste arquivo ou usar o comando input. O resumo deve ter apenas uma página, desde o cabeçalho até as palavras chave. Caso seu resumo seja maior, use comandos para diminuir espaçamento e fonte (até um mínimo de 10pt) no texto. Você pode reduzir o espaçamento do texto removendo comentário da primeira linha deste campo: comando singlespacing. Segundo a MDT, é preciso que os resumos tenham, no máximo, 250 palavras para trabalhos de conclusão de curso de graduação, pós-graduação e iniciação científica e até 500 palavras para dissertações e teses.
+\input{capitulos/resumo}
 }
-\palavrachave{Palavra Chave 1. Palavra 2. Palavra 3. (...)}
+\palavrachave{Astrofotografia. Plataforma Equatorial. Sistema Eletrônico. Aplicativo Android. Bluetooth.}
 % "... deverão constar, no mínimo, três palavras-chave, iniciadas em
 % letras maiúsculas, cada termo separado dos demais por ponto, e
 % finalizadas também por ponto." MDT 2012
 
 % % % % %  ABSTRACT E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 \abstract{
-Write your abstract here! As recomendações do resumo também se aplicam ao abstract.
+\input{capitulos/abstract}
 }
-\keywords{Keyword 1. Keyword 2. Keyword 3. (...)}
+\keywords{Astrophotography. Equatorial Mount. Electronic System. Android Application. Bluetooth.}
 
 
 % % %  ATIVACAO DE LISTAS E PAGINAS ESPECIAIS
@@ -168,13 +183,13 @@ Write your abstract here! As recomendações do resumo também se aplicam ao abs
 % % LISTA DE FIGURAS 
 % \semfiguras   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % % LISTA DE GRAFICOS 
-% \semgraficos   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+ \semgraficos   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % % LISTA DE ILUSTRACOES 
-% \semilustracoes  %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+ \semilustracoes  %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % % LISTA DE TABELAS 
 % \semtabelas   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % % LISTA DE QUADROS 
-% \semquadros   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
+ \semquadros   %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % % LISTA DE APENDICES 
 % \semapendices  %%(QUANDO ATIVIDA NAO EXIBE A LISTA)
 % LISTA DE ANEXOS 
@@ -204,7 +219,7 @@ Write your abstract here! As recomendações do resumo também se aplicam ao abs
 
 
 % % % FICHA CATALOGRAFICA
-% \semcatalografica  %%%%  (QUANDO ATIVIDA NAO EXIBE A FICHA CATALOGRAFICA NECESSITA DO ARQUIVO DA FICHA: ficha_catalografica.pdf
+\semcatalografica  %%%%  (QUANDO ATIVIDA NAO EXIBE A FICHA CATALOGRAFICA NECESSITA DO ARQUIVO DA FICHA: ficha_catalografica.pdf
 % % % A FICHA CATALOGRAFICA FORNECIDA PELA UFSM EH UM PDF DO TAMANHO A4
 % % % EH POSSIVEL GERA-LA NO SITE http://cascavel.ufsm.br/ficha_catalografica/
 % % % OS COMANDOS ABAIXO DEFINEM AS MARGENS PARA CORTAR A FICHA FORNECIDA E COLOCA-LA COMO UMA FIGURA NO DOCUMENTO LATEX
@@ -285,6 +300,16 @@ Write your abstract here! As recomendações do resumo também se aplicam ao abs
 
 \include{capitulos/introducao}
 
+\include{capitulos/revisaobiblio}
+
+\include{capitulos/desPlataforma}
+
+\include{capitulos/desAplicativo}
+
+\include{capitulos/resultados}
+
+\include{capitulos/conclusao}
+
 
 	
 	
@@ -298,7 +323,9 @@ Write your abstract here! As recomendações do resumo também se aplicam ao abs
 % % % % % % % % % % % % % BIBLIOGRAFIA  % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
 
-\bibliografia{referencias}  %%%%% BIBLIOGRAFIA -> INCLUIR NAS CHAVES O NOME DO ARQUIVO *.BIB	
+\bibliography{referencias}  %%%%% BIBLIOGRAFIA -> INCLUIR NAS CHAVES O NOME DO ARQUIVO *.BIB
+
+%\bibliografia{referencias}	
 	
 	
 	
@@ -308,16 +335,60 @@ Write your abstract here! As recomendações do resumo também se aplicam ao abs
 
 \apendice %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS APENDICES
 
-\chapter{Demonstração de algo}
+\chapter{Desenho Técnico das Peças}
 
-          
+\section{Base}
+
+\includegraphics[width=\linewidth]{E:/Git/Easy-Tracker-System/CAD/Fabricação/BDT_I_P_11_v01_desenho}
+
+\section{Parte Móvel}
+
+\section{Barra curvada}
+
+\includegraphics[width=\linewidth]{E:/Git/Easy-Tracker-System/CAD/Fabricação/BDT_G_F_05_v01_desenho}
+
+\chapter{Diagrama de Montagem}
+
+\chapter{Código excutado pelo Arduino Nano}
+
+
+\arduinominted{configuration.h}
+
+%\arduinominted{HMC5883L_bdt.cpp}
+%\arduinominted{HMC5883L_bdt.h}
+%\arduinominted{MPU6050_bdt.cpp}
+%\arduinominted{MPU6050_bdt.h}
+%\arduinominted{stp.cpp}
+%\arduinominted{stp.h}
+
+\arduinominted{bluetooth.ino}
+\arduinominted{debug.ino}
+\arduinominted{sensorData.ino}
+\arduinominted{i2c.ino}
+\arduinominted{main.ino}
+
+\chapter{Código do Aplicativo (Sem as Telas)}
+
+\section{Rotina da Atividade Principal}
+\kotlinminted{MainActivity.kt}
+\kotlinminted{Util.kt}
+
+\section{Layout da Atividade Principal}
+\xmlminted{activity_main.xml}
+
+\section{Classe Bluetooth}
+\kotlinminted{BluetoothService.kt}
+
+
+
+
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
 % % % % % % % % % % % % % % % ANEXOS  % % % % % % % % % % % % % % % % % % % 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 	
 
-\anexo    %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS ANEXOS
+%\anexo    %%%% TEXTOS A PARIR DESTE PONTO SERAO CONSIDERADOS ANEXOS
         
-\chapter{Algo interessante que alguém fez}
+%\chapter{Algo interessante que alguém fez}
       
          
 \end{document}

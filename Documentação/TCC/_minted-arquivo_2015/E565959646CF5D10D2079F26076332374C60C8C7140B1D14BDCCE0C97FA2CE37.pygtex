@@ -1,0 +1,199 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}configuration.h\PYGZdq{}}
+
+\PYG{c+c1}{// Librarys includes}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}Wire.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}MPU6050\PYGZus{}bdt.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}HMC5883L\PYGZus{}bdt.h\PYGZdq{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZdq{}stp.h\PYGZdq{}}
+\PYG{c+c1}{//\PYGZsh{}include \PYGZlt{}Stepper.h\PYGZgt{}}
+
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}SoftwareSerial.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}EEPROM.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}include} \PYG{c+cpf}{\PYGZlt{}avr/wdt.h\PYGZgt{}}
+
+\PYG{c+c1}{// Bluetooth variables}
+\PYG{n+nf}{SoftwareSerial} \PYG{n+nf}{bluetoothSerial}\PYG{p}{(}\PYG{l+m+mi}{16}\PYG{p}{,} \PYG{l+m+mi}{15}\PYG{p}{);} \PYG{c+c1}{// RX/TX}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{timerBluetoothRestartMessages} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{timerBluetoothRecieveMessages} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{timerBluetoothSendMessages} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{k+kr}{byte} \PYG{n}{bluetoothStatePin} \PYG{o}{=} \PYG{l+m+mi}{13}\PYG{p}{;}
+
+\PYG{c+c1}{//User Input Variables}
+\PYG{k+kr}{char} \PYG{n}{availableUserOption} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{k+kr}{bool} \PYG{n}{manualDeactivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{,} \PYG{n}{remoteDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+\PYG{k+kr}{bool} \PYG{n}{manualActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{,} \PYG{n}{lastManualActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+\PYG{k+kr}{bool} \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+
+\PYG{c+c1}{// Acelerometer variables}
+\PYG{n}{MPU6050} \PYG{n}{accelgyro}\PYG{p}{;}
+\PYG{k+kr}{float} \PYG{n}{angleX}\PYG{p}{,} \PYG{n}{angleY}\PYG{p}{,} \PYG{n}{angleZ}\PYG{p}{;}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{gyroIntegrateTimer} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{c+c1}{//Timer to interate Gyroscope axis and get Gyro part of Pitch and Roll angle.}
+\PYG{k+kr}{const} \PYG{k+kr}{float} \PYG{n}{accelGyroRelation} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{p}{;} \PYG{c+c1}{//How mucth Gyro and Accel is consider for interate Pitch and Roll. 0 means that only accel will be used.}
+
+\PYG{c+c1}{// Magnetometer variables}
+\PYG{n}{HMC5883L} \PYG{n}{mag}\PYG{p}{;}
+\PYG{k+kr}{int} \PYG{n}{mx}\PYG{p}{,} \PYG{n}{my}\PYG{p}{,} \PYG{n}{mz}\PYG{p}{;}
+\PYG{k+kr}{float} \PYG{n}{mxCalibrated}\PYG{p}{,} \PYG{n}{myCalibrated}\PYG{p}{,} \PYG{n}{mzCalibrated}\PYG{p}{;}
+
+\PYG{c+c1}{// Calibration factors}
+\PYG{k+kr}{int} \PYG{n}{mxMin} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{k+kr}{int} \PYG{n}{myMin} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{);}
+\PYG{k+kr}{int} \PYG{n}{mzMin} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{);}
+\PYG{k+kr}{int} \PYG{n}{mxMax} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{);}
+\PYG{k+kr}{int} \PYG{n}{myMax} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{);}
+\PYG{k+kr}{int} \PYG{n}{mzMax} \PYG{o}{=} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{\PYGZlt{}\PYGZlt{}} \PYG{l+m+mi}{8} \PYG{o}{|} \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{);}
+
+\PYG{c+c1}{// Calculation variables}
+\PYG{k+kr}{const} \PYG{k+kr}{byte} \PYG{n}{mediaMovelArray} \PYG{o}{=} \PYG{l+m+mi}{8}\PYG{p}{;}
+\PYG{k+kr}{float} \PYG{n}{compassAngle} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{k+kr}{float} \PYG{n}{reads}\PYG{p}{[}\PYG{n}{mediaMovelArray}\PYG{p}{];}
+
+\PYG{c+c1}{// Timer variables}
+\PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{timerMpuData}\PYG{p}{,} \PYG{n}{timerStepperMicros} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{timerLoop} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+\PYG{c+c1}{// Stepper variables}
+\PYG{k+kr}{boolean} \PYG{n}{stepperState} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{k+kr}{int} \PYG{n}{startButtonPin} \PYG{o}{=} \PYG{l+m+mi}{14}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{k+kr}{int} \PYG{n}{stopButtonPin} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{k+kr}{int} \PYG{n}{stopButtonPin\PYGZus{}sec} \PYG{o}{=} \PYG{l+m+mi}{3}\PYG{p}{;}
+\PYG{k+kr}{const} \PYG{k+kr}{int} \PYG{n}{stepsPerRevolution} \PYG{o}{=} \PYG{l+m+mi}{4096} \PYG{o}{/} \PYG{l+m+mi}{2}\PYG{p}{;}
+\PYG{n}{HalfStepper} \PYG{n}{myStepper} \PYG{o}{=} \PYG{n}{HalfStepper}\PYG{p}{(}\PYG{n}{stepsPerRevolution}\PYG{p}{,} \PYG{l+m+mi}{12}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{11}\PYG{p}{,} \PYG{l+m+mi}{9}\PYG{p}{);}
+
+\PYG{k+kr}{void} \PYG{n+nb}{setup}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{c+c1}{//Initializate Whatchdog}
+  \PYG{n}{wdt\PYGZus{}enable}\PYG{p}{(}\PYG{n}{WDTO\PYGZus{}8S}\PYG{p}{);}
+
+  \PYG{c+c1}{// Initializate Variables}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kr}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{mediaMovelArray}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{reads}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+c1}{// Initializate Serial}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+  \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{begin}\PYG{p}{(}\PYG{l+m+mi}{115200}\PYG{p}{);}
+  \PYG{n}{printCalibrationInfo}\PYG{p}{();}
+\PYG{c+cp}{\PYGZsh{}endif}
+
+  \PYG{c+c1}{// Initializate Bluetooth}
+  \PYG{n}{bluetoothSart}\PYG{p}{();}
+
+  \PYG{c+c1}{// Initializate I2C Bus}
+  \PYG{n}{beginI2cBus}\PYG{p}{();}
+  \PYG{n}{initializeDevicesI2c}\PYG{p}{();}
+
+  \PYG{c+c1}{// Initializate Arduino pins}
+  \PYG{c+c1}{//  pinMode(ledPin, OUTPUT);}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{startButtonPin}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{stopButtonPin}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{stopButtonPin\PYGZus{}sec}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);}
+
+  \PYG{c+c1}{// Setup Stepper}
+  \PYG{n}{myStepper}\PYG{p}{.}\PYG{n+nf}{setSpeed}\PYG{p}{(}\PYG{n}{STP\PYGZus{}SPEED}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{void} \PYG{n+nb}{loop}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+  \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+
+  \PYG{n}{stepperState} \PYG{o}{=} \PYG{n}{checkStepperCondition}\PYG{p}{();}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{stepperState} \PYG{o}{==} \PYG{k+kr}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{myStepper}\PYG{p}{.}\PYG{n+nf}{step}\PYG{p}{(}\PYG{n}{runningSteps}\PYG{p}{);} \PYG{c+c1}{//runs Stepper motor and elevate the plataform}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{manualActivation} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{remoteActivation}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}s,s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+      \PYG{n}{availableUserOption} \PYG{o}{=} \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{();} \PYG{c+c1}{//flush buffer}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{remoteActivation}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}n,n}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+        \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+      \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{stepperState} \PYG{o}{==} \PYG{k+kr}{false}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{getData}\PYG{p}{();}
+    \PYG{n}{serialCommunication}\PYG{p}{();}
+    \PYG{n}{bluetoothCommunication}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{n}{manageUserOption}\PYG{p}{();}
+
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+\PYG{c+c1}{//  Serial.print(\PYGZdq{}manualActivation \PYGZdq{}); Serial.println(manualActivation);}
+\PYG{c+c1}{//  Serial.print(\PYGZdq{}manualDeactivation \PYGZdq{}); Serial.println(manualDeactivation);}
+\PYG{c+c1}{//  Serial.print(\PYGZdq{}remoteActivation \PYGZdq{}); Serial.println(remoteActivation);}
+\PYG{c+c1}{//  Serial.print(\PYGZdq{}remoteDeactivation \PYGZdq{}); Serial.println(remoteDeactivation); Serial.println();}
+\PYG{c+cp}{\PYGZsh{}endif}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k+kr}{bool} \PYG{n+nf}{checkStepperCondition}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{int} \PYG{n}{nullvar} \PYG{o}{=} \PYG{n+nf}{analogRead}\PYG{p}{(}\PYG{n}{startButtonPin}\PYG{p}{);} \PYG{c+c1}{//não tem função nenhuma, não serve pra nada, porém o código só funciona se estiver aqui!}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{5000}\PYG{p}{)} \PYG{p}{\PYGZob{}}\PYG{c+c1}{// dont get the starting set of pullup as a true value}
+    \PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{manualActivation} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{startButtonPin}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+      \PYG{n}{manualActivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{;}
+      \PYG{n}{manualDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+      \PYG{n}{remoteDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{manualActivation} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{startButtonPin}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+      \PYG{n}{manualActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+      \PYG{n}{manualDeactivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{;}
+      \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k+kr}{bool} \PYG{n}{stopState} \PYG{o}{=} \PYG{p}{(}\PYG{o}{!}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{stopButtonPin}\PYG{p}{)} \PYG{o}{||} \PYG{o}{!}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{stopButtonPin\PYGZus{}sec}\PYG{p}{));}
+  \PYG{k}{if}\PYG{p}{(}\PYG{n}{stopState}\PYG{p}{)\PYGZob{}}
+    \PYG{n}{manualActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{p}{((}\PYG{n}{manualActivation} \PYG{o}{||} \PYG{n}{remoteActivation}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{o}{!}\PYG{n}{manualDeactivation} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{remoteDeactivation} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{stopState}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{bool} \PYG{n+nf}{checkBluetoothCondition}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k}{return} \PYG{p}{(}\PYG{o}{!}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{bluetoothStatePin}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{void} \PYG{n+nf}{serialCommunication}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+  \PYG{k}{while} \PYG{p}{(}\PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{availableUserOption} \PYG{o}{=} \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+\PYG{c+cp}{\PYGZsh{}endif}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{   @brief}
+\PYG{c+cm}{   @note}
+\PYG{c+cm}{   @param}
+\PYG{c+cm}{   @return}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{void} \PYG{n+nf}{manageUserOption}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{availableUserOption} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}c\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{compassCalibration}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{availableUserOption} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{;}
+    \PYG{n}{remoteDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{n}{manualDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}s,s}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);} \PYG{c+c1}{//while writebuffer isnt clean in android, send the buffer that trigger an internal clean}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{availableUserOption} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}n\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{remoteDeactivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{;}
+    \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+    \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}n,n}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);} \PYG{c+c1}{//while writebuffer isnt clean in android, send the buffer that trigger an internal clean}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{availableUserOption} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}r\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{ressetCalibration}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{availableUserOption} \PYG{o}{==} \PYG{l+s+sc}{\PYGZsq{}1\PYGZsq{}}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{remoteActivation} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{;}
+    \PYG{n}{remoteDeactivation} \PYG{o}{=} \PYG{k+kr}{false}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n}{availableUserOption} \PYG{o}{=} \PYG{l+s+sc}{\PYGZsq{}0\PYGZsq{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

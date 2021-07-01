@@ -1,0 +1,57 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}androidx.coordinatorlayout.widget.CoordinatorLayout}
+    \PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}
+    \PYG{n+na}{xmlns:app=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res\PYGZhy{}auto\PYGZdq{}}
+    \PYG{n+na}{xmlns:tools=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/tools\PYGZdq{}}
+    \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+    \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+    \PYG{n+na}{tools:context=}\PYG{l+s}{\PYGZdq{}.MainActivity\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}LinearLayout}
+        \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+        \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+        \PYG{n+na}{android:orientation=}\PYG{l+s}{\PYGZdq{}vertical\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}com.google.android.material.appbar.AppBarLayout}
+        \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+        \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+        \PYG{n+na}{android:theme=}\PYG{l+s}{\PYGZdq{}@style/Theme.MyApplication.AppBarOverlay\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+        \PYG{n+nt}{\PYGZlt{}androidx.appcompat.widget.Toolbar}
+            \PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/toolbar\PYGZdq{}}
+            \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+            \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}?attr/actionBarSize\PYGZdq{}}
+            \PYG{n+na}{android:background=}\PYG{l+s}{\PYGZdq{}?attr/colorPrimary\PYGZdq{}}
+            \PYG{n+na}{app:popupTheme=}\PYG{l+s}{\PYGZdq{}@style/Theme.MyApplication.PopupOverlay\PYGZdq{}}
+            \PYG{n+nt}{/\PYGZgt{}}
+
+    \PYG{n+nt}{\PYGZlt{}/com.google.android.material.appbar.AppBarLayout\PYGZgt{}}
+
+        \PYG{n+nt}{\PYGZlt{}androidx.drawerlayout.widget.DrawerLayout}
+            \PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/drawerLayout\PYGZdq{}}
+            \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+            \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+            \PYG{n+nt}{\PYGZlt{}androidx.fragment.app.FragmentContainerView}
+                \PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/nav\PYGZus{}host\PYGZus{}fragment\PYGZdq{}}
+                \PYG{n+na}{android:name=}\PYG{l+s}{\PYGZdq{}androidx.navigation.fragment.NavHostFragment\PYGZdq{}}
+                \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+                \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+                \PYG{n+na}{app:defaultNavHost=}\PYG{l+s}{\PYGZdq{}true\PYGZdq{}}
+                \PYG{n+na}{app:layout\PYGZus{}anchor=}\PYG{l+s}{\PYGZdq{}@+id/drawerLayout\PYGZdq{}}
+                \PYG{n+na}{app:layout\PYGZus{}anchorGravity=}\PYG{l+s}{\PYGZdq{}center\PYGZdq{}}
+                \PYG{n+na}{app:navGraph=}\PYG{l+s}{\PYGZdq{}@navigation/nav\PYGZus{}graph\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+            \PYG{n+nt}{\PYGZlt{}com.google.android.material.navigation.NavigationView}
+                \PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/navView\PYGZdq{}}
+                \PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+                \PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+                \PYG{n+na}{android:layout\PYGZus{}gravity =} \PYG{l+s}{\PYGZdq{}start\PYGZdq{}}
+                \PYG{n+na}{app:menu=}\PYG{l+s}{\PYGZdq{}@menu/nav\PYGZus{}menu\PYGZdq{}}
+                \PYG{n+na}{app:headerLayout=}\PYG{l+s}{\PYGZdq{}@layout/nav\PYGZus{}header\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+
+        \PYG{n+nt}{\PYGZlt{}/androidx.drawerlayout.widget.DrawerLayout\PYGZgt{}}
+    \PYG{n+nt}{\PYGZlt{}/LinearLayout\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/androidx.coordinatorlayout.widget.CoordinatorLayout\PYGZgt{}}
+\end{Verbatim}

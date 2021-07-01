@@ -1,0 +1,154 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{package} \PYG{n+nn}{com.example.startracker}
+
+
+\PYG{k}{import} \PYG{n+nn}{android.content.Context}
+\PYG{k}{import} \PYG{n+nn}{android.os.Bundle}
+\PYG{k}{import} \PYG{n+nn}{android.view.MotionEvent}
+\PYG{k}{import} \PYG{n+nn}{android.view.View}
+\PYG{k}{import} \PYG{n+nn}{android.view.inputmethod.InputMethodManager}
+\PYG{k}{import} \PYG{n+nn}{android.widget.EditText}
+\PYG{k}{import} \PYG{n+nn}{androidx.appcompat.app.AppCompatActivity}
+\PYG{k}{import} \PYG{n+nn}{androidx.appcompat.app.AppCompatDelegate}
+\PYG{k}{import} \PYG{n+nn}{androidx.appcompat.app.AppCompatDelegate.MODE\PYGZus{}NIGHT\PYGZus{}YES}
+\PYG{k}{import} \PYG{n+nn}{androidx.appcompat.widget.Toolbar}
+\PYG{k}{import} \PYG{n+nn}{androidx.drawerlayout.widget.DrawerLayout}
+\PYG{k}{import} \PYG{n+nn}{androidx.navigation.NavController}
+\PYG{k}{import} \PYG{n+nn}{androidx.navigation.NavDestination}
+\PYG{k}{import} \PYG{n+nn}{androidx.navigation.findNavController}
+\PYG{k}{import} \PYG{n+nn}{androidx.navigation.fragment.NavHostFragment}
+\PYG{k}{import} \PYG{n+nn}{androidx.navigation.ui.NavigationUI}
+\PYG{k}{import} \PYG{n+nn}{com.example.startracker.databinding.ActivityMainBinding}
+
+
+\PYG{k+kd}{class} \PYG{n+nc}{MainActivity} \PYG{p}{:} \PYG{n}{AppCompatActivity}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+    \PYG{k+kd}{var} \PYG{n+nv}{hc05} \PYG{o}{=} \PYG{n}{BluetoothService}\PYG{p}{()}
+    \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{toolbar}\PYG{p}{:} \PYG{n}{Toolbar}
+    \PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{drawerLayout}\PYG{p}{:} \PYG{n}{DrawerLayout}
+    \PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{binding}\PYG{p}{:} \PYG{n}{ActivityMainBinding}
+    \PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{destinationHandler}\PYG{p}{:} \PYG{n}{NavDestination}
+
+    \PYG{k+kd}{override} \PYG{k+kd}{fun} \PYG{n+nf}{onCreate}\PYG{p}{(}\PYG{n}{savedInstanceState}\PYG{p}{:} \PYG{n}{Bundle?)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{setTheme}\PYG{p}{(}\PYG{n}{R}\PYG{p}{.}\PYG{n+na}{style}\PYG{p}{.}\PYG{n+na}{Theme\PYGZus{}MyApplication\PYGZus{}NoActionBar}\PYG{p}{)}
+        \PYG{k}{super}\PYG{p}{.}\PYG{n+na}{onCreate}\PYG{p}{(}\PYG{n}{savedInstanceState}\PYG{p}{)}
+
+        \PYG{n}{binding} \PYG{o}{=} \PYG{n}{ActivityMainBinding}\PYG{p}{.}\PYG{n+na}{inflate}\PYG{p}{(}\PYG{n}{layoutInflater}\PYG{p}{)}
+        \PYG{n}{setContentView}\PYG{p}{(}\PYG{n}{binding}\PYG{p}{.}\PYG{n+na}{root}\PYG{p}{)}
+
+        \PYG{c+c1}{// set the Android Night Mode as default for the app}
+        \PYG{n}{AppCompatDelegate}\PYG{p}{.}\PYG{n+na}{setDefaultNightMode}\PYG{p}{(}\PYG{n}{MODE\PYGZus{}NIGHT\PYGZus{}YES}\PYG{p}{)}
+
+        \PYG{c+c1}{// get toolbar instance}
+        \PYG{n}{toolbar} \PYG{o}{=} \PYG{n}{binding}\PYG{p}{.}\PYG{n+na}{toolbar}
+        \PYG{n}{setSupportActionBar}\PYG{p}{(}\PYG{n}{toolbar}\PYG{p}{)}
+
+        \PYG{n}{drawerLayout} \PYG{o}{=} \PYG{n}{binding}\PYG{p}{.}\PYG{n+na}{drawerLayout}
+
+        \PYG{c+c1}{//Get and setup navcontroller that will make the navigation between fragments}
+        \PYG{k+kd}{val} \PYG{n+nv}{navHostFragment} \PYG{o}{=} \PYG{n}{supportFragmentManager}
+            \PYG{p}{.}\PYG{n+na}{findFragmentById}\PYG{p}{(}\PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{nav\PYGZus{}host\PYGZus{}fragment}\PYG{p}{)} \PYG{k}{as} \PYG{n}{NavHostFragment}
+
+        \PYG{k+kd}{val} \PYG{n+nv}{navController} \PYG{o}{=} \PYG{n}{navHostFragment}\PYG{p}{.}\PYG{n+na}{navController}
+        \PYG{k+kd}{val} \PYG{n+nv}{graphInflater} \PYG{o}{=} \PYG{n}{navHostFragment}\PYG{p}{.}\PYG{n+na}{navController}\PYG{p}{.}\PYG{n+na}{navInflater}
+        \PYG{k+kd}{val} \PYG{n+nv}{navGraph} \PYG{o}{=} \PYG{n}{graphInflater}\PYG{p}{.}\PYG{n+na}{inflate}\PYG{p}{(}\PYG{n}{R}\PYG{p}{.}\PYG{n+na}{navigation}\PYG{p}{.}\PYG{n+na}{nav\PYGZus{}graph}\PYG{p}{)}
+
+        \PYG{n}{NavigationUI}\PYG{p}{.}\PYG{n+na}{setupActionBarWithNavController}\PYG{p}{(}\PYG{k}{this}\PYG{p}{,} \PYG{n}{navController}\PYG{p}{,} \PYG{n}{drawerLayout}\PYG{p}{)}
+        \PYG{n}{NavigationUI}\PYG{p}{.}\PYG{n+na}{setupWithNavController}\PYG{p}{(}\PYG{n}{binding}\PYG{p}{.}\PYG{n+na}{navView}\PYG{p}{,} \PYG{n}{navController}\PYG{p}{)}
+
+        \PYG{c+c1}{//change home screen in agreement with the case of new user or not}
+        \PYG{c+c1}{//TODO: check if this function can be removed}
+        \PYG{n}{navController}\PYG{p}{.}\PYG{n+na}{addOnDestinationChangedListener} \PYG{p}{\PYGZob{}} \PYG{n}{nc}\PYG{p}{:} \PYG{n}{NavController}\PYG{p}{,}
+                                                        \PYG{n}{nd}\PYG{p}{:} \PYG{n}{NavDestination}\PYG{p}{,}
+                                                        \PYG{n}{args}\PYG{p}{:} \PYG{n}{Bundle? }\PYG{o}{\PYGZhy{}\PYGZgt{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{nd}\PYG{p}{.}\PYG{n+na}{id} \PYG{o}{==} \PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{currentProfileFragment}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{navGraph}\PYG{p}{.}\PYG{n+na}{startDestination} \PYG{o}{=} \PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{currentProfileFragment}
+                \PYG{n}{setDrawer\PYGZus{}locked}\PYG{p}{()}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{// check if the screen is for new user, and remove/locking}
+        \PYG{c+c1}{// navigation parts of the app, making it clean}
+        \PYG{n}{navController}\PYG{p}{.}\PYG{n+na}{addOnDestinationChangedListener} \PYG{p}{\PYGZob{}} \PYG{n}{nc}\PYG{p}{:} \PYG{n}{NavController}\PYG{p}{,}
+                                                        \PYG{n}{nd}\PYG{p}{:} \PYG{n}{NavDestination}\PYG{p}{,}
+                                                        \PYG{n}{args}\PYG{p}{:} \PYG{n}{Bundle? }\PYG{o}{\PYGZhy{}\PYGZgt{}}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{nd}\PYG{p}{.}\PYG{n+na}{id} \PYG{o}{==} \PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{welcomeFragment}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{n}{navGraph}\PYG{p}{.}\PYG{n+na}{startDestination} \PYG{o}{=} \PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{welcomeFragment}
+                \PYG{n}{setDrawer\PYGZus{}locked}\PYG{p}{()}
+                \PYG{n}{toolbar}\PYG{p}{.}\PYG{n+na}{navigationIcon} \PYG{o}{=} \PYG{k+kc}{null}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{c+c1}{//set the back button menu to be hide at home screen}
+        \PYG{n}{navController}\PYG{p}{.}\PYG{n+na}{addOnDestinationChangedListener} \PYG{p}{\PYGZob{}} \PYG{n}{nc}\PYG{p}{:} \PYG{n}{NavController}\PYG{p}{,}
+                                                        \PYG{n}{nd}\PYG{p}{:} \PYG{n}{NavDestination}\PYG{p}{,}
+                                                        \PYG{n}{args}\PYG{p}{:} \PYG{n}{Bundle? }\PYG{o}{\PYGZhy{}\PYGZgt{}}
+            \PYG{n}{destinationHandler} \PYG{o}{=} \PYG{n}{nd}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{nd}\PYG{p}{.}\PYG{n+na}{id} \PYG{o}{==} \PYG{n}{nc}\PYG{p}{.}\PYG{n+na}{graph}\PYG{p}{.}\PYG{n+na}{startDestination}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//setDrawer\PYGZus{}locked()}
+                \PYG{n}{setDrawer\PYGZus{}unLocked}\PYG{p}{()}
+            \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+                \PYG{c+c1}{//setDrawer\PYGZus{}unLocked()}
+                \PYG{n}{setDrawer\PYGZus{}locked}\PYG{p}{()}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//activate the navigation in acivity}
+    \PYG{k+kd}{override} \PYG{k+kd}{fun} \PYG{n+nf}{onSupportNavigateUp}\PYG{p}{():} \PYG{k+kt}{Boolean} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{val} \PYG{n+nv}{navController} \PYG{o}{=} \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{findNavController}\PYG{p}{(}\PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{nav\PYGZus{}host\PYGZus{}fragment}\PYG{p}{)}
+
+        \PYG{k}{return} \PYG{n}{NavigationUI}\PYG{p}{.}\PYG{n+na}{navigateUp}\PYG{p}{(}\PYG{n}{navController}\PYG{p}{,} \PYG{n}{drawerLayout}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//set the back button menu to be displayed or not}
+    \PYG{k+kd}{fun} \PYG{n+nf}{setDrawer\PYGZus{}locked}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{n}{drawerLayout}\PYG{p}{.}\PYG{n+na}{setDrawerLockMode}\PYG{p}{(}\PYG{n}{DrawerLayout}\PYG{p}{.}\PYG{n+na}{LOCK\PYGZus{}MODE\PYGZus{}LOCKED\PYGZus{}CLOSED}\PYG{p}{)}
+        \PYG{c+c1}{//toolbar.setNavigationIcon(null)}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k+kd}{fun} \PYG{n+nf}{setDrawer\PYGZus{}unLocked}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{n}{drawerLayout}\PYG{p}{.}\PYG{n+na}{setDrawerLockMode}\PYG{p}{(}\PYG{n}{DrawerLayout}\PYG{p}{.}\PYG{n+na}{LOCK\PYGZus{}MODE\PYGZus{}UNLOCKED}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//block native back button}
+    \PYG{k+kd}{override} \PYG{k+kd}{fun} \PYG{n+nf}{onBackPressed}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{shouldAllowBack}\PYG{p}{())} \PYG{p}{\PYGZob{}}
+            \PYG{k}{super}\PYG{p}{.}\PYG{n+na}{onBackPressed}\PYG{p}{()}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//block native back button for ensure that the new user wont back to}
+    \PYG{c+c1}{// the welcome screen manualy and/or replicate the same profile}
+    \PYG{k+kd}{private} \PYG{k+kd}{fun} \PYG{n+nf}{shouldAllowBack}\PYG{p}{():} \PYG{k+kt}{Boolean} \PYG{p}{\PYGZob{}}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{destinationHandler}\PYG{p}{.}\PYG{n+na}{id} \PYG{o}{==} \PYG{n}{R}\PYG{p}{.}\PYG{n+na}{id}\PYG{p}{.}\PYG{n+na}{currentProfileFragment}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k}{return} \PYG{k+kc}{false}
+        \PYG{p}{\PYGZcb{}}
+
+        \PYG{k}{return} \PYG{k+kc}{true}
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{c+c1}{//Hide Keyboard when user touch outside}
+    \PYG{c+c1}{//https://stackoverflow.com/questions/8697499/}
+    \PYG{k+kd}{override} \PYG{k+kd}{fun} \PYG{n+nf}{dispatchTouchEvent}\PYG{p}{(}\PYG{n}{ev}\PYG{p}{:} \PYG{n}{MotionEvent}\PYG{p}{):} \PYG{k+kt}{Boolean} \PYG{p}{\PYGZob{}}
+        \PYG{k+kd}{val} \PYG{n+nv}{view}\PYG{p}{:} \PYG{n}{View? }\PYG{o}{=} \PYG{n}{currentFocus}
+        \PYG{k}{if} \PYG{p}{(}\PYG{n}{view} \PYG{o}{!=} \PYG{k+kc}{null} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{ev}\PYG{p}{.}\PYG{n+na}{action} \PYG{o}{==} \PYG{n}{MotionEvent}\PYG{p}{.}\PYG{n+na}{ACTION\PYGZus{}UP} \PYG{o}{||}
+                    \PYG{n}{ev}\PYG{p}{.}\PYG{n+na}{action} \PYG{o}{==} \PYG{n}{MotionEvent}\PYG{p}{.}\PYG{n+na}{ACTION\PYGZus{}MOVE}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{n}{view} \PYG{k}{is} \PYG{n}{EditText}
+        \PYG{p}{)} \PYG{p}{\PYGZob{}}
+            \PYG{k+kd}{val} \PYG{n+nv}{scrcoords} \PYG{o}{=} \PYG{n}{IntArray}\PYG{p}{(}\PYG{l+m}{2}\PYG{p}{)}
+            \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getLocationOnScreen}\PYG{p}{(}\PYG{n}{scrcoords}\PYG{p}{)}
+            \PYG{k+kd}{val} \PYG{n+nv}{x}\PYG{p}{:} \PYG{k+kt}{Float} \PYG{o}{=} \PYG{n}{ev}\PYG{p}{.}\PYG{n+na}{rawX} \PYG{o}{+} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getLeft}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{scrcoords}\PYG{o}{[}\PYG{l+m}{0}\PYG{o}{]}
+            \PYG{k+kd}{val} \PYG{n+nv}{y}\PYG{p}{:} \PYG{k+kt}{Float} \PYG{o}{=} \PYG{n}{ev}\PYG{p}{.}\PYG{n+na}{rawY} \PYG{o}{+} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getTop}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{scrcoords}\PYG{o}{[}\PYG{l+m}{1}\PYG{o}{]}
+            \PYG{k}{if} \PYG{p}{(}\PYG{n}{x} \PYG{o}{\PYGZlt{}} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getLeft}\PYG{p}{()} \PYG{o}{||} \PYG{n}{x} \PYG{o}{\PYGZgt{}} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getRight}\PYG{p}{()} \PYG{o}{||} \PYG{n}{y} \PYG{o}{\PYGZlt{}} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getTop}\PYG{p}{()}
+                \PYG{o}{||} \PYG{n}{y} \PYG{o}{\PYGZgt{}} \PYG{n}{view}\PYG{p}{.}\PYG{n+na}{getBottom}\PYG{p}{()}
+            \PYG{p}{)} \PYG{p}{(}\PYG{k}{this}\PYG{p}{.}\PYG{n+na}{getSystemService}\PYG{p}{(}
+                \PYG{n}{Context}\PYG{p}{.}\PYG{n+na}{INPUT\PYGZus{}METHOD\PYGZus{}SERVICE}
+            \PYG{p}{)} \PYG{k}{as} \PYG{n}{InputMethodManager}\PYG{p}{).}\PYG{n+na}{hideSoftInputFromWindow}\PYG{p}{(}
+                \PYG{k}{this}\PYG{p}{.}\PYG{n+na}{window}\PYG{p}{.}\PYG{n+na}{decorView}\PYG{p}{.}\PYG{n+na}{applicationWindowToken}\PYG{p}{,} \PYG{l+m}{0}
+            \PYG{p}{)}
+        \PYG{p}{\PYGZcb{}}
+        \PYG{k}{return} \PYG{k}{super}\PYG{p}{.}\PYG{n+na}{dispatchTouchEvent}\PYG{p}{(}\PYG{n}{ev}\PYG{p}{)}
+    \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,122 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[Android Studio 2021]{site:androidstudio}
+\abntrefinfo{Android\ldots}{ANDROID\ldots}{2021}
+{ANDROID Studio: Guia do usuário. Google, 2021.
+Acesso em 16 mar.2021.
+Dispon{\'\i}vel em: \url{https://developer.android.com/studio/intro}.}
+
+\bibitem[Barbosa et al.
+  2021]{BarbosaEtAl2021InteracaoHumanoComputadorExperiencia}
+\abntrefinfo{Barbosa et al.}{BARBOSA et al.}{2021}
+{BARBOSA, S. D.~J. et al. \textbf{Interação {Humano}-{Computador} e
+  {Experiência} do {Usuário}}. [S.l.]: Autopublicação, 2021.}
+
+\bibitem[{Budiu, Raluca} 2020]{site:nielsenRecall}
+\abntrefinfo{{Budiu, Raluca}}{{Budiu, Raluca}}{2020}
+{{Budiu, Raluca}. \textbf{Memory Recognition and Recall in User Interfaces.}
+  Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/recognition-and-recall/}.}
+
+\bibitem[{CABAU JÚNIOR, S. D.} 2016]{site:introCabau}
+\abntrefinfo{{CABAU JÚNIOR, S. D.}}{{CABAU JÚNIOR, S. D.}}{2016}
+{{CABAU JÚNIOR, S. D.} \textbf{Introdução à astrofotografia}. Network for
+  Astronomy School Education, 2016.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
+  instrumentos/astrofotografia.pdf}.}
+
+\bibitem[{Egan, Mark} c2021]{site:nyxtech}
+\abntrefinfo{{Egan, Mark}}{{Egan, Mark}}{c2021}
+{{Egan, Mark}. \textbf{Nyx Tech}. Nyx Tech, c2021.
+Acesso em 29 mar. 2021.
+Dispon{\'\i}vel em: \url{https://nyxtech.us/}.}
+
+\bibitem[{Harley, Aurora} 2014]{site:nielsenIcon}
+\abntrefinfo{{Harley, Aurora}}{{Harley, Aurora}}{2014}
+{{Harley, Aurora}. \textbf{Icon Usability.} Nielsen Norman Group, 2014.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/icon-usability/}.}
+
+\bibitem[{HELERBROCK, Rafael} c2021]{site:brescolaAstrofoto}
+\abntrefinfo{{HELERBROCK, Rafael}}{{HELERBROCK, Rafael}}{c2021}
+{{HELERBROCK, Rafael}. \textbf{História da Astronomia}. Brasil Escola, c2021.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.}}
+
+\bibitem[{iOptron Corporation} c2021]{site:ioptron}
+\abntrefinfo{{iOptron Corporation}}{{iOptron Corporation}}{c2021}
+{{iOptron Corporation}. \textbf{SkyGuiderTM Pro camera mount full package}.
+  IOPTRON, c2021.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
+
+\bibitem[{Joyce, Alita.} 2020]{site:nielsenHelpandDoc}
+\abntrefinfo{{Joyce, Alita.}}{{Joyce, Alita.}}{2020}
+{{Joyce, Alita.} \textbf{Help and Documentation}. Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/help-and-documentation/}.}
+
+\bibitem[{Kaley, Anna} 2018]{site:nielsenRealWorld}
+\abntrefinfo{{Kaley, Anna}}{{Kaley, Anna}}{2018}
+{{Kaley, Anna}. \textbf{Match Between the System and the Real Worl}. Nielsen
+  Norman Group, 2018.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/match-system-real-world/}.}
+
+\bibitem[{Laubheimer, Page} 2015]{site:nielsenError}
+\abntrefinfo{{Laubheimer, Page}}{{Laubheimer, Page}}{2015}
+{{Laubheimer, Page}. \textbf{Preventing User Errors}. Nielsen Norman Group,
+  2015.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/slips/}.}
+
+\bibitem[{Laubheimer, Page} 2020]{site:nielsenFlexibility}
+\abntrefinfo{{Laubheimer, Page}}{{Laubheimer, Page}}{2020}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Flexibility and Efficiency of Use}.
+  Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.}
+
+\bibitem[Material Design 2015]{site:materialdesign}
+\abntrefinfo{Material\ldots}{MATERIAL\ldots}{2015}
+{MATERIAL Design: Introduction. Google, 2015.
+Acesso em 16 mar. 2021.
+Dispon{\'\i}vel em: \url{https://material.io/design/introduction}.}
+
+\bibitem[{Nielsen, Jakob} 2020]{site:nielsen}
+\abntrefinfo{{Nielsen, Jakob}}{{Nielsen, Jakob}}{2020}
+{{Nielsen, Jakob}. \textbf{Usability Heuristics for User Interface Design.}
+  Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/ten-usability-heuristics/}.}
+
+\bibitem[{Redka, Maria} 2021]{site:kotlinxjava}
+\abntrefinfo{{Redka, Maria}}{{Redka, Maria}}{2021}
+{{Redka, Maria}. \textbf{Kotlin vs. Java}: Which programming language to choose
+  for your android app. MLSDev, 2021.
+Acesso em 16 mar. 2021.
+Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
+
+\bibitem[{SANTOS, N. S.} 2010]{site:importanciaAstroftoSantos}
+\abntrefinfo{{SANTOS, N. S.}}{{SANTOS, N. S.}}{2010}
+{{SANTOS, N. S.} \textbf{A astrofotografia e sua importância para a
+  astronomia}. Educação Espacial, 2010.
+Acesso em 19 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.}
+
+\end{thebibliography}

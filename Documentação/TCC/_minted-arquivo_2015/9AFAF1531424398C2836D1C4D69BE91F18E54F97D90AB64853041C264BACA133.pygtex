@@ -1,0 +1,196 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{void} \PYG{n+nf}{initializeDevicesI2c}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+  \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{println}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Initializing I2C devices...\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+
+
+  \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n+nf}{begin}\PYG{p}{(}\PYG{n}{MPU6050\PYGZus{}SCALE\PYGZus{}2000DPS}\PYG{p}{,} \PYG{n}{MPU6050\PYGZus{}RANGE\PYGZus{}2G}\PYG{p}{,} \PYG{n}{MPU6050\PYGZus{}NORMAL}\PYG{p}{,} \PYG{n}{WIRE\PYGZus{}400kHz}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ MPU6050 connection successful }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{n+nf}{delay}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{setI2CMasterModeEnabled}\PYG{p}{(}\PYG{k+kr}{false}\PYG{p}{);}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{setI2CBypassEnabled}\PYG{p}{(}\PYG{k+kr}{true}\PYG{p}{);}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{setSleepEnabled}\PYG{p}{(}\PYG{k+kr}{false}\PYG{p}{);}
+    \PYG{c+c1}{//accelgyro.setDHPFMode(MPU6050\PYGZus{}DHPF\PYGZus{}5HZ);}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{setDLPFMode}\PYG{p}{(}\PYG{n}{MPU6050\PYGZus{}DLPF\PYGZus{}6}\PYG{p}{);}
+
+
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ MPU6050 configurate successful }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ *MPU6050 connection failed* }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{n}{mag}\PYG{p}{.}\PYG{n}{initialize}\PYG{p}{();}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+  \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{n}{mag}\PYG{p}{.}\PYG{n}{testConnection}\PYG{p}{()} \PYG{o}{?} \PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ HMC5883L connection successful}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}} \PYG{o}{:} \PYG{l+s}{\PYGZdq{}*HMC5883L connection failed*}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{   Check I2C Lines, start bus and get device list}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{void} \PYG{n+nf}{beginI2cBus}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+  \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+
+  \PYG{k+kr}{int} \PYG{n}{rtn} \PYG{o}{=} \PYG{n}{I2C\PYGZus{}ClearBus}\PYG{p}{();} \PYG{c+c1}{// clear the I2C bus first before calling Wire.begin()}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{!=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ I2C bus error. Could not clear }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ SCL clock line held low }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ SCL clock line held low by slave clock stretch }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{rtn} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ SDA data line held low }\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{c+c1}{// bus clear}
+    \PYG{c+c1}{// re\PYGZhy{}enable Wire}
+    \PYG{c+c1}{// now can start Wire Arduino master}
+    \PYG{n+nf}{Wire}\PYG{p}{.}\PYG{n+nf}{begin}\PYG{p}{();}
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ I2C bus clear. Init Sucesful}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+    \PYG{n}{scanI2C}\PYG{p}{();}
+\PYG{c+cp}{\PYGZsh{}endif}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{   Clean I2C bus and return actual situation for start wire sucessfully}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{int} \PYG{n+nf}{I2C\PYGZus{}ClearBus}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+  \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+  
+\PYG{c+cp}{\PYGZsh{}if defined(TWCR) \PYGZam{}\PYGZam{} defined(TWEN)}
+  \PYG{n}{TWCR} \PYG{o}{\PYGZam{}=} \PYG{o}{\PYGZti{}}\PYG{p}{(}\PYG{n}{\PYGZus{}BV}\PYG{p}{(}\PYG{n}{TWEN}\PYG{p}{));} \PYG{c+c1}{//Disable the Atmel 2\PYGZhy{}Wire interface so we can control the SDA and SCL pins directly}
+\PYG{c+cp}{\PYGZsh{}endif}
+
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);} \PYG{c+c1}{// Make SDA (data) and SCL (clock) pins Inputs with pullup.}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);}
+
+  \PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{timerI2c} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();}
+  \PYG{k}{while} \PYG{p}{(}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timerI2c} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{2500}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();} \PYG{c+c1}{// Wait 2.5 secs. This is strictly only necessary on the first power}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{c+c1}{// up of the DS3231 module to allow it to initialize properly,}
+  \PYG{c+c1}{// but is also assists in reliable programming of FioV3 boards as it gives the}
+  \PYG{c+c1}{// IDE a chance to start uploaded the program}
+  \PYG{c+c1}{// before existing sketch confuses the IDE by sending Serial data.}
+
+  \PYG{k+kr}{boolean} \PYG{n}{SCL\PYGZus{}LOW} \PYG{o}{=} \PYG{p}{(}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{)} \PYG{o}{==} \PYG{k+kr}{LOW}\PYG{p}{);} \PYG{c+c1}{// Check is SCL is Low.}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{SCL\PYGZus{}LOW}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//If it is held low Arduno cannot become the I2C master.}
+    \PYG{k}{return} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{c+c1}{//I2C bus error. Could not clear SCL clock line held low}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{k+kr}{boolean} \PYG{n}{SDA\PYGZus{}LOW} \PYG{o}{=} \PYG{p}{(}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{)} \PYG{o}{==} \PYG{k+kr}{LOW}\PYG{p}{);}  \PYG{c+c1}{// vi. Check SDA input.}
+  \PYG{k+kr}{int} \PYG{n}{clockCount} \PYG{o}{=} \PYG{l+m+mi}{20}\PYG{p}{;} \PYG{c+c1}{// \PYGZgt{} 2x9 clock}
+
+  \PYG{k}{while} \PYG{p}{(}\PYG{n}{SDA\PYGZus{}LOW} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{clockCount} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//  vii. If SDA is Low,}
+
+
+    \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+    
+    \PYG{n}{clockCount}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+    \PYG{c+c1}{// Note: I2C bus is open collector so do NOT drive SCL or SDA high.}
+    \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{// release SCL pullup so that when made output it will be LOW}
+    \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{OUTPUT}\PYG{p}{);} \PYG{c+c1}{// then clock SCL Low}
+    \PYG{n+nf}{delayMicroseconds}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);} \PYG{c+c1}{//  for \PYGZgt{}5uS}
+    \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{// release SCL LOW}
+    \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);} \PYG{c+c1}{// turn on pullup resistors again}
+    \PYG{c+c1}{// do not force high as slave may be holding it low for clock stretching.}
+    \PYG{n+nf}{delayMicroseconds}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);} \PYG{c+c1}{//  for \PYGZgt{}5uS}
+    \PYG{c+c1}{// The \PYGZgt{}5uS is so that even the slowest I2C devices are handled.}
+    \PYG{n}{SCL\PYGZus{}LOW} \PYG{o}{=} \PYG{p}{(}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{)} \PYG{o}{==} \PYG{k+kr}{LOW}\PYG{p}{);} \PYG{c+c1}{// Check if SCL is Low.}
+    \PYG{k+kr}{int} \PYG{n}{counter} \PYG{o}{=} \PYG{l+m+mi}{20}\PYG{p}{;}
+    \PYG{k}{while} \PYG{p}{(}\PYG{n}{SCL\PYGZus{}LOW} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{p}{(}\PYG{n}{counter} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{))} \PYG{p}{\PYGZob{}}  \PYG{c+c1}{//  loop waiting for SCL to become High only wait 2sec.}
+
+      \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+
+      \PYG{n}{counter}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{;}
+      \PYG{n+nf}{delay}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{);}
+      \PYG{n}{SCL\PYGZus{}LOW} \PYG{o}{=} \PYG{p}{(}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{)} \PYG{o}{==} \PYG{k+kr}{LOW}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{SCL\PYGZus{}LOW}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// still low after 2 sec error}
+      \PYG{k}{return} \PYG{l+m+mi}{2}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{SDA\PYGZus{}LOW} \PYG{o}{=} \PYG{p}{(}\PYG{n+nf}{digitalRead}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{)} \PYG{o}{==} \PYG{k+kr}{LOW}\PYG{p}{);} \PYG{c+c1}{//   and check SDA input again and loop}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{SDA\PYGZus{}LOW}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{// still low}
+    \PYG{k}{return} \PYG{l+m+mi}{3}\PYG{p}{;} \PYG{c+c1}{// I2C bus error. Could not clear. SDA data line held low}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+c1}{// else pull SDA line low for Start or Repeated Start}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{// remove pullup.}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{OUTPUT}\PYG{p}{);}  \PYG{c+c1}{// and then make it LOW i.e. send an I2C Start or Repeated start control.}
+  \PYG{c+c1}{// When there is only one I2C master a Start or Repeat Start has the same function as a Stop and clears the bus.}
+  \PYG{c+c1}{/// A Repeat Start is a Start occurring after a Start with no intervening Stop.}
+  \PYG{n+nf}{delayMicroseconds}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);} \PYG{c+c1}{// wait \PYGZgt{}5uS}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{// remove output low}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{INPUT\PYGZus{}PULLUP}\PYG{p}{);} \PYG{c+c1}{// and make SDA high i.e. send I2C STOP control.}
+  \PYG{n+nf}{delayMicroseconds}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);} \PYG{c+c1}{// x. wait \PYGZgt{}5uS}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SDA}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{// and reset pins as tri\PYGZhy{}state inputs which is the default state on reset}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{SCL}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);}
+  \PYG{k}{return} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{c+c1}{// all ok}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{   Scan i2c bus with a for() loking for adress in all 127 spaces.}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{void} \PYG{n+nf}{scanI2C}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{byte} \PYG{n}{error}\PYG{p}{,} \PYG{n}{address}\PYG{p}{;}
+  \PYG{k+kr}{int} \PYG{n}{nDevices}\PYG{p}{;}
+
+  \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Scanning I2C Bus...}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+
+  \PYG{n}{nDevices} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{for} \PYG{p}{(}\PYG{n}{address} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{address} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{127}\PYG{p}{;} \PYG{n}{address}\PYG{o}{++} \PYG{p}{)} \PYG{p}{\PYGZob{}}
+
+    \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+    
+    \PYG{c+c1}{// The i2c\PYGZus{}scanner uses the return value of}
+    \PYG{c+c1}{// the Write.endTransmisstion to see if}
+    \PYG{c+c1}{// a device did acknowledge to the address.}
+    \PYG{n+nf}{Wire}\PYG{p}{.}\PYG{n+nf}{beginTransmission}\PYG{p}{(}\PYG{n}{address}\PYG{p}{);}
+    \PYG{n}{error} \PYG{o}{=} \PYG{n+nf}{Wire}\PYG{p}{.}\PYG{n+nf}{endTransmission}\PYG{p}{();}
+
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{error} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ I2C device found at address 0x\PYGZdq{}}\PYG{p}{);}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{address} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{16}\PYG{p}{)}
+        \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{println}\PYG{p}{(}\PYG{n}{address}\PYG{p}{,} \PYG{n}{HEX}\PYG{p}{);}
+
+      \PYG{n}{nDevices}\PYG{o}{++}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{else} \PYG{k}{if} \PYG{p}{(}\PYG{n}{error} \PYG{o}{==} \PYG{l+m+mi}{4}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ Unknown error at address 0x\PYGZdq{}}\PYG{p}{);}
+      \PYG{k}{if} \PYG{p}{(}\PYG{n}{address} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{16}\PYG{p}{)}
+        \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}0\PYGZdq{}}\PYG{p}{);}
+      \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{println}\PYG{p}{(}\PYG{n}{address}\PYG{p}{,} \PYG{n}{HEX}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{nDevices} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ No I2C devices found}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}} \PYG{k}{else} \PYG{p}{\PYGZob{}}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}t}\PYG{l+s}{ Done scanner I2C}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

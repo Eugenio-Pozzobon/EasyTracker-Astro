@@ -1,0 +1,168 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kr}{void} \PYG{n+nf}{getData}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{k}{if} \PYG{p}{(((}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timerMpuData}\PYG{p}{)} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{\PYGZam{}\PYGZam{}} \PYG{o}{!}\PYG{n}{stepperState}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+
+    \PYG{n}{timerMpuData} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();}
+    \PYG{c+c1}{//1ms to get all data with 400kHz and 5ms with 100kHz}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{readNormalizeAccel}\PYG{p}{();}
+    \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{readNormalizeGyro}\PYG{p}{();}
+
+    \PYG{n}{mag}\PYG{p}{.}\PYG{n}{getHeading}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{mx}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{my}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{mz}\PYG{p}{);}
+
+
+    \PYG{n}{angleCalculation}\PYG{p}{();}
+    \PYG{c+c1}{//compassCalculation();}
+
+    \PYG{n}{debugSensor}\PYG{p}{();}
+  \PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{void} \PYG{n+nf}{angleCalculation}\PYG{p}{()} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//900us usando int\PYGZus{}16t e 1300us usando float}
+  \PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{cT} \PYG{o}{=} \PYG{n+nf}{micros}\PYG{p}{();} \PYG{c+c1}{// contar tempo de loop}
+  \PYG{k+kr}{unsigned} \PYG{k+kr}{long} \PYG{n}{dT} \PYG{o}{=} \PYG{n}{cT} \PYG{o}{\PYGZhy{}} \PYG{n}{gyroIntegrateTimer}\PYG{p}{;} \PYG{c+c1}{//Variable for measure angle with gps and make integration of values}
+  \PYG{n}{gyroIntegrateTimer} \PYG{o}{=} \PYG{n}{cT}\PYG{p}{;}
+
+  \PYG{c+c1}{// Gyro Calculations convert gyro raw to degrees per second}
+  \PYG{c+c1}{//  rate\PYGZus{}gyr\PYGZus{}x = accelgyro.ngx;}
+  \PYG{c+c1}{//  rate\PYGZus{}gyr\PYGZus{}y = accelgyro.ngy;}
+  \PYG{c+c1}{//  rate\PYGZus{}gyr\PYGZus{}z = accelgyro.ngz;}
+  \PYG{c+c1}{//  gyroXangle += rate\PYGZus{}gyr\PYGZus{}x * dT;}
+  \PYG{c+c1}{//  gyroYangle += rate\PYGZus{}gyr\PYGZus{}y * dT;}
+  \PYG{c+c1}{//  gyroZangle += rate\PYGZus{}gyr\PYGZus{}z * dT;}
+
+  \PYG{c+c1}{// Roll angle}
+  \PYG{n}{angleX} \PYG{o}{=} \PYG{n}{accelGyroRelation} \PYG{o}{*} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{angleX} \PYG{o}{+} \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{ngx} \PYG{o}{*} \PYG{p}{(}\PYG{k+kr}{float}\PYG{p}{(}\PYG{n}{dT}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{1000000}\PYG{p}{))} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{accelGyroRelation}\PYG{p}{)} \PYG{o}{*}
+           \PYG{p}{(}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{nax}\PYG{p}{,} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{n+nf}{pow}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{nay}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{n+nf}{pow}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{naz}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)))} \PYG{o}{*} \PYG{l+m+mi}{180}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mf}{3.14}\PYG{p}{;}
+  \PYG{n}{angleX} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{angleX}\PYG{p}{;}
+
+  \PYG{c+c1}{// Pitch angle}
+  \PYG{n}{angleY} \PYG{o}{=} \PYG{n}{accelGyroRelation} \PYG{o}{*} \PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{angleY} \PYG{o}{+} \PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{ngy} \PYG{o}{*} \PYG{p}{(}\PYG{k+kr}{float}\PYG{p}{(}\PYG{n}{dT}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{1000000}\PYG{p}{))} \PYG{o}{+} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{\PYGZhy{}} \PYG{n}{accelGyroRelation}\PYG{p}{)} \PYG{o}{*}
+           \PYG{p}{(}\PYG{n}{atan2}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{nay}\PYG{p}{,} \PYG{n+nf}{sqrt}\PYG{p}{(}\PYG{n+nf}{pow}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{nax}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{n+nf}{pow}\PYG{p}{(}\PYG{n}{accelgyro}\PYG{p}{.}\PYG{n}{naz}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)))} \PYG{o}{*} \PYG{l+m+mi}{180}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mf}{3.14}\PYG{p}{;}
+  \PYG{n}{angleY} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{angleY}\PYG{p}{;}
+  \PYG{c+c1}{//(atan2(accelgyro.nay, accelgyro.naz) * 180) / 3.14;}
+
+  \PYG{c+c1}{// Yaw Angle based on acelerometer}
+  \PYG{c+c1}{//angleZ = accelGyroRelation * (angleZ + accelgyro.ngz * (float(dT) / 1000000)) + (1 \PYGZhy{} accelGyroRelation) *}
+  \PYG{c+c1}{//         (atan2(sqrt(pow(accelgyro.nax, 2) + pow(accelgyro.nay, 2)), accelgyro.naz) * 180) / 3.14;}
+
+  \PYG{c+c1}{//  mxCalibrated = my \PYGZhy{} ((myMax + myMin) / 2.0);}
+  \PYG{c+c1}{//  myCalibrated = mx \PYGZhy{} ((mxMax + mxMin) / 2.0);}
+  \PYG{c+c1}{//  mzCalibrated = mz \PYGZhy{} ((mzMax + mzMin) / 2.0);}
+  \PYG{c+c1}{//}
+  \PYG{c+c1}{//  angleZ = atan2( (mzCalibrated * sin(angleX) \PYGZhy{} myCalibrated * cos(angleX)),}
+  \PYG{c+c1}{//                  (mxCalibrated * cos(angleY) + myCalibrated * sin(angleY) * sin(angleX) + mzCalibrated * sin(angleY) * cos(angleX))  ) * (180 / 3.14);}
+
+  \PYG{c+c1}{// Yaw Angle Based on Compass}
+  \PYG{n}{compassCalculation}\PYG{p}{();}
+  \PYG{n}{angleZ} \PYG{o}{=} \PYG{n}{mediaMovel}\PYG{p}{(}\PYG{n}{reads}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{c+cm}{/* To calculate heading in degrees. 0 degree indicates North}
+\PYG{c+cm}{   Calculate in radians}
+\PYG{c+cm}{   xC = mx \PYGZhy{} ((mxMax + mxMin) / 2.0);}
+\PYG{c+cm}{   yC = my \PYGZhy{} ((myMax + myMin) / 2.0);}
+\PYG{c+cm}{   zC = mz \PYGZhy{} ((mzMax + mzMin) / 2.0);}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{void} \PYG{n+nf}{compassCalculation}\PYG{p}{()} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//256us}
+  \PYG{c+c1}{//calculation}
+  \PYG{n}{compassAngle} \PYG{o}{=} \PYG{n}{atan2}\PYG{p}{(}\PYG{n}{my} \PYG{o}{\PYGZhy{}} \PYG{p}{((}\PYG{n}{myMax} \PYG{o}{+} \PYG{n}{myMin}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mf}{2.0}\PYG{p}{),} \PYG{n}{mx} \PYG{o}{\PYGZhy{}} \PYG{p}{((}\PYG{n}{mxMax} \PYG{o}{+} \PYG{n}{mxMin}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mf}{2.0}\PYG{p}{))} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{180} \PYG{o}{/} \PYG{n}{PI}\PYG{p}{);}
+  \PYG{n}{compassAngle} \PYG{o}{=} \PYG{n}{compassAngle} \PYG{o}{+} \PYG{l+m+mi}{180}\PYG{p}{;}
+
+  \PYG{c+c1}{//check if it north}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{compassAngle} \PYG{o}{\PYGZgt{}=} \PYG{l+m+mi}{360}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{compassAngle} \PYG{o}{\PYGZhy{}=} \PYG{l+m+mi}{360}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{compassAngle} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{compassAngle} \PYG{o}{+=} \PYG{l+m+mi}{360}\PYG{p}{;}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{c+c1}{//pass it for an array to stabilizate the data}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kr}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{mediaMovelArray} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{reads}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{=} \PYG{n}{reads}\PYG{p}{[}\PYG{n}{i} \PYG{o}{+} \PYG{l+m+mi}{1}\PYG{p}{];}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{n}{reads}\PYG{p}{[}\PYG{n}{mediaMovelArray} \PYG{o}{\PYGZhy{}} \PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{=} \PYG{n}{compassAngle}\PYG{p}{;}
+
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{   Calculate the media of an array}
+\PYG{c+cm}{*/}
+\PYG{k+kr}{float} \PYG{n+nf}{mediaMovel}\PYG{p}{(}\PYG{k+kr}{float} \PYG{o}{*}\PYG{n}{vetor}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+  \PYG{k+kr}{float} \PYG{n}{soma} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{k}{for} \PYG{p}{(}\PYG{k+kr}{int} \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;} \PYG{n}{i} \PYG{o}{\PYGZlt{}} \PYG{n}{mediaMovelArray}\PYG{p}{;} \PYG{n}{i}\PYG{o}{++}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    \PYG{n}{soma} \PYG{o}{+=} \PYG{n}{vetor}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+  \PYG{p}{\PYGZcb{}}
+  \PYG{k}{return} \PYG{n}{soma} \PYG{o}{/} \PYG{n}{mediaMovelArray}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+
+\PYG{k+kr}{void} \PYG{n+nf}{compassCalibration}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n}{mxMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mxMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{myMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{myMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mzMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mzMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+
+  \PYG{k+kr}{long} \PYG{k+kr}{unsigned} \PYG{k+kr}{int} \PYG{n}{t\PYGZus{}cal} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();}
+  \PYG{k}{while} \PYG{p}{((}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{t\PYGZus{}cal}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{p}{(}\PYG{n}{CALIBRATING\PYGZus{}TIME} \PYG{o}{*} \PYG{l+m+mi}{1000}\PYG{p}{))} \PYG{p}{\PYGZob{}}
+    \PYG{n}{wdt\PYGZus{}reset}\PYG{p}{();}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{();} \PYG{c+c1}{//flush buffer11}
+      \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}c,c}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{n}{mag}\PYG{p}{.}\PYG{n}{getHeading}\PYG{p}{(}\PYG{o}{\PYGZam{}}\PYG{n}{mx}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{my}\PYG{p}{,} \PYG{o}{\PYGZam{}}\PYG{n}{mz}\PYG{p}{);}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{mxMax} \PYG{o}{\PYGZlt{}} \PYG{n}{mx}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{mxMax} \PYG{o}{=} \PYG{n}{mx}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{mxMin} \PYG{o}{\PYGZgt{}} \PYG{n}{mx}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{mxMin} \PYG{o}{=} \PYG{n}{mx}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{myMax} \PYG{o}{\PYGZlt{}} \PYG{n}{my}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{myMax} \PYG{o}{=} \PYG{n}{my}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{myMin} \PYG{o}{\PYGZgt{}} \PYG{n}{my}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{myMin} \PYG{o}{=} \PYG{n}{my}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{mzMax} \PYG{o}{\PYGZlt{}} \PYG{n}{mz}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{mzMax} \PYG{o}{=} \PYG{n}{mz}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+    \PYG{k}{if} \PYG{p}{(}\PYG{n}{mzMin} \PYG{o}{\PYGZgt{}} \PYG{n}{mz}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+      \PYG{n}{mzMin} \PYG{o}{=} \PYG{n}{mz}\PYG{p}{;}
+    \PYG{p}{\PYGZcb{}}
+
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}Calibrating! Time remaining (s):\PYGZdq{}}\PYG{p}{);}
+    \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{println}\PYG{p}{(}\PYG{n}{CALIBRATING\PYGZus{}TIME} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{t\PYGZus{}cal}\PYG{p}{)} \PYG{o}{/} \PYG{l+m+mi}{1000}\PYG{p}{);}
+\PYG{c+cp}{\PYGZsh{}endif}
+    \PYG{n+nf}{delay}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{);}
+  \PYG{p}{\PYGZcb{}}
+
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{mxMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mxMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{myMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{myMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{mzMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{mzMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{n}{mxMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,} \PYG{n}{mxMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{n}{myMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,} \PYG{n}{myMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{mzMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{,} \PYG{n}{mzMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+
+\PYG{c+cp}{\PYGZsh{}ifdef DEBUG}
+  \PYG{n}{printCalibrationInfo}\PYG{p}{();}
+\PYG{c+cp}{\PYGZsh{}endif}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{void} \PYG{n+nf}{ressetCalibration}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n}{mxMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mxMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{myMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{myMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mzMax} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n}{mzMin} \PYG{o}{=} \PYG{l+m+mi}{0}\PYG{p}{;}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{mxMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{mxMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{myMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{n}{myMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,} \PYG{n}{mzMin} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{mzMin} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{6}\PYG{p}{,} \PYG{n}{mxMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{7}\PYG{p}{,} \PYG{n}{mxMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{8}\PYG{p}{,} \PYG{n}{myMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{9}\PYG{p}{,} \PYG{n}{myMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{10}\PYG{p}{,} \PYG{n}{mzMax} \PYG{o}{\PYGZgt{}\PYGZgt{}} \PYG{l+m+mi}{8}\PYG{p}{);}  \PYG{n+nf}{EEPROM}\PYG{p}{.}\PYG{n+nf}{write}\PYG{p}{(}\PYG{l+m+mi}{11}\PYG{p}{,} \PYG{n}{mzMax} \PYG{o}{\PYGZpc{}} \PYG{l+m+mi}{256}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

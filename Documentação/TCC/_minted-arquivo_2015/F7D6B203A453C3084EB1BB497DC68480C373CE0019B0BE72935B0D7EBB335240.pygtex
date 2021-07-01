@@ -1,0 +1,66 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{package} \PYG{n+nn}{com.example.startracker}
+
+\PYG{k}{import} \PYG{n+nn}{android.annotation.SuppressLint}
+\PYG{k}{import} \PYG{n+nn}{android.content.Context}
+\PYG{k}{import} \PYG{n+nn}{android.util.DisplayMetrics}
+\PYG{k}{import} \PYG{n+nn}{android.widget.TextView}
+\PYG{k}{import} \PYG{n+nn}{androidx.recyclerview.widget.RecyclerView}
+\PYG{k}{import} \PYG{n+nn}{java.text.SimpleDateFormat}
+
+\PYG{c+c1}{// File with functions used in all code}
+
+\PYG{c+c1}{//sensor error margin for user get screen green}
+\PYG{k+kd}{var} \PYG{n+nv}{errorMargin} \PYG{o}{=} \PYG{l+m}{0.5}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * This method converts dp unit to equivalent pixels, depending on device density.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * @param dp A value in dp (density independent pixels) unit. Which we need to convert into pixels}
+\PYG{c+cm}{ * @param context Context to get resources and device specific display metrics}
+\PYG{c+cm}{ * @return A float value to represent px equivalent to dp depending on device density}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{fun} \PYG{n+nf}{convertDpToPixel}\PYG{p}{(}\PYG{n}{dp}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{context}\PYG{p}{:} \PYG{n}{Context}\PYG{p}{):} \PYG{k+kt}{Float} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{dp} \PYG{o}{*} \PYG{p}{(}\PYG{n}{context}\PYG{p}{.}\PYG{n+na}{getResources}\PYG{p}{()}
+        \PYG{p}{.}\PYG{n+na}{getDisplayMetrics}\PYG{p}{().}\PYG{n+na}{densityDpi}\PYG{p}{.}\PYG{n+na}{toFloat}\PYG{p}{()} \PYG{o}{/} \PYG{n}{DisplayMetrics}\PYG{p}{.}\PYG{n+na}{DENSITY\PYGZus{}DEFAULT}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * This method converts device specific pixels to density independent pixels.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * @param px A value in px (pixels) unit. Which we need to convert into db}
+\PYG{c+cm}{ * @param context Context to get resources and device specific display metrics}
+\PYG{c+cm}{ * @return A float value to represent dp equivalent to px value}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{fun} \PYG{n+nf}{convertPixelsToDp}\PYG{p}{(}\PYG{n}{px}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{context}\PYG{p}{:} \PYG{n}{Context}\PYG{p}{):} \PYG{k+kt}{Float} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{px} \PYG{o}{/} \PYG{p}{(}\PYG{n}{context}\PYG{p}{.}\PYG{n+na}{getResources}\PYG{p}{()}
+        \PYG{p}{.}\PYG{n+na}{getDisplayMetrics}\PYG{p}{().}\PYG{n+na}{densityDpi}\PYG{p}{.}\PYG{n+na}{toFloat}\PYG{p}{()} \PYG{o}{/} \PYG{n}{DisplayMetrics}\PYG{p}{.}\PYG{n+na}{DENSITY\PYGZus{}DEFAULT}\PYG{p}{)}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * Take the Long milliseconds returned by the system and stored in Room,}
+\PYG{c+cm}{ * and convert it to a nicely formatted string for display.}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * EEEE \PYGZhy{} Display the long letter version of the weekday}
+\PYG{c+cm}{ * MMM \PYGZhy{} Display the letter abbreviation of the nmotny}
+\PYG{c+cm}{ * dd\PYGZhy{}yyyy \PYGZhy{} day in month and full year numerically}
+\PYG{c+cm}{ * HH:mm \PYGZhy{} Hours and minutes in 24hr format}
+\PYG{c+cm}{ */}
+\PYG{n+nd}{@SuppressLint}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}SimpleDateFormat\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kd}{fun} \PYG{n+nf}{convertLongToDateString}\PYG{p}{(}\PYG{n}{systemTime}\PYG{p}{:} \PYG{k+kt}{Long}\PYG{p}{,} \PYG{n}{patern}\PYG{p}{:}\PYG{k+kt}{String}\PYG{p}{):} \PYG{k+kt}{String} \PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{n}{SimpleDateFormat}\PYG{p}{(}\PYG{n}{patern}\PYG{p}{)}
+        \PYG{p}{.}\PYG{n+na}{format}\PYG{p}{(}\PYG{n}{systemTime}\PYG{p}{).}\PYG{n+na}{toString}\PYG{p}{()}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kd}{fun} \PYG{n+nf}{mapFloat}\PYG{p}{(}\PYG{n}{keyValue}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{in\PYGZus{}min}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{in\PYGZus{}max}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{out\PYGZus{}min}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{,} \PYG{n}{out\PYGZus{}max}\PYG{p}{:} \PYG{k+kt}{Float}\PYG{p}{):}\PYG{k+kt}{Float}\PYG{p}{\PYGZob{}}
+    \PYG{k}{return} \PYG{p}{(}\PYG{n}{keyValue} \PYG{o}{\PYGZhy{}} \PYG{n}{in\PYGZus{}min}\PYG{p}{)} \PYG{o}{*} \PYG{p}{(}\PYG{n}{out\PYGZus{}max} \PYG{o}{\PYGZhy{}} \PYG{n}{out\PYGZus{}min}\PYG{p}{)} \PYG{o}{/} \PYG{p}{(}\PYG{n}{in\PYGZus{}max} \PYG{o}{\PYGZhy{}} \PYG{n}{in\PYGZus{}min}\PYG{p}{)} \PYG{o}{+} \PYG{n}{out\PYGZus{}min}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/**}
+\PYG{c+cm}{ * ViewHolder that holds a single [TextView].}
+\PYG{c+cm}{ *}
+\PYG{c+cm}{ * A ViewHolder holds a view for the [RecyclerView] as well as providing additional information}
+\PYG{c+cm}{ * to the RecyclerView such as where on the screen it was last drawn during scrolling.}
+\PYG{c+cm}{ */}
+\PYG{k+kd}{class} \PYG{n+nc}{TextItemViewHolder}\PYG{p}{(}\PYG{k+kd}{val} \PYG{n+nv}{textView}\PYG{p}{:} \PYG{n}{TextView}\PYG{p}{):} \PYG{n}{RecyclerView}\PYG{p}{.}\PYG{n+na}{ViewHolder}\PYG{p}{(}\PYG{n}{textView}\PYG{p}{)}
+\end{Verbatim}

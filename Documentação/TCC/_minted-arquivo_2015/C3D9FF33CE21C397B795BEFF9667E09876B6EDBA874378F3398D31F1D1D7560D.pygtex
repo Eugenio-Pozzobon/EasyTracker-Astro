@@ -1,0 +1,51 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Initializate HC05 Serial Comunication}
+\PYG{c+cm}{ */}
+\PYG{k+kr}{void} \PYG{n+nf}{bluetoothSart}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{begin}\PYG{p}{(}\PYG{l+m+mi}{9600}\PYG{p}{);}   \PYG{c+c1}{//Serial Bluetooth}
+  \PYG{n+nf}{pinMode}\PYG{p}{(}\PYG{n}{bluetoothStatePin}\PYG{p}{,} \PYG{k+kr}{INPUT}\PYG{p}{);} \PYG{c+c1}{//Enable pin HC05, indicate if it is connected with smartphone or not}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+cm}{/*}
+\PYG{c+cm}{ * Manages Bluetooth Comunication}
+\PYG{c+cm}{ */}
+\PYG{k+kr}{void} \PYG{n+nf}{bluetoothCommunication}\PYG{p}{()} \PYG{p}{\PYGZob{}}
+
+  \PYG{k+kr}{bool} \PYG{n}{bluetoothState} \PYG{o}{=} \PYG{n}{checkBluetoothCondition}\PYG{p}{();}
+  
+  \PYG{k}{if} \PYG{p}{(}\PYG{n}{bluetoothState} \PYG{o}{=} \PYG{k+kr}{true}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+    
+    \PYG{k}{if} \PYG{p}{(} \PYG{p}{(}\PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{||} \PYG{p}{((}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timerBluetoothSendMessages}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{25}\PYG{p}{)} \PYG{p}{)} \PYG{p}{\PYGZob{}}\PYG{c+c1}{//50Hz}
+      
+      \PYG{k}{while} \PYG{p}{(}\PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{available}\PYG{p}{()} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+        \PYG{n}{timerBluetoothRecieveMessages} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();} \PYG{c+c1}{// resset timer to countdown for get ACK response.}
+        \PYG{n}{timerBluetoothRestartMessages} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();}
+        \PYG{n}{availableUserOption} \PYG{o}{=} \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{read}\PYG{p}{();} \PYG{c+c1}{//2ms for recieve a single char}
+        \PYG{n+nf}{Serial}\PYG{p}{.}\PYG{n+nf}{println}\PYG{p}{(}\PYG{n}{availableUserOption}\PYG{p}{);}
+      \PYG{p}{\PYGZcb{}}
+      
+      \PYG{k}{if} \PYG{p}{((}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timerBluetoothRecieveMessages}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{1000}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//it takes 16ms for send all angle buffer}
+        \PYG{n}{timerBluetoothSendMessages} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();} \PYG{c+c1}{// resset timer to countdown for send message.}
+        \PYG{n}{printDataBluetoothSerial}\PYG{p}{();} \PYG{c+c1}{//send messages to HC05 module}
+      \PYG{p}{\PYGZcb{}}
+      
+    \PYG{p}{\PYGZcb{}}
+
+    \PYG{k}{if} \PYG{p}{((}\PYG{n+nf}{millis}\PYG{p}{()} \PYG{o}{\PYGZhy{}} \PYG{n}{timerBluetoothRestartMessages}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{2000}\PYG{p}{)} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//if there is no communication with app (ACK) Try restart communication}
+      \PYG{n}{timerBluetoothRestartMessages} \PYG{o}{=} \PYG{n+nf}{millis}\PYG{p}{();}
+      \PYG{n}{printDataBluetoothSerial}\PYG{p}{();} \PYG{c+c1}{//send messages to HC05 module}
+    \PYG{p}{\PYGZcb{}}
+    
+  \PYG{p}{\PYGZcb{}}
+  
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kr}{void} \PYG{n+nf}{printDataBluetoothSerial}\PYG{p}{()} \PYG{p}{\PYGZob{}} \PYG{c+c1}{//it takes 16ms for send this messages buffer}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleY} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{));} \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleX} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{));} \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleZ} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{));} \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{},\PYGZdq{}}\PYG{p}{);}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleX} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{+} \PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleY} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{)} \PYG{o}{+} \PYG{k+kr}{int}\PYG{p}{(}\PYG{n}{angleZ} \PYG{o}{*} \PYG{l+m+mi}{10}\PYG{p}{));}
+  \PYG{n}{bluetoothSerial}\PYG{p}{.}\PYG{n+nf}{print}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
