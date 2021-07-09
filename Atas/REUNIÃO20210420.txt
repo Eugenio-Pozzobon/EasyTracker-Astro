@@ -1,0 +1,35 @@
+Gráfico dos ângulos 
+esperado x real
+diferença
+
+gráfico do erro procentual
+
+Não precisa longitude, só interessa latitude
+
+icone com interrogação para popup de info dsobre declinação magnética
+
+VER CINZA DO MODO NOTURNO
+
+Fazer separado
+	*Ajuste de nível
+	*Ajuste de azimute
+		Escrever os pontos cardiais e remover valor
+	*ajuste de latitude/elevação
+
+remover valores de ângulos
+
+pensar primeiro em português
+	depois avaliar tradução
+
+Mandar comando para mesa em um segundo momento
+		adicionar botões para rebobinar etc.
+
+
+GPS: Opção de auto preenchimento ou digitar direto.
+	Orientar preenchimento (grau, minuto, segundo)
+ 
+Declinação Magnética: seleção android. Adicionar interrogação para site de declinação magnética
+
+Adicionar icone do bluetooth
+
+Adicionar "check" e "não check" para botões concluído 

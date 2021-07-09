@@ -1,0 +1,33 @@
+Camobi Parafusos:
+Dobradiça -> 50mm OK + parafusos
+Porca M6 para madeira -> Não tem! Mudar para rosca de 1/4 ou porca sextavado colado?
+Porca 1/4 para madeira -> OK!
+
+Correções no CAD:
+	Porca Prensando Madeira
+	COLOCAR PLACA DE CIRCUITO IMPRESSO
+	Conferir se o eixo ao se deslocar não bate no tripé
+
+Ideia: Fazer uma versão cortada só das engrenages, para conferir se o sistema eletrônico e de engrenagens funciona?
+
+Podemos fazer a impressão no GEPOC? INRE? Algum laboratório...
+
+Diagrama Elétrico Corrigido v1.1
+Debounce nos botões via software
+	Entrada de interrupção do arduino
+
+
+Funcionamento do sistema para Serial, o que informar? como informar?
+	Alinhamento Polo Sul
+	Ângulo da mesa
+
+Diagramas de Montagem? Não, exeto a barra roscada
+
+Entrar em contato com o Paulo ou Gilberto do NUPEDEE
+Placa de circuito impresso -> NUPEDEE frezar, ou corroer.
+
+paulords@ufsm.br
+
+Verificar possibilidades para impressão 3D
+
+

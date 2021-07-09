@@ -1,8 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{//Define Variables}
-\PYG{k+kr}{double} \PYG{n}{STP\PYGZus{}SPEED} \PYG{o}{=} \PYG{l+m+mf}{1.89363}\PYG{p}{;}\PYG{c+c1}{//10;//}
-\PYG{k+kr}{byte} \PYG{n}{runningSteps} \PYG{o}{=} \PYG{l+m+mi}{20}\PYG{p}{;}
-
-\PYG{c+cp}{\PYGZsh{}define CALIBRATING\PYGZus{}TIME 30 }\PYG{c+c1}{//tempo de calibração do sensor magnetômetro.}
-\PYG{c+cp}{\PYGZsh{}define DEBUG}
-\end{Verbatim}

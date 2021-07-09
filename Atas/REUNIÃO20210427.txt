@@ -1,0 +1,11 @@
+-> Situação das disciplinas
+	Simplificar icone -> Fazer opturador parecer galáxia.
+-> Fragments e View Model
+	->Tela de perfil carregado (Adobe XD)
+-> Gráficos de erro -> Ideia de fazer isso por debugação e permitir análise mais cuidadosa.
+	->Formas de dobrar a barra com baixo erro?(Talvez)
+
+Popup para se conectar com bluetoth -> preencher todos os campos
+Mandar para o pessoal que faz vídeo no youtube pensando em divulgação. (FUTURO)
+
+

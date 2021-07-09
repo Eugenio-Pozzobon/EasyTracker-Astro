@@ -1,0 +1,21 @@
+Validação do Sistema
+
+
+	(Full Step x Half Step x Wave Step)
+
+	Houve uma correção no código para mudar a sequência de acionamento do motor, para um modo de 			meio passo e consumir menos corrente e também vibrar menos. É necessário pois permite um 		controle mais preciso em baixas velocidades também. É possível reduzir ainda mais porém ainda 		faltaria esse testes
+
+	Conjunto de borrachas funcionou MUITO bem!
+	Alguns detalhes no eixo-z somente.
+
+
+	Escrita do TCC: Apenas resolvi problemas na compilação do pacote da ufsm
+	Pretendo escrever de fato nesta semana
+
+	Dúvida: na escrita do TCC eu documento a evolução do sistema com os testes realizados? ou 		escrevo direto ao estado da arte atual do sistema? 
+
+		Resposta: Depende da extensão do TCC
+
+	--
+	Arruela para travar o movimento
+	Vacinação

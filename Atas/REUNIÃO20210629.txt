@@ -1,0 +1,32 @@
+Existe uma constância no erro da velocidade do motor na plataforma. Alternativas?
+		Reduzir o tamanho da barra para ficar majoritariamente a parte inicial do eixo.
+		Tempo atual: 3h
+		Reduzir para 1h30 (?)
+
+Mudar cálculo de derivada com mais pontos.
+
+Envio somente páginas com texto novo? Ou mando o tcc completo no estado da arte?
+Introdução, Resumo, seção 2.7. Se sobrar tempo fazer diagrama de montagem.
+
+revista cientifica
+livros, artigos de congresso, patentes, datasheets,
+sites.
+
+buscar aplication note. notas de aula (evitar)
+
+diminuir espaçamento do código, courrier. eNCURTAR COMENTÁRIOS, remover caracter de quebra de linha 
+
+Citações de Softwares no TCC: 
+	Licença do Solid dura até fim de julho. Fazer Correções de CAD até o fim desse mês, assim o 	projeto estará salvo em arquivos com licença.
+
+	Adobe XD é gratuíto apesar de eu ter usado um pirata
+	Android Studio é Gratuíto
+
+	Sem licença:
+	Menciono Edição das imagens em softwares da Adobe? Gimp talvez. Software de edição de imagens.
+	Menciono o Proteus para projeto das Placas de Circuito? Software de Layout de Placas de Circuito Impresso. 
+
+Apendices: +6000 linhas de código no Android Studio. Seria o caso de colocar tudo ou apenas arquivos importantes como arquivo com classe de comunicação bluetooth?
+
+Lhe Entrego a plataforma essa semana para as fotos em campo.
+	

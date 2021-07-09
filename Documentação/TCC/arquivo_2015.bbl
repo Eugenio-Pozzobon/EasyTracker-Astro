@@ -5,6 +5,11 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Andolfato 2017]{livro:astropratica}
+\abntrefinfo{Andolfato}{ANDOLFATO}{2017}
+{ANDOLFATO, R. \textbf{Astrofotografia Prática: O guia da Fotografia do
+  Universo}. Brasil: Clube de Autores, 2017. 454~p.}
+
 \bibitem[Android Studio 2021]{site:androidstudio}
 \abntrefinfo{Android\ldots}{ANDROID\ldots}{2021}
 {ANDROID Studio: Guia do usuário. Google, 2021.
@@ -90,6 +95,11 @@ Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.}
 
+\bibitem[Lochun et al. 2015]{book:bbcsky}
+\abntrefinfo{Lochun et al.}{LOCHUN et al.}{2015}
+{LOCHUN, K. et al. \textbf{The Complete Guide to Astrophotography.} [S.l.]: BBC
+  Sky at Night Magazine, 2015.}
+
 \bibitem[Material Design 2015]{site:materialdesign}
 \abntrefinfo{Material\ldots}{MATERIAL\ldots}{2015}
 {MATERIAL Design: Introduction. Google, 2015.
@@ -118,5 +128,13 @@ Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
 Acesso em 19 fev. 2021.
 Dispon{\'\i}vel em:
   \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.}
+
+\bibitem[{Viero, Eduardo} 2018]{site:eduardoemonica}
+\abntrefinfo{{Viero, Eduardo}}{{Viero, Eduardo}}{2018}
+{{Viero, Eduardo}. \textbf{Os 3 pilares da fotografia}. Eduardo e Mônica,
+  2018.
+Acessado em 5 de julho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.}
 
 \end{thebibliography}
