@@ -511,7 +511,8 @@ Defesa realizada por videoconferência.
    \@genericofalse
    \def\generico{\@genericotrue\gdef\UFSM@tipo {\@tipogenerico}%
    \gdef\UFSM@tipoen {\@tipogenericoen}
-   \gdef\UFSM@textofolharosto{\UFSM@tipo~apresentad\@concordagenerico~ao \UFSM@statuscurso~de \UFSM@nivelensino~em \UFSM@curso \if@presencial{}\else{~(EaD)}\fi~da \UFSM@instituicao~(\UFSM@instituicaosigla, RS), como requisito parcial para obtenção do grau de \textbf{\@graugenerico}.}}
+   %\gdef\UFSM@textofolharosto{\UFSM@tipo~apresentad\@concordagenerico~ao \UFSM@statuscurso~de \UFSM@nivelensino~em \UFSM@curso \if@presencial{}\else{~(EaD)}\fi~da \UFSM@instituicao~(\UFSM@instituicaosigla, RS), como requisito parcial para obtenção do grau de \textbf{\@graugenerico}.}}
+   \gdef\UFSM@textofolharosto{\UFSM@tipo~apresentad\@concordagenerico~ao \UFSM@statuscurso~de \UFSM@curso \if@presencial{}\else{~(EaD)}\fi~da \UFSM@instituicao~(\UFSM@instituicaosigla, RS), como requisito parcial para obtenção do grau de \textbf{\@graugenerico}.}}
 % % % % % % % % % % % % % % % % 
 
 \newif\if@errata
@@ -1071,7 +1072,10 @@ Defesa realizada por videoconferência.
     {\noindent\large{{\MakeUppercase{\UFSM@instituicaoead}}}}\\%
     \fi
     {\large{{\MakeUppercase{\UFSM@centroensino}}}}\\%
-    {\large{{\MakeUppercase{{\UFSM@statuscurso~de \UFSM@nivelensino~em \UFSM@curso}}}}}\\%
+
+    %{\large{{\MakeUppercase{{\UFSM@statuscurso~de \UFSM@nivelensino~em %\UFSM@curso}}}}}\\%
+    {\large{{\MakeUppercase{{\UFSM@statuscurso~de \UFSM@curso}}}}}\\%
+    
     \vspace{8\baselineskip}
     {\Large{\scalefont{0.926}\UFSM@autor}}\\
     \vspace{8\baselineskip}

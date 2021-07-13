@@ -1,0 +1,162 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem[ALVES 2018]{man:vanessacameras}
+\abntrefinfo{ALVES}{ALVES}{2018}
+{ALVES, V. \textbf{Tipos de máquinas fotográficas}.
+4. ed. [S.l.], 2018. 54~p. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
+  \url{https://fotografiadicas.com.br/wp-content/uploads/2018/07/Tipos-de-M\%C3\%A1quinas-Fotogr\%C3\%A1ficas-Fotografia-Dicas-4a-Ed.pdf}.}
+
+\bibitem[Andolfato 2017]{livro:astropratica}
+\abntrefinfo{Andolfato}{ANDOLFATO}{2017}
+{ANDOLFATO, R. \textbf{Astrofotografia Prática: O guia da Fotografia do
+  Universo}. Brasil: Clube de Autores, 2017. 454~p.}
+
+\bibitem[Barbosa et al.
+  2021]{BarbosaEtAl2021InteracaoHumanoComputadorExperiencia}
+\abntrefinfo{Barbosa et al.}{BARBOSA et al.}{2021}
+{BARBOSA, S. D.~J. et al. \textbf{Interação {Humano}-{Computador} e
+  {Experiência} do {Usuário}}. [S.l.]: Autopublicação, 2021.}
+
+\bibitem[{BUDIU, R.} 2020]{site:nielsenRecall}
+\abntrefinfo{{BUDIU, R.}}{{BUDIU, R.}}{2020}
+{{BUDIU, R.} \textbf{Memory Recognition and Recall in User Interfaces.} Nielsen
+  Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/recognition-and-recall/}.}
+
+\bibitem[{CABAU JÚNIOR, S. D.} 2016]{site:introCabau}
+\abntrefinfo{{CABAU JÚNIOR, S. D.}}{{CABAU JÚNIOR, S. D.}}{2016}
+{{CABAU JÚNIOR, S. D.} \textbf{Introdução à astrofotografia}. Network for
+  Astronomy School Education, 2016.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
+  instrumentos/astrofotografia.pdf}.}
+
+\bibitem[Deep Sky Stacker c2021]{man:deepskystackerBetterImages}
+\abntrefinfo{Deep Sky Stacker}{DEEP SKY STACKER}{c2021a}
+{DEEP SKY STACKER. \textbf{How to create better images}.
+[S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
+  \url{http://deepskystacker.free.fr/english/theory.htm}.}
+
+\bibitem[Deep Sky Stacker c2021]{man:deepskystackerfaq}
+\abntrefinfo{Deep Sky Stacker}{DEEP SKY STACKER}{c2021b}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Light, Dark, Flat, Bias... What are they
+  and how to create them?}
+[S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
+  \url{http://deepskystacker.free.fr/english/faq.htm\#lightdarkflatoffset}.}
+
+\bibitem[{EGAN, M.} c2021]{site:nyxtech}
+\abntrefinfo{{EGAN, M.}}{{EGAN, M.}}{c2021}
+{{EGAN, M.} \textbf{Nyx Tech}. Nyx Tech, c2021.
+Acesso em 29 mar. 2021.
+Dispon{\'\i}vel em: \url{https://nyxtech.us/}.}
+
+\bibitem[Google Developers 2021]{site:androidstudio}
+\abntrefinfo{Google Developers}{GOOGLE DEVELOPERS}{2021}
+{GOOGLE DEVELOPERS. \textbf{Android Studio}: Guia do usuário.
+[S.l.], 2021. Acesso em 16 mar.2021. Dispon{\'\i}vel em:
+  \url{https://developer.android.com/studio/intro}.}
+
+\bibitem[{HARLEY, A.} 2014]{site:nielsenIcon}
+\abntrefinfo{{HARLEY, A.}}{{HARLEY, A.}}{2014}
+{{HARLEY, A.} \textbf{Icon Usability.} Nielsen Norman Group, 2014.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/icon-usability/}.}
+
+\bibitem[{HELERBROCK, Rafael} c2021]{site:brescolaAstrofoto}
+\abntrefinfo{{HELERBROCK, Rafael}}{{HELERBROCK, Rafael}}{c2021}
+{{HELERBROCK, Rafael}. \textbf{História da Astronomia}. Brasil Escola, c2021.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.}}
+
+\bibitem[{iOptron Corporation} c2021]{site:ioptron}
+\abntrefinfo{{iOptron Corporation}}{{iOptron Corporation}}{c2021}
+{{iOptron Corporation}. \textbf{SkyGuiderTM Pro camera mount full package}.
+  IOPTRON, c2021.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
+
+\bibitem[{JOYCE, A.} 2020]{site:nielsenHelpandDoc}
+\abntrefinfo{{JOYCE, A.}}{{JOYCE, A.}}{2020}
+{{JOYCE, A.} \textbf{Help and Documentation}. Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/help-and-documentation/}.}
+
+\bibitem[{KALEY, A.} 2018]{site:nielsenRealWorld}
+\abntrefinfo{{KALEY, A.}}{{KALEY, A.}}{2018}
+{{KALEY, A.} \textbf{Match Between the System and the Real Worl}. Nielsen
+  Norman Group, 2018.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/match-system-real-world/}.}
+
+\bibitem[{LAUBHEIMER, P.} 2015]{site:nielsenError}
+\abntrefinfo{{LAUBHEIMER, P.}}{{LAUBHEIMER, P.}}{2015}
+{{LAUBHEIMER, P.} \textbf{Preventing User Errors}. Nielsen Norman Group, 2015.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/slips/}.}
+
+\bibitem[{LAUBHEIMER, P.} 2020]{site:nielsenFlexibility}
+\abntrefinfo{{LAUBHEIMER, P.}}{{LAUBHEIMER, P.}}{2020}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Flexibility and Efficiency of Use}.
+  Nielsen Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.}
+
+\bibitem[Lochun et al. 2015]{book:bbcsky}
+\abntrefinfo{Lochun et al.}{LOCHUN et al.}{2015}
+{LOCHUN, K. et al. \textbf{The Complete Guide to Astrophotography.} [S.l.]: BBC
+  Sky at Night Magazine, 2015.}
+
+\bibitem[Material Fundation 2021]{site:materialdesign}
+\abntrefinfo{Material Fundation}{MATERIAL FUNDATION}{2021}
+{MATERIAL FUNDATION. \textbf{Material Design}: Introduction.
+[S.l.], 2021. Acesso em 16 mar. 2021. Dispon{\'\i}vel em:
+  \url{https://material.io/design/introduction}.}
+
+\bibitem[{NIELSEN, J.} 2020]{site:nielsen}
+\abntrefinfo{{NIELSEN, J.}}{{NIELSEN, J.}}{2020}
+{{NIELSEN, J.} \textbf{Usability Heuristics for User Interface Design.} Nielsen
+  Norman Group, 2020.
+Acessado em 25 de junho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.nngroup.com/articles/ten-usability-heuristics/}.}
+
+\bibitem[{REDKA, M.} 2021]{site:kotlinxjava}
+\abntrefinfo{{REDKA, M.}}{{REDKA, M.}}{2021}
+{{REDKA, M.} \textbf{Kotlin vs. Java}: Which programming language to choose for
+  your android app. MLSDev, 2021.
+Acesso em 16 mar. 2021.
+Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
+
+\bibitem[REGINA 2013]{man:claudia7licoes}
+\abntrefinfo{REGINA}{REGINA}{2013}
+{REGINA, C. \textbf{Aprenda a Fotografar em 7 Lições}.
+[S.l.], 2013. 18~p.}
+
+\bibitem[{SANTOS, N. S.} 2010]{site:importanciaAstroftoSantos}
+\abntrefinfo{{SANTOS, N. S.}}{{SANTOS, N. S.}}{2010}
+{{SANTOS, N. S.} \textbf{A astrofotografia e sua importância para a
+  astronomia}. Educação Espacial, 2010.
+Acesso em 19 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.}
+
+\bibitem[{VIERO, E.} 2018]{site:eduardoemonica}
+\abntrefinfo{{VIERO, E.}}{{VIERO, E.}}{2018}
+{{VIERO, E.} \textbf{Os 3 pilares da fotografia}. Eduardo e Mônica, 2018.
+Acessado em 5 de julho de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.}
+
+\end{thebibliography}
