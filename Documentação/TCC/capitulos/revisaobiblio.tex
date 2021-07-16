@@ -14,11 +14,13 @@ Além de uma câmera e uma lente, existem alguns equipamentos periféricos que s
 
 \subsubsection{Câmeras}
 
-DSLR e Mirrorless. \cite{man:vanessacameras}
+As câmeras digitais possuem sensores CMOS-(Complementary Metal-Oxide Semi-conductor) de imagem que substituem o filme das máquinas fotográficas mais antigas. O sensor CMOS pode ter diversos tamanhos físicos diferentes e com uma densidade de pixels por polegada (dpi) diversa entre os modelos, mas via de regra, quanto maior for o sensor físico, mais qualidade terá a imagem final \cite{man:vanessacameras}.
+
+Existem diversos modelos de câmeras para fotografia: compacta, super-zoom, mirrorless, DLSR e por fim as câmeras em celulares. As cãmeras Mirrorless atualmente são equiparáveis às DSLR e ambas são as mais usadas para astrofotografia, possibilitam trocar lente e podem funcionar bem de dia e de noite para capturar imagens da Via Láctea, galáxias e nebulosas. Além disso, possibilitam uma série de configurações em modo manual que não são possíveis em câmeras semi-profissionais, compactas ou de super-zoom \cite{book:bbcsky}.
 
 \subsubsection{Lentes}
 
-Lentes são um equipamento acoplado no corpo da câmera que é responsável por ordenar a luz que entra no sensor das câmeras. As lentes podem ser rígidas no corpo da câmera no caso de modelos semiprofissionais e compactos; ou podem ser removíveis para o caso de modelos profissionais. Nesse último caso, as lentes removíveis são itens que podem ser obtidos por escolha do fotógrafo e existe uma variedade de modelos.
+Lentes são um equipamento acoplado no corpo das câmeras que é responsável por ordenar a luz que entra no sensor das câmeras. As lentes podem ser rígidas no corpo da câmera no caso de modelos semiprofissionais e compactos; ou podem ser removíveis para o caso de modelos profissionais. Nesse último caso, as lentes removíveis são itens que podem ser obtidos por escolha do fotógrafo e existe uma variedade de modelos.
 
 Esses modelos podem ser lentes fixas ou zoom. O primeiro é um modelo de lente que possui uma distância focal fixa, conseguindo ler apenas um ângulo de visão único. Já as lentes \textit{zoom} permitem uma variação na distância focal o que acaba gerando o \textit{zoom} óptico \cite{man:claudia7licoes}. 
 
@@ -119,6 +121,41 @@ O movimento de rotação da terra gera um movimento aparente no céu. Ao realiza
 	\fonte{Autor}
 \end{figure}
 
+\subsubsection{Tempo de Exposição Máximo}
+\label{sec:TempoMax}
+
+Existe um limite de tempo máximo para que uma câmera fixa permaneça capturando luz sem que ocorra o fenômeno de \textit{star trail}. Esse tempo máximo depende de vários fatores, mas os dois principais são a distância focal da lente e a posição da estrela no céu.
+
+A distância focal é importante pois uma lente com um longo comprimento amplia a imagem, da mesma forma que amplia o rastro da estrelas. Do contrário, lentes com ângulo mais aberto, de menor comprimento focal, fazem tudo parecer pequeno, incluindo o movimento das estrelas, e isso permite um tempo de exposição maior \cite{book:astrophotographyAmateur}.
+
+A distância de um astro até a linha do equador celestial é chamada de declinação estrelar, sendo medida em graus. Quanto menor for essa distância, mais rápido a estrela aparenta se movimentar no céu. Seja a declinação simbolizada por $\sigma$, e a distancia focal nomeada $ F $, uma fórmula capaz de aproximar o limite do tempo de exposição é dada em \ref{eq:timeexp} \cite{book:astrophotographyAmateur}. Existem ainda outras fórmulas que buscam aproximar o tempo máximo de exposição. 
+
+\begin{equation}
+	t_{max}(s) = \dfrac{343}{F\cos(\sigma)}
+	\label{eq:timeexp}
+\end{equation}
+
+
+
+\paragraph{Regra dos 500}
+
+A regra dos 500 é uma fórmula que se baseia apenas distância focal, e o cálculo do tempo máximo é dado pela equação \ref{eq:timeexp500}. É uma regra muito simples mas que permite uma aproximação razoável sobre o tempo máximo de exposição. Existem variantes dessa regra que alteram a constante no numerador, como a regra dos 300 ou a regra dos 400 \cite{site:500xNPF}.
+
+\begin{equation}
+	t_{max}(s) = \dfrac{500}{F}
+	\label{eq:timeexp500}
+\end{equation}
+
+\paragraph{Regra NPF}
+
+A regra NPF é uma evolução da fórmula dada em \ref{eq:timeexp}, que considera multiplos fatores para recalcular a constante do numerador.
+\cite{site:500xNPF}. O tempo de exposição máximo é cálculado pela equação \ref{eq:npf} com base na abertura da lente ($ N $), a distância focal ($ F $), o tamanho em micrometros do sensor da câmera ($ p $), a declinação da estrela para onde a câmera será apontada ($\sigma$), e um fator de multiplicação ($ k $). O fator $ k $ é mantido em 1, porém pode ser aumentado até k=3 para obter imagens mais nítidas e contrastantes \cite{site:500xNPF}. 
+
+\begin{equation}
+	t_{max}(s) = k \cdot \dfrac{16.9 N  + 0.1 F + 13.7 p}{F\cos(\sigma)}
+	\label{eq:npf}
+\end{equation}
+
 \subsection{Empilhamento de Fotos}
 
 O fenômeno de Star Trail gera a necessidade do uso de ferramentas para compensar o movimento da terra e permitir uma fotografia de longa exposição sem que se crie rastro. Essa compensação pode ser feita por meio de software, realizando-se o empilhamentos de fotos de curta exposição \cite{livro:astropratica}.
@@ -179,8 +216,33 @@ Os \textit{Bias/Offset Frames} são usados para remover sinais de ruído na leit
 
 \subsection{Métodos de Rastreamento}
 
+Tendo em vista o limite do tempo de exposição e o movimento de rotação da terra descutidos na seção \ref{sec:TempoMax}, os softwares de empilhamento possuem algoritmos que compensam a rotação das estrelas, rotacionando as imagens fotografadas no sentido oposto, e realizando o empilhamento dessas imagens após esse ajuste de nível das fotos. Esse método compensa o ruído, mas como os tempos de exposições são curtos, não é possível obter cor, brilho e contrastes nos objetos celestes. Isso só é possível capturar aumentando o tempo de exposição. 
+
+Então, para realizar astrofotografias de longa exposição, é necessário o uso de um rastreador físico que movimenta a câmera no sentido de rotação aparente das estrelas no céu, garantindo que não ocorrerá o efeito de \textit{Star Trail}. Existem dois métodos de rastreamento: Alt-Azimutal e Equatorial \cite{book:bbcsky}.
+
 \subsubsection{Alt-Azimutal}
+
+Uma montagem Alt-Azimutal funciona movendo a câmera ou um telescópio por meio dos eixos veritical e horizontal, alterando o azimute e a altitude simultaneamente. Isso requer um sistema com dois motores para realizar o rastreamento, o que torna essa montagem mais cara complexa. Além disso, para astrofotografias, essa montagem acaba não sendo indicada pois ela não consegue compensar a rotação aparente dos astros que também é gerado pelo movimento de rotação da terra (Figura \ref{fig:altazimuterotation}) \cite{book:bbcsky}. 
+
+\begin{figure}[!htb]
+	\centering
+	\caption{O enquadramento não rotaciona com o astro na montagem Alt-Azimutal}
+	\includegraphics[width=0.45\linewidth]{figuras/altazimuterotation}
+	\label{fig:altazimuterotation}
+	\fonte{Adaptado de \cite{book:bbcsky}}
+\end{figure}
+
 \subsubsection{Equatorial}
+
+Ao contrário do modelo de montagem comentado na seção anterior, uma montagem equatorial consegue compensar a rotação aparente dos astros (Figura \ref{fig:equatorialrotation}) e por esse motivo é a melhor opção de mecanismo para realizar astrofotografias. Isso ocorre pois essa construção realiza o movimento da câmera de forma circular, na mesma velocidade de rotação aparente da terra, após alinhar o eixo de altitude junto com o meridiano polar (eixo norte-sul) \cite{book:bbcsky}. Esse sistema requer somente um motor, porém precisa também de um método acurado de alinhamento com o meridiano e isso será explorado na próxima seção. 
+
+\begin{figure}[!htb]
+	\centering
+	\caption{O enquadramento se mantêm constante na montagem equatorial.}
+	\includegraphics[width=0.45\linewidth]{figuras/equatorialrotation}
+	\label{fig:equatorialrotation}
+	\fonte{Adaptado de \cite{book:bbcsky}}
+\end{figure}
 
 \section{Plataformas Equatoriais}
 
@@ -201,6 +263,8 @@ Declinação Magnética
 \subsection{Soluções Comerciais Existentes}
 
 Existem inúmeras soluções comerciais para o problema proposto, porém todos eles usam uma luneta ou \textit{laser} como método de alinhamento polar. Isso só é possível no hemisfério norte devido a presença da estrela polar. Existem produtos com diferentes especificações e orçamentos. A Tabela \ref{tabela_benchmark} ilustra os principais equipamentos, comparando suas funcionalidades. 
+
+%Todo: mencionar o rastreador compacto moveshootmove.com
 
 \begin{table}[htb]
 	\caption{Comparativo das Soluções de Mercado}
@@ -230,7 +294,7 @@ Contudo, na realidade brasileira, o preço mostrado passaria ainda por impostos,
 
 \section{Objetivos}
 
-Pelo \textit{benchmark} exposto, fixou-se como objetivos o desenvolvimento de uma solução robusta, visualmente elegante, e que consiga se aproximar das propriedades do modelo comercial mais acessível com o custo inferior a 115 dólares. Além disso, deve ter como diferencial um aplicativo que permita uma fácil interação do usuário com o sistema, facilitando o processo de configuração e alinhamento polar.
+Pelo \textit{benchmark} exposto, fixou-se como objetivos o desenvolvimento de uma solução robusta, visualmente elegante, e que consiga se aproximar das propriedades do modelo comercial mais acessível, com o custo inferior a 115 dólares. Além disso, deve ter como diferencial um aplicativo que permita uma fácil interação do usuário com o sistema, facilitando o processo de configuração e alinhamento polar.
 
 \section{Protocolos de Comunicação}
 
