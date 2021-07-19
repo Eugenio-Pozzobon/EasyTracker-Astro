@@ -3,6 +3,7 @@ Electronics/CADs/
 CAD/Imported/
 Documentação/Fotos/
 Documentação/Teste Vibração/
+src/main_Cmake/
 *.csv
 *.pdsbak
 *.err
