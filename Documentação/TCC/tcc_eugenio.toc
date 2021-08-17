@@ -1,105 +1,107 @@
 \babel@toc {brazil}{}
 \contentsline {chapter}{\numberline {1}Introduçao}{10}{section*.7}%
 \contentsline {chapter}{\numberline {2}Desenvolvimento Teórico}{12}{section*.9}%
-\contentsline {section}{\numberline {2.1}Astrofografia}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.1}Astrofotografia}{12}{section.2.1}%
 \contentsline {subsection}{\numberline {2.1.1}Equipamentos}{12}{subsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.1.1}Câmeras}{12}{subsubsection.2.1.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.1.2}Lentes}{13}{subsubsection.2.1.1.2}%
 \contentsline {paragraph}{\numberline {2.1.1.2.1}Distância Focal}{13}{paragraph.2.1.1.2.1}%
-\contentsline {subsection}{\numberline {2.1.2}Exposição}{14}{subsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.2.1}Velocidade}{15}{subsubsection.2.1.2.1}%
+\contentsline {subsection}{\numberline {2.1.2}Exposição}{13}{subsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.2.1}Tempo de Exposição}{15}{subsubsection.2.1.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.2.2}Abertura}{15}{subsubsection.2.1.2.2}%
 \contentsline {subsubsection}{\numberline {2.1.2.3}Sensibilidade (ISO)}{16}{subsubsection.2.1.2.3}%
 \contentsline {subsection}{\numberline {2.1.3}Formatos de Arquivos}{17}{subsection.2.1.3}%
 \contentsline {subsection}{\numberline {2.1.4}Rastro de Estrelas}{17}{subsection.2.1.4}%
-\contentsline {subsubsection}{\numberline {2.1.4.1}Tempo de Exposição Máximo}{18}{subsubsection.2.1.4.1}%
+\contentsline {subsubsection}{\numberline {2.1.4.1}Tempo de Exposição Máximo}{17}{subsubsection.2.1.4.1}%
 \contentsline {paragraph}{\numberline {2.1.4.1.1}Regra dos 500}{18}{paragraph.2.1.4.1.1}%
 \contentsline {paragraph}{\numberline {2.1.4.1.2}Regra NPF}{18}{paragraph.2.1.4.1.2}%
 \contentsline {subsection}{\numberline {2.1.5}Empilhamento de Fotos}{19}{subsection.2.1.5}%
-\contentsline {subsubsection}{\numberline {2.1.5.1}Imagens de Calibração}{19}{subsubsection.2.1.5.1}%
+\contentsline {subsubsection}{\numberline {2.1.5.1}Imagens de Calibração}{20}{subsubsection.2.1.5.1}%
 \contentsline {paragraph}{\numberline {2.1.5.1.1}\textit {Dark Frames}}{20}{paragraph.2.1.5.1.1}%
-\contentsline {paragraph}{\numberline {2.1.5.1.2}\textit {Bias (Offset) Frames}}{21}{paragraph.2.1.5.1.2}%
+\contentsline {paragraph}{\numberline {2.1.5.1.2}\textit {Bias (Offset) Frames}}{20}{paragraph.2.1.5.1.2}%
 \contentsline {paragraph}{\numberline {2.1.5.1.3}\textit {Flat Frames}}{21}{paragraph.2.1.5.1.3}%
 \contentsline {subsection}{\numberline {2.1.6}Métodos de Rastreamento}{21}{subsection.2.1.6}%
 \contentsline {subsubsection}{\numberline {2.1.6.1}Alt-Azimutal}{21}{subsubsection.2.1.6.1}%
 \contentsline {subsubsection}{\numberline {2.1.6.2}Equatorial}{22}{subsubsection.2.1.6.2}%
-\contentsline {section}{\numberline {2.2}Plataformas Equatoriais}{23}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Métodos de Alinhamento Polar}{23}{subsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.1.1}Ajuste de Azimute}{23}{subsubsection.2.2.1.1}%
-\contentsline {paragraph}{\numberline {2.2.1.1.1}Localização da Estrela Polar}{23}{paragraph.2.2.1.1.1}%
-\contentsline {paragraph}{\numberline {2.2.1.1.2}Alinhamento com o Polo Norte}{23}{paragraph.2.2.1.1.2}%
-\contentsline {subsubsection}{\numberline {2.2.1.2}Ajuste de Elevação}{23}{subsubsection.2.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.2.1.3}Método \textit {Drift}}{23}{subsubsection.2.2.1.3}%
-\contentsline {subsection}{\numberline {2.2.2}Soluções Comerciais Existentes}{23}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Objetivos}{24}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Protocolos de Comunicação}{25}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Serial}{25}{subsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.1.1}UART}{25}{subsubsection.2.4.1.1}%
-\contentsline {subsubsection}{\numberline {2.4.1.2}I2C}{25}{subsubsection.2.4.1.2}%
-\contentsline {subsection}{\numberline {2.4.2}Bluetooth}{25}{subsection.2.4.2}%
-\contentsline {section}{\numberline {2.5}Sensores e Atuadores}{25}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}Acelerômetro}{25}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}Giroscópio}{25}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}Magnetômetro}{25}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}GPS}{25}{subsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.5.5}Motor de Passo}{25}{subsection.2.5.5}%
-\contentsline {section}{\numberline {2.6}Microcontroladores}{26}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}Arduino Nano}{26}{subsection.2.6.1}%
-\contentsline {section}{\numberline {2.7}Interface Gráfica}{26}{section.2.7}%
-\contentsline {subsection}{\numberline {2.7.1}Princípios e Diretrizes}{26}{subsection.2.7.1}%
-\contentsline {subsubsection}{\numberline {2.7.1.1}Visibilidade dos status do sistema}{26}{subsubsection.2.7.1.1}%
-\contentsline {subsubsection}{\numberline {2.7.1.2}Comunicar-se com o mundo real}{26}{subsubsection.2.7.1.2}%
-\contentsline {subsubsection}{\numberline {2.7.1.3}Liberdade de Controle do Usuário}{27}{subsubsection.2.7.1.3}%
-\contentsline {subsubsection}{\numberline {2.7.1.4}Consistências e Padrões}{27}{subsubsection.2.7.1.4}%
-\contentsline {subsubsection}{\numberline {2.7.1.5}Prevenção de erros}{27}{subsubsection.2.7.1.5}%
-\contentsline {subsubsection}{\numberline {2.7.1.6}Relembrar o usuário é mais fácil do que o usuário relembrar}{28}{subsubsection.2.7.1.6}%
-\contentsline {subsubsection}{\numberline {2.7.1.7}Torne o sistema flexível e eficiente}{28}{subsubsection.2.7.1.7}%
-\contentsline {subsubsection}{\numberline {2.7.1.8}Tenha um projeto minimalista}{28}{subsubsection.2.7.1.8}%
-\contentsline {subsubsection}{\numberline {2.7.1.9}Ajude o usuário a entender e se recuperar de erros}{28}{subsubsection.2.7.1.9}%
-\contentsline {subsubsection}{\numberline {2.7.1.10}Tire dúvidas e documente o sistema}{29}{subsubsection.2.7.1.10}%
-\contentsline {subsection}{\numberline {2.7.2}Android}{29}{subsection.2.7.2}%
-\contentsline {subsubsection}{\numberline {2.7.2.1}Ambiente de Desenvolvimento}{29}{subsubsection.2.7.2.1}%
-\contentsline {subsubsection}{\numberline {2.7.2.2}Linguagens de Programação}{29}{subsubsection.2.7.2.2}%
-\contentsline {subsubsection}{\numberline {2.7.2.3}\textit {Material Design}}{30}{subsubsection.2.7.2.3}%
-\contentsline {chapter}{\numberline {3}Desenvolvimento da Plataforma}{31}{section*.24}%
-\contentsline {section}{\numberline {3.1}Hardware}{31}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Módulos Comerciais}{31}{subsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.1.1}Módulo Bluetooth HC05}{31}{subsubsection.3.1.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.1.2}Módulo de sensores GY87}{31}{subsubsection.3.1.1.2}%
-\contentsline {subsection}{\numberline {3.1.2}Motor 28BYJ-48}{31}{subsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.2.1}Driver ULN2003}{31}{subsubsection.3.1.2.1}%
-\contentsline {subsection}{\numberline {3.1.3}Placa de Circuito Impresso}{32}{subsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.3.1}Diagrama Elétrico}{32}{subsubsection.3.1.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.3.2}\textit {Layout}}{32}{subsubsection.3.1.3.2}%
-\contentsline {subsubsection}{\numberline {3.1.3.3}Manufatura}{32}{subsubsection.3.1.3.3}%
-\contentsline {section}{\numberline {3.2}Projeto Estrutural}{32}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Requisitos de Projeto}{32}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Peças}{32}{subsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.1}Frame Principal}{32}{subsubsection.3.2.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2.2}Engrenagens}{32}{subsubsection.3.2.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.2.3}Barra de Elevação}{32}{subsubsection.3.2.2.3}%
-\contentsline {subsection}{\numberline {3.2.3}Manufatura}{33}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Montagem}{33}{subsection.3.2.4}%
-\contentsline {chapter}{\numberline {4}Desenvolvimento do Aplicativo}{34}{section*.25}%
-\contentsline {section}{\numberline {4.1}Necessidades dos Usuários}{34}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Prototipação das Telas}{34}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Implementação do Aplicativo Android}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Requisitos de Sistema}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Arquitetura do Funcionamento}{34}{subsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.1}\textit {Activity}}{34}{subsubsection.4.3.2.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.2}\textit {Room Database}}{34}{subsubsection.4.3.2.2}%
-\contentsline {subsubsection}{\numberline {4.3.2.3}\textit {Fragments}}{35}{subsubsection.4.3.2.3}%
-\contentsline {paragraph}{\numberline {4.3.2.3.1}\textit {View Model}}{35}{paragraph.4.3.2.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2.4}Protocolo de Comunicação \textit {Bluetooth}}{35}{subsubsection.4.3.2.4}%
-\contentsline {chapter}{\numberline {5}Resultados Obtidos}{36}{section*.26}%
-\contentsline {section}{\numberline {5.1}Análise de Vibração}{36}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Método}{36}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Discussão}{36}{subsection.5.1.2}%
-\contentsline {section}{\numberline {5.2}Custo Total do Sistema}{36}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Análise de Desempenho do Aplicativo}{36}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Fotografias}{36}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Considerações Finais}{37}{section*.27}%
-\contentsline {section}{\numberline {6.1}Projeto \textit {Open-Source}}{37}{section.6.1}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Refer\^encias Bibliogr\'aficas}{38}{section*.29}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice A~--~Desenho Técnico das Peças}{41}{section*.31}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice B~--~Diagrama de Montagem}{43}{section*.36}%
+\contentsline {section}{\numberline {2.2}Plataformas Equatoriais}{22}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Modelos de Montagem}{23}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Métodos de Alinhamento Polar}{26}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Localização da Estrela Polar}{26}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}Instrumentação}{27}{subsubsection.2.2.2.2}%
+\contentsline {paragraph}{\numberline {2.2.2.2.1}Ajuste de Azimute}{28}{paragraph.2.2.2.2.1}%
+\contentsline {paragraph}{\numberline {2.2.2.2.2}Ajuste de Elevação}{28}{paragraph.2.2.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.3}Método \textit {Drift}}{29}{subsubsection.2.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Soluções Comerciais Existentes}{31}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Objetivos}{32}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Protocolos de Comunicação}{32}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Serial}{32}{subsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.1}UART}{32}{subsubsection.2.4.1.1}%
+\contentsline {subsubsection}{\numberline {2.4.1.2}I2C}{32}{subsubsection.2.4.1.2}%
+\contentsline {subsection}{\numberline {2.4.2}Bluetooth}{33}{subsection.2.4.2}%
+\contentsline {section}{\numberline {2.5}Sensores e Atuadores}{33}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Acelerômetro}{33}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Giroscópio}{33}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Magnetômetro}{33}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}GPS}{33}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}Motor de Passo}{33}{subsection.2.5.5}%
+\contentsline {section}{\numberline {2.6}Microcontroladores}{33}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Arduino Nano}{33}{subsection.2.6.1}%
+\contentsline {section}{\numberline {2.7}Interface Gráfica}{33}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Princípios e Diretrizes}{33}{subsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.1.1}Visibilidade dos status do sistema}{34}{subsubsection.2.7.1.1}%
+\contentsline {subsubsection}{\numberline {2.7.1.2}Comunicar-se com o mundo real}{34}{subsubsection.2.7.1.2}%
+\contentsline {subsubsection}{\numberline {2.7.1.3}Liberdade de Controle do Usuário}{34}{subsubsection.2.7.1.3}%
+\contentsline {subsubsection}{\numberline {2.7.1.4}Consistências e Padrões}{35}{subsubsection.2.7.1.4}%
+\contentsline {subsubsection}{\numberline {2.7.1.5}Prevenção de erros}{35}{subsubsection.2.7.1.5}%
+\contentsline {subsubsection}{\numberline {2.7.1.6}Relembrar o usuário é mais fácil do que o usuário relembrar}{35}{subsubsection.2.7.1.6}%
+\contentsline {subsubsection}{\numberline {2.7.1.7}Torne o sistema flexível e eficiente}{35}{subsubsection.2.7.1.7}%
+\contentsline {subsubsection}{\numberline {2.7.1.8}Tenha um projeto minimalista}{36}{subsubsection.2.7.1.8}%
+\contentsline {subsubsection}{\numberline {2.7.1.9}Ajude o usuário a entender e se recuperar de erros}{36}{subsubsection.2.7.1.9}%
+\contentsline {subsubsection}{\numberline {2.7.1.10}Tire dúvidas e documente o sistema}{36}{subsubsection.2.7.1.10}%
+\contentsline {subsection}{\numberline {2.7.2}Android}{36}{subsection.2.7.2}%
+\contentsline {subsubsection}{\numberline {2.7.2.1}Ambiente de Desenvolvimento}{36}{subsubsection.2.7.2.1}%
+\contentsline {subsubsection}{\numberline {2.7.2.2}Linguagens de Programação}{37}{subsubsection.2.7.2.2}%
+\contentsline {subsubsection}{\numberline {2.7.2.3}\textit {Material Design}}{37}{subsubsection.2.7.2.3}%
+\contentsline {subsection}{\numberline {2.7.3}Usuários}{38}{subsection.2.7.3}%
+\contentsline {chapter}{\numberline {3}Desenvolvimento da Plataforma}{39}{section*.37}%
+\contentsline {section}{\numberline {3.1}Hardware}{39}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Módulos Comerciais}{39}{subsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.1}Módulo Bluetooth HC05}{39}{subsubsection.3.1.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1.2}Módulo de sensores GY87}{39}{subsubsection.3.1.1.2}%
+\contentsline {subsection}{\numberline {3.1.2}Motor 28BYJ-48}{39}{subsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2.1}Driver ULN2003}{39}{subsubsection.3.1.2.1}%
+\contentsline {subsection}{\numberline {3.1.3}Placa de Circuito Impresso}{40}{subsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.3.1}Diagrama Elétrico}{40}{subsubsection.3.1.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.3.2}\textit {Layout}}{40}{subsubsection.3.1.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3.3}Manufatura}{40}{subsubsection.3.1.3.3}%
+\contentsline {section}{\numberline {3.2}Projeto Estrutural}{40}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Requisitos de Projeto}{40}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Peças}{40}{subsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.1}Frame Principal}{40}{subsubsection.3.2.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2.2}Engrenagens}{40}{subsubsection.3.2.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.2.3}Barra de Elevação}{40}{subsubsection.3.2.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Manufatura}{41}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Montagem}{41}{subsection.3.2.4}%
+\contentsline {chapter}{\numberline {4}Desenvolvimento do Aplicativo}{42}{section*.38}%
+\contentsline {section}{\numberline {4.1}Necessidades dos Usuários}{42}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Prototipação das Telas}{42}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Implementação do Aplicativo Android}{42}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Requisitos de Sistema}{42}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Arquitetura do Funcionamento}{42}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}\textit {Activity}}{42}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}\textit {Room Database}}{42}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}\textit {Fragments}}{43}{subsubsection.4.3.2.3}%
+\contentsline {paragraph}{\numberline {4.3.2.3.1}\textit {View Model}}{43}{paragraph.4.3.2.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}Protocolo de Comunicação \textit {Bluetooth}}{43}{subsubsection.4.3.2.4}%
+\contentsline {chapter}{\numberline {5}Resultados Obtidos}{44}{section*.39}%
+\contentsline {section}{\numberline {5.1}Análise de Vibração}{44}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Método}{44}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Discussão}{44}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5.2}Custo Total do Sistema}{44}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Análise de Desempenho do Aplicativo}{44}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Fotografias}{44}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Considerações Finais}{45}{section*.40}%
+\contentsline {section}{\numberline {6.1}Projeto \textit {Open-Source}}{45}{section.6.1}%
+\contentsline {chapter}{\hspace {\@tempdima }\noindent Refer\^encias Bibliogr\'aficas}{46}{section*.42}%
+\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice A~--~Desenho Técnico das Peças}{50}{section*.44}%
+\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice B~--~Diagrama de Montagem}{52}{section*.49}%

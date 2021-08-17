@@ -22,34 +22,48 @@
 {BARBOSA, S. D.~J. et al. \textbf{Interação {Humano}-{Computador} e
   {Experiência} do {Usuário}}. [S.l.]: Autopublicação, 2021.}
 
-\bibitem[{BUDIU, R.} 2020]{site:nielsenRecall}
-\abntrefinfo{{BUDIU, R.}}{{BUDIU, R.}}{2020}
-{{BUDIU, R.} \textbf{Memory Recognition and Recall in User Interfaces.} Nielsen
+\bibitem[BRESSER c2021]{site:bresserpolarscope}
+\abntrefinfo{BRESSER}{BRESSER}{c2021}
+{BRESSER. \textbf{BRESSER Polar Finder Scope for StarTracker}. Bressr group of
+  companies, c2021.
+Acesso em 11 ago. 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.bresser.de/en/Astronomy/BRESSER-Polar-Finder-Scope-for-StarTracker-PM-100.html}.}
+
+\bibitem[BUDIU 2020]{site:nielsenRecall}
+\abntrefinfo{BUDIU}{BUDIU}{2020}
+{BUDIU, R. \textbf{Memory Recognition and Recall in User Interfaces.} Nielsen
   Norman Group, 2020.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/recognition-and-recall/}.}
 
-\bibitem[{CABAU JÚNIOR, S. D.} 2016]{site:introCabau}
-\abntrefinfo{{CABAU JÚNIOR, S. D.}}{{CABAU JÚNIOR, S. D.}}{2016}
-{{CABAU JÚNIOR, S. D.} \textbf{Introdução à astrofotografia}. Network for
-  Astronomy School Education, 2016.
+\bibitem[Corporation c2021]{site:ioptron}
+\abntrefinfo{Corporation}{CORPORATION}{c2021}
+{CORPORATION iOptron. \textbf{SkyGuiderTM Pro camera mount full package}.
+  IOPTRON, c2021.
 Acesso em 20 fev. 2021.
-Dispon{\'\i}vel em:
-  \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
-  instrumentos/astrofotografia.pdf}.}
+Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
 
 \bibitem[Covington 2006]{book:astrophotographyAmateur}
 \abntrefinfo{Covington}{COVINGTON}{2006}
 {COVINGTON, M.~A. \textbf{Astrophotography for the Amateur}. [S.l.]: Cambridge
   University, 2006.}
 
-\bibitem[{COX, S.} 2021]{site:500xNPF}
-\abntrefinfo{{COX, S.}}{{COX, S.}}{2021}
-{{COX, S.} \textbf{00 Rule vs NPF Rule}: Shutter speed for astrophotography.
+\bibitem[COX 2021]{site:500xNPF}
+\abntrefinfo{COX}{COX}{2021}
+{COX, S. \textbf{00 Rule vs NPF Rule}: Shutter speed for astrophotography.
   photographylife, 2021.
 Acesso em 13 jul. 2021.
 Dispon{\'\i}vel em: \url{https://photographylife.com/500-rule-vs-npf-rule}.}
+
+\bibitem[{DAVID, K.} 2015]{site:pentaxBarnDoor}
+\abntrefinfo{{DAVID, K.}}{{DAVID, K.}}{2015}
+{{DAVID, K.} \textbf{Astrophotography Part 3 of 6: Making a Barn Door Tracker}.
+  Pentax Foruns, 2015.
+Acesso em 10 ago. 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.pentaxforums.com/articles/photo-articles/astrophotography-part-3-barn-door-tracker.html}.}
 
 \bibitem[Deep Sky Stacker c2021]{man:deepskystackerBetterImages}
 \abntrefinfo{Deep Sky Stacker}{DEEP SKY STACKER}{c2021a}
@@ -64,11 +78,24 @@ Dispon{\'\i}vel em: \url{https://photographylife.com/500-rule-vs-npf-rule}.}
 [S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
   \url{http://deepskystacker.free.fr/english/faq.htm\#lightdarkflatoffset}.}
 
-\bibitem[{EGAN, M.} c2021]{site:nyxtech}
-\abntrefinfo{{EGAN, M.}}{{EGAN, M.}}{c2021}
-{{EGAN, M.} \textbf{Nyx Tech}. Nyx Tech, c2021.
+\bibitem[DYER 2019]{site:testingMSM}
+\abntrefinfo{DYER}{DYER}{2019}
+{DYER, A. \textbf{Testing the MSM Tracker}. The Amazing Sky, 2019.
+Acesso em 10 ago. 2021.
+Dispon{\'\i}vel em:
+  \url{https://amazingsky.net/2019/08/22/testing-the-msm-tracker/}.}
+
+\bibitem[EGAN c2021]{site:nyxtech}
+\abntrefinfo{EGAN}{EGAN}{c2021a}
+{EGAN, M. \textbf{Nyx Tech}. Nyx Tech, c2021.
 Acesso em 29 mar. 2021.
 Dispon{\'\i}vel em: \url{https://nyxtech.us/}.}
+
+\bibitem[EGAN c2021]{site:nyxtechtips}
+\abntrefinfo{EGAN}{EGAN}{c2021b}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Tips and Tutorials}. Nyx Tech, c2021.
+Acesso em 9 ago. 2021.
+Dispon{\'\i}vel em: \url{https://nyxtech.us/pages/tips-tutorials}.}
 
 \bibitem[Google Developers 2021]{site:androidstudio}
 \abntrefinfo{Google Developers}{GOOGLE DEVELOPERS}{2021}
@@ -76,49 +103,64 @@ Dispon{\'\i}vel em: \url{https://nyxtech.us/}.}
 [S.l.], 2021. Acesso em 16 mar.2021. Dispon{\'\i}vel em:
   \url{https://developer.android.com/studio/intro}.}
 
-\bibitem[{HARLEY, A.} 2014]{site:nielsenIcon}
-\abntrefinfo{{HARLEY, A.}}{{HARLEY, A.}}{2014}
-{{HARLEY, A.} \textbf{Icon Usability.} Nielsen Norman Group, 2014.
+\bibitem[HARLEY 2014]{site:nielsenIcon}
+\abntrefinfo{HARLEY}{HARLEY}{2014}
+{HARLEY, A. \textbf{Icon Usability.} Nielsen Norman Group, 2014.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/icon-usability/}.}
 
-\bibitem[{HELERBROCK, Rafael} c2021]{site:brescolaAstrofoto}
-\abntrefinfo{{HELERBROCK, Rafael}}{{HELERBROCK, Rafael}}{c2021}
-{{HELERBROCK, Rafael}. \textbf{História da Astronomia}. Brasil Escola, c2021.
+\bibitem[HELERBROCK c2021]{site:brescolaAstrofoto}
+\abntrefinfo{HELERBROCK}{HELERBROCK}{c2021}
+{HELERBROCK, R. \textbf{História da Astronomia}. Brasil Escola, c2021.
 Acesso em 20 fev. 2021.
 Dispon{\'\i}vel em:
   \url{https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.}}
 
-\bibitem[{iOptron Corporation} c2021]{site:ioptron}
-\abntrefinfo{{iOptron Corporation}}{{iOptron Corporation}}{c2021}
-{{iOptron Corporation}. \textbf{SkyGuiderTM Pro camera mount full package}.
-  IOPTRON, c2021.
-Acesso em 20 fev. 2021.
-Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
+\bibitem[INFORMATION c2021]{site:noicDecMag}
+\abntrefinfo{INFORMATION}{INFORMATION}{c2021}
+{INFORMATION, N. C. F.~E. \textbf{Magnetic Field Calculators}. National Oceanic
+  and Atmospheric Administration, c2021.
+Acesso em 27 jul. 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml\#declination}.}
 
-\bibitem[{JOYCE, A.} 2020]{site:nielsenHelpandDoc}
-\abntrefinfo{{JOYCE, A.}}{{JOYCE, A.}}{2020}
-{{JOYCE, A.} \textbf{Help and Documentation}. Nielsen Norman Group, 2020.
+\bibitem[JÚNIOR 2016]{site:introCabau}
+\abntrefinfo{JÚNIOR}{JÚNIOR}{2016}
+{JÚNIOR, S.~D. C. \textbf{Introdução à astrofotografia}. Network for
+  Astronomy School Education, 2016.
+Acesso em 20 fev. 2021.
+Dispon{\'\i}vel em:
+  \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
+  instrumentos/astrofotografia.pdf}.}
+
+\bibitem[Jones 1980]{artigo:edjonescurved}
+\abntrefinfo{Jones}{JONES}{1980}
+{JONES, E. Some experiments with curved bolt drives.
+\textbf{Sky and Telescope Magazine}, 1980.}
+
+\bibitem[JOYCE 2020]{site:nielsenHelpandDoc}
+\abntrefinfo{JOYCE}{JOYCE}{2020}
+{JOYCE, A. \textbf{Help and Documentation}. Nielsen Norman Group, 2020.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/help-and-documentation/}.}
 
-\bibitem[{KALEY, A.} 2018]{site:nielsenRealWorld}
-\abntrefinfo{{KALEY, A.}}{{KALEY, A.}}{2018}
-{{KALEY, A.} \textbf{Match Between the System and the Real Worl}. Nielsen
-  Norman Group, 2018.
+\bibitem[KALEY 2018]{site:nielsenRealWorld}
+\abntrefinfo{KALEY}{KALEY}{2018}
+{KALEY, A. \textbf{Match Between the System and the Real Worl}. Nielsen Norman
+  Group, 2018.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/match-system-real-world/}.}
 
-\bibitem[{LAUBHEIMER, P.} 2015]{site:nielsenError}
-\abntrefinfo{{LAUBHEIMER, P.}}{{LAUBHEIMER, P.}}{2015}
-{{LAUBHEIMER, P.} \textbf{Preventing User Errors}. Nielsen Norman Group, 2015.
+\bibitem[LAUBHEIMER 2015]{site:nielsenError}
+\abntrefinfo{LAUBHEIMER}{LAUBHEIMER}{2015}
+{LAUBHEIMER, P. \textbf{Preventing User Errors}. Nielsen Norman Group, 2015.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/slips/}.}
 
-\bibitem[{LAUBHEIMER, P.} 2020]{site:nielsenFlexibility}
-\abntrefinfo{{LAUBHEIMER, P.}}{{LAUBHEIMER, P.}}{2020}
+\bibitem[LAUBHEIMER 2020]{site:nielsenFlexibility}
+\abntrefinfo{LAUBHEIMER}{LAUBHEIMER}{2020}
 {\underline{\ \ \ \ \ \ \ \ }. \textbf{Flexibility and Efficiency of Use}.
   Nielsen Norman Group, 2020.
 Acessado em 25 de junho de 2021.
@@ -130,23 +172,37 @@ Dispon{\'\i}vel em:
 {LOCHUN, K. et al. \textbf{The Complete Guide to Astrophotography.} [S.l.]: BBC
   Sky at Night Magazine, 2015.}
 
+\bibitem[Mack 2008]{livro:starwatch:v1}
+\abntrefinfo{Mack}{MACK}{2008}
+{MACK, J.~E. \textbf{Star Watch}: The amateur astronomers guide to finding
+  observing and learning about over 125 celestial objects. London: White Crow
+  Books, 2008. {v}. 1, 304 p.}
+
 \bibitem[Material Fundation 2021]{site:materialdesign}
 \abntrefinfo{Material Fundation}{MATERIAL FUNDATION}{2021}
 {MATERIAL FUNDATION. \textbf{Material Design}: Introduction.
 [S.l.], 2021. Acesso em 16 mar. 2021. Dispon{\'\i}vel em:
   \url{https://material.io/design/introduction}.}
 
-\bibitem[{NIELSEN, J.} 2020]{site:nielsen}
-\abntrefinfo{{NIELSEN, J.}}{{NIELSEN, J.}}{2020}
-{{NIELSEN, J.} \textbf{Usability Heuristics for User Interface Design.} Nielsen
+\bibitem[NIELSEN 2020]{site:nielsen}
+\abntrefinfo{NIELSEN}{NIELSEN}{2020}
+{NIELSEN, J. \textbf{Usability Heuristics for User Interface Design.} Nielsen
   Norman Group, 2020.
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/ten-usability-heuristics/}.}
 
-\bibitem[{REDKA, M.} 2021]{site:kotlinxjava}
-\abntrefinfo{{REDKA, M.}}{{REDKA, M.}}{2021}
-{{REDKA, M.} \textbf{Kotlin vs. Java}: Which programming language to choose for
+\bibitem[{OBSERVATÓRIO LUPUS} 2014]{site:driftLupus}
+\abntrefinfo{{OBSERVATÓRIO LUPUS}}{{OBSERVATÓRIO LUPUS}}{2014}
+{{OBSERVATÓRIO LUPUS}. \textbf{Alinhamento pelo Método Drift}. Observatório
+  Astronônico Lupus, 2014.
+Acesso em 26 jul. 2021.
+Dispon{\'\i}vel em:
+  \url{http://observatoriolupus.blogspot.com/2014/10/alinhamento-pelo-metodo-drift-derivacao.html?m=1}.}
+
+\bibitem[REDKA 2021]{site:kotlinxjava}
+\abntrefinfo{REDKA}{REDKA}{2021}
+{REDKA, M. \textbf{Kotlin vs. Java}: Which programming language to choose for
   your android app. MLSDev, 2021.
 Acesso em 16 mar. 2021.
 Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
@@ -156,17 +212,27 @@ Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
 {REGINA, C. \textbf{Aprenda a Fotografar em 7 Lições}.
 [S.l.], 2013. 18~p.}
 
-\bibitem[{SANTOS, N. S.} 2010]{site:importanciaAstroftoSantos}
-\abntrefinfo{{SANTOS, N. S.}}{{SANTOS, N. S.}}{2010}
-{{SANTOS, N. S.} \textbf{A astrofotografia e sua importância para a
-  astronomia}. Educação Espacial, 2010.
+\bibitem[SANTOS 2010]{site:importanciaAstroftoSantos}
+\abntrefinfo{SANTOS}{SANTOS}{2010}
+{SANTOS, N.~S. \textbf{A astrofotografia e sua importância para a astronomia}.
+  Educação Espacial, 2010.
 Acesso em 19 fev. 2021.
 Dispon{\'\i}vel em:
   \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.}
 
-\bibitem[{VIERO, E.} 2018]{site:eduardoemonica}
-\abntrefinfo{{VIERO, E.}}{{VIERO, E.}}{2018}
-{{VIERO, E.} \textbf{Os 3 pilares da fotografia}. Eduardo e Mônica, 2018.
+\bibitem[Seronik 2007]{artigo:garySeronik}
+\abntrefinfo{Seronik}{SERONIK}{2007}
+{SERONIK, G. A tracking platform for astrophotography.
+\textbf{Sky and Telescope Magazine}, 2007.}
+
+\bibitem[Trott 1989]{artigo:davidtrottinventions}
+\abntrefinfo{Trott}{TROTT}{1989}
+{TROTT, D. Double arm barn-door drive.
+\textbf{Sky and Telescope Magazine}, p. 436--441, 1989.}
+
+\bibitem[VIERO 2018]{site:eduardoemonica}
+\abntrefinfo{VIERO}{VIERO}{2018}
+{VIERO, E. \textbf{Os 3 pilares da fotografia}. Eduardo e Mônica, 2018.
 Acessado em 5 de julho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.}
