@@ -5,6 +5,18 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
+\bibitem[Advanced Micro System c2021]{man:advancedmicrosystemStepControl}
+\abntrefinfo{Advanced Micro System}{ADVANCED MICRO SYSTEM}{c2021}
+{ADVANCED MICRO SYSTEM. \textbf{Stepper Motor System Basics}.
+[S.l.], c2021. 9~p.}
+
+\bibitem[AFZAL c2021]{site:analogI2c}
+\abntrefinfo{AFZAL}{AFZAL}{c2021}
+{AFZAL, S. \textbf{I2C Primer}. Analog Devices, c2021.
+Acessado em 13 de novembro de 2021.
+Dispon{\'\i}vel em:
+  \url{https://www.analog.com/en/technical-articles/i2c-primer-what-is-i2c-part-1.html}.}
+
 \bibitem[ALVES 2018]{man:vanessacameras}
 \abntrefinfo{ALVES}{ALVES}{2018}
 {ALVES, V. \textbf{Tipos de máquinas fotográficas}.
@@ -16,11 +28,23 @@
 {ANDOLFATO, R. \textbf{Astrofotografia Prática: O guia da Fotografia do
   Universo}. Brasil: Clube de Autores, 2017. 454~p.}
 
+\bibitem[Arora 2015]{man:texasI2Cpullup}
+\abntrefinfo{Arora}{ARORA}{2015}
+{ARORA, R. \textbf{I2C Bus Pullup Resistor Calculation}.
+1. ed. [S.l.], 2015. 8~p. Dispon{\'\i}vel em:
+  \url{https://sites.ifi.unicamp.br/soares/files/2017/03/Pull-up-slva689.pdf}.}
+
 \bibitem[Barbosa et al.
   2021]{BarbosaEtAl2021InteracaoHumanoComputadorExperiencia}
 \abntrefinfo{Barbosa et al.}{BARBOSA et al.}{2021}
 {BARBOSA, S. D.~J. et al. \textbf{Interação {Humano}-{Computador} e
   {Experiência} do {Usuário}}. [S.l.]: Autopublicação, 2021.}
+
+\bibitem[Bluetooth 2019]{man:btlecore52}
+\abntrefinfo{Bluetooth}{BLUETOOTH}{2019}
+{BLUETOOTH. \textbf{Bluetooth Core Specification}.
+[S.l.], 2019. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
+  \url{https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc\_id=478726}.}
 
 \bibitem[BRESSER c2021]{site:bresserpolarscope}
 \abntrefinfo{BRESSER}{BRESSER}{c2021}
@@ -78,6 +102,14 @@ Dispon{\'\i}vel em:
 [S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
   \url{http://deepskystacker.free.fr/english/faq.htm\#lightdarkflatoffset}.}
 
+\bibitem[DEVZONE 2018]{site:devzonebtle}
+\abntrefinfo{DEVZONE}{DEVZONE}{2018}
+{DEVZONE. \textbf{Bluetooth low energy Services, a beginner's tutorial}. Nordic
+  Semicondctor, 2018.
+Acessado em 13 de novembro de 2021.
+Dispon{\'\i}vel em:
+  \url{https://devzone.nordicsemi.com/guides/short-range-guides/b/bluetooth-low-energy/posts/ble-services-a-beginners-tutorial}.}
+
 \bibitem[DYER 2019]{site:testingMSM}
 \abntrefinfo{DYER}{DYER}{2019}
 {DYER, A. \textbf{Testing the MSM Tracker}. The Amazing Sky, 2019.
@@ -124,6 +156,13 @@ Acesso em 27 jul. 2021.
 Dispon{\'\i}vel em:
   \url{https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml\#declination}.}
 
+\bibitem[Jauch, Silva e Paz 2014]{apostilagps}
+\abntrefinfo{Jauch, Silva e Paz}{JAUCH; SILVA; PAZ}{2014}
+{JAUCH, F.~E.; SILVA, L. d.~S.; PAZ, O.~L. da. \textbf{SISTEMA DE
+  POSICIONAMENTO GLOBAL - GPS}.
+[S.l.], 2014. Acesso em 15 jul. 2021. Dispon{\'\i}vel em:
+  \url{https://acervodigital.ufpr.br/bitstream/handle/1884/37756/APOSTILA\%20GPS\%202014.pdf}.}
+
 \bibitem[JÚNIOR 2016]{site:introCabau}
 \abntrefinfo{JÚNIOR}{JÚNIOR}{2016}
 {JÚNIOR, S.~D. C. \textbf{Introdução à astrofotografia}. Network for
@@ -132,6 +171,12 @@ Acesso em 20 fev. 2021.
 Dispon{\'\i}vel em:
   \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
   instrumentos/astrofotografia.pdf}.}
+
+\bibitem[Jones c2004]{manual:stepperMicrochip}
+\abntrefinfo{Jones}{JONES}{c2004}
+{JONES, D.~W. \textbf{Stepping Motors Fundamentals}.
+[S.l.], c2004. 22~p. Acesso em 15 jul. 2021. Dispon{\'\i}vel em:
+  \url{http://www.t-es-t.hu/download/microchip/an907a.pdf}.}
 
 \bibitem[Jones 1980]{artigo:edjonescurved}
 \abntrefinfo{Jones}{JONES}{1980}
@@ -152,6 +197,15 @@ Dispon{\'\i}vel em:
 Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/match-system-real-world/}.}
+
+\bibitem[LAGE 2016]{tcc:viniciusPID2Graus}
+\abntrefinfo{LAGE}{LAGE}{2016}
+{LAGE, V.~N.
+\textbf{DESENVOLVIMENTO DE UM CONTROLADOR PID PARA ESTABILIZAÇÃO DE UMA
+  PLATAFORMA COM DOIS GRAUS DE LIBERDADE}.
+2016. 96~f. Monografia (Trabalho de Conclusão de Curso) --- Curso de
+  Engenharia de Controle e Automação,Universidade Federal de Ouro Preto.,
+  Ouro Preto, 2016.}
 
 \bibitem[LAUBHEIMER 2015]{site:nielsenError}
 \abntrefinfo{LAUBHEIMER}{LAUBHEIMER}{2015}
@@ -184,6 +238,19 @@ Dispon{\'\i}vel em:
 [S.l.], 2021. Acesso em 16 mar. 2021. Dispon{\'\i}vel em:
   \url{https://material.io/design/introduction}.}
 
+\bibitem[Moura 2013]{tcc:rafaelEESC}
+\abntrefinfo{Moura}{MOURA}{2013}
+{MOURA, R.~S.
+\textbf{DESENVOLVIMENTO DE UM SISTEMA DE POSIÇÃO ESPACIAL INERCIAL}.
+2013. 150~f. Monografia (Trabalho de Conclusão de Curso) --- Curso de
+  Engenharia Elétrica com ênfase em Eletrônica, Escola de Engenharia de São
+  Carlos, São Carlos, 2013.}
+
+\bibitem[Muller 2000]{book:BluetoothDemystified}
+\abntrefinfo{Muller}{MULLER}{2000}
+{MULLER, N. J. \textbf{Bluetooth Demystified}. [S.l.]: McGraw-Hill, 2000. {v}.
+  1, 396 p.}
+
 \bibitem[NIELSEN 2020]{site:nielsen}
 \abntrefinfo{NIELSEN}{NIELSEN}{2020}
 {NIELSEN, J. \textbf{Usability Heuristics for User Interface Design.} Nielsen
@@ -200,6 +267,14 @@ Acesso em 26 jul. 2021.
 Dispon{\'\i}vel em:
   \url{http://observatoriolupus.blogspot.com/2014/10/alinhamento-pelo-metodo-drift-derivacao.html?m=1}.}
 
+\bibitem[PETERSON 2020]{site:altiumpcb}
+\abntrefinfo{PETERSON}{PETERSON}{2020}
+{PETERSON, Z. \textbf{I2C vs. SPI vs. UART: How to Layout These Common Buses}.
+  Altium, 2020.
+Acessado em 13 de novembro de 2021.
+Dispon{\'\i}vel em:
+  \url{https://resources.altium.com/p/i2c-vs-spi-vs-uart-how-layout-these-common-buses}.}
+
 \bibitem[REDKA 2021]{site:kotlinxjava}
 \abntrefinfo{REDKA}{REDKA}{2021}
 {REDKA, M. \textbf{Kotlin vs. Java}: Which programming language to choose for
@@ -211,6 +286,11 @@ Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
 \abntrefinfo{REGINA}{REGINA}{2013}
 {REGINA, C. \textbf{Aprenda a Fotografar em 7 Lições}.
 [S.l.], 2013. 18~p.}
+
+\bibitem[Russel 2010]{book:ANSIC}
+\abntrefinfo{Russel}{RUSSEL}{2010}
+{RUSSEL, D. \textbf{Introduction to Embedded Systems: Using ANSI C and the
+  Arduino Development Environment}. [S.l.]: Morgan e Claypool, 2010. 276~p.}
 
 \bibitem[SANTOS 2010]{site:importanciaAstroftoSantos}
 \abntrefinfo{SANTOS}{SANTOS}{2010}
@@ -225,10 +305,38 @@ Dispon{\'\i}vel em:
 {SERONIK, G. A tracking platform for astrophotography.
 \textbf{Sky and Telescope Magazine}, 2007.}
 
+\bibitem[Takahasi 2003]{diss:ClaudioBluetooth}
+\abntrefinfo{Takahasi}{TAKAHASI}{2003}
+{TAKAHASI, C.~K.
+\textbf{Arquitetura de Mobilidade Bluetooth}.
+2003. 116~f. Disserta\c{c}\~{a}o (Mestrado em Ciência da Computação) ---
+  Universidade Federal de Pernambuco, Recife, 2003.}
+
+\bibitem[Texas Instruments 2010]{man:texasUART}
+\abntrefinfo{Texas Instruments}{TEXAS INSTRUMENTS}{2010}
+{TEXAS INSTRUMENTS. \textbf{KeyStone Architecture}: Universal asynchronous
+  receiver/transmitter (uart).
+1. ed. Dallas, 2010. 51~p. Acesso em 8 nov. 2021. Dispon{\'\i}vel em:
+  \url{https://www.ti.com/lit/ug/sprugp1/sprugp1.pdf?ts=1636387120360}.}
+
+\bibitem[Tier 2019]{tcc:tier2019}
+\abntrefinfo{Tier}{TIER}{2019}
+{TIER, E.~G.
+\textbf{DESENVOLVIMENTO DE SISTEMAS DE MONITORAMENTO EMPREGANDO TECNOLOGIA LORA
+  EM UM PROTÓTIPO TIPO FORMULA SAE}.
+2019. 120~f. Monografia (Trabalho de Conclusão de Curso) --- Curso de
+  Engenharia de Controle e Automação, Universidade Federal de Santa Maria,
+  Santa Maria, 2019.}
+
 \bibitem[Trott 1989]{artigo:davidtrottinventions}
 \abntrefinfo{Trott}{TROTT}{1989}
 {TROTT, D. Double arm barn-door drive.
 \textbf{Sky and Telescope Magazine}, p. 436--441, 1989.}
+
+\bibitem[Valdez Jonathan;~Becker 2015]{man:texasI2C}
+\abntrefinfo{Valdez Jonathan;~Becker}{VALDEZ JONATHAN;~BECKER}{2015}
+{VALDEZ JONATHAN;~BECKER, J. \textbf{Understanding the I2C Bus}.
+1. ed. [S.l.], 2015. 8~p.}
 
 \bibitem[VIERO 2018]{site:eduardoemonica}
 \abntrefinfo{VIERO}{VIERO}{2018}
@@ -236,5 +344,19 @@ Dispon{\'\i}vel em:
 Acessado em 5 de julho de 2021.
 Dispon{\'\i}vel em:
   \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.}
+
+\bibitem[Woodman 2007]{manual:cambimu}
+\abntrefinfo{Woodman}{WOODMAN}{2007}
+{WOODMAN, O.~J. \textbf{An introduction to inertial navigation}.
+[S.l.], 2007. 37~p. Acesso em 16 jul. 2021. Dispon{\'\i}vel em:
+  \url{https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-696.pdf}.}
+
+\bibitem[Zanoni 2012]{diss:FabioAUV}
+\abntrefinfo{Zanoni}{ZANONI}{2012}
+{ZANONI, F.~D.
+\textbf{Modelagem e Implementação do Sistema de navegação para um AUV}.
+2012. 116~f. Disserta\c{c}\~{a}o (Mestrado em Engenharia de Controle e
+  Automação) --- Escola Politécnica da Universiade de São Paulo, São
+  Paulo, 2012.}
 
 \end{thebibliography}

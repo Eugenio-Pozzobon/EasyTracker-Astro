@@ -146,7 +146,7 @@ bool checkStepperCondition() {
       remoteActivation = false;
     }
   }
-  bool stopState = (!digitalRead(stopButtonPin) || !digitalRead(stopButtonPin_sec));
+  bool stopState = false;//(!digitalRead(stopButtonPin) || !digitalRead(stopButtonPin_sec));
   if(stopState){
     manualActivation = false;
     remoteActivation = false;
