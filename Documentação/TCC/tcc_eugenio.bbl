@@ -13,15 +13,16 @@
 \bibitem[AFZAL c2021]{site:analogI2c}
 \abntrefinfo{AFZAL}{AFZAL}{c2021}
 {AFZAL, S. \textbf{I2C Primer}. Analog Devices, c2021.
-Acessado em 13 de novembro de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.analog.com/en/technical-articles/i2c-primer-what-is-i2c-part-1.html}.}
+  \url{https://www.analog.com/en/technical-articles/i2c-primer-what-is-i2c-part-1.html}.
+  Acesso em: 13 de novembro de 2021.}
 
 \bibitem[ALVES 2018]{man:vanessacameras}
 \abntrefinfo{ALVES}{ALVES}{2018}
 {ALVES, V. \textbf{Tipos de máquinas fotográficas}.
-4. ed. [S.l.], 2018. 54~p. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
-  \url{https://fotografiadicas.com.br/wp-content/uploads/2018/07/Tipos-de-M\%C3\%A1quinas-Fotogr\%C3\%A1ficas-Fotografia-Dicas-4a-Ed.pdf}.}
+4. ed. [S.l.], 2018. 54~p. Dispon{\'\i}vel em:
+  \url{https://fotografiadicas.com.br/wp-content/uploads/2018/07/Tipos-de-M\%C3\%A1quinas-Fotogr\%C3\%A1ficas-Fotografia-Dicas-4a-Ed.pdf}.
+  Acesso em: 12 jul. 2021.}
 
 \bibitem[Andolfato 2017]{livro:astropratica}
 \abntrefinfo{Andolfato}{ANDOLFATO}{2017}
@@ -43,31 +44,43 @@ Dispon{\'\i}vel em:
 \bibitem[Bluetooth 2019]{man:btlecore52}
 \abntrefinfo{Bluetooth}{BLUETOOTH}{2019}
 {BLUETOOTH. \textbf{Bluetooth Core Specification}.
-[S.l.], 2019. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
-  \url{https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc\_id=478726}.}
+[S.l.], 2019. Dispon{\'\i}vel em:
+  \url{https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc\_id=478726}.
+  Acesso em: 12 jul. 2021.}
 
 \bibitem[BRESSER c2021]{site:bresserpolarscope}
 \abntrefinfo{BRESSER}{BRESSER}{c2021}
 {BRESSER. \textbf{BRESSER Polar Finder Scope for StarTracker}. Bressr group of
   companies, c2021.
-Acesso em 11 ago. 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.bresser.de/en/Astronomy/BRESSER-Polar-Finder-Scope-for-StarTracker-PM-100.html}.}
+  \url{https://www.bresser.de/en/Astronomy/BRESSER-Polar-Finder-Scope-for-StarTracker-PM-100.html}.
+  Acesso em: 11 ago. 2021.}
 
 \bibitem[BUDIU 2020]{site:nielsenRecall}
 \abntrefinfo{BUDIU}{BUDIU}{2020}
 {BUDIU, R. \textbf{Memory Recognition and Recall in User Interfaces.} Nielsen
   Norman Group, 2020.
-Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.nngroup.com/articles/recognition-and-recall/}.}
+  \url{https://www.nngroup.com/articles/recognition-and-recall/}. Acesso em: 25
+  de junho de 2021.}
+
+\bibitem[Caruso 1997]{carusoSAE}
+\abntrefinfo{Caruso}{CARUSO}{1997}
+{CARUSO, M. Aplication of magnetoresistive sensors in navigation systems. In:
+  . [S.l.]: SAE SP-1220, 1997. p. 15--21.}
+
+\bibitem[Caruso 2000]{838300}
+\abntrefinfo{Caruso}{CARUSO}{2000}
+{\underline{\ \ \ \ \ \ \ \ }. Applications of magnetic sensors for low cost
+  compass systems. In:  \textbf{IEEE 2000. Position Location and Navigation
+  Symposium (Cat. No.00CH37062)}. [S.l.: s.n.], 2000. p. 177--184.}
 
 \bibitem[Corporation c2021]{site:ioptron}
 \abntrefinfo{Corporation}{CORPORATION}{c2021}
 {CORPORATION iOptron. \textbf{SkyGuiderTM Pro camera mount full package}.
   IOPTRON, c2021.
-Acesso em 20 fev. 2021.
-Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
+Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}. Acesso
+  em: 20 fev. 2021.}
 
 \bibitem[Covington 2006]{book:astrophotographyAmateur}
 \abntrefinfo{Covington}{COVINGTON}{2006}
@@ -78,105 +91,112 @@ Dispon{\'\i}vel em: \url{https://www.ioptron.com/product-p/3550.htm}.}
 \abntrefinfo{COX}{COX}{2021}
 {COX, S. \textbf{00 Rule vs NPF Rule}: Shutter speed for astrophotography.
   photographylife, 2021.
-Acesso em 13 jul. 2021.
-Dispon{\'\i}vel em: \url{https://photographylife.com/500-rule-vs-npf-rule}.}
+Dispon{\'\i}vel em: \url{https://photographylife.com/500-rule-vs-npf-rule}.
+  Acesso em: 13 jul. 2021.}
 
 \bibitem[{DAVID, K.} 2015]{site:pentaxBarnDoor}
 \abntrefinfo{{DAVID, K.}}{{DAVID, K.}}{2015}
 {{DAVID, K.} \textbf{Astrophotography Part 3 of 6: Making a Barn Door Tracker}.
   Pentax Foruns, 2015.
-Acesso em 10 ago. 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.pentaxforums.com/articles/photo-articles/astrophotography-part-3-barn-door-tracker.html}.}
+  \url{https://www.pentaxforums.com/articles/photo-articles/astrophotography-part-3-barn-door-tracker.html}.
+  Acesso em: 10 ago. 2021.}
 
 \bibitem[Deep Sky Stacker c2021]{man:deepskystackerBetterImages}
 \abntrefinfo{Deep Sky Stacker}{DEEP SKY STACKER}{c2021a}
 {DEEP SKY STACKER. \textbf{How to create better images}.
-[S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
-  \url{http://deepskystacker.free.fr/english/theory.htm}.}
+[S.l.], c2021. Dispon{\'\i}vel em:
+  \url{http://deepskystacker.free.fr/english/theory.htm}. Acesso em: 12 jul.
+  2021.}
 
 \bibitem[Deep Sky Stacker c2021]{man:deepskystackerfaq}
 \abntrefinfo{Deep Sky Stacker}{DEEP SKY STACKER}{c2021b}
 {\underline{\ \ \ \ \ \ \ \ }. \textbf{Light, Dark, Flat, Bias... What are they
   and how to create them?}
-[S.l.], c2021. Acesso em 12 jul. 2021. Dispon{\'\i}vel em:
-  \url{http://deepskystacker.free.fr/english/faq.htm\#lightdarkflatoffset}.}
+[S.l.], c2021. Dispon{\'\i}vel em:
+  \url{http://deepskystacker.free.fr/english/faq.htm\#lightdarkflatoffset}.
+  Acesso em: 12 jul. 2021.}
 
 \bibitem[DEVZONE 2018]{site:devzonebtle}
 \abntrefinfo{DEVZONE}{DEVZONE}{2018}
 {DEVZONE. \textbf{Bluetooth low energy Services, a beginner's tutorial}. Nordic
   Semicondctor, 2018.
-Acessado em 13 de novembro de 2021.
 Dispon{\'\i}vel em:
-  \url{https://devzone.nordicsemi.com/guides/short-range-guides/b/bluetooth-low-energy/posts/ble-services-a-beginners-tutorial}.}
+  \url{https://devzone.nordicsemi.com/guides/short-range-guides/b/bluetooth-low-energy/posts/ble-services-a-beginners-tutorial}.
+  Acesso em: 13 de novembro de 2021.}
 
 \bibitem[DYER 2019]{site:testingMSM}
 \abntrefinfo{DYER}{DYER}{2019}
 {DYER, A. \textbf{Testing the MSM Tracker}. The Amazing Sky, 2019.
-Acesso em 10 ago. 2021.
 Dispon{\'\i}vel em:
-  \url{https://amazingsky.net/2019/08/22/testing-the-msm-tracker/}.}
+  \url{https://amazingsky.net/2019/08/22/testing-the-msm-tracker/}. Acesso em:
+  10 ago. 2021.}
 
 \bibitem[EGAN c2021]{site:nyxtech}
 \abntrefinfo{EGAN}{EGAN}{c2021a}
 {EGAN, M. \textbf{Nyx Tech}. Nyx Tech, c2021.
-Acesso em 29 mar. 2021.
-Dispon{\'\i}vel em: \url{https://nyxtech.us/}.}
+Dispon{\'\i}vel em: \url{https://nyxtech.us/}. Acesso em: 29 mar. 2021.}
 
 \bibitem[EGAN c2021]{site:nyxtechtips}
 \abntrefinfo{EGAN}{EGAN}{c2021b}
 {\underline{\ \ \ \ \ \ \ \ }. \textbf{Tips and Tutorials}. Nyx Tech, c2021.
-Acesso em 9 ago. 2021.
-Dispon{\'\i}vel em: \url{https://nyxtech.us/pages/tips-tutorials}.}
+Dispon{\'\i}vel em: \url{https://nyxtech.us/pages/tips-tutorials}. Acesso em: 9
+  ago. 2021.}
 
 \bibitem[Google Developers 2021]{site:androidstudio}
 \abntrefinfo{Google Developers}{GOOGLE DEVELOPERS}{2021}
 {GOOGLE DEVELOPERS. \textbf{Android Studio}: Guia do usuário.
-[S.l.], 2021. Acesso em 16 mar.2021. Dispon{\'\i}vel em:
-  \url{https://developer.android.com/studio/intro}.}
+[S.l.], 2021. Dispon{\'\i}vel em:
+  \url{https://developer.android.com/studio/intro}. Acesso em: 16 mar.2021.}
 
 \bibitem[HARLEY 2014]{site:nielsenIcon}
 \abntrefinfo{HARLEY}{HARLEY}{2014}
 {HARLEY, A. \textbf{Icon Usability.} Nielsen Norman Group, 2014.
-Acessado em 25 de junho de 2021.
-Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/icon-usability/}.}
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/icon-usability/}.
+  Acesso em: 25 de junho de 2021.}
 
 \bibitem[HELERBROCK c2021]{site:brescolaAstrofoto}
 \abntrefinfo{HELERBROCK}{HELERBROCK}{c2021}
 {HELERBROCK, R. \textbf{História da Astronomia}. Brasil Escola, c2021.
-Acesso em 20 fev. 2021.
 Dispon{\'\i}vel em:
-  \url{https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.}}
+  \url{https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.} Acesso
+  em: 20 fev. 2021.}
+
+\bibitem[Honeywell 1995]{man:Honeywell}
+\abntrefinfo{Honeywell}{HONEYWELL}{1995}
+{HONEYWELL. \textbf{COMPASS HEADING USING MAGNETOMETERS}.
+[S.l.], 1995. 2~p.}
 
 \bibitem[INFORMATION c2021]{site:noicDecMag}
 \abntrefinfo{INFORMATION}{INFORMATION}{c2021}
 {INFORMATION, N. C. F.~E. \textbf{Magnetic Field Calculators}. National Oceanic
   and Atmospheric Administration, c2021.
-Acesso em 27 jul. 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml\#declination}.}
+  \url{https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml\#declination}.
+  Acesso em: 27 jul. 2021.}
 
 \bibitem[Jauch, Silva e Paz 2014]{apostilagps}
 \abntrefinfo{Jauch, Silva e Paz}{JAUCH; SILVA; PAZ}{2014}
 {JAUCH, F.~E.; SILVA, L. d.~S.; PAZ, O.~L. da. \textbf{SISTEMA DE
   POSICIONAMENTO GLOBAL - GPS}.
-[S.l.], 2014. Acesso em 15 jul. 2021. Dispon{\'\i}vel em:
-  \url{https://acervodigital.ufpr.br/bitstream/handle/1884/37756/APOSTILA\%20GPS\%202014.pdf}.}
+[S.l.], 2014. Dispon{\'\i}vel em:
+  \url{https://acervodigital.ufpr.br/bitstream/handle/1884/37756/APOSTILA\%20GPS\%202014.pdf}.
+  Acesso em: 15 jul. 2021.}
 
 \bibitem[JÚNIOR 2016]{site:introCabau}
 \abntrefinfo{JÚNIOR}{JÚNIOR}{2016}
 {JÚNIOR, S.~D. C. \textbf{Introdução à astrofotografia}. Network for
   Astronomy School Education, 2016.
-Acesso em 20 fev. 2021.
 Dispon{\'\i}vel em:
   \url{http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
-  instrumentos/astrofotografia.pdf}.}
+  instrumentos/astrofotografia.pdf}. Acesso em: 20 fev. 2021.}
 
 \bibitem[Jones c2004]{manual:stepperMicrochip}
 \abntrefinfo{Jones}{JONES}{c2004}
 {JONES, D.~W. \textbf{Stepping Motors Fundamentals}.
-[S.l.], c2004. 22~p. Acesso em 15 jul. 2021. Dispon{\'\i}vel em:
-  \url{http://www.t-es-t.hu/download/microchip/an907a.pdf}.}
+[S.l.], c2004. 22~p. Dispon{\'\i}vel em:
+  \url{http://www.t-es-t.hu/download/microchip/an907a.pdf}. Acesso em: 15 jul.
+  2021.}
 
 \bibitem[Jones 1980]{artigo:edjonescurved}
 \abntrefinfo{Jones}{JONES}{1980}
@@ -186,17 +206,34 @@ Dispon{\'\i}vel em:
 \bibitem[JOYCE 2020]{site:nielsenHelpandDoc}
 \abntrefinfo{JOYCE}{JOYCE}{2020}
 {JOYCE, A. \textbf{Help and Documentation}. Nielsen Norman Group, 2020.
-Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.nngroup.com/articles/help-and-documentation/}.}
+  \url{https://www.nngroup.com/articles/help-and-documentation/}. Acesso em: 25
+  de junho de 2021.}
 
 \bibitem[KALEY 2018]{site:nielsenRealWorld}
 \abntrefinfo{KALEY}{KALEY}{2018}
 {KALEY, A. \textbf{Match Between the System and the Real Worl}. Nielsen Norman
   Group, 2018.
-Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.nngroup.com/articles/match-system-real-world/}.}
+  \url{https://www.nngroup.com/articles/match-system-real-world/}. Acesso em:
+  25 de junho de 2021.}
+
+\bibitem[{KONVALIN, C.} 2009]{site:magFierce}
+\abntrefinfo{{KONVALIN, C.}}{{KONVALIN, C.}}{2009}
+{{KONVALIN, C.} \textbf{Compensating for Tilt, Hard-Iron, and Soft-Iron
+  Effects}. Fierce Electronics, 2009.
+Dispon{\'\i}vel em:
+  \url{https://www.fierceelectronics.com/components/compensating-for-tilt-hard-iron-and-soft-iron-effects}.
+  Acesso em: 6 dec. 2021.}
+
+\bibitem[Kuncar, Sysel e Urbanek 2016]{calibrationMatrix}
+\abntrefinfo{Kuncar, Sysel e Urbanek}{KUNCAR; SYSEL; URBANEK}{2016}
+{KUNCAR, A.; SYSEL, M.; URBANEK, T. Calibration of triaxial accelerometer and
+  triaxial magnetometer for tilt compensated electronic compass. In:  SILHAVY,
+  R. et al. (Ed.). \textbf{Automation Control Theory Perspectives in
+  Intelligent Systems}. Cham: Springer International Publishing, 2016. p.
+  45--52.
+ISBN 978-3-319-33389-2.}
 
 \bibitem[LAGE 2016]{tcc:viniciusPID2Graus}
 \abntrefinfo{LAGE}{LAGE}{2016}
@@ -210,21 +247,21 @@ Dispon{\'\i}vel em:
 \bibitem[LAUBHEIMER 2015]{site:nielsenError}
 \abntrefinfo{LAUBHEIMER}{LAUBHEIMER}{2015}
 {LAUBHEIMER, P. \textbf{Preventing User Errors}. Nielsen Norman Group, 2015.
-Acessado em 25 de junho de 2021.
-Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/slips/}.}
+Dispon{\'\i}vel em: \url{https://www.nngroup.com/articles/slips/}. Acesso em:
+  25 de junho de 2021.}
 
 \bibitem[LAUBHEIMER 2020]{site:nielsenFlexibility}
 \abntrefinfo{LAUBHEIMER}{LAUBHEIMER}{2020}
 {\underline{\ \ \ \ \ \ \ \ }. \textbf{Flexibility and Efficiency of Use}.
   Nielsen Norman Group, 2020.
-Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.}
+  \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.
+  Acesso em: 25 de junho de 2021.}
 
-\bibitem[Lochun et al. 2015]{book:bbcsky}
-\abntrefinfo{Lochun et al.}{LOCHUN et al.}{2015}
-{LOCHUN, K. et al. \textbf{The Complete Guide to Astrophotography.} [S.l.]: BBC
-  Sky at Night Magazine, 2015.}
+\bibitem[Lochun, GateÇr e Lawrence 2015]{book:bbcsky}
+\abntrefinfo{Lochun, GateÇr e Lawrence}{LOCHUN; GATEÇR; LAWRENCE}{2015}
+{LOCHUN, K.; GATEÇR, W.; LAWRENCE, P. \textbf{The Complete Guide to
+  Astrophotography.} [S.l.]: BBC Sky at Night Magazine, 2015.}
 
 \bibitem[Mack 2008]{livro:starwatch:v1}
 \abntrefinfo{Mack}{MACK}{2008}
@@ -235,8 +272,8 @@ Dispon{\'\i}vel em:
 \bibitem[Material Fundation 2021]{site:materialdesign}
 \abntrefinfo{Material Fundation}{MATERIAL FUNDATION}{2021}
 {MATERIAL FUNDATION. \textbf{Material Design}: Introduction.
-[S.l.], 2021. Acesso em 16 mar. 2021. Dispon{\'\i}vel em:
-  \url{https://material.io/design/introduction}.}
+[S.l.], 2021. Dispon{\'\i}vel em:
+  \url{https://material.io/design/introduction}. Acesso em: 16 mar. 2021.}
 
 \bibitem[Moura 2013]{tcc:rafaelEESC}
 \abntrefinfo{Moura}{MOURA}{2013}
@@ -251,36 +288,66 @@ Dispon{\'\i}vel em:
 {MULLER, N. J. \textbf{Bluetooth Demystified}. [S.l.]: McGraw-Hill, 2000. {v}.
   1, 396 p.}
 
+\bibitem[Murta 2016]{site:eletrogateguiamotor}
+\abntrefinfo{Murta}{MURTA}{2016}
+{MURTA, J. G.~A. \textbf{Guia completo do Motor de Passo 28BYJ-48 e Driver
+  ULN2003}. Eletrogate, 2016.
+Dispon{\'\i}vel em:
+  \url{https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003}.
+  Acesso em: 22 de novembro de 2021.}
+
+\bibitem[Nedelkovski 2016]{site:MEMSHOTO}
+\abntrefinfo{Nedelkovski}{NEDELKOVSKI}{2016}
+{NEDELKOVSKI, D. \textbf{What is MEMS? Accelerometer, Gyroscope \& Magnetometer
+  with Arduino}. How to Mechatronics, 2016.
+Dispon{\'\i}vel em:
+  \url{https://howtomechatronics.com/how-it-works/electrical-engineering/mems-accelerometer-gyrocope-magnetometer-arduino/}.
+  Acesso em: 22 de novembro de 2021.}
+
 \bibitem[NIELSEN 2020]{site:nielsen}
 \abntrefinfo{NIELSEN}{NIELSEN}{2020}
 {NIELSEN, J. \textbf{Usability Heuristics for User Interface Design.} Nielsen
   Norman Group, 2020.
-Acessado em 25 de junho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.nngroup.com/articles/ten-usability-heuristics/}.}
+  \url{https://www.nngroup.com/articles/ten-usability-heuristics/}. Acesso em:
+  25 de junho de 2021.}
 
 \bibitem[{OBSERVATÓRIO LUPUS} 2014]{site:driftLupus}
 \abntrefinfo{{OBSERVATÓRIO LUPUS}}{{OBSERVATÓRIO LUPUS}}{2014}
 {{OBSERVATÓRIO LUPUS}. \textbf{Alinhamento pelo Método Drift}. Observatório
   Astronônico Lupus, 2014.
-Acesso em 26 jul. 2021.
 Dispon{\'\i}vel em:
-  \url{http://observatoriolupus.blogspot.com/2014/10/alinhamento-pelo-metodo-drift-derivacao.html?m=1}.}
+  \url{http://observatoriolupus.blogspot.com/2014/10/alinhamento-pelo-metodo-drift-derivacao.html?m=1}.
+  Acesso em: 26 jul. 2021.}
+
+\bibitem[Oliveira Waldri dos S. ;~Gon{\,c}alves 2017]{artigo:forscienceKalman}
+\abntrefinfo{Oliveira Waldri dos S. ;~Gon{\,c}alves}{OLIVEIRA WALDRI DOS S.
+  ;~GON{\,C}ALVES}{2017}
+{OLIVEIRA WALDRI DOS S. ;~GON{\,C}ALVES, E.~N. ImplementaÇÃo em c: Filtro de
+  kalman, fusÃo de sensores para determinaÇÃo de Ângulos.
+\textbf{ForScience}, v.~4, 2017.}
+
+\bibitem[PATRÃO 2015]{diss:coimbraSergio}
+\abntrefinfo{PATRÃO}{PATRÃO}{2015}
+{PATRÃO, S. M.~C.
+\textbf{Ferramenta de Teste e Validação para Algoritmos de Fusão Sensorial}.
+2015. 90~f. Disserta\c{c}\~{a}o (Mestrado em Instrumentação Biomédica) ---
+  Instituto Superior de Engenharia de Coimbra, Coimbra, 2015.}
 
 \bibitem[PETERSON 2020]{site:altiumpcb}
 \abntrefinfo{PETERSON}{PETERSON}{2020}
 {PETERSON, Z. \textbf{I2C vs. SPI vs. UART: How to Layout These Common Buses}.
   Altium, 2020.
-Acessado em 13 de novembro de 2021.
 Dispon{\'\i}vel em:
-  \url{https://resources.altium.com/p/i2c-vs-spi-vs-uart-how-layout-these-common-buses}.}
+  \url{https://resources.altium.com/p/i2c-vs-spi-vs-uart-how-layout-these-common-buses}.
+  Acesso em: 13 de novembro de 2021.}
 
 \bibitem[REDKA 2021]{site:kotlinxjava}
 \abntrefinfo{REDKA}{REDKA}{2021}
 {REDKA, M. \textbf{Kotlin vs. Java}: Which programming language to choose for
   your android app. MLSDev, 2021.
-Acesso em 16 mar. 2021.
-Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
+Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}. Acesso em: 16
+  mar. 2021.}
 
 \bibitem[REGINA 2013]{man:claudia7licoes}
 \abntrefinfo{REGINA}{REGINA}{2013}
@@ -296,9 +363,9 @@ Dispon{\'\i}vel em: \url{https://mlsdev.com/blog/kotlin-vs-java}.}
 \abntrefinfo{SANTOS}{SANTOS}{2010}
 {SANTOS, N.~S. \textbf{A astrofotografia e sua importância para a astronomia}.
   Educação Espacial, 2010.
-Acesso em 19 fev. 2021.
 Dispon{\'\i}vel em:
-  \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.}
+  \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.
+  Acesso em: 19 fev. 2021.}
 
 \bibitem[Seronik 2007]{artigo:garySeronik}
 \abntrefinfo{Seronik}{SERONIK}{2007}
@@ -338,18 +405,34 @@ Dispon{\'\i}vel em:
 {VALDEZ JONATHAN;~BECKER, J. \textbf{Understanding the I2C Bus}.
 1. ed. [S.l.], 2015. 8~p.}
 
+\bibitem[VECTORNAV c2021]{man:HSIcalibration}
+\abntrefinfo{VECTORNAV}{VECTORNAV}{c2021}
+{VECTORNAV. \textbf{MAGNETOMETER: HARD E SOFT IRON CALIBRATION}.
+[S.l.], c2021. Dispon{\'\i}vel em:
+  \url{https://www.vectornav.com/resources/inertial-navigation-primer/specifications----error-budgets/specs-hsicalibration}.
+  Acesso em: 11 dec. 2021.}
+
 \bibitem[VIERO 2018]{site:eduardoemonica}
 \abntrefinfo{VIERO}{VIERO}{2018}
 {VIERO, E. \textbf{Os 3 pilares da fotografia}. Eduardo e Mônica, 2018.
-Acessado em 5 de julho de 2021.
 Dispon{\'\i}vel em:
-  \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.}
+  \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.
+  Acesso em: 5 de julho de 2021.}
 
 \bibitem[Woodman 2007]{manual:cambimu}
 \abntrefinfo{Woodman}{WOODMAN}{2007}
 {WOODMAN, O.~J. \textbf{An introduction to inertial navigation}.
-[S.l.], 2007. 37~p. Acesso em 16 jul. 2021. Dispon{\'\i}vel em:
-  \url{https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-696.pdf}.}
+[S.l.], 2007. 37~p. Dispon{\'\i}vel em:
+  \url{https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-696.pdf}. Acesso em: 16
+  jul. 2021.}
+
+\bibitem[Yang, Bajenov e Shen 2017]{article:Yang2017}
+\abntrefinfo{Yang, Bajenov e Shen}{YANG; BAJENOV; SHEN}{2017}
+{YANG, W.; BAJENOV, A.; SHEN, Y. Improving low-cost inertial-measurement-unit
+  (imu)-based motion tracking accuracy for a biomorphic hyper-redundant snake
+  robot.
+\textbf{Robotics and Biomimetics}, v.~4, n.~1, p.~16, Nov 2017.
+Dispon{\'\i}vel em: \url{https://doi.org/10.1186/s40638-017-0069-z}.}
 
 \bibitem[Zanoni 2012]{diss:FabioAUV}
 \abntrefinfo{Zanoni}{ZANONI}{2012}

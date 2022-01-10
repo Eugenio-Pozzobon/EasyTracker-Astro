@@ -26,6 +26,7 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
+Reallocating 'field_info' (item size: 4) to 10037 items.
 Database file #1: abntex2-options.bib
 Database file #2: referencias.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -37,44 +38,44 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 62 entries,
+You've used 73 entries,
             6714 wiz_defined-function locations,
-            1545 strings with 18512 characters,
-and the built_in function-call counts, 80951 in all, are:
-= -- 9998
-> -- 785
-< -- 2361
-+ -- 2679
-- -- 257
-* -- 4599
-:= -- 9780
-add.period$ -- 254
-call.type$ -- 65
-change.case$ -- 407
-chr.to.int$ -- 76
-cite$ -- 53
-duplicate$ -- 8847
-empty$ -- 3660
-format.name$ -- 1181
-if$ -- 16098
+            1621 strings with 20689 characters,
+and the built_in function-call counts, 96994 in all, are:
+= -- 11932
+> -- 1012
+< -- 2827
++ -- 3215
+- -- 327
+* -- 5622
+:= -- 11735
+add.period$ -- 307
+call.type$ -- 76
+change.case$ -- 462
+chr.to.int$ -- 93
+cite$ -- 64
+duplicate$ -- 10555
+empty$ -- 4360
+format.name$ -- 1506
+if$ -- 19346
 int.to.chr$ -- 10
 int.to.str$ -- 3
-missing$ -- 1003
-newline$ -- 295
-num.names$ -- 230
-pop$ -- 1130
+missing$ -- 1155
+newline$ -- 326
+num.names$ -- 276
+pop$ -- 1260
 preamble$ -- 1
-purify$ -- 192
+purify$ -- 229
 quote$ -- 0
-skip$ -- 9128
+skip$ -- 10863
 stack$ -- 1
-substring$ -- 3574
-swap$ -- 3047
-text.length$ -- 36
+substring$ -- 4238
+swap$ -- 3688
+text.length$ -- 48
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 18
+type$ -- 24
 warning$ -- 0
-while$ -- 327
+while$ -- 397
 width$ -- 0
-write$ -- 856
+write$ -- 1036

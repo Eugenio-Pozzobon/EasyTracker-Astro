@@ -1,6 +1,14 @@
 %%%% Modelo para bibliografia - bibtex!
 
 %%%manuais
+COMPASS HEADING USING MAGNETOMETERS
+@manual{man:Honeywell,
+	organization={Honeywell},
+	Title = {COMPASS HEADING USING MAGNETOMETERS},
+	publisher={Honeywell},
+	Year    = {1995},
+	pages   = {2}
+}
 
 @manual{man:advancedmicrosystemStepControl,
 	organization={Advanced Micro System},
@@ -12,6 +20,15 @@
 	pagename = {p.},
 }
 
+@manual{man:HSIcalibration,
+	organization={VECTORNAV},
+	Title = {MAGNETOMETER: HARD E SOFT IRON
+	CALIBRATION},
+	publisher={VECTORNAV},
+	Year    = {c2021},
+	url = {https://www.vectornav.com/resources/inertial-navigation-primer/specifications--and--error-budgets/specs-hsicalibration},
+	urlaccessdate={11 dec. 2021}
+}
 
 @manual{manual:stepperMicrochip,
 	Author  = {Jones, Douglas W.},
@@ -21,7 +38,7 @@
 	pages   = {22},
 	pagename = {p.},
 	url = {http://www.t-es-t.hu/download/microchip/an907a.pdf},
-	note={Acesso em 15 jul. 2021}
+	urlaccessdate={15 jul. 2021}
 }
 
 @manual{manual:cambimu,
@@ -32,7 +49,7 @@
 	pages   = {37},
 	pagename = {p.},
 	url = {https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-696.pdf},
-	note={Acesso em 16 jul. 2021}
+	urlaccessdate={16 jul. 2021}
 }
 
 @manual{apostilagps,
@@ -41,7 +58,7 @@
 	publisher={Universidade Federal do Paraná},
 	Year    = {2014},
 	url = {https://acervodigital.ufpr.br/bitstream/handle/1884/37756/APOSTILA%20GPS%202014.pdf},
-	note={Acesso em 15 jul. 2021}
+	urlaccessdate={15 jul. 2021}
 }
 
 
@@ -51,7 +68,7 @@
 	publisher={Deep Sky Stacker},
 	Year    = {c2021},
 	url = {http://deepskystacker.free.fr/english/faq.htm#lightdarkflatoffset},
-	note={Acesso em 12 jul. 2021}
+	urlaccessdate={12 jul. 2021}
 }
 
 @manual{man:btlecore52,
@@ -60,7 +77,7 @@
 	publisher={Bluetooth SIG Proprietary},
 	Year    = {2019},
 	url = {https://www.bluetooth.org/docman/handlers/downloaddoc.ashx?doc_id=478726},
-	note={Acesso em 12 jul. 2021}
+	urlaccessdate={12 jul. 2021}
 }
 
 @manual{man:deepskystackerBetterImages,
@@ -69,7 +86,7 @@
 	publisher={Deep Sky Stacker},
 	Year    = {c2021},
 	url = {http://deepskystacker.free.fr/english/theory.htm},
-	note={Acesso em 12 jul. 2021}
+	urlaccessdate={12 jul. 2021}
 }
 
 @manual{man:vanessacameras,
@@ -81,7 +98,7 @@
 	pages   = {54},
 	pagename = {p.},
 	url={https://fotografiadicas.com.br/wp-content/uploads/2018/07/Tipos-de-M%C3%A1quinas-Fotogr%C3%A1ficas-Fotografia-Dicas-4a-Ed.pdf},
-	note={Acesso em 12 jul. 2021}
+	urlaccessdate={12 jul. 2021}
 }
 
 @manual{man:claudia7licoes,
@@ -119,7 +136,7 @@ pagename = {p.},
 	year={2021},
 	edition = {},
 	url = {https://material.io/design/introduction},
-	note={Acesso em 16 mar. 2021}
+	urlaccessdate={16 mar. 2021}
 }
 
 @manual{site:androidstudio,
@@ -130,7 +147,7 @@ pagename = {p.},
 	year={2021},
 	edition = {},
 	url = {https://developer.android.com/studio/intro},
-	note={Acesso em 16 mar.2021}
+	urlaccessdate={16 mar.2021}
 }
 
 @manual{man:MDTUFSM2015,
@@ -242,6 +259,20 @@ Note    = { }
 	org-short = {POLI-USP},
 	address = {São Paulo},
 	pages   = {116},
+	pagename= {f.},
+	Note    = { }
+}
+
+@mastersthesis{diss:coimbraSergio,
+	title={Ferramenta de Teste e Validação para Algoritmos
+	de Fusão Sensorial},
+	author={PATRÃO, Sérgio M. C.},
+	type = {Mestrado em Instrumentação Biomédica},
+	year={2015},
+	school  = {Instituto Superior de Engenharia de Coimbra},
+	org-short = {ISEC},
+	address = {Coimbra},
+	pages   = {90},
 	pagename= {f.},
 	Note    = { }
 }
@@ -430,6 +461,33 @@ note={{v}. 2, 296 p.}
 
 %%% artigos em periódicos
 
+@Article{article:Yang2017,
+	author={Yang, Weixin
+	and Bajenov, Alexandr
+	and Shen, Yantao},
+	title={Improving low-cost inertial-measurement-unit (IMU)-based motion tracking accuracy for a biomorphic hyper-redundant snake robot},
+	journal={Robotics and Biomimetics},
+	year={2017},
+	month={Nov},
+	day={10},
+	volume={4},
+	number={1},
+	pages={16},
+	doi={10.1186/s40638-017-0069-z},
+	url={https://doi.org/10.1186/s40638-017-0069-z}
+}
+
+
+
+@article{artigo:forscienceKalman,
+	title={IMPLEMENTAÇÃO EM C: FILTRO DE KALMAN, FUSÃO DE SENSORES PARA
+	DETERMINAÇÃO DE ÂNGULOS},
+	author={Oliveira, Waldri dos S. ; Gon{\,c}alves, Eduardo N.},
+	journal={ForScience},
+	year={2017},
+	volume={4}
+}
+
 @article{artigo:edjonescurved,
   title={Some Experiments with Curved Bolt Drives},
   author={Jones, Ed},
@@ -462,6 +520,49 @@ note={{v}. 2, 296 p.}
 }
 
 %%%% anais de eventos
+
+@InProceedings{calibrationMatrix,
+	author="Kuncar, Ales
+	and Sysel, Martin
+	and Urbanek, Tomas",
+	editor="Silhavy, Radek
+	and Senkerik, Roman
+	and Oplatkova, Zuzana Kominkova
+	and Silhavy, Petr
+	and Prokopova, Zdenka",
+	title="Calibration of Triaxial Accelerometer and Triaxial Magnetometer for Tilt Compensated Electronic Compass",
+	booktitle="Automation Control Theory Perspectives in Intelligent Systems",
+	year="2016",
+	publisher="Springer International Publishing",
+	address="Cham",
+	pages="45--52",
+	abstract="This research paper describes the method for the calibration of accelerometer and magnetometer for tilt compensated electronic compass. The electronic compass is implemented using triaxial MEMS accelerometer and triaxial MEMS magnetometer. The heading of the compass is generally influenced by scale factors, offsets and misalignment errors of these sensors. The proposed calibration method determines twelve calibration parameters in six stationary positions for accelerometer and twelve calibration parameters in 3D rotations for magnetometer.",
+	isbn="978-3-319-33389-2"
+}
+
+
+
+@INPROCEEDINGS{carusoSAE,	
+	author={Caruso, M.J.},	
+	journal="SAE International Congress and Exposition", 	
+	publisher="SAE SP-1220",	
+	title="Aplication of Magnetoresistive Sensors in Navigation Systems", 	
+	year="1997",	
+	month="Feb",	
+	volume="",	
+	url="",	
+	pages="15-21",
+	doi="10.4271/970602"
+}
+ 
+@INPROCEEDINGS{838300,
+	author={Caruso, M.J.},
+	booktitle={IEEE 2000. Position Location and Navigation Symposium (Cat. No.00CH37062)}, 
+	title={Applications of magnetic sensors for low cost compass systems}, 
+	year={2000},
+	pages={177-184},
+	doi={10.1109/PLANS.2000.838300}
+}
 
 @inproceedings{cbmet:anabor2012,
 title = "Sistemas convectivos de mesoescala: serão todos {CCMs}?",
@@ -499,6 +600,14 @@ note = "Acesso em: 10/5/2011"
 %%%%% sites 
 
 
+@misc{site:magFierce,
+	author="{KONVALIN, C.}",
+	Title = {Compensating for Tilt, Hard-Iron, and Soft-Iron Effects},
+	publisher={Fierce Electronics},
+	year={2009},
+	url = {https://www.fierceelectronics.com/components/compensating-for-tilt-hard-iron-and-soft-iron-effects},
+	urlaccessdate={6 dec. 2021}
+}
 
 @misc{site:pentaxBarnDoor,
 	author="{DAVID, K.}",
@@ -506,7 +615,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Pentax Foruns},
 	year={2015},
 	url = {https://www.pentaxforums.com/articles/photo-articles/astrophotography-part-3-barn-door-tracker.html},
-	note={Acesso em 10 ago. 2021}
+	urlaccessdate={10 ago. 2021}
 }
 
 @misc{site:driftLupus,
@@ -515,7 +624,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Observatório Astronônico Lupus},
 	year={2014},
 	url = {http://observatoriolupus.blogspot.com/2014/10/alinhamento-pelo-metodo-drift-derivacao.html?m=1},
-	note={Acesso em 26 jul. 2021}
+	urlaccessdate={26 jul. 2021}
 }
 
 
@@ -525,7 +634,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={National Oceanic and Atmospheric Administration},
 	year={c2021},
 	url = {https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination},
-	note={Acesso em 27 jul. 2021}
+	urlaccessdate={27 jul. 2021}
 }
 
 
@@ -535,7 +644,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Educação Espacial},
 	year={2010},
 	url = {https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf },
-	note={Acesso em 19 fev. 2021}
+	urlaccessdate={19 fev. 2021}
 }
 
 @misc{site:introCabau,
@@ -545,7 +654,7 @@ note = "Acesso em: 10/5/2011"
 	year={2016},
 	url = {http://sac.csic.es/astrosecundaria/complementario/pt/actividades/
 	instrumentos/astrofotografia.pdf},
-	note={Acesso em 20 fev. 2021}
+	urlaccessdate={20 fev. 2021}
 }
 
 @misc{site:brescolaAstrofoto,
@@ -554,7 +663,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Brasil Escola},
 	year={c2021},
 	url = {https://brasilescola.uol.com.br/fisica/historia-astronomia.htm.},
-	note={Acesso em 20 fev. 2021}
+	urlaccessdate={20 fev. 2021}
 }
 
 
@@ -564,7 +673,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={IOPTRON},
 	year={c2021},
 	url = {https://www.ioptron.com/product-p/3550.htm},	
-	note={Acesso em 20 fev. 2021}
+	urlaccessdate={20 fev. 2021}
 }
 
 
@@ -574,7 +683,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nyx Tech},
 	year={c2021},
 	url = {https://nyxtech.us/},
-	note={Acesso em 29 mar. 2021}
+	urlaccessdate={29 mar. 2021}
 }
 
 @misc{site:nyxtechtips,
@@ -583,7 +692,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nyx Tech},
 	year={c2021},
 	url = {https://nyxtech.us/pages/tips-tutorials},
-	note={Acesso em 9 ago. 2021}
+	urlaccessdate={9 ago. 2021}
 }
 
 @misc{site:testingMSM,
@@ -592,7 +701,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={The Amazing Sky},
 	year={2019},
 	url = {https://amazingsky.net/2019/08/22/testing-the-msm-tracker/},
-	note={Acesso em 10 ago. 2021}
+	urlaccessdate={10 ago. 2021}
 }
 
 @misc{site:bresserpolarscope,
@@ -601,7 +710,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Bressr group of companies},
 	year={c2021},
 	url = {https://www.bresser.de/en/Astronomy/BRESSER-Polar-Finder-Scope-for-StarTracker-PM-100.html},
-	note={Acesso em 11 ago. 2021}
+	urlaccessdate={11 ago. 2021}
 }
 
 
@@ -613,7 +722,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={MLSDev},
 	year={2021},
 	url = {https://mlsdev.com/blog/kotlin-vs-java},
-	note={Acesso em 16 mar. 2021}
+	urlaccessdate={16 mar. 2021}
 }
 
 @misc{site:500xNPF,
@@ -623,7 +732,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={photographylife},
 	year={2021},
 	url = {https://photographylife.com/500-rule-vs-npf-rule},
-	note={Acesso em 13 jul. 2021}
+	urlaccessdate={13 jul. 2021}
 }
 
 @misc{site:nielsenRealWorld,
@@ -632,7 +741,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2018},
 	url={https://www.nngroup.com/articles/match-system-real-world/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsenFlexibility,
@@ -641,7 +750,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2020},
 	url={https://www.nngroup.com/articles/flexibility-efficiency-heuristic/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsenError,
@@ -650,7 +759,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2015},
 	url={https://www.nngroup.com/articles/slips/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsen,
@@ -659,7 +768,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2020},
 	url={https://www.nngroup.com/articles/ten-usability-heuristics/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsenIcon,
@@ -668,7 +777,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2014},
 	url={https://www.nngroup.com/articles/icon-usability/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsenRecall,
@@ -677,7 +786,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2020},
 	url={https://www.nngroup.com/articles/recognition-and-recall/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 @misc{site:nielsenHelpandDoc,
@@ -686,7 +795,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Nielsen Norman Group},
 	year = {2020},
 	url={https://www.nngroup.com/articles/help-and-documentation/},
-	note={Acessado em 25 de junho de 2021}
+	urlaccessdate={25 de junho de 2021}
 }
 
 
@@ -696,7 +805,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Eduardo e Mônica},
 	year = {2018},
 	url={https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia},
-	note={Acessado em 5 de julho de 2021}
+	urlaccessdate={5 de julho de 2021}
 }
 
 @misc{site:analogI2c,
@@ -705,7 +814,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Analog Devices},
 	year = {c2021},
 	url={https://www.analog.com/en/technical-articles/i2c-primer-what-is-i2c-part-1.html},
-	note={Acessado em 13 de novembro de 2021}
+	urlaccessdate={13 de novembro de 2021}
 }
 
 @misc{site:altiumpcb,
@@ -714,7 +823,7 @@ note = "Acesso em: 10/5/2011"
 	publisher={Altium},
 	year = {2020},
 	url={https://resources.altium.com/p/i2c-vs-spi-vs-uart-how-layout-these-common-buses},
-	note={Acessado em 13 de novembro de 2021}
+	urlaccessdate={13 de novembro de 2021}
 }
 
 @misc{site:devzonebtle,
@@ -723,6 +832,23 @@ title={Bluetooth low energy Services, a beginner's tutorial},
 publisher={Nordic Semicondctor},
 year = {2018},
 url={https://devzone.nordicsemi.com/guides/short-range-guides/b/bluetooth-low-energy/posts/ble-services-a-beginners-tutorial},
-note={Acessado em 13 de novembro de 2021}
+urlaccessdate={13 de novembro de 2021}
 }
 
+@misc{site:MEMSHOTO,
+	author={Nedelkovski, Dejan},
+	title={What is MEMS? Accelerometer, Gyroscope \& Magnetometer with Arduino},
+	publisher={How to Mechatronics},
+	year = {2016},
+	url={https://howtomechatronics.com/how-it-works/electrical-engineering/mems-accelerometer-gyrocope-magnetometer-arduino/},
+	urlaccessdate={22 de novembro de 2021}
+}
+
+@misc{site:eletrogateguiamotor,
+	author={Murta, José G. A.},
+	title={Guia completo do Motor de Passo 28BYJ-48 e Driver ULN2003},
+	publisher={Eletrogate},
+	year = {2016},
+	url={https://blog.eletrogate.com/guia-completo-do-motor-de-passo-28byj-48-driver-uln2003},
+	urlaccessdate={22 de novembro de 2021}
+}
