@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{...}
+\PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{mmDevice}\PYG{p}{:} \PYG{n}{BluetoothDevice} \PYG{c+c1}{// dispositivo}
+\PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{mmInStream}\PYG{p}{:} \PYG{n}{InputStream} \PYG{c+c1}{// buffer de entrada}
+\PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{mmOutStream}\PYG{p}{:} \PYG{n}{OutputStream} \PYG{c+c1}{// buffer de saída}
+\PYG{k+kd}{private} \PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{mmAdapter}\PYG{p}{:} \PYG{n}{BluetoothAdapter}
+\PYG{k+kd}{lateinit} \PYG{k+kd}{var} \PYG{n+nv}{mmSocket}\PYG{p}{:} \PYG{n}{BluetoothSocket}
+\PYG{k+kd}{private} \PYG{k+kd}{val} \PYG{n+nv}{myUUID}\PYG{p}{:} \PYG{n}{UUID? }\PYG{o}{=}
+	\PYG{n}{UUID}\PYG{p}{.}\PYG{n+na}{fromString}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}00001101\PYGZhy{}0000\PYGZhy{}1000\PYGZhy{}8000\PYGZhy{}00805F9B34FB\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kd}{fun} \PYG{n+nf}{connectThread}\PYG{p}{(}\PYG{n}{context}\PYG{p}{:} \PYG{n}{Context}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+	\PYG{k+kd}{val} \PYG{n+nv}{bluetoothManager} \PYG{o}{=}
+		\PYG{n}{context}\PYG{p}{.}\PYG{n+na}{getSystemService}\PYG{p}{(}\PYG{n}{Context}\PYG{p}{.}\PYG{n+na}{BLUETOOTH\PYGZus{}SERVICE}\PYG{p}{)}
+		\PYG{k}{as} \PYG{n}{BluetoothManager}
+	
+	\PYG{c+c1}{// checa se o dispositivo suporta comunicação Bluetooth}
+	\PYG{c+c1}{// e se ela está ativada}
+	\PYG{k}{if} \PYG{p}{(}\PYG{n}{bluetoothManager}\PYG{p}{.}\PYG{n+na}{adapter} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+		\PYG{n}{mmAdapter} \PYG{o}{=} \PYG{n}{bluetoothManager}\PYG{p}{.}\PYG{n+na}{adapter}
+		\PYG{k}{if} \PYG{p}{(}\PYG{o}{!}\PYG{n}{mmAdapter}\PYG{p}{.}\PYG{n+na}{isEnabled}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{k}{throw} \PYG{n}{Exception}\PYG{p}{(}
+				\PYG{l+s}{\PYGZdq{}Bluetooth adapter não encontrado ou acionado!\PYGZdq{}}\PYG{p}{)}
+		\PYG{p}{\PYGZcb{}}
+		\PYG{p}{...}
+		\PYG{c+c1}{// Declara o dispositivo pelo seu endereço MAC}
+		\PYG{n}{mmDevice} \PYG{o}{=} \PYG{n}{mmAdapter}\PYG{p}{.}\PYG{n+na}{getRemoteDevice}\PYG{p}{(}\PYG{n}{DeviceMAC}\PYG{p}{)}
+		\PYG{c+c1}{// Realiza a Conexão}
+		\PYG{n}{mmSocket} \PYG{o}{=} \PYG{n}{mmDevice}\PYG{p}{.}\PYG{n+na}{createRfcommSocketToServiceRecord}\PYG{p}{(}\PYG{n}{myUUID}\PYG{p}{)}
+		\PYG{p}{...}
+		\PYG{k}{try} \PYG{p}{\PYGZob{}}
+			\PYG{n}{mmSocket}\PYG{p}{.}\PYG{n+na}{connect}\PYG{p}{()}
+			\PYG{c+c1}{// Aciona os Buffers I/O de dados bluetooth}
+			\PYG{n}{mmInStream} \PYG{o}{=} \PYG{n}{mmSocket}\PYG{p}{.}\PYG{n+na}{inputStream}
+			\PYG{n}{mmOutStream} \PYG{o}{=} \PYG{n}{mmSocket}\PYG{p}{.}\PYG{n+na}{outputStream}
+			
+		\PYG{p}{\PYGZcb{}} \PYG{k}{catch} \PYG{p}{(}\PYG{n}{e}\PYG{p}{:} \PYG{n}{IOException}\PYG{p}{)} \PYG{p}{\PYGZob{}}
+			\PYG{p}{...}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{p}{...}
+\PYG{p}{\PYGZcb{}}		
+\end{Verbatim}

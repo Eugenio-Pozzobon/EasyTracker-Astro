@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{\PYGZlt{}layout\PYGZgt{}}
+	...
+	\PYG{c}{\PYGZlt{}!\PYGZhy{}\PYGZhy{} Disponibiliza os dados do ViewModel para realizar databinding. \PYGZhy{}\PYGZhy{}\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}data\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}variable}
+	\PYG{n+na}{name=}\PYG{l+s}{\PYGZdq{}newProfileViewModel\PYGZdq{}}
+	\PYG{n+na}{type=}\PYG{l+s}{\PYGZdq{}com.epp.easytracker.newprofile.NewProfileViewModel\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}/data\PYGZgt{}}		
+\PYG{n+nt}{\PYGZlt{}/layout\PYGZgt{}}
+\end{Verbatim}

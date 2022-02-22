@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+...
+android \PYGZob{}
+	...
+	defaultConfig \PYGZob{}
+		minSdkVersion 21
+		targetSdkVersion 31
+		...
+	\PYGZcb{}
+\PYGZcb{}
+\end{Verbatim}

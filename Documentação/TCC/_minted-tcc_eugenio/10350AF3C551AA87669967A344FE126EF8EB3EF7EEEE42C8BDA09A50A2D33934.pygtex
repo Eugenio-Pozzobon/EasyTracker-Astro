@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nd}{@Entity}\PYG{p}{(}\PYG{n}{tableName} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}profile\PYGZus{}table\PYGZdq{}}\PYG{p}{)}
+\PYG{k+kd}{data} \PYG{k+kd}{class} \PYG{n+nc}{Profile}\PYG{p}{(}
+	\PYG{n+nd}{@PrimaryKey}\PYG{p}{(}\PYG{n}{autoGenerate} \PYG{o}{=} \PYG{k+kc}{true}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{profileId}\PYG{p}{:} \PYG{k+kt}{Long} \PYG{o}{=} \PYG{l+m}{0L}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}profile\PYGZus{}name\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{profileName}\PYG{p}{:} \PYG{k+kt}{String} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}last\PYGZus{}profile\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{lastProfile}\PYG{p}{:} \PYG{k+kt}{Boolean} \PYG{o}{=} \PYG{k+kc}{false}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}gps\PYGZus{}data\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{gpsData}\PYG{p}{:} \PYG{k+kt}{String} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}declination\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{declination}\PYG{p}{:} \PYG{k+kt}{String} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}bluetooth\PYGZus{}mac\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{var} \PYG{n+nv}{btAddress}\PYG{p}{:} \PYG{k+kt}{String} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,}
+	\PYG{n+nd}{@ColumnInfo}\PYG{p}{(}\PYG{n}{name} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}start\PYGZus{}time\PYGZus{}milli\PYGZdq{}}\PYG{p}{)}
+	\PYG{k+kd}{val} \PYG{n+nv}{startTimeMilli}\PYG{p}{:} \PYG{k+kt}{Long} \PYG{o}{=} \PYG{n}{System}\PYG{p}{.}\PYG{n+na}{currentTimeMillis}\PYG{p}{()}
+\PYG{p}{)}
+\end{Verbatim}

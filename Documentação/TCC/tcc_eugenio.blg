@@ -26,7 +26,7 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
-Reallocating 'field_info' (item size: 4) to 10037 items.
+Reallocating 'field_info' (item size: 4) to 10106 items.
 Database file #1: abntex2-options.bib
 Database file #2: referencias.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
@@ -38,44 +38,44 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 73 entries,
+You've used 74 entries,
             6714 wiz_defined-function locations,
-            1621 strings with 20689 characters,
-and the built_in function-call counts, 96994 in all, are:
-= -- 11932
-> -- 1012
-< -- 2827
-+ -- 3215
-- -- 327
-* -- 5622
-:= -- 11735
-add.period$ -- 307
-call.type$ -- 76
-change.case$ -- 462
-chr.to.int$ -- 93
-cite$ -- 64
-duplicate$ -- 10555
-empty$ -- 4360
-format.name$ -- 1506
-if$ -- 19346
+            1629 strings with 20939 characters,
+and the built_in function-call counts, 99187 in all, are:
+= -- 12231
+> -- 1017
+< -- 2912
++ -- 3302
+- -- 329
+* -- 5739
+:= -- 11998
+add.period$ -- 312
+call.type$ -- 77
+change.case$ -- 467
+chr.to.int$ -- 94
+cite$ -- 65
+duplicate$ -- 10838
+empty$ -- 4426
+format.name$ -- 1520
+if$ -- 19748
 int.to.chr$ -- 10
 int.to.str$ -- 3
-missing$ -- 1155
-newline$ -- 326
-num.names$ -- 276
-pop$ -- 1260
+missing$ -- 1171
+newline$ -- 331
+num.names$ -- 281
+pop$ -- 1276
 preamble$ -- 1
-purify$ -- 229
+purify$ -- 232
 quote$ -- 0
-skip$ -- 10863
+skip$ -- 11149
 stack$ -- 1
-substring$ -- 4238
-swap$ -- 3688
-text.length$ -- 48
+substring$ -- 4344
+swap$ -- 3784
+text.length$ -- 49
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 24
 warning$ -- 0
-while$ -- 397
+while$ -- 404
 width$ -- 0
-write$ -- 1036
+write$ -- 1052

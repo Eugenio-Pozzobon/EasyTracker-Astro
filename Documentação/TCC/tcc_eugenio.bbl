@@ -258,10 +258,10 @@ Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/flexibility-efficiency-heuristic/}.
   Acesso em: 25 de junho de 2021.}
 
-\bibitem[Lochun, GateÇr e Lawrence 2015]{book:bbcsky}
-\abntrefinfo{Lochun, GateÇr e Lawrence}{LOCHUN; GATEÇR; LAWRENCE}{2015}
-{LOCHUN, K.; GATEÇR, W.; LAWRENCE, P. \textbf{The Complete Guide to
-  Astrophotography.} [S.l.]: BBC Sky at Night Magazine, 2015.}
+\bibitem[Lochun et al. 2015]{book:bbcsky}
+\abntrefinfo{Lochun et al.}{LOCHUN et al.}{2015}
+{LOCHUN, K. et al. \textbf{The Complete Guide to Astrophotography.} [S.l.]: BBC
+  Sky at Night Magazine, 2015.}
 
 \bibitem[Mack 2008]{livro:starwatch:v1}
 \abntrefinfo{Mack}{MACK}{2008}
@@ -372,6 +372,14 @@ Dispon{\'\i}vel em:
 {SERONIK, G. A tracking platform for astrophotography.
 \textbf{Sky and Telescope Magazine}, 2007.}
 
+\bibitem[Solutions c2022]{site:MVVM}
+\abntrefinfo{Solutions}{SOLUTIONS}{c2022}
+{SOLUTIONS, D. \textbf{MVVM and its implementation in Android}. Digital
+  Solutions Consulting GmbH, c2022.
+Dispon{\'\i}vel em:
+  \url{https://digital-solutions.consulting/blog/mvvm-and-its-implementation-in-android/}.
+  Acesso em: 22 de janeiro de 2022.}
+
 \bibitem[Takahasi 2003]{diss:ClaudioBluetooth}
 \abntrefinfo{Takahasi}{TAKAHASI}{2003}
 {TAKAHASI, C.~K.
@@ -409,7 +417,7 @@ Dispon{\'\i}vel em:
 \abntrefinfo{VECTORNAV}{VECTORNAV}{c2021}
 {VECTORNAV. \textbf{MAGNETOMETER: HARD E SOFT IRON CALIBRATION}.
 [S.l.], c2021. Dispon{\'\i}vel em:
-  \url{https://www.vectornav.com/resources/inertial-navigation-primer/specifications----error-budgets/specs-hsicalibration}.
+  \url{https://www.vectornav.com/resources/inertial-navigation-primer/specifications--and--error-budgets/specs-hsicalibration}.
   Acesso em: 11 dec. 2021.}
 
 \bibitem[VIERO 2018]{site:eduardoemonica}

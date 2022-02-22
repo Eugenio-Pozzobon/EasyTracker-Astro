@@ -1,0 +1,67 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Exemplo de solução comercial empregada em astrofotografias\relax }}{12}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Efeito de zoom gerado pela variação da distância focal\relax }}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Fotografia da Via Láctea com lente \textit {zoom} em configuração de 4mm\relax }}{15}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Fotografia de Júpiter e as Luas de Galileu com lente \textit {zoom} em configuração de 205mm\relax }}{16}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Impacto do tempo de exposição de captura para objetos em movimento\relax }}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Variações de abertura de uma lente\relax }}{17}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Impacto da abertura na profundidade de campo\relax }}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Variações do ISO e o ruído agregado\relax }}{18}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fotografia com a captura de um \textit {star trail}\relax }}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Efeito da combinação de imagens. (a) Imagem Original e (b) Empilhamento de 32 imagens\relax }}{21}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Diagrama do processo de calibração do empilhamento sem o uso de \textit {Dark Flat Frames}\relax }}{21}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces O enquadramento não rotaciona com o astro na montagem Alt-Azimutal\relax }}{23}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces O enquadramento se mantêm constante na montagem equatorial\relax }}{24}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Projeção do eixo de rotação da terra no céu marca os polos Norte/Sul; a projeção da linha do equador determina o Equador celestial.\relax }}{24}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Exemplo de Montagem \textit {Barn Door}\relax }}{25}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces \textit {Barn Door} com braço simples\relax }}{26}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Diagrama de montagem do mecanismo de Braço Duplo\relax }}{26}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Modelo de Montagem Curva}}{27}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Alinhamento por \textit {laser}\relax }}{28}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.19}{\ignorespaces Visor de uma luneta para astrofotografia, contendo marcadores para alinhar as estrelas\relax }}{28}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.20}{\ignorespaces Alinhamento impossível sem colaboração do tempo limpo\relax }}{29}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.21}{\ignorespaces Marcação da latitude para ajuste de elevação\relax }}{30}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.22}{\ignorespaces Estrela centralizada na grelha do visor da câmera\relax }}{31}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.23}{\ignorespaces Estrela apresentando fuga para a direita que, neste caso, aponta para o Sul\relax }}{31}{figure.caption.32}%
+\contentsline {figure}{\numberline {2.24}{\ignorespaces Cabeça de Tripé com possibilidade para ajuste de precisão\relax }}{32}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.25}{\ignorespaces Cabeça de Tripé com possibilidade para ajuste de precisão\relax }}{32}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.26}{\ignorespaces Nyx Tracker\relax }}{33}{figure.caption.37}%
+\contentsline {figure}{\numberline {2.27}{\ignorespaces Visualização conceitual de um sistema embarcado.\relax }}{34}{figure.caption.38}%
+\contentsline {figure}{\numberline {2.28}{\ignorespaces Modelos de motores: (a) um motor unipolar, (b) motor bipolar\relax }}{35}{figure.caption.39}%
+\contentsline {figure}{\numberline {2.29}{\ignorespaces Diagrama de controle de um motor de passo\relax }}{36}{figure.caption.40}%
+\contentsline {figure}{\numberline {2.30}{\ignorespaces Sistema de ângulos \textit {Roll($\phi $)-Pitch( $ \theta $)-Yaw($ \psi $)} para um avião\relax }}{39}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.31}{\ignorespaces Visualização de um acelerômetro digital: a massa laranja se move, alternando a distância de sua aleta com as partes em verde, oscilando a capacitância C1 e C2\relax }}{40}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.32}{\ignorespaces Vista interna de um giroscópio digital\relax }}{41}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces Efeito Hall aplicado para medição de campo magnético\relax }}{42}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.34}{\ignorespaces Vetor de direção do campo magnético\relax }}{45}{figure.caption.47}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces Diagrama de leitura dos dados inerciais com magnetômetro\relax }}{46}{figure.caption.48}%
+\contentsline {figure}{\numberline {2.36}{\ignorespaces Planificação dos dados de um sistema inclinado\relax }}{46}{figure.caption.49}%
+\contentsline {figure}{\numberline {2.37}{\ignorespaces Leitura de dados ideal de um magnetômetro ao rotacioná-lo $ 360^{\circ } $\relax }}{48}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.38}{\ignorespaces Impacto das interferências \textit {hard-iron} (a) e \textit {soft-iron} (b) na leitura do magnetômetro em rotação de $ 360^{\circ } $\relax }}{48}{figure.caption.51}%
+\contentsline {figure}{\numberline {2.39}{\ignorespaces Aplicação da calibração: (a) sinal original lido, (b) sinal lido após aplicação da calibração\relax }}{50}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.40}{\ignorespaces Exemplos de comunicação UART\relax }}{51}{figure.caption.53}%
+\contentsline {figure}{\numberline {2.41}{\ignorespaces Topologia de uma rede I2C com 1 mestre e 3 escravos conectados às linhas SDA e SCL, ambas com resistores de \textit {pull-up}\relax }}{52}{figure.caption.54}%
+\contentsline {figure}{\numberline {2.42}{\ignorespaces Transmissão de dados do mestre para o escravo\relax }}{53}{figure.caption.55}%
+\contentsline {figure}{\numberline {2.43}{\ignorespaces Requisição de dados do mestre ao escravo\relax }}{53}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.44}{\ignorespaces condições de \textit {START} e \textit {STOP} no padrão I2C\relax }}{54}{figure.caption.57}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resultados do Formulário de Pesquisa com Usuários: (a) Interesse dos astrofotógrafos no aplicativo, e; (b) sistema operacional usado\relax }}{65}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{65}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Fluxo de Atividade Principal\relax }}{66}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Fluxo de Atividade para alinhamento com Método \textit {Drift}\relax }}{67}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Prototipação das Telas no Adobe XD\relax }}{68}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Esboço de tela padrão para o perfil de dados de localização\relax }}{68}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Configuração principal do compilador, no arquivo \textit {build.graddle}\relax }}{70}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Código usado para estabelecer as permissões que serão solicitadas ao usuário.\relax }}{70}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sistema Android solicitando permissão ao usuário\relax }}{71}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Código usado para estabelecer a base de dados\relax }}{71}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Arquitetura MVVM genérica.\relax }}{72}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Arquitetura MVVM aplicada ao sistema \textit {Android}, em \textit {Kotlin}\relax }}{73}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces \textit {Fragments} dentro de uma mesma \textit {Activity}\relax }}{73}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Declaração do \textit {ViewModel} dentro do \textit {layout}, no \textit {Fragment} que cria um novo perfil de localização\relax }}{74}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Código dentro do \textit {layout} de um \textit {fragment} para conectar um texto à uma variável, e um botão à uma função que aciona o \textit {ViewModel} diretamente\relax }}{74}{figure.caption.74}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Código do \textit {ViewModel}, que se conectará com a \textit {View} por \textit {Databinding}\relax }}{75}{figure.caption.75}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Código simplificado para estabelecer a base de dados\relax }}{76}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Pacote de dados transmitido no cenário de alinhamento\relax }}{77}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Diagrama de processamento empregado no lado do Aplicativo\relax }}{78}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces \textit {Popup} padrão para reconectar com a Eletrônica\relax }}{78}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Arquitetura final do aplicativo\relax }}{79}{figure.caption.80}%

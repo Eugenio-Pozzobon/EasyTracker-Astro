@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{package} \PYG{n+nn}{com.epp.easytracker.newprofile}
+
+\PYG{c+c1}{//declaração do viewModel}
+\PYG{k+kd}{class} \PYG{n+nc}{NewProfileViewModel}\PYG{p}{(}
+	\PYG{k+kd}{val} \PYG{n+nv}{database}\PYG{p}{:} \PYG{n}{ProfileDatabaseDao}\PYG{p}{,}
+	\PYG{n}{application}\PYG{p}{:} \PYG{n}{Application}
+\PYG{p}{)} \PYG{p}{:} \PYG{n}{AndroidViewModel}\PYG{p}{(}\PYG{n}{application}\PYG{p}{)} \PYG{p}{\PYGZob{}}		
+	\PYG{p}{...}
+	\PYG{c+c1}{// variável mutável para ser acessada por databinding}
+	\PYG{k+kd}{var} \PYG{n+nv}{magDeclination} \PYG{o}{=} \PYG{n}{MutableLiveData}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{String}\PYG{o}{\PYGZgt{}}\PYG{p}{()}
+	
+	\PYG{c+c1}{// função pública para ser acessada via databiding}
+	\PYG{c+c1}{// informa ao viewmodel que o botão de}
+	\PYG{c+c1}{// conexão bluetooth foi pressionado}
+	\PYG{k+kd}{fun} \PYG{n+nf}{onStartConnection}\PYG{p}{()\PYGZob{}}
+		\PYG{n}{viewModelScope}\PYG{p}{.}\PYG{n+na}{launch} \PYG{p}{\PYGZob{}}
+			\PYG{n}{\PYGZus{}startConnection}\PYG{p}{.}\PYG{n+na}{value} \PYG{o}{=} \PYG{k+kc}{true}
+		\PYG{p}{\PYGZcb{}}
+	\PYG{p}{\PYGZcb{}}
+	\PYG{p}{...}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
