@@ -4,9 +4,9 @@ Para realizar o desenvolvimento de um aplicativo, é preciso analisar a necessid
 
 \section{Necessidades dos Usuários}
 
-O primeiro passo do desenvolvimento foi buscar entender o que os usuários de uma plataforma equatorial precisam, e como o aplicativo pode contribuir para sanar as necessidades. Para investigar isso, foi desenvolvido um formulário de pesquisa, destinado a astrofotógrafos que já utilizam, ou não, uma plataforma de astrofotografia. Essa pesquisa foi divulgada por meio de parceiros em mídias sociais e obteve 68 respostas.
+O primeiro passo do desenvolvimento foi buscar entender o que os usuários de uma plataforma equatorial precisam, e como o aplicativo pode contribuir para sanar as necessidades. Para investigar isso, foi desenvolvido um formulário de pesquisa, destinado a astrofotógrafos que já utilizaram, ou não, uma plataforma de astrofotografia. Essa pesquisa foi divulgada por meio de parceiros em mídias sociais e obteve 68 respostas.
 
-A pesquisa foi desenvolvida buscando responder 2 perguntas gerais: "qual o nível de interesse e necessidade de uma plataforma equatorial?", e "qual o tipo de fotografia que os astrofotógrafos almejam com essas técnicas?". Essas perguntas permitem identificar, no público, se a ideia é realmente válida, qual o nível de precisão que eles precisam, e se requerem recursos para utilizar métodos de alinhamento avançado (como o método \textit{Drift}, abordado na seção \ref{driftsection}). Na mesma oportunidade, verificou-se qual o tipo de sistema operacional o público usa, escolaridade, entre outras informações relevantes.
+A pesquisa foi desenvolvida buscando responder a duas perguntas gerais: "qual o nível de interesse e necessidade de uma plataforma equatorial?", e "qual o tipo de fotografia que os astrofotógrafos almejam com essas técnicas?". Essas perguntas permitem identificar, no público, se a ideia é realmente válida, qual o nível de precisão que eles precisam, e se requerem recursos para utilizar métodos de alinhamento avançado (como o método \textit{Drift}, abordado na seção \ref{driftsection}). Na mesma oportunidade, verificou-se qual o tipo de sistema operacional o público usa, escolaridade, entre outras informações relevantes.
  
 Os resultados evidenciaram a necessidade do aplicativo e a relevância do projeto, demonstrado pela Figura \ref{fig:resultadoapp}. Concomitantemente, constatou-se que os usuários \textit{Android} dominam uma grande parcela do público, como demonstra a Figura \ref{fig:usuariosandroid}. 
 
@@ -14,7 +14,7 @@ Os resultados evidenciaram a necessidade do aplicativo e a relevância do projet
 \begin{figure}[!htb]
 	\centering
 	\captionsetup[subfigure]{justification=centering}
-	\caption{Resultados do Formulário de Pesquisa com Usuários: (a) Interesse dos astrofotógrafos no aplicativo, e; (b) sistema operacional usado}
+	\caption{Resultados do Formulário de Pesquisa com Usuários. (a) Interesse dos astrofotógrafos no aplicativo. (b) Sistema operacional usado}
 	\begin{subfigure}[b]{0.58\textwidth}
 		\centering
 		\includegraphics[width=.9\linewidth]{figuras/desAplicativo/interesse}
@@ -29,11 +29,11 @@ Os resultados evidenciaram a necessidade do aplicativo e a relevância do projet
 		\label{fig:usuariosandroid}
 	\end{subfigure}
 	\label{fig:resultadosforms}
-	\fonte{Autor}
+	\fonte{Autor.}
 \end{figure}
 
 \subsection{Casos de Uso}
-Em função das necessidades elencadas pelos usuários de uma plataforma equatorial, pode-se inferir possíveis casos de uso do aplicativo. Cada caso gera um fluxo de atividade alternativo, com cada passo que o usuário possivelmente realizará dentro do software. Em geral, têm-se 3 cenários.
+Em função das necessidades elencadas pelos usuários de uma plataforma equatorial, pode-se inferir possíveis casos de uso do aplicativo. Cada caso gera um fluxo de atividade alternativo, com cada passo que o usuário possivelmente realizará dentro do software. Em geral, têm-se três cenários.
 
 No primeiro caso, o fluxo de atividades diz respeito ao usuário que deseja alinhar a plataforma. Um segundo fluxo faz referência a um usuário avançado, que deseja realizar um alinhamento por método \textit{Drift}. Por fim, um fluxo comum é referente ao usuário que deseja buscar informações no aplicativo, sobre fotografia, astrofotografia ou o projeto da plataforma como um todo. Cada cenário pode ser visualizado no diagrama geral de casos de uso \footnote{No diagrama, quando uma ação está conectada usando o termo "\textit{include}", significa que a próxima ação é obrigatória para o fluxo do aplicativo. Quando a conexão é feita com o termo "\textit{extended}", significa que a ação é opcional.}(Figura \ref{fig:casosDeUso}).
 
@@ -47,7 +47,7 @@ No primeiro caso, o fluxo de atividades diz respeito ao usuário que deseja alin
 
 \subsubsection{Fluxo de atividades}
 
-Com base nesses 3 casos, determina-se qual a sequência de atividades que os usuários deverão executar para obter o que desejam. A primeira delas, de alinhamento, possui uma variação para novos usuários no aplicativo, pois estes não possuem nenhum local cadastrado no sistema, e precisam passar por telas receptivas de aprendizado. Mas, após realizar o cadastro de uma localização, o fluxo de atividade de alinhamento segue a mesma ordem: nivela-se a plataforma, ajusta-se o azimute com o polo Norte/Sul e, inclina-se a plataforma no ângulo da latitude. Esse cenário pode ser visualizado no fluxo de atividades da Figura \ref{fig:atividadeprincipal}.
+Com base nesses três casos, determina-se qual a sequência de atividades que os usuários deverão executar para obter o que desejam. A primeira delas, de alinhamento, possui uma variação para novos usuários no aplicativo, pois estes não possuem nenhum local cadastrado no sistema, e precisam passar por telas receptivas de aprendizado. Mas, após realizar o cadastro de uma localização, o fluxo de atividade de alinhamento segue a mesma ordem: nivela-se a plataforma, ajusta-se o azimute com o polo Norte/Sul e, inclina-se a plataforma no ângulo da latitude. Esse cenário pode ser visualizado no fluxo de atividades da Figura \ref{fig:atividadeprincipal}.
 
 \begin{figure}[!htb]
 	\centering
@@ -67,7 +67,7 @@ O segundo caso de uso, envolvendo alinhamento avançado com método \textit{Drif
 	\fonte{Autor.}
 \end{figure}
 
-Por fim, o último caso - e mais simples -, que diz respeito a um usuário buscando informação, pode ser sintetizado em duas telas: uma com perguntas frequentes; e outra com informações mais complexas, redirecionando para os repositórios digitais e documentos. 
+Por fim, o último caso -- e mais simples --, que diz respeito a um usuário buscando informação, pode ser sintetizado em duas telas: uma com perguntas frequentes; e outra com informações mais complexas, redirecionando para os repositórios digitais e documentos. 
 
 \subsection{Prototipação das Telas}
 
@@ -81,7 +81,7 @@ O fluxo da atividade principal, envolvendo configuração do aplicativo e alinha
 	\fonte{Autor.}
 \end{figure}
 
-De forma geral, optou-se por usar ícones para chamar a atenção do usuário para as variáveis de posição, declinação magnética e status da conexão \textit{Bluetooth}. Como somente esses 3 dados são fundamentais para o uso da plataforma, foi possível criar um layout padrão de perfil para cada localização (Figura \ref{fig:layoutpadraoperfil}). 
+De forma geral, optou-se por usar ícones para chamar a atenção do usuário para as variáveis de posição, declinação magnética e status da conexão \textit{Bluetooth}. Como somente esses três dados são fundamentais para o uso da plataforma, foi possível criar um \textit{layout} padrão de perfil para cada localização (Figura \ref{fig:layoutpadraoperfil}). 
 
 \begin{figure}[!htb]
 	\centering
@@ -91,11 +91,191 @@ De forma geral, optou-se por usar ícones para chamar a atenção do usuário pa
 	\fonte{Autor.}
 \end{figure}
 
-Além das telas de dados, o fluxo da atividade de alinhamento da plataforma foi projetado para guiar o usuário em um passo a passo simplificado. Porém, todas as telas foram desenhadas para manterem o mesmo padrão de interface, tornando a experiência mais fluída e compreensível. As demais situações foram pós implementadas diretamente durante o desenvolvimento do sistema \textit{Android}, sendo apenas abstraídas durante essa primeira etapa.
+Além das telas de dados, o fluxo da atividade de alinhamento da plataforma foi projetado para guiar o usuário em um passa-a-passo simplificado. Porém, todas as telas foram desenhadas para manterem o mesmo padrão de interface, tornando a experiência mais fluída e compreensível. As demais situações foram pós implementadas diretamente durante o desenvolvimento do sistema \textit{Android}, sendo apenas abstraídas durante essa primeira etapa.
 
-\section{Implementação do Aplicativo Android}
+\section{Implementação do Aplicativo}
 
-Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos e requisitos que serão necessários para o funcionamento do aplicativo; dados a serem coletados do usuário, e; arquitetura de desenvolvimento.
+Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos de design e experiência do usuário empregados, requisitos que serão necessários para o funcionamento do aplicativo; dados a serem coletados do usuário; e arquitetura de desenvolvimento. Antes de abordar essa discussão, apresentarei a parte gráfica do software.
+
+\subsection{Interface e Experiência}
+
+A interface gráfica do aplicativo foi desenvolvida baseando-se em elementos prontos da biblioteca Material Design, e considerando a identidade visual planejada para o Projeto.
+
+\subsubsection{Identidade Visual}
+
+
+\subsubsection{Elementos e Cores}
+A biblioteca Material unifica padrões e elementos em recursos mobile, e por isso buscou-se sempre utiliza-la para criação de elementos. Assim, todos os campos de entrada de dados do usuário, na criação do perfil de localização, são campos de entrada providos por ela. As cores seguem um padrão do modo escuro da Material, onde o preto em \textit{background} não é totalmente preto e popups de aviso possuem botões em cores que chamam a atenção; as demais cores adotadas -- em outros elementos -- são proporcionadas pela identidade visual do projeto. A Figura \ref{} enumera os elementos principais da interface, e as respectivas cores utilizadas, .
+
+
+Com base nesses elementos, cores, e nas telas protótipo desenhadas anteriormente, implementou-se o aplicativo. As telas serão abordadas nas próximas sub-seções na ordem da experiência de um novo usuário.
+
+\subsubsection{Primeiro Uso}
+
+Um novo usuário da plataforma é reconhecido pelo sistema e para ele aparece uma mensagem inicial de boas vindas, e que informa a ele sobre a necessidade de pareamento com o sistema eletrônico antes de usar o App. Na sequência, o usuário deve registrar uma localização nova de onde ele usará a plataforma. 
+
+
+\begin{figure}[H]
+	\centering
+	\caption{Telas Iniciais}
+	\label{telasiniciais}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{figuras/desAplicativo/welcome}
+		\caption{Boas vindas}
+		\label{initial}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{figuras/desAplicativo/add}
+		\caption{Inserção de dados}
+		\label{polar}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.75\textwidth]{figuras/desAplicativo/erroescrita}
+		\caption{Erro: faltou o nome}
+		\label{elev}
+	\end{subfigure}
+\end{figure}
+
+
+
+\subsubsection{Manipulação de Perfis de Localização}
+A partir de configurado uma vez, o App irá abrir sempre na tela de perfil no último que foi usado, ignorando as telas anteriores. Ainda é possível que o usuário edite as informações neste perfil, ou adicione novos, edite os novos, e carregue outros perfis no aplicativo. O usuário ainda pode apagar todos os perfis de localização, mas ele é obrigado a criar um perfil para usar o aplicativo.
+
+\begin{figure}[H]
+	\centering
+	\caption{Telas de perfis}
+	\label{telasperfis}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/desAplicativo/edit}
+		\caption{Editar Perfil}
+		\label{edit}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.6\textwidth]{figuras/desAplicativo/load}
+		\caption{Carregar Perfil}
+		\label{load}
+	\end{subfigure}
+\end{figure}
+
+\subsubsection{Botão de Conectar em 3 estágios}
+O botão de conexão bluetooth oscila em 3 estados que indicam o estado da conexão bluetooth. (Figura \ref{conect})
+
+\begin{figure}[!htb]
+	\centering
+	\caption{Conexão Realizada}
+	\label{conect}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/conectar}
+		\caption{Conexão não iniciada}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/conectando}
+		\caption{Conexão em Andamento}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/conectado}
+		\caption{Alinhamento de Elevação}
+	\end{subfigure}
+\end{figure}
+
+
+
+
+\subsubsection{Realização do Alinhamento}
+As 4 telas de alinhamento consistem de 3 telas guias e uma tela final (Figura \ref{endalignment}) com dicas e instruções, com um controle de ligar ou desligar o rastreamento da plataforma. O usuário deve realizar o alinhamento pelas 3 telas tendo como base a vista superior da plataforma que está presente nas telas, guiando para nivelar e alinhar a plataforma com o polo celeste. 
+
+\begin{figure}[!htb]
+	\centering
+	\caption{Telas de Alinhamento}
+	\label{alinhamento}
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/nivel}
+		\caption{Nivelamento da plataforma}
+		\label{menu}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/azimute}
+		\caption{Azimute da Plataforma}
+		\label{menu1st}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/elevacao}
+		\caption{Angulo Da plataforma}
+		\label{menubus}
+	\end{subfigure}
+\end{figure}
+
+\subsection{Outras Telas}
+
+Ainda existem telas com Guias e tutoriais (Figura \ref{faq}), que pode ser expandida com mais questões, telas sobre o aplicativo (Figura \ref{about}), que redirecionam para links externos de documentação open-source.
+
+\begin{figure}[!htb]
+	\centering
+	\caption{Telas Informativas}
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/about}
+		\caption{Menu de Navegação Lateral}
+		\label{about}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/faq}
+		\caption{Questões Comuns}
+		\label{faq}
+	\end{subfigure}
+\end{figure}
+
+\subsection{Menus}
+
+O sistema ainda é composto por menus. O menu lateral (Figura \ref{menu}) pode ser acessível somente na tela inicial da atividade que é a tela com o perfil principal. O menu superior é configurável e foi melhorado trazendo soluções especificas para cada tela do app, de forma geral, oferecendo a possibilidade de acessar a seção de dúvidas sobre o sistema. Os principais menus constam na tela inicial (Figura \ref{menu1st}) e na tela de bússola (Figura \ref{menubus}).
+
+\begin{figure}[!htb]
+	\centering
+	\caption{Menus}
+	\label{overflowmenus}
+	
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/menu}
+		\caption{Menu de Navegação}
+		\label{nivel}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/overflow}
+		\caption{Menu de perfil}
+		\label{azim}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/overbus}
+		\caption{Menu da Bússola}
+		\label{elevacao}
+		
+	\end{subfigure}
+\end{figure}
 
 \subsection{Requisitos de Sistema}
 
@@ -129,26 +309,7 @@ android {
 \fonte{Autor.}
 \end{figure}
 
-Então, a partir da definição de quais subsistemas do celular serão usados junto com o aplicativo, entende-se quais permissões são necessárias obter do usuário. Neste caso, em função da necessidade de uso do GPS e o \textit{Bluetooth}, é preciso que o usuário permita serviços de localização e comunicação. Esses serviços são definidos, com o código da Figura \ref{code:uses-permission}\footnote{O arquivo de manifesto completo pode ser acessado aqui: link-no-futuro}, no Arquivo de Manifesto - onde são declaradas todas as atividades e recursos que serão usados pelo aplicativo - e, quando forem requeridos pela aplicação, a plataforma \textit{Android} se encarregará de solicitar ao usuário a permissão, por meio de um pop-up (Figura \ref{fig:permissaoandroid}).
-
-\begin{figure}[htb]
-	\centering
-	\caption{Código usado para estabelecer as permissões que serão solicitadas ao usuário.}
-	\vspace{-15pt}
-	\begin{minted}[bgcolor=codebg, fontsize=\small, frame=lines]{xml}
-<manifest>
-  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-  <uses-permission android:name="android.permission.BLUETOOTH"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
-  <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-</manifest>
-\end{minted}
-\label{code:uses-permission}
-	\vspace{-30pt}
-\fonte{Autor.}
-\end{figure}
+Então, a partir da definição de quais subsistemas do celular serão usados junto com o aplicativo, entende-se quais permissões são necessárias obter do usuário. Neste caso, em função da necessidade de uso do GPS e o \textit{Bluetooth}, é preciso que o usuário permita serviços de localização e comunicação. Esses serviços são definidos no Arquivo de Manifesto\footnote{O arquivo de manifesto completo pode ser acessado aqui: link-no-futuro}, -- onde são declaradas todas as atividades e recursos que serão usados pelo aplicativo -- e, quando forem requeridos pela aplicação, a plataforma \textit{Android} se encarregará de solicitar ao usuário a permissão, por meio de um pop-up (Figura \ref{fig:permissaoandroid}).
 
 \begin{figure}[htb]
 	\centering
@@ -196,7 +357,7 @@ data class Profile(
 
 Hoje em dia, a privacidade é um dos tópico muito relevante e é discutida por qualquer empresa de tecnologia. Com essa preocupação, contratos e políticas de privacidade fazem parte dessa discussão, e, por isso, é necessário que seja descrito da forma mais clara possível, para o usuário, quais e como seus dados serão usados.
 
-Então, para o projeto, elaborou-se uma política de privacidade destacando o uso das permissões de uso de dados \textit{Bluetooth} e GPS. Os demais dados coletados não são considerados sensíveis\footnote{A política de privacidade pode ser conferida na íntegra neste link: link-no-futuro}.
+Então, para o projeto, elaborou-se uma política de privacidade destacando o uso de dados \textit{Bluetooth} e GPS. As demais informações coletadas não são considerados sensíveis\footnote{A política de privacidade pode ser conferida na íntegra neste link: link-no-futuro}.
 
 \subsection{Arquitetura do Funcionamento}
 
@@ -438,3 +599,4 @@ Portanto, a arquitetura final do sistema pode ser demonstrada na Figura \ref{fig
 	\label{fig:finalarc}
 	\fonte{Autor.}
 \end{figure}
+

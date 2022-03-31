@@ -1,51 +1,109 @@
 \chapter{Desenvolvimento da Plataforma}
 
-\section{Hardware}
+Para desenvolver a parte física da plataforma, que irá realizar o movimento da câmera e comunicar-se com aplicativo, é preciso começar pela parte mecânica do sistema. Em conjunto com desenvolvimento estrutural, é realizado o projeto eletrônico, com a Placa de Circuito Impresso (PCI) que irá agrupar os componentes eletrônicos. 
 
-\subsection{Módulos Comerciais}
-\subsubsection{Módulo Bluetooth HC05}
-Justificativa, limitações, pinagem
+\section{Projeto Estrutural}
+Dentre as variações de modelo Barn-Door que foram abordadas na seção x, optou-se pelo modelo de rosca curvada, que é o mais simples e barato dentre as outras opções. A montagem de braço simples foi descartada pois ela requer que o motor tenha um feedback do ângulo da plataforma, para regular sua correta velocidade, isso encarece o sistema e torna-o mais complexo. Ao contrário, a montagem de braço dupla não possui esse último problema, porém requer uma montagem mais elaborada e com mais componentes mecânicos, pecando na simplicidade. 
 
-\subsubsection{Módulo de sensores GY87}
-Pinagem
+\subsection{Requisitos de Projeto}
+Apesar da montagem curva ter suas vantagens, ela também apresenta características estruturais que requerem atenção durante o projeto; não só por problemas inerente da montagem curva, mas também por eles serem um problema genérico de qualquer montagem Barn-Door. Então, destacam-se abaixo os requisitos de projeto mais relevantes para este trabalho:
 
+\begin{itemize}
+	\item Mover a câmera com uma velocidade angular constante de $ 0,2507^{\circ}/min $. 
+	\item Suportar pelo menos 2kg de peso total em rastreamento. 
+	\item Ter peso máximo de 1kg sem a câmera.
+	\item Possuir uma vibração -- em rastreamento e nos 3 eixos inerciais -- que não seja visível no sensor da câmera.
+\end{itemize}
+
+\subsection{Motor 28BYJ-48}
+O motor selecionado foi o modelo 28BYJ-48, por ser de baixíssimo custo e funcionar com tensão de alimentação 5V. A importância disso será abordada na próxima seção. 
+
+ESPECIFICAÇÕES...
+
+\subsection{Estrutura Principal}
+
+A estrutura principal é a estrutura responsável por abrigar todos os componentes, fixar a câmera e ser fixada no tripé do fotógrafo. Ela foi projetada com MDF 15mm pois é um material mais barato que metais, e consegue prover resistência ao sistema. Além disso, buscou-se dispor os componentes da forma mais compacta possível. 
+
+O sistema de transmissão foi projetado para funcionar com duas engrenagens, que buscam suavizar o movimento do motor, reduzindo sua velocidade e aumentando o torque. A relação adotada no projeto foi 2:3, onde a engrenagem menor é montada no motor, e a maior transmite momento para o eixo curvado. A força gerada no eixo com o sistema transmissão é descrito pela equação \ref{}, onde: VARIÁVEIS.
+
+Para garantir que o motor selecionado irá ter torque suficiente para movimentar a câmera na velocidade desejada, nas condições observadas no projeto base, foram realizados cálculos de momento e com relação ao sistema de transmissão. A Figura \ref{} destaca as principais dimensões da estrutura projetada que serão usada nos cálculos. 
+
+
+A equação \ref{} discretiza o somatório de momentos, que deve ser superior a 0 para que o motor tenha torque necessário para movimentar a câmera; onde: VARIÁVEIS. 
+
+
+
+\subsection{Engrenagens}
+Cálculo das dimensões das engrenagens, passo, etc.
+
+
+
+\subsection{Barra de Elevação}
+
+A barra de elevação curva é o componente que realiza a elevação da base superior, recebendo o movimento da engrenagem maior através de uma porca sem travante, fixada na engrenagem. A porca é inserida na engrenagem, e se mantêm por meio de um colante \textit{TeekBond}. 
+
+Além disso, destaca-se que barra de elevação pode se tornar o principal causador de problemas na estabilidade do sistema, pois é curva. A curvatura pode gerar instabilidade no contato com a engrenagem e, se não for fabricada de maneira precisa, pode criar certas incertezas no funcionamento. Por isso, foi preparado um desenho técnico para servir de gabarito na Fabricação, que é "artesanal" (Apêndice \ref{}). 
+
+\subsection{Placa de Circuíto}
+Para finalizar o projeto mecânico, foi inserido um modelo 3D do circuito impresso, garantindo que os componentes mecânicos e eletrônicos estão projetados corretamente.
+
+\section{Hardware Eletrônico}
+
+... que irá embarcar o Arduíno, Driver do Motor de passo, botões de controle e os módulos Bluetooth e de sensores. 
+
+\subsection{Arduíno Nano}
+Para realizar o controle do sistema, foi empregado o controlador ATMEGA328P, em um Arduíno Nano (Figura \ref{}). Esse controlador tem somente um núcleo de processamento de 16MHz, e pinos de comunicação I2C, UART, entre outros \cite{}. Ele foi escolhido por ter uma ampla documentação na internet, uma variedade de bibliotecas, e ser um dos mais acessíveis do mercado, principalmente no Brasil. 
+
+\subsection{Módulo Bluetooth HC05}
+Para a comunicação Bluetooth, foi escolhido o Módulo HC05, compatível com o controlador ATMEGA328P, pois ambos podem utilizar comunicação Serial em nível lógico de 5V. O Chip deste módulo permite ainda uma configuração extra de parâmetros.
+
+\subsection{Módulo de sensores GY87}
+O sensoreamento da plataforma, para guiar o alinhamento equatorial, é realizado pelo conjunto de sensores MPU6050 e HMC..., ambos são acessíveis usando um módulo GY87. Os dados de ambos os sensores são acessíveis via rede I2C, no entanto, existem ressalvas quanto ao circuito do módulo, mostrado na Figura \ref{}. A rede I2C do módulo passa internamente pelo circuito do MPU6050, que pode ser configurado para trabalhar em paralelo, ou como mestre da comunicação I2C. Essa configuração é realizada no registrador XX do sensor, setando-o em 1. 
+
+
+\subsection{Driver ULN2003}
+Acionamento escolhido, velocidade e torque
 Sensores MPU6050 e HMC
 
 Enderaçamento na rede, velocidades suportadas, filtragem de dados, cálculo dos ângulos.
 
-\subsection{Motor 28BYJ-48}
-Justificativa: preço, uso em soluções comerciais.
+\subsection{Diagrama Elétrico}
 
-\subsubsection{Driver ULN2003}
-Acionamento escolhido, velocidade e torque
+\subsubsection{Alimentação do Sistema}
 
-\subsection{Placa de Circuito Impresso}
 
-\subsubsection{Diagrama Elétrico}
-\subsubsection{\textit{Layout}}
+\subsection{\textit{Layout}}
+O layout foi desenvolvido com base no espaço reservado na base inferior e nos locais de fixação, respeitando as limitações dos protocolos de comunicação e recomendações de desenvolvimento para os componentes. São cinco pontos de fixação, dos quais quatro localizam-se em cada canto, e o quinto foi instalado no centro, onde planejou-se deixar o conector do motor de passo. O conector USB do tipo B e botões de controle foram posicionados próximos dos cantos da placa. Esses posicionamentos garantem que a placa não irá fletir quando o usuário estiver montando-a ou realizando um acionamento. 
 
-\subsubsection{Manufatura}
+De início, os componentes foram organizados em 3 zonas: Alimentação, Dados, Controle e Comunicação \textit{Bluetooth}. Buscou-se manter a zona de dados o mais distante possível do sistema \textit{Bluetooth}, e o mais próximo possível do Arduíno, para reduzir a impedância das linhas SDA e SCL do protocolo I2C dos sensores.  
 
-Foto da placa
+Foi criado um plano de Terra apenas na parte inferior da placa, onde os componentes são soldados. Assim, a placa pode ser fabricada em modos artesanais. Por isso, também, manteve-se uma distância de XXXX entre trilhas, e dos componentes com o plano de terra. 
 
-\section{Projeto Estrutural}
-
-\subsection{Requisitos de Projeto}
-Vibração, constância na velocidade, resistência para proteção dos equipamentos.
-
-\subsection{Peças}
-\subsubsection{Frame Principal}
-
-\subsubsection{Engrenagens}
-Cálculo das dimensões das engrenagens, passo, etc.
-
-\subsubsection{Barra de Elevação}
-Dimensionamento
-
-\subsection{Manufatura}
-CNC
-Foto das peças.
 
 \subsection{Montagem}
-Observações da montagem, elásticos, etc.
+Para a montagem final do sistema, é preciso somente das seguintes ferramentas, que também são mostradas na Figura \ref{}:
+
+\begin{itemize}
+	\item Chave Phillips
+	\item Chave de Fenda
+	\item Chave Allen XX
+	\item Chave de Boca
+	\item Alicate de Bico
+\end{itemize}
+
+A primeira montagem dos componentes é realizada em etapas, descritas na ordem abaixo, e demonstrada no diagrama de Montagem do Apêndice \ref{}:
+
+\begin{enumerate}
+	\item Rosca 1/4" na base inferior usando a Chave Allen xx
+	\item Parafusos de Fixação da PCB na base inferior
+	\item Placa de circuíto é posicionada nos parafusos, onde é fixada.
+	\item Dobradiças conectando base superior e inferior
+	\item Motor de Passo com engrenagem menor é parafusado na base inferior
+	\item Ball-Head da câmera é parafusado na base superior
+	\item Engrenagem maior rosqueada no eixo curvo
+	\item Eixo curvo é fixado na base superior com 2 porcas, 2 arruelas e 2 borrachas (uma em cada lado da base).
+	\item Rosqueiam-se os ganchos e instalam-se os elásticos.
+\end{enumerate}
+
+
 

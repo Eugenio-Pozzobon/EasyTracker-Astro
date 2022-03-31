@@ -44,24 +44,30 @@
 \contentsline {figure}{\numberline {2.42}{\ignorespaces Transmissão de dados do mestre para o escravo\relax }}{53}{figure.caption.55}%
 \contentsline {figure}{\numberline {2.43}{\ignorespaces Requisição de dados do mestre ao escravo\relax }}{53}{figure.caption.56}%
 \contentsline {figure}{\numberline {2.44}{\ignorespaces condições de \textit {START} e \textit {STOP} no padrão I2C\relax }}{54}{figure.caption.57}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Resultados do Formulário de Pesquisa com Usuários: (a) Interesse dos astrofotógrafos no aplicativo, e; (b) sistema operacional usado\relax }}{65}{figure.caption.60}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{65}{figure.caption.61}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Fluxo de Atividade Principal\relax }}{66}{figure.caption.62}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Fluxo de Atividade para alinhamento com Método \textit {Drift}\relax }}{67}{figure.caption.63}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Prototipação das Telas no Adobe XD\relax }}{68}{figure.caption.64}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Esboço de tela padrão para o perfil de dados de localização\relax }}{68}{figure.caption.65}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Configuração principal do compilador, no arquivo \textit {build.graddle}\relax }}{70}{figure.caption.66}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Código usado para estabelecer as permissões que serão solicitadas ao usuário.\relax }}{70}{figure.caption.67}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Sistema Android solicitando permissão ao usuário\relax }}{71}{figure.caption.68}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Código usado para estabelecer a base de dados\relax }}{71}{figure.caption.69}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Arquitetura MVVM genérica.\relax }}{72}{figure.caption.70}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Arquitetura MVVM aplicada ao sistema \textit {Android}, em \textit {Kotlin}\relax }}{73}{figure.caption.71}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces \textit {Fragments} dentro de uma mesma \textit {Activity}\relax }}{73}{figure.caption.72}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Declaração do \textit {ViewModel} dentro do \textit {layout}, no \textit {Fragment} que cria um novo perfil de localização\relax }}{74}{figure.caption.73}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Código dentro do \textit {layout} de um \textit {fragment} para conectar um texto à uma variável, e um botão à uma função que aciona o \textit {ViewModel} diretamente\relax }}{74}{figure.caption.74}%
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Código do \textit {ViewModel}, que se conectará com a \textit {View} por \textit {Databinding}\relax }}{75}{figure.caption.75}%
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Código simplificado para estabelecer a base de dados\relax }}{76}{figure.caption.76}%
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Pacote de dados transmitido no cenário de alinhamento\relax }}{77}{figure.caption.77}%
-\contentsline {figure}{\numberline {4.19}{\ignorespaces Diagrama de processamento empregado no lado do Aplicativo\relax }}{78}{figure.caption.78}%
-\contentsline {figure}{\numberline {4.20}{\ignorespaces \textit {Popup} padrão para reconectar com a Eletrônica\relax }}{78}{figure.caption.79}%
-\contentsline {figure}{\numberline {4.21}{\ignorespaces Arquitetura final do aplicativo\relax }}{79}{figure.caption.80}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Resultados do Formulário de Pesquisa com Usuários. (a) Interesse dos astrofotógrafos no aplicativo. (b) Sistema operacional usado\relax }}{67}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{67}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Fluxo de Atividade Principal\relax }}{68}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Fluxo de Atividade para alinhamento com Método \textit {Drift}\relax }}{69}{figure.caption.63}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Prototipação das Telas no Adobe XD\relax }}{70}{figure.caption.64}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Esboço de tela padrão para o perfil de dados de localização\relax }}{70}{figure.caption.65}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Telas Iniciais\relax }}{72}{figure.caption.66}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Telas de perfis\relax }}{73}{figure.caption.67}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Conexão Realizada\relax }}{73}{figure.caption.68}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Telas de Alinhamento\relax }}{74}{figure.caption.69}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Telas Informativas\relax }}{75}{figure.caption.70}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Menus\relax }}{76}{figure.caption.71}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Configuração principal do compilador, no arquivo \textit {build.graddle}\relax }}{77}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Sistema Android solicitando permissão ao usuário\relax }}{77}{figure.caption.73}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Código usado para estabelecer a base de dados\relax }}{78}{figure.caption.74}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Arquitetura MVVM genérica.\relax }}{79}{figure.caption.75}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Arquitetura MVVM aplicada ao sistema \textit {Android}, em \textit {Kotlin}\relax }}{79}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces \textit {Fragments} dentro de uma mesma \textit {Activity}\relax }}{80}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Declaração do \textit {ViewModel} dentro do \textit {layout}, no \textit {Fragment} que cria um novo perfil de localização\relax }}{81}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Código dentro do \textit {layout} de um \textit {fragment} para conectar um texto à uma variável, e um botão à uma função que aciona o \textit {ViewModel} diretamente\relax }}{81}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Código do \textit {ViewModel}, que se conectará com a \textit {View} por \textit {Databinding}\relax }}{82}{figure.caption.80}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Código simplificado para estabelecer a base de dados\relax }}{83}{figure.caption.81}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Pacote de dados transmitido no cenário de alinhamento\relax }}{84}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Diagrama de processamento empregado no lado do Aplicativo\relax }}{85}{figure.caption.83}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces \textit {Popup} padrão para reconectar com a Eletrônica\relax }}{85}{figure.caption.84}%
+\contentsline {figure}{\numberline {4.26}{\ignorespaces Arquitetura final do aplicativo\relax }}{86}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Teclado só permite uso de vírgula e ponto, não permitindo aspas e sinal de grau $ (^\circ ) $\relax }}{89}{figure.caption.87}%
