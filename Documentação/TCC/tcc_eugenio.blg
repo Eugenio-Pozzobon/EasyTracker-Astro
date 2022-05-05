@@ -26,9 +26,45 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
-Reallocating 'field_info' (item size: 4) to 10106 items.
+Reallocating 'field_info' (item size: 4) to 10934 items.
 Database file #1: abntex2-options.bib
 Database file #2: referencias.bib
+I was expecting a `,' or a `}'---line 21 of file referencias.bib
+ :  
+ :  pages   = {264}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 31 of file referencias.bib
+ :  
+ :  pages   = {60}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 56 of file referencias.bib
+ :  
+ :  pages   = {10},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 67 of file referencias.bib
+ :  
+ :  pages   = {52},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 79 of file referencias.bib
+ :  
+ :  pages   = {3},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 90 of file referencias.bib
+ :  
+ :  pages   = {39},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 101 of file referencias.bib
+ :  
+ :  urlaccessdate={11 mar. 2021}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "man:advancedmicrosystemStepControl"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -38,44 +74,45 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 74 entries,
+You've used 85 entries,
             6714 wiz_defined-function locations,
-            1629 strings with 20939 characters,
-and the built_in function-call counts, 99187 in all, are:
-= -- 12231
-> -- 1017
-< -- 2912
-+ -- 3302
-- -- 329
-* -- 5739
-:= -- 11998
-add.period$ -- 312
-call.type$ -- 77
-change.case$ -- 467
-chr.to.int$ -- 94
-cite$ -- 65
-duplicate$ -- 10838
-empty$ -- 4426
-format.name$ -- 1520
-if$ -- 19748
+            1686 strings with 22608 characters,
+and the built_in function-call counts, 118580 in all, are:
+= -- 14920
+> -- 1062
+< -- 3642
++ -- 4048
+- -- 344
+* -- 6807
+:= -- 14131
+add.period$ -- 360
+call.type$ -- 88
+change.case$ -- 525
+chr.to.int$ -- 105
+cite$ -- 76
+duplicate$ -- 13327
+empty$ -- 5072
+format.name$ -- 1589
+if$ -- 23450
 int.to.chr$ -- 10
 int.to.str$ -- 3
-missing$ -- 1171
-newline$ -- 331
-num.names$ -- 281
-pop$ -- 1276
+missing$ -- 1333
+newline$ -- 387
+num.names$ -- 296
+pop$ -- 1447
 preamble$ -- 1
-purify$ -- 232
+purify$ -- 265
 quote$ -- 0
-skip$ -- 11149
+skip$ -- 13627
 stack$ -- 1
-substring$ -- 4344
-swap$ -- 3784
-text.length$ -- 49
+substring$ -- 5293
+swap$ -- 4620
+text.length$ -- 59
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 28
 warning$ -- 0
-while$ -- 404
+while$ -- 441
 width$ -- 0
-write$ -- 1052
+write$ -- 1223
+(There were 7 error messages)

@@ -6,7 +6,7 @@ Para realizar o desenvolvimento de um aplicativo, é preciso analisar a necessid
 
 O primeiro passo do desenvolvimento foi buscar entender o que os usuários de uma plataforma equatorial precisam, e como o aplicativo pode contribuir para sanar as necessidades. Para investigar isso, foi desenvolvido um formulário de pesquisa, destinado a astrofotógrafos que já utilizaram, ou não, uma plataforma de astrofotografia. Essa pesquisa foi divulgada por meio de parceiros em mídias sociais e obteve 68 respostas.
 
-A pesquisa foi desenvolvida buscando responder a duas perguntas gerais: "qual o nível de interesse e necessidade de uma plataforma equatorial?", e "qual o tipo de fotografia que os astrofotógrafos almejam com essas técnicas?". Essas perguntas permitem identificar, no público, se a ideia é realmente válida, qual o nível de precisão que eles precisam, e se requerem recursos para utilizar métodos de alinhamento avançado (como o método \textit{Drift}, abordado na seção \ref{driftsection}). Na mesma oportunidade, verificou-se qual o tipo de sistema operacional o público usa, escolaridade, entre outras informações relevantes.
+A pesquisa foi desenvolvida buscando responder a duas perguntas gerais: "qual o nível de interesse e necessidade de uma plataforma equatorial?", e "qual o tipo de fotografia que os astrofotógrafos almejam com essas técnicas?". Essas perguntas permitem identificar, no público, se a ideia é realmente válida, qual o nível de precisão que eles precisam, e se requerem recursos para utilizar métodos de alinhamento avançado (como o método \textit{t}, abordado na seção \ref{driftsection}). Na mesma oportunidade, verificou-se qual o tipo de sistema operacional o público usa, escolaridade, entre outras informações relevantes.
  
 Os resultados evidenciaram a necessidade do aplicativo e a relevância do projeto, demonstrado pela Figura \ref{fig:resultadoapp}. Concomitantemente, constatou-se que os usuários \textit{Android} dominam uma grande parcela do público, como demonstra a Figura \ref{fig:usuariosandroid}. 
 
@@ -57,6 +57,7 @@ Com base nesses três casos, determina-se qual a sequência de atividades que os
 	\fonte{Autor.}
 \end{figure}
 
+\label{sec:driftproj}
 O segundo caso de uso, envolvendo alinhamento avançado com método \textit{Drift}, pode ser sintetizado em um tutorial passo a passo. Primeiro para realizar o ajuste preciso de azimute, e depois para ajustar a elevação. O diagrama da Figura \ref{fig:atividadedrif} demonstra o processo.
 
 \begin{figure}[!htb]
@@ -70,7 +71,7 @@ O segundo caso de uso, envolvendo alinhamento avançado com método \textit{Drif
 Por fim, o último caso -- e mais simples --, que diz respeito a um usuário buscando informação, pode ser sintetizado em duas telas: uma com perguntas frequentes; e outra com informações mais complexas, redirecionando para os repositórios digitais e documentos. 
 
 \subsection{Prototipação das Telas}
-
+\label{sec:prototipacao}
 O fluxo da atividade principal, envolvendo configuração do aplicativo e alinhamento da plataforma, foi esboçado usando o Adobe XD (Figura \ref{fig:adobexd}). Isso foi realizado para determinar quais elementos de interface seriam usados para o usuário monitorar o sistema e coordenar o seu fluxo de uso. No entanto, ressalta-se que essa etapa funciona apenas como um passo inicial, e não aborda de forma técnica problemas que podem surgir no código. Ou seja, trata-se de um esboço, que apenas guiará a consistência do projeto como um todo.
 
 \begin{figure}[!htb]
@@ -95,20 +96,28 @@ Além das telas de dados, o fluxo da atividade de alinhamento da plataforma foi 
 
 \section{Implementação do Aplicativo}
 
-Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos de design e experiência do usuário empregados, requisitos que serão necessários para o funcionamento do aplicativo; dados a serem coletados do usuário; e arquitetura de desenvolvimento. Antes de abordar essa discussão, apresentarei a parte gráfica do software.
+Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos de design e experiência do usuário empregados; dados a serem coletados do usuário; e arquitetura de desenvolvimento. Antes de abordar essa discussão, será demonstrado a parte gráfica do software.
 
 \subsection{Interface e Experiência}
 
-A interface gráfica do aplicativo foi desenvolvida baseando-se em elementos prontos da biblioteca Material Design, e considerando a identidade visual planejada para o Projeto.
+A interface gráfica do aplicativo foi desenvolvida considerando a identidade visual planejada para o Projeto, e baseando-se em elementos prontos da biblioteca Material Design.
 
 \subsubsection{Identidade Visual}
+A Identidade Visual foi montada com cores alaranjadas, e misturando elementos como o diafragma de uma câmera e os anéis de saturno. O Aplicativo foi nomeado como EasyTracker Astro e a identidade montada na Figura \ref{fig:idvisual} é aplicada em todos os materiais\footnote{Neste Link é possível acessar o Guia da Identidade do Projeto: Link Aqui}.
 
+\begin{figure}[!htb]
+	\centering
+	\caption{Base da Identidade Visual}
+	\includegraphics[width=0.7\linewidth]{figuras/desAplicativo/idvisual}
+	\label{fig:idvisual}
+	\fonte{Autor.}
+\end{figure}
 
 \subsubsection{Elementos e Cores}
-A biblioteca Material unifica padrões e elementos em recursos mobile, e por isso buscou-se sempre utiliza-la para criação de elementos. Assim, todos os campos de entrada de dados do usuário, na criação do perfil de localização, são campos de entrada providos por ela. As cores seguem um padrão do modo escuro da Material, onde o preto em \textit{background} não é totalmente preto e popups de aviso possuem botões em cores que chamam a atenção; as demais cores adotadas -- em outros elementos -- são proporcionadas pela identidade visual do projeto. A Figura \ref{} enumera os elementos principais da interface, e as respectivas cores utilizadas, .
+A biblioteca Material unifica padrões e elementos para geração de recursos mobile, e por isso buscou-se sempre utiliza-la para inserção de componentes. Assim, todos os campos de entrada de dados do usuário, na criação do perfil de localização, são campos de entrada providos por ela. As cores seguem um padrão do modo escuro da Material. As cores que não são padronizadas pela biblioteca, como em ícones, são baseadas na identidade visual do projeto. O código de cada cor é configurado no projeto em um arquivo\footnote{O Arquivo de configuração pode ser acessado aqui: LINK NO FUTURO} que informa o código hexadecimal das cores utilizadas. 
 
 
-Com base nesses elementos, cores, e nas telas protótipo desenhadas anteriormente, implementou-se o aplicativo. As telas serão abordadas nas próximas sub-seções na ordem da experiência de um novo usuário.
+Com base nesses elementos, cores, e nas telas do protótipo esboçadas na etapa da subseção \ref{sec:prototipacao}, implementou-se o aplicativo. As telas serão abordadas nas próximas sub-seções na ordem da experiência de um novo usuário.
 
 \subsubsection{Primeiro Uso}
 
@@ -144,7 +153,7 @@ Um novo usuário da plataforma é reconhecido pelo sistema e para ele aparece um
 
 
 \subsubsection{Manipulação de Perfis de Localização}
-A partir de configurado uma vez, o App irá abrir sempre na tela de perfil no último que foi usado, ignorando as telas anteriores. Ainda é possível que o usuário edite as informações neste perfil, ou adicione novos, edite os novos, e carregue outros perfis no aplicativo. O usuário ainda pode apagar todos os perfis de localização, mas ele é obrigado a criar um perfil para usar o aplicativo.
+A partir de configurado uma primeira vez, o App irá abrir sempre na tela de perfil, carregando dados do último que foi usado, ignorando as telas anteriores. Ainda é possível que o usuário edite as informações neste perfil, ou adicione novos, edite os novos, e carregue outros perfis no aplicativo. O usuário ainda pode apagar todos os perfis de localização, mas ele é obrigado a criar um perfil para usar o aplicativo.
 
 \begin{figure}[H]
 	\centering
@@ -181,13 +190,13 @@ O botão de conexão bluetooth oscila em 3 estados que indicam o estado da conex
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/conectando}
-		\caption{Conexão em Andamento}
+		\caption{Conexão em andamento}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/conectado}
-		\caption{Alinhamento de Elevação}
+		\caption{Conexão concluída}
 	\end{subfigure}
 \end{figure}
 
@@ -204,7 +213,7 @@ As 4 telas de alinhamento consistem de 3 telas guias e uma tela final (Figura \r
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/nivel}
-		\caption{Nivelamento da plataforma}
+		\caption{Nivel da plataforma}
 		\label{menu}
 	\end{subfigure}
 	\hfill
@@ -485,7 +494,7 @@ class NewProfileViewModel(
 \end{figure}
 
 \subsection{Protocolo de Comunicação \textit{Bluetooth}}
-
+\label{sec:btandroid}
 Dentro dos componentes de arquitetura, o \textit{Bluetooth} se encontra fora de qualquer estrutura. Ele funciona com \textit{threads} separadas, mas sua classe é necessariamente atrelada à uma \textit{Activity} e ao contexto de um \textit{Fragment}. Entre outras palavras, o \textit{Bluetooth} do celular só se comunica com o aplicativo se estiver associado aos elementos da tela. Por esse motivo, estabeleceu-se que toda a seção principal, de perfil de localização e alinhamento, consistiria em uma atividade única. Caso o aplicativo fosse dividido em mais \textit{Activitys}, o sistema necessariamente iria desconectar o \textit{Bluetooth} quando elas fossem alternadas. Em termos práticos, o \textit{Bluetooth} iria reconectar com a eletrônica em cada alternância de telas, criando uma preocupação indesejada para o usuário. 
 
 A conexão é realizada usando o endereço MAC do dispositivo com que deseja-se comunicar. Para a comunicação iniciar, indica-se ao sistema, qual o serviço \textit{Bluetooth} adotado pela eletrônica, ou seja, seu UUID. Para o caso do chip HC-05 empregado, o código como o da Figura \ref{code:bluetoothconnection} realiza a conexão.

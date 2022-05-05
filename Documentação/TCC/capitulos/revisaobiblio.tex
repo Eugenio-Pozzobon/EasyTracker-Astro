@@ -262,6 +262,7 @@ Plataformas Equatoriais são mecanismos que se baseiam em uma montagem equatoria
 A posição do polo norte/sul celestial, no céu, depende da posição geográfica (latitude) da pessoa/equipamento de observação e é alinhado com o eixo de rotação da terra. Depois que o eixo da plataforma está alinhado com o polo celeste, ela começa a rotacionar no sentido e mesma taxa da rotação do planeta.
 
 \subsection[Modelos de Montagem]{Modelos de Montagem \textit{Barn Door}}
+\label{sec:modelosdemontagem}
 \textit{Barn Door} é um modelo de montagem que se caracterizam pelas duas bases acopladas, onde uma é fixada no tripé do fotógrafo, e a outra é móvel, fixando a câmera que será rotacionada para acompanhar o movimento aparente do céu (Figura \ref{fig:barndoorexample}). Seu funcionamento é igual a abertura de uma porta com dobradiças \cite{site:pentaxBarnDoor}. 
 
 \begin{figure}[!htb]
@@ -289,7 +290,7 @@ Trot (1989) desenvolveu um mecanismo de braço duplo (Figura \ref{fig:doublearm}
 
 \begin{figure}[!htb]
 	\centering
-	\caption{Diagrama de montagem do mecanismo de Braço Duplo}
+	\caption{Vista lateral do mecanismo de Braço Duplo}
 	\includegraphics[width=0.6\linewidth]{figuras/revisaobiblio/heavy-duty-double-arm-barndoor-building-plans-3_edited}
 	\label{fig:doublearm}
 	\fonte{Adaptado de \cite{artigo:davidtrottinventions}.}
@@ -683,7 +684,7 @@ Um filtro passa-altas, ao contrário, limita a amplitude dos sinais em frequênc
 Por meio desses filtros, portanto, é possível minimizar o impacto do ruído branco e eliminar possíveis distorções e vibrações que são indesejadas na leitura dos sensores \cite{article:Yang2017}. A frequência de corte e a ordem do filtro devem ser determinados pelo projetista de forma a garantir que os dados desejados não sejam afetados negativamente. 
 
 \subsection{Cálculo de \textit{Pitch} e \textit{Roll}}
-
+\label{sec:calcPitchRoll}
 Uma vez que os sinais de acelerômetro e giroscópio tenham sido corretamente filtrados, é possível calcular os ângulos inerciais. Isso pode ser realizado de forma independente, usando os sensores de forma separada.
 
 Uma vez que o acelerômetro esteja imóvel, e realizando a leitura somente da aceleração gravitacional, é possível calcular a posição inercial do sensor com os vetores de aceleração nos 3 eixos. Então, seja $ A_x $, $A_y$ e $A_z$ os dados relativos a cada eixo, as equações (\ref{apitch}) e (\ref{aroll}) correspondem, respectivamente a, o cálculo dos ângulos \textit{pitch} ($ \theta $) e \textit{roll} ($ \phi $) \cite{diss:coimbraSergio}. 
@@ -737,6 +738,7 @@ Onde, seja $ f_d $ a frequência de divisão desejada para os dados de acelerôm
 \end{equation}
 
 \subsection{Magnetômetro como uma Bússola}
+\label{sec:azimutal}
 
 O campo magnético terrestre pode ser lido, em qualquer posição no planeta, como um vetor que aponta em direção ao polo norte magnético. Um magnetômetro pode ler os valores relativos aos seus 3 eixos e determinar o sentido do campo, como demonstrado na Figura \ref{fig:He}. A intensidade desse campo pode ser determinada pela equação (\ref{he}) \cite{man:Honeywell}.
 
@@ -924,6 +926,7 @@ E, além disso, ressalta-se que as distorções magnéticas ocorrem conforme o s
 O sensores e atuadores explicados nas seções anteriores podem se comunicar com os controladores através de protocolos de comunicação específicos. Esses modelos funcionam como uma linguagem para acessar as informações, sendo fundamentais para a diagramação do sistema eletrônico em \textit{hardware} e \textit{software}. Por meio dessas redes, um controlador consegue realizar a leitura dos dados armazenados no registrador de um sensor, por exemplo, ou escrever uma nova calibração em outro local da memória \cite{man:texasI2C}.
 
 \subsection{UART}
+\label{sec:uart}
 O protocolo UART (\textit{Universal Asynchrounous Receiver/Transmiter}) é uma forma de comunicação baseada em padrões industriais. Nesse protocolo há somente duas linhas: receptor (RX) e transmissor (TX) que utilizam de uma taxa de transmissão referência (\textit{baud rate}) para que haja o correto processamento bit a bit do que é comunicado via protocolo \cite{man:texasUART}. 
 
 As mensagens enviadas possuem limite na velocidade que depende do \textit{clock} do controlador que está sendo utilizado. Além disso, baseado nas configurações dos dispositivos, as mensagens são enviadas no seguinte pacote (Figura \ref{fig:uartcommunication}):
@@ -947,6 +950,7 @@ Os pinos de comunicação UART são conectados ligando-se o pino RX de um dispos
 
 \subsection{I2C}
 
+\label{sec:i2c}
 A rede I2C (\textit{Inter-Integrated Circuit}) é um protocolo padrão e popular, usado para comunicação entre mestre(s) e escravo(s) (Figura \ref{fig:i2connection}). 
 Para a comunicação ocorrer, o mestre deve ordenar quando e o que será transmitido pelos escravos. Nesse procedimento, o mestre sempre especifica o endereço do escravo que ele deseja ler ou escrever alguma informação nos seus registradores, esses endereços são um valor de 0 a 127 e dois escravos não devem partilhar o mesmo valor \cite{man:texasI2C}. A rede permite diversos modos de comunicação, que se diferenciam pela velocidade da transmissão de dados. Os mais comuns são de 100 kbit/s (\textit{Standard Mode}), 400 kbit/s (\textit{Fast Mode}) ou 3.4 Mbit/s(\textit{Fast Mode Plus}). Contudo, nem todos os dispositivos que aceitam o protocolo I2C irão suportar todos os modos obrigatoriamente.
 

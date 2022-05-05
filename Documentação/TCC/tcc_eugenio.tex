@@ -25,7 +25,7 @@
 % % % % % % % % PACOTES PESSOAIS % % % % % % % %  
 
 \usepackage{minted}
-
+\usepackage{lipsum}
 \usepackage{caption}
 \usepackage{subcaption}
 
@@ -162,9 +162,10 @@
 % % % EPIGRAFE
 %\epigrafe{"Se você tem uma maçã e eu tenho uma maçã e formos trocar essas maçãs, você e eu ainda teremos uma maçã cada um. Mas se você tem uma ideia e eu tenho uma ideia e formos trocar essas ideias, cada um de nós terá duas ideias."}{George Bernard Shaw} %ESTRUTURA DE CAMPOS -> {Texto}{Autor}
 % % % DEDICATORIA
-%\dedicatoria{Dedico este trabalho a todos os astrofotógrafos que carecem de recursos para investir em equipamentos, na esperança de que isso possa ajudá-los a produzir fotografias de qualidade, alcançando ainda mais longe no céu profundo.}
+\dedicatoria{\input{capitulos/dedicatória}}
 % % % %  AGRADECIMENTOS
-% \agradecimentos{A mim!}
+\agradecimentos{
+	\input{capitulos/agradecimentos}}
 
 % % % % %  RESUMO E PALAVRAS CHAVE DO RESUMO - OBRIGATORIO PARA MDT-UFSM
 \resumo{
@@ -343,17 +344,15 @@
 
 \chapter{Desenho Técnico das Peças}
 
-\section{Base}
-
-\includegraphics[width=\linewidth]{D:/Git/Easy-Tracker-System/CAD/Fabricação/BDT_I_P_11_v01_desenho}
-
-\section{Parte Móvel}
-
 \section{Barra curvada}
-
+\label{apendice:barracurvada}
 \includegraphics[width=\linewidth]{D:/Git/Easy-Tracker-System/CAD/Fabricação/BDT_G_F_05_v01_desenho}
 
-\chapter{Diagrama de Montagem}
+
+\chapter{Bill of Materials (BOM)}
+
+\label{apendice:bom}
+\includegraphics[width=\linewidth]{D:/Git/Easy-Tracker-System/CAD/BOM_v1}
 
 %\chapter{Código excutado pelo Arduino Nano}
 

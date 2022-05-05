@@ -5,10 +5,12 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[Advanced Micro System c2021]{man:advancedmicrosystemStepControl}
-\abntrefinfo{Advanced Micro System}{ADVANCED MICRO SYSTEM}{c2021}
-{ADVANCED MICRO SYSTEM. \textbf{Stepper Motor System Basics}.
-[S.l.], c2021. 9~p.}
+\bibitem[Advanced Micro System Inc. c2021]{man:sizemotor}
+\abntrefinfo{Advanced Micro System Inc.}{ADVANCED MICRO SYSTEM INC.}{c2021}
+{ADVANCED MICRO SYSTEM INC. \textbf{How to Size a Motor}.
+[S.l.], c2021. Dispon{\'\i}vel em:
+  \url{https://www.amci.com/industrial-automation-resources/plc-automation-tutorials/how-size-motor/}.
+  Acesso em: 16 jul. 2021.}
 
 \bibitem[AFZAL c2021]{site:analogI2c}
 \abntrefinfo{AFZAL}{AFZAL}{c2021}
@@ -29,11 +31,23 @@ Dispon{\'\i}vel em:
 {ANDOLFATO, R. \textbf{Astrofotografia Prática: O guia da Fotografia do
   Universo}. Brasil: Clube de Autores, 2017. 454~p.}
 
+\bibitem[Arduino 2021]{man:pinoutNano}
+\abntrefinfo{Arduino}{ARDUINO}{2021}
+{ARDUINO. \textbf{Pinout Nano}.
+[S.l.], 2021. Dispon{\'\i}vel em:
+  \url{https://content.arduino.cc/assets/Pinout-NANO\_latest.pdf}.}
+
 \bibitem[Arora 2015]{man:texasI2Cpullup}
 \abntrefinfo{Arora}{ARORA}{2015}
 {ARORA, R. \textbf{I2C Bus Pullup Resistor Calculation}.
 1. ed. [S.l.], 2015. 8~p. Dispon{\'\i}vel em:
   \url{https://sites.ifi.unicamp.br/soares/files/2017/03/Pull-up-slva689.pdf}.}
+
+\bibitem[Atmel Corporation 2015]{man:atmegadatasheet}
+\abntrefinfo{Atmel Corporation}{ATMEL CORPORATION}{2015}
+{ATMEL CORPORATION. \textbf{ATmega328P}.
+[S.l.], 2015. Dispon{\'\i}vel em:
+  \url{https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P\_Datasheet.pdf}.}
 
 \bibitem[Barbosa et al.
   2021]{BarbosaEtAl2021InteracaoHumanoComputadorExperiencia}
@@ -74,6 +88,12 @@ Dispon{\'\i}vel em:
 {\underline{\ \ \ \ \ \ \ \ }. Applications of magnetic sensors for low cost
   compass systems. In:  \textbf{IEEE 2000. Position Location and Navigation
   Symposium (Cat. No.00CH37062)}. [S.l.: s.n.], 2000. p. 177--184.}
+
+\bibitem[Commons c2022]{CCBYSA}
+\abntrefinfo{Commons}{COMMONS}{c2022}
+{COMMONS, C. \textbf{Sobre as Licenças}. Creative Commons, c2022.
+Dispon{\'\i}vel em: \url{https://br.creativecommons.net/licencas/}. Acesso em:
+  22 de dezembro de 2021.}
 
 \bibitem[Corporation c2021]{site:ioptron}
 \abntrefinfo{Corporation}{CORPORATION}{c2021}
@@ -143,6 +163,14 @@ Dispon{\'\i}vel em: \url{https://nyxtech.us/}. Acesso em: 29 mar. 2021.}
 Dispon{\'\i}vel em: \url{https://nyxtech.us/pages/tips-tutorials}. Acesso em: 9
   ago. 2021.}
 
+\bibitem[Facundo 2021]{site:3dprinted}
+\abntrefinfo{Facundo}{FACUNDO}{2021}
+{FACUNDO, A. \textbf{Best 3D printing Material/filament for Gears!} 3D Solved,
+  2021.
+Dispon{\'\i}vel em:
+  \url{https://3dsolved.com/best-3d-printing-filament-for-gears/}. Acesso em: 2
+  de dezembro de 2021.}
+
 \bibitem[Google Developers 2021]{site:androidstudio}
 \abntrefinfo{Google Developers}{GOOGLE DEVELOPERS}{2021}
 {GOOGLE DEVELOPERS. \textbf{Android Studio}: Guia do usuário.
@@ -174,6 +202,12 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml\#declination}.
   Acesso em: 27 jul. 2021.}
+
+\bibitem[InvenSense 2013]{man:mpu6050}
+\abntrefinfo{InvenSense}{INVENSENSE}{2013}
+{INVENSENSE. \textbf{MPU-6000 and MPU-6050 Product Specification}.
+[S.l.], 2013. Dispon{\'\i}vel em:
+  \url{https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf}.}
 
 \bibitem[Jauch, Silva e Paz 2014]{apostilagps}
 \abntrefinfo{Jauch, Silva e Paz}{JAUCH; SILVA; PAZ}{2014}
@@ -217,6 +251,14 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://www.nngroup.com/articles/match-system-real-world/}. Acesso em:
   25 de junho de 2021.}
+
+\bibitem[KIPEL 2018]{tcc:lucasEngrenagem}
+\abntrefinfo{KIPEL}{KIPEL}{2018}
+{KIPEL, L.~R.
+\textbf{A CONSTRUÇÃO DE ENGRENAGENS CILÍNDRICAS COM O AUXÍLIO DE EQUAÇÕES
+  EM SOFTWARES CAD/CAE}.
+2018. 96~f. Monografia (Trabalho de Conclusão de Curso) --- Curso de
+  Engenharia Mecânica do Centro Universitário UNIFACVEST, Lages, 2018.}
 
 \bibitem[{KONVALIN, C.} 2009]{site:magFierce}
 \abntrefinfo{{KONVALIN, C.}}{{KONVALIN, C.}}{2009}
@@ -327,6 +369,12 @@ Dispon{\'\i}vel em:
   kalman, fusÃo de sensores para determinaÇÃo de Ângulos.
 \textbf{ForScience}, v.~4, 2017.}
 
+\bibitem[Pacific Bearing Company 2017]{man:pcblinear}
+\abntrefinfo{Pacific Bearing Company}{PACIFIC BEARING COMPANY}{2017}
+{PACIFIC BEARING COMPANY. \textbf{World Class LEAD SCREW Assemblies}.
+[S.l.], 2017. Dispon{\'\i}vel em:
+  \url{https://pages.pbclinear.com/rs/909-BFY-775/images/Product-Catalog-Lead-Screw-Technology.pdf}.}
+
 \bibitem[PATRÃO 2015]{diss:coimbraSergio}
 \abntrefinfo{PATRÃO}{PATRÃO}{2015}
 {PATRÃO, S. M.~C.
@@ -367,10 +415,24 @@ Dispon{\'\i}vel em:
   \url{https://educacaoespacial.files.wordpress.com/2010/10/a-astrofotografia-e-sua-importncia-para-a-astronomia.pdf}.
   Acesso em: 19 fev. 2021.}
 
+\bibitem[Semiconductor Components Industries 2013]{man:diodozenner}
+\abntrefinfo{Semiconductor Components Industries}{SEMICONDUCTOR COMPONENTS
+  INDUSTRIES}{2013}
+{SEMICONDUCTOR COMPONENTS INDUSTRIES. \textbf{5 Watt Surmetic 40 Zener Voltage
+  Regulators}.
+[S.l.], 2013. Dispon{\'\i}vel em:
+  \url{https://br.mouser.com/datasheet/2/308/1N5333B\_D-2309169.pdf}.}
+
 \bibitem[Seronik 2007]{artigo:garySeronik}
 \abntrefinfo{Seronik}{SERONIK}{2007}
 {SERONIK, G. A tracking platform for astrophotography.
 \textbf{Sky and Telescope Magazine}, 2007.}
+
+\bibitem[Smart Prototyping c2022]{man:gy87}
+\abntrefinfo{Smart Prototyping}{SMART PROTOTYPING}{c2022}
+{SMART PROTOTYPING. \textbf{GY-87 Schematic}.
+[S.l.], c2022. Dispon{\'\i}vel em:
+  \url{https://www.smart-prototyping.com/image/data/2\_components/Arduino/100960\%20MPU6050/01.jpg}.}
 
 \bibitem[Solutions c2022]{site:MVVM}
 \abntrefinfo{Solutions}{SOLUTIONS}{c2022}
@@ -393,6 +455,13 @@ Dispon{\'\i}vel em:
   receiver/transmitter (uart).
 1. ed. Dallas, 2010. 51~p. Acesso em 8 nov. 2021. Dispon{\'\i}vel em:
   \url{https://www.ti.com/lit/ug/sprugp1/sprugp1.pdf?ts=1636387120360}.}
+
+\bibitem[Texas Instruments 2019]{man:ulndriver}
+\abntrefinfo{Texas Instruments}{TEXAS INSTRUMENTS}{2019}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{ULN200x, ULQ200x High-Voltage,
+  High-Current Darlington Transistor Arrays}.
+[S.l.], 2019. Dispon{\'\i}vel em:
+  \url{https://www.ti.com/lit/ds/symlink/uln2003a.pdf}.}
 
 \bibitem[Tier 2019]{tcc:tier2019}
 \abntrefinfo{Tier}{TIER}{2019}
@@ -426,6 +495,11 @@ Dispon{\'\i}vel em:
 Dispon{\'\i}vel em:
   \url{https://www.eduardo-monica.com/new-blog/iso-velocidade-abertura-exposicao-fotografia}.
   Acesso em: 5 de julho de 2021.}
+
+\bibitem[Welten Holdings c2022]{man:stepperMotor}
+\abntrefinfo{Welten Holdings}{WELTEN HOLDINGS}{c2022}
+{WELTEN HOLDINGS. \textbf{28BYJ-48 – 5V Stepper Motor}.
+[S.l.], c2022. 1~p.}
 
 \bibitem[Woodman 2007]{manual:cambimu}
 \abntrefinfo{Woodman}{WOODMAN}{2007}

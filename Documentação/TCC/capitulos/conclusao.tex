@@ -1,3 +1,45 @@
 \chapter{Considerações Finais}
 
+Os objetivos do trabalho foram elaborados com base em \textit{benchmark} comercial, e foi possível vencer as expectativas criando um protótipo economicamente mais viável, como menor massa, mais resistente e ao mesmo tempo é mais \textit{user-friendly} para o público-alvo. Dentre os sub-objetivos de projeto, o erro do motor é aceitável, comparando com outros produtos; e os limites de peso suportado também se encontram dentro da margem esperada para o porte do protótipo. A Tabela \ref{tabela_benchmark_conclusao} sintetiza a comparação do sistema com modelos comerciais, demonstrando os resultados atingidos.
+
+
+\begin{table}[htb]
+	\caption{Comparativo das Soluções de Mercado}
+	\begin{tabular}{l|cccc}
+		& EasyTracker & Nyx Tracker & iOptron  & SkyWatcher \\ \hline
+		Preço (US\$) & 62\footnote{Considerando taxa de câmbio para o dia 5 de maio de 2022, quando 1 dólar vale 4,94 reais. } & 115 & 299  & 299 \\\hline
+		Carga Máxima (kg) & 2,5 & 2,25 & 3 & 3 \\\hline
+		Erro periódico (arcsec) & 63 & 115 & 100 & 50 \\\hline
+		Peso (kg) & 0,716 & 0,4 & 1,15 & 0,72 \\\hline
+		Alinhamento & Sensores e App. & \textit{Laser} & \textit{Polar Scope} & \textit{Polar Scope} \\
+	\end{tabular}
+	\label{tabela_benchmark_conclusao}
+	\fonte{Adaptado de \cite{site:nyxtech}.}
+\end{table}
+
+O aplicativo, por outro lado, é o grande diferencial; com ele foi possível simplificar todo o processo de alinhamento; e os \textit{feedbacks} do usuário teste demonstram sua eficiência. Seu diferencial também foi motivo de atenção na mídia, a Revista Arco da UFSM\footnote{Link da reportagem na revista Arco: \url{https://www.ufsm.br/midias/arco/a-arte-de-fotografar-o-espaco/}}, o G1\footnote{Link da reportagem no G1: \url{https://g1.globo.com/rs/rio-grande-do-sul/noticia/2021/12/30/pesquisadores-da-ufsm-criam-dispositivo-que-ajuda-fotografos-amadores-na-pratica-da-astrofotografia.ghtml}} e a RBS TV\footnote{Link da reportagem no Jornal do Almoço na RBS TV: \url{https://globoplay.globo.com/v/10171682/}} divulgaram o trabalho em suas mídias.
+
+
+Com isso o projeto passou a ser alvo de muitos interessados em obter um protótipo. No entanto, como não é necessariamente uma obrigação ou desejo dos autores fazer do EasyTracker um produto comercial, e pensando no futuro do desenvolvimento deste, optou-se por manter o projeto como \textit{Open-Source}.
+
 \section{Projeto \textit{Open-Source}}
+
+Então, o projeto foi integralmente disponibilizado no GitHub na esperança de que ele possa ser reproduzido por quem interessar, e seja melhorado pela comunidade. Durante as etapas em que houve contato com o público, foi possível perceber que existem diversos outros usos para o conceito que foi proposto. E, com isso, a melhor forma de fazer com que essas variações do trabalho realmente venham a florescer, é tornando-o público, acessível e bem documentado.
+
+Contudo, apesar de livre, ressalta-se que o projeto de software embarcado e Android estão licenciados sob proteção da GPLV3. A licença foi aplicada em cada arquivo de software, como consta em suas diretrizes. O Trabalho, portanto, não pode ser reproduzido sem que os autores sejam mencionados, preservando-se o cabeçalho da licença. Além disso, tudo aquilo que for produzido com base neste material, também deve ser disponibilizado de forma \textit{open-source}, e com a mesma licença GPL. 
+
+A documentação desse projeto, que muitas vezes foi referenciada neste documento em notas de rodapé, está protegida sob a licença \textit{Creative Commons (CC BY-SA)}. Com ela, essa documentação pode ser redistribuída e alterada, desde que os autores recebam os devidos créditos \cite{CCBYSA}. Todos os arquivos licenciados carregam a marca dessa licença. 
+
+
+Por fim, o projeto eletromecânico está apenas disponível de forma online e sem licença. As leis internacionais de patente referente a componentes mecânicos impedem que este projeto possa ser patenteado, uma vez que já está disponível na internet para amplo acesso. Mesmo que fosse do interesse realizar uma patente, a parte mecânica não seria permitida pois os projetos e modelos de rastreadores \textit{Barn-Door} apresentados, já estão publicados desde a década de 80.
+
+
+\section{Sugestões para o futuro do EasyTracker}
+
+Finalmente, o projeto não termina com a elaboração deste documento. Existem muitos diferenciais na parte eletrônica e de software, que podem ser expandidos para outros projetos e utilidades. Por exemplo, é possível reaproveitar o projeto, remodelando-o para ser usado em conjunto com sistemas mecânicos profissionais. Nesse cenário, o projeto passa a ser um "extra" para aqueles que já possuem um sistema profissional. 
+
+Contudo, para aqueles que desejam desenvolver e montar o seu próprio EasyTracker, melhorias podem ser implementadas, ou mesmo customizações podem ser criadas. O inserto da base inferior, usado para fixação no tripé, por exemplo, pode ter variações dependendo do padrão empregado no tripé que a pessoa utiliza, assim como seu \textit{ball-head}. Recomenda-se ainda utilizar um padrão 3/8" uma vez que este fixador é mais resistente que o 1/4, e consegue prover uma melhor fixação à plataforma.
+
+Para continuações do projeto matriz, é interessante uma evolução do código no Arduíno e do Aplicativo. A proposta de apoio na interface para realização do método \textit{Drift} -- discutida e projetada, respectivamente, nas seções \ref{driftsection} e \ref{sec:driftproj} -- ainda pode ser implementada no aplicativo. Para a eletrônica, recomenda-se a substituição do Arduíno por um ESP32 \textit{Bluetooth}.
+
+Com essa alternativa de controlador, é possível simplificar a placa, tendo apenas o ESP, alimentação e o sensor. A programação pode ser reaproveitada pois ele também é programado com a mesma linguagem. Entretanto, a ressalva é utilizar os dois núcleos do chip, onde com isso será possível aplicar uma \textit{thread} para leitura do sensor com comunicação \textit{bluetooth}, e a outra para controle do motor.
