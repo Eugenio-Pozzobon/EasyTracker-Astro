@@ -26,45 +26,44 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
-Reallocating 'field_info' (item size: 4) to 10934 items.
+Reallocating 'field_info' (item size: 4) to 11141 items.
 Database file #1: abntex2-options.bib
 Database file #2: referencias.bib
-I was expecting a `,' or a `}'---line 21 of file referencias.bib
+I was expecting a `,' or a `}'---line 47 of file referencias.bib
  :  
  :  pages   = {264}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 31 of file referencias.bib
+I was expecting a `,' or a `}'---line 57 of file referencias.bib
  :  
  :  pages   = {60}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 56 of file referencias.bib
+I was expecting a `,' or a `}'---line 82 of file referencias.bib
  :  
  :  pages   = {10},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 67 of file referencias.bib
+I was expecting a `,' or a `}'---line 93 of file referencias.bib
  :  
  :  pages   = {52},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 79 of file referencias.bib
+I was expecting a `,' or a `}'---line 105 of file referencias.bib
  :  
  :  pages   = {3},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 90 of file referencias.bib
+I was expecting a `,' or a `}'---line 116 of file referencias.bib
  :  
  :  pages   = {39},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 101 of file referencias.bib
+I was expecting a `,' or a `}'---line 127 of file referencias.bib
  :  
  :  urlaccessdate={11 mar. 2021}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "man:advancedmicrosystemStepControl"
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'glb_str_end' (item size: 4) to 20 items.
 Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
@@ -74,45 +73,45 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 | Em caso de dúvidas ou problemas com este estilo procure |
 | http://www.abntex.net.br/                               |
 +---------------------------------------------------------+
-You've used 85 entries,
+You've used 89 entries,
             6714 wiz_defined-function locations,
-            1686 strings with 22608 characters,
-and the built_in function-call counts, 118580 in all, are:
-= -- 14920
-> -- 1062
-< -- 3642
-+ -- 4048
-- -- 344
-* -- 6807
-:= -- 14131
-add.period$ -- 360
-call.type$ -- 88
-change.case$ -- 525
-chr.to.int$ -- 105
-cite$ -- 76
-duplicate$ -- 13327
-empty$ -- 5072
-format.name$ -- 1589
-if$ -- 23450
-int.to.chr$ -- 10
+            1700 strings with 22977 characters,
+and the built_in function-call counts, 124803 in all, are:
+= -- 15764
+> -- 1077
+< -- 3863
++ -- 4276
+- -- 349
+* -- 7151
+:= -- 14813
+add.period$ -- 378
+call.type$ -- 92
+change.case$ -- 546
+chr.to.int$ -- 107
+cite$ -- 80
+duplicate$ -- 14102
+empty$ -- 5314
+format.name$ -- 1612
+if$ -- 24671
+int.to.chr$ -- 12
 int.to.str$ -- 3
-missing$ -- 1333
-newline$ -- 387
-num.names$ -- 296
-pop$ -- 1447
+missing$ -- 1392
+newline$ -- 407
+num.names$ -- 301
+pop$ -- 1514
 preamble$ -- 1
-purify$ -- 265
+purify$ -- 277
 quote$ -- 0
-skip$ -- 13627
+skip$ -- 14392
 stack$ -- 1
-substring$ -- 5293
-swap$ -- 4620
-text.length$ -- 59
+substring$ -- 5597
+swap$ -- 4883
+text.length$ -- 62
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 28
 warning$ -- 0
-while$ -- 441
+while$ -- 453
 width$ -- 0
-write$ -- 1223
+write$ -- 1285
 (There were 7 error messages)

@@ -41,14 +41,14 @@
 \contentsline {subsubsection}{\numberline {2.5.1.3}Tamanho do Passo}{40}{subsubsection.2.5.1.3}%
 \contentsline {subsubsection}{\numberline {2.5.1.4}Formas de Controle}{40}{subsubsection.2.5.1.4}%
 \contentsline {paragraph}{\numberline {2.5.1.4.1}Full Step}{40}{paragraph.2.5.1.4.1}%
-\contentsline {paragraph}{\numberline {2.5.1.4.2}Half Step}{41}{paragraph.2.5.1.4.2}%
+\contentsline {paragraph}{\numberline {2.5.1.4.2}Half Step}{40}{paragraph.2.5.1.4.2}%
 \contentsline {paragraph}{\numberline {2.5.1.4.3}Microstep}{41}{paragraph.2.5.1.4.3}%
 \contentsline {subsection}{\numberline {2.5.2}GPS}{41}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}Sensores de Posição Inercial}{42}{subsection.2.5.3}%
 \contentsline {subsubsection}{\numberline {2.5.3.1}Acelerômetro}{42}{subsubsection.2.5.3.1}%
 \contentsline {subsubsection}{\numberline {2.5.3.2}Giroscópio}{43}{subsubsection.2.5.3.2}%
-\contentsline {subsubsection}{\numberline {2.5.3.3}Magnetômetro}{43}{subsubsection.2.5.3.3}%
-\contentsline {section}{\numberline {2.6}Processamento de Dados}{45}{section.2.6}%
+\contentsline {subsubsection}{\numberline {2.5.3.3}Magnetômetro}{44}{subsubsection.2.5.3.3}%
+\contentsline {section}{\numberline {2.6}Processamento de Dados}{44}{section.2.6}%
 \contentsline {subsection}{\numberline {2.6.1}Erros comuns em sensores IMU}{45}{subsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.6.2}Filtragem de sinais}{46}{subsection.2.6.2}%
 \contentsline {subsection}{\numberline {2.6.3}Cálculo de \textit {Pitch} e \textit {Roll}}{46}{subsection.2.6.3}%
@@ -62,14 +62,14 @@
 \contentsline {subsection}{\numberline {2.7.3}Bluetooth}{57}{subsection.2.7.3}%
 \contentsline {subsubsection}{\numberline {2.7.3.1}Bluetooth Low Energy}{58}{subsubsection.2.7.3.1}%
 \contentsline {section}{\numberline {2.8}Interface Gráfica}{58}{section.2.8}%
-\contentsline {subsection}{\numberline {2.8.1}Princípios e Diretrizes}{58}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.1}Princípios e Diretrizes}{59}{subsection.2.8.1}%
 \contentsline {subsubsection}{\numberline {2.8.1.1}Visibilidade dos status do sistema}{59}{subsubsection.2.8.1.1}%
 \contentsline {subsubsection}{\numberline {2.8.1.2}Comunicar-se com o mundo real}{59}{subsubsection.2.8.1.2}%
 \contentsline {subsubsection}{\numberline {2.8.1.3}Liberdade de Controle do Usuário}{59}{subsubsection.2.8.1.3}%
 \contentsline {subsubsection}{\numberline {2.8.1.4}Consistências e Padrões}{60}{subsubsection.2.8.1.4}%
 \contentsline {subsubsection}{\numberline {2.8.1.5}Prevenção de erros}{60}{subsubsection.2.8.1.5}%
 \contentsline {subsubsection}{\numberline {2.8.1.6}Relembrar o usuário é mais fácil do que o usuário relembrar}{60}{subsubsection.2.8.1.6}%
-\contentsline {subsubsection}{\numberline {2.8.1.7}Torne o sistema flexível e eficiente}{60}{subsubsection.2.8.1.7}%
+\contentsline {subsubsection}{\numberline {2.8.1.7}Torne o sistema flexível e eficiente}{61}{subsubsection.2.8.1.7}%
 \contentsline {subsubsection}{\numberline {2.8.1.8}Tenha um projeto minimalista}{61}{subsubsection.2.8.1.8}%
 \contentsline {subsubsection}{\numberline {2.8.1.9}Ajude o usuário a entender e se recuperar de erros}{61}{subsubsection.2.8.1.9}%
 \contentsline {subsubsection}{\numberline {2.8.1.10}Tire dúvidas e documente o sistema}{61}{subsubsection.2.8.1.10}%
@@ -81,21 +81,21 @@
 \contentsline {chapter}{\numberline {3}Desenvolvimento da Plataforma}{64}{section*.62}%
 \contentsline {section}{\numberline {3.1}Projeto Estrutural}{64}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Requisitos de Projeto}{64}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Motor 28BYJ-48}{65}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.1.2}Motor 28BYJ-48}{64}{subsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.1.3}Estrutura Principal}{65}{subsection.3.1.3}%
 \contentsline {subsection}{\numberline {3.1.4}Engrenagens}{69}{subsection.3.1.4}%
 \contentsline {subsection}{\numberline {3.1.5}Barra de Elevação}{71}{subsection.3.1.5}%
-\contentsline {subsection}{\numberline {3.1.6}Placa de Circuíto}{72}{subsection.3.1.6}%
+\contentsline {subsection}{\numberline {3.1.6}Placa de Circuíto Impresso}{72}{subsection.3.1.6}%
 \contentsline {section}{\numberline {3.2}Montagem}{73}{section.3.2}%
 \contentsline {section}{\numberline {3.3}Hardware Eletrônico}{73}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Arduíno Nano}{73}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Módulo Bluetooth HC05}{74}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Módulo de sensores GY87}{74}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.3}Módulo de Sensores GY87}{74}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}\textit {Driver} ULN2003}{75}{subsection.3.3.4}%
 \contentsline {subsection}{\numberline {3.3.5}Alimentação do Sistema}{76}{subsection.3.3.5}%
-\contentsline {subsection}{\numberline {3.3.6}Diagrama Elétrico}{76}{subsection.3.3.6}%
-\contentsline {subsection}{\numberline {3.3.7}\textit {Layout}}{77}{subsection.3.3.7}%
-\contentsline {subsection}{\numberline {3.3.8}Fabricação do Circuíto}{78}{subsection.3.3.8}%
+\contentsline {subsection}{\numberline {3.3.6}Diagrama Elétrico Completo}{76}{subsection.3.3.6}%
+\contentsline {subsection}{\numberline {3.3.7}\textit {Layout} da PCI}{77}{subsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.3.8}Fabricação do Circuito}{78}{subsection.3.3.8}%
 \contentsline {section}{\numberline {3.4}Software Embarcado}{79}{section.3.4}%
 \contentsline {chapter}{\numberline {4}Desenvolvimento do Aplicativo}{80}{section*.80}%
 \contentsline {section}{\numberline {4.1}Necessidades dos Usuários}{80}{section.4.1}%
@@ -120,17 +120,13 @@
 \contentsline {section}{\numberline {5.1}Requisitos mecânicos}{101}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Impressão 3D}{101}{subsection.5.1.1}%
 \contentsline {subsection}{\numberline {5.1.2}Eixo Curvado}{102}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Análise de Consistência}{102}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.3}Análise de Consistência}{103}{subsection.5.1.3}%
 \contentsline {section}{\numberline {5.2}Custo total do sistema}{103}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Análise de desempenho do aplicativo}{103}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Interface Gráfica}{104}{subsection.5.3.1}%
+\contentsline {section}{\numberline {5.3}Análise de desempenho do aplicativo}{104}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Interface Gráfica}{105}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Desempenho}{106}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5.4}Comparativo Geral}{107}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Comparativo Geral}{106}{section.5.4}%
 \contentsline {subsection}{\numberline {5.4.1}Erro Periódico}{107}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Erro de Alinhamento}{108}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Considerações Finais}{109}{section*.118}%
-\contentsline {section}{\numberline {6.1}Projeto \textit {Open-Source}}{109}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Sugestões para o futuro do EasyTracker}{110}{section.6.2}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Refer\^encias Bibliogr\'aficas}{112}{section*.121}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice A~--~Desenho Técnico das Peças}{118}{section*.123}%
-\contentsline {chapter}{\hspace {\@tempdima }\noindent Apêndice B~--~Bill of Materials (BOM)}{119}{section*.126}%
+\contentsline {chapter}{\numberline {6}Considerações Finais}{110}{section*.118}%
+\contentsline {section}{\numberline {6.1}Projeto \textit {Open-Source}

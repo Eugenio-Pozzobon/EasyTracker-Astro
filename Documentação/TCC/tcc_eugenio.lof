@@ -32,34 +32,34 @@
 \contentsline {figure}{\numberline {2.30}{\ignorespaces Sistema de ângulos \textit {Roll($\phi $)-Pitch( $ \theta $)-Yaw($ \psi $)} para um avião\relax }}{42}{figure.caption.47}%
 \contentsline {figure}{\numberline {2.31}{\ignorespaces Visualização de um acelerômetro digital: a massa laranja se move, alternando a distância de sua aleta com as partes em verde, oscilando a capacitância C1 e C2\relax }}{43}{figure.caption.48}%
 \contentsline {figure}{\numberline {2.32}{\ignorespaces Vista interna de um giroscópio digital\relax }}{44}{figure.caption.49}%
-\contentsline {figure}{\numberline {2.33}{\ignorespaces Efeito Hall aplicado para medição de campo magnético\relax }}{44}{figure.caption.50}%
+\contentsline {figure}{\numberline {2.33}{\ignorespaces Efeito Hall aplicado para medição de campo magnético\relax }}{45}{figure.caption.50}%
 \contentsline {figure}{\numberline {2.34}{\ignorespaces Vetor de direção do campo magnético\relax }}{48}{figure.caption.51}%
-\contentsline {figure}{\numberline {2.35}{\ignorespaces Diagrama de leitura dos dados inerciais com magnetômetro\relax }}{48}{figure.caption.52}%
+\contentsline {figure}{\numberline {2.35}{\ignorespaces Diagrama de leitura dos dados inerciais com magnetômetro\relax }}{49}{figure.caption.52}%
 \contentsline {figure}{\numberline {2.36}{\ignorespaces Planificação dos dados de um sistema inclinado\relax }}{49}{figure.caption.53}%
 \contentsline {figure}{\numberline {2.37}{\ignorespaces Leitura de dados ideal de um magnetômetro ao rotacioná-lo $ 360^{\circ } $\relax }}{51}{figure.caption.54}%
 \contentsline {figure}{\numberline {2.38}{\ignorespaces Impacto das interferências \textit {hard-iron} (a) e \textit {soft-iron} (b) na leitura do magnetômetro em rotação de $ 360^{\circ } $\relax }}{51}{figure.caption.55}%
-\contentsline {figure}{\numberline {2.39}{\ignorespaces Aplicação da calibração: (a) sinal original lido, (b) sinal lido após aplicação da calibração\relax }}{52}{figure.caption.56}%
+\contentsline {figure}{\numberline {2.39}{\ignorespaces Aplicação da calibração: (a) sinal original lido, (b) sinal lido após aplicação da calibração\relax }}{53}{figure.caption.56}%
 \contentsline {figure}{\numberline {2.40}{\ignorespaces Exemplos de comunicação UART\relax }}{54}{figure.caption.57}%
 \contentsline {figure}{\numberline {2.41}{\ignorespaces Topologia de uma rede I2C com 1 mestre e 3 escravos conectados às linhas SDA e SCL, ambas com resistores de \textit {pull-up}\relax }}{55}{figure.caption.58}%
 \contentsline {figure}{\numberline {2.42}{\ignorespaces Transmissão de dados do mestre para o escravo\relax }}{56}{figure.caption.59}%
 \contentsline {figure}{\numberline {2.43}{\ignorespaces Requisição de dados do mestre ao escravo\relax }}{56}{figure.caption.60}%
 \contentsline {figure}{\numberline {2.44}{\ignorespaces condições de \textit {START} e \textit {STOP} no padrão I2C\relax }}{57}{figure.caption.61}%
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Motor de Passo 28BYJ-48\relax }}{65}{figure.caption.63}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Encaixe das peças superior e inferior\relax }}{65}{figure.caption.64}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Encaixe das bases superior e inferior\relax }}{65}{figure.caption.64}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Fixação no tripé: (a) Inserto e (b) Montagem\relax }}{66}{figure.caption.65}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Montagem da câmera no Ball Head\relax }}{66}{figure.caption.66}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Render que demonstra a transmissão do torque do motor para elevar a plataforma\relax }}{67}{figure.caption.67}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Montagem da câmera no Ball Head\relax }}{67}{figure.caption.66}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \textit {Render} que demonstra a transmissão do torque do motor para elevar a plataforma\relax }}{67}{figure.caption.67}%
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Representação da montagem com as dimensões para cálculos\relax }}{68}{figure.caption.68}%
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Dimensões de projeto para engrenagens\relax }}{70}{figure.caption.69}%
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Vista Explodida da engrenagem maior com a porca e a barra rosqueada\relax }}{71}{figure.caption.71}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Vista explodida da engrenagem maior com a porca e a barra rosqueada\relax }}{71}{figure.caption.71}%
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Render do projeto final\relax }}{72}{figure.caption.72}%
 \contentsline {figure}{\numberline {3.10}{\ignorespaces Vista lateral da montagem final do sistema\relax }}{73}{figure.caption.73}%
 \contentsline {figure}{\numberline {3.11}{\ignorespaces Pinagem do Arduíno Nano\relax }}{74}{figure.caption.74}%
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Módulo HC05 e suas conexões.\relax }}{75}{figure.caption.75}%
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama Esquemático do Módulo\relax }}{76}{figure.caption.76}%
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama elétrico final\relax }}{77}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Módulo HC05 e suas conexões\relax }}{75}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Diagrama esquemático do módulo GY87\relax }}{76}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Diagrama elétrico completo\relax }}{77}{figure.caption.77}%
 \contentsline {figure}{\numberline {3.15}{\ignorespaces Regiões da PCB\relax }}{78}{figure.caption.78}%
-\contentsline {figure}{\numberline {3.16}{\ignorespaces Projeto da Placa de Circuito Impresso\relax }}{78}{figure.caption.79}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Projeto da placa de circuito impresso\relax }}{78}{figure.caption.79}%
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Resultados do Formulário de Pesquisa com Usuários. (a) Interesse dos astrofotógrafos no aplicativo. (b) Sistema operacional usado\relax }}{81}{figure.caption.81}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama de Casos de Uso\relax }}{81}{figure.caption.82}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Fluxo de Atividade Principal\relax }}{82}{figure.caption.83}%
@@ -88,10 +88,10 @@
 \contentsline {figure}{\numberline {4.26}{\ignorespaces \textit {Popup} padrão para reconectar com a Eletrônica\relax }}{99}{figure.caption.106}%
 \contentsline {figure}{\numberline {4.27}{\ignorespaces Arquitetura final do aplicativo\relax }}{100}{figure.caption.107}%
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Engrenagem com rachamento em evidência\relax }}{101}{figure.caption.109}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Erro de fabricação demarcado em vermelho, onde a barra apresenta uma curvatura que varia em relação ao desenho técnico\relax }}{103}{figure.caption.110}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Sensor instalado na base superior\relax }}{104}{figure.caption.111}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Erro de fabricação demarcado em vermelho, onde a barra apresenta uma curvatura que varia em relação ao desenho técnico\relax }}{102}{figure.caption.110}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Sensor instalado na base superior\relax }}{103}{figure.caption.111}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Primeiro teste do sistema\relax }}{104}{figure.caption.112}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Teste do sistema com\relax }}{105}{figure.caption.113}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Teste do sistema com elementos amortecedores\relax }}{104}{figure.caption.113}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Teclado só permite uso de vírgula e ponto, não permitindo aspas e sinal de grau $ (^\circ ) $\relax }}{106}{figure.caption.115}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Resultados apresentados no Google Play Console\relax }}{107}{figure.caption.116}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Pontos obtidos com as 8 imagens empilhadas ao longo de 80s\relax }}{108}{figure.caption.117}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Pontos obtidos com as 8 imagens sobrepostas, que foram captadas com intervalos de 10s\relax }}{108}{figure.caption.117}%

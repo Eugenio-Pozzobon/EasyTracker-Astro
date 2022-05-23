@@ -6,11 +6,16 @@
 \abntbstabout{v-1.9.7 }
 
 \bibitem[Advanced Micro System Inc. c2021]{man:sizemotor}
-\abntrefinfo{Advanced Micro System Inc.}{ADVANCED MICRO SYSTEM INC.}{c2021}
+\abntrefinfo{Advanced Micro System Inc.}{ADVANCED MICRO SYSTEM INC.}{c2021a}
 {ADVANCED MICRO SYSTEM INC. \textbf{How to Size a Motor}.
 [S.l.], c2021. Dispon{\'\i}vel em:
   \url{https://www.amci.com/industrial-automation-resources/plc-automation-tutorials/how-size-motor/}.
   Acesso em: 16 jul. 2021.}
+
+\bibitem[Advanced Micro System Inc. c2021]{man:advancedmicrosystemStepControl}
+\abntrefinfo{Advanced Micro System Inc.}{ADVANCED MICRO SYSTEM INC.}{c2021b}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{Stepper Motor System Basics}.
+[S.l.], c2021.}
 
 \bibitem[AFZAL c2021]{site:analogI2c}
 \abntrefinfo{AFZAL}{AFZAL}{c2021}
@@ -162,6 +167,28 @@ Dispon{\'\i}vel em: \url{https://nyxtech.us/}. Acesso em: 29 mar. 2021.}
 {\underline{\ \ \ \ \ \ \ \ }. \textbf{Tips and Tutorials}. Nyx Tech, c2021.
 Dispon{\'\i}vel em: \url{https://nyxtech.us/pages/tips-tutorials}. Acesso em: 9
   ago. 2021.}
+
+\bibitem[EGAN c2022]{site:nyxtechFAQPeriodicError}
+\abntrefinfo{EGAN}{EGAN}{c2022}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{What is periodic error and how does the
+  Nyx Tracker perform?} Nyx Tech, c2022.
+Dispon{\'\i}vel em:
+  \url{https://nyxtech.us/pages/nyx-tracker-faq\#periodicerror}. Acesso em: 29
+  abr. 2022.}
+
+\bibitem[Espressif System c2022]{man:hc05}
+\abntrefinfo{Espressif System}{ESPRESSIF SYSTEM}{c2022a}
+{ESPRESSIF SYSTEM. \textbf{ESP32 Datasheet}.
+[S.l.], c2022. Dispon{\'\i}vel em:
+  \url{https://www.espressif.com/sites/default/files/documentation/esp32\_datasheet\_en.pdf}.
+  Acesso em: 10 mai. 2022.}
+
+\bibitem[Espressif System c2022]{man:ESP32}
+\abntrefinfo{Espressif System}{ESPRESSIF SYSTEM}{c2022b}
+{\underline{\ \ \ \ \ \ \ \ }. \textbf{ESP32 Datasheet}.
+[S.l.], c2022. Dispon{\'\i}vel em:
+  \url{https://www.espressif.com/sites/default/files/documentation/esp32\_datasheet\_en.pdf}.
+  Acesso em: 10 mai. 2022.}
 
 \bibitem[Facundo 2021]{site:3dprinted}
 \abntrefinfo{Facundo}{FACUNDO}{2021}

@@ -1,6 +1,6 @@
 \chapter{Desenvolvimento do Aplicativo}
 
-Para realizar o desenvolvimento de um aplicativo, é preciso analisar a necessidade dos usuários, determinando os casos de uso do sistema. A partir disso, é possível prototipar a interface de forma prévia, combinando as heurísticas de design comentadas na seção 2.8. Após essas etapas, é possível implementar o aplicativo \textit{Android}.
+Para realizar o desenvolvimento de um aplicativo, é preciso analisar a necessidade dos usuários, determinando os casos de uso do sistema. A partir disso, é possível prototipar a interface de forma prévia, combinando as heurísticas de \textit{design} comentadas na seção 2.8. Após essas etapas, é possível implementar o aplicativo \textit{Android}.
 
 \section{Necessidades dos Usuários}
 
@@ -96,14 +96,14 @@ Além das telas de dados, o fluxo da atividade de alinhamento da plataforma foi 
 
 \section{Implementação do Aplicativo}
 
-Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos de design e experiência do usuário empregados; dados a serem coletados do usuário; e arquitetura de desenvolvimento. Antes de abordar essa discussão, será demonstrado a parte gráfica do software.
+Diante do planejamento de interface (UI) e experiência (UX) de usuário feito anteriormente, incia-se o processo de implementação do aplicativo \textit{Android}. Três problemas precisam ser discutidos: recursos de \textit{design} e experiência do usuário empregados; dados a serem coletados do usuário; e arquitetura de desenvolvimento. Antes de abordar essa discussão, será demonstrado a parte gráfica do \textit{software}.
 
 \subsection{Interface e Experiência}
 
-A interface gráfica do aplicativo foi desenvolvida considerando a identidade visual planejada para o Projeto, e baseando-se em elementos prontos da biblioteca Material Design.
+A interface gráfica do aplicativo foi desenvolvida considerando a identidade visual planejada para o projeto, e baseando-se em elementos prontos da biblioteca Material Design.
 
 \subsubsection{Identidade Visual}
-A Identidade Visual foi montada com cores alaranjadas, e misturando elementos como o diafragma de uma câmera e os anéis de saturno. O Aplicativo foi nomeado como EasyTracker Astro e a identidade montada na Figura \ref{fig:idvisual} é aplicada em todos os materiais\footnote{Neste Link é possível acessar o Guia da Identidade do Projeto: Link Aqui}.
+A identidade visual foi montada com cores alaranjadas, e misturando elementos como o diafragma de uma câmera e os anéis de Saturno. O aplicativo foi nomeado como EasyTracker Astro e a identidade mostrada na Figura \ref{fig:idvisual} é aplicada em todos os materiais\footnote{Neste \textit{link} é possível acessar o Guia da Identidade do Projeto: Link Aqui}.
 
 \begin{figure}[!htb]
 	\centering
@@ -114,14 +114,14 @@ A Identidade Visual foi montada com cores alaranjadas, e misturando elementos co
 \end{figure}
 
 \subsubsection{Elementos e Cores}
-A biblioteca Material unifica padrões e elementos para geração de recursos mobile, e por isso buscou-se sempre utiliza-la para inserção de componentes. Assim, todos os campos de entrada de dados do usuário, na criação do perfil de localização, são campos de entrada providos por ela. As cores seguem um padrão do modo escuro da Material. As cores que não são padronizadas pela biblioteca, como em ícones, são baseadas na identidade visual do projeto. O código de cada cor é configurado no projeto em um arquivo\footnote{O Arquivo de configuração pode ser acessado aqui: LINK NO FUTURO} que informa o código hexadecimal das cores utilizadas. 
+A biblioteca Material unifica padrões e elementos para geração de recursos \textit{mobile}, e por isso buscou-se sempre utilizá-la para inserção de componentes. Assim, todos os campos de entrada de dados do usuário, na criação do perfil de localização, são campos de entrada providos por ela. As cores seguem um padrão do modo escuro da Material. As cores que não são padronizadas pela biblioteca, como em ícones, são baseadas na identidade visual do projeto. O código de cada cor é configurado no projeto em um arquivo\footnote{O arquivo de configuração pode ser acessado aqui: LINK NO FUTURO} que informa o código hexadecimal das cores utilizadas. 
 
 
 Com base nesses elementos, cores, e nas telas do protótipo esboçadas na etapa da subseção \ref{sec:prototipacao}, implementou-se o aplicativo. As telas serão abordadas nas próximas sub-seções na ordem da experiência de um novo usuário.
 
 \subsubsection{Primeiro Uso}
 
-Um novo usuário da plataforma é reconhecido pelo sistema e para ele aparece uma mensagem inicial de boas vindas, e que informa a ele sobre a necessidade de pareamento com o sistema eletrônico antes de usar o App. Na sequência, o usuário deve registrar uma localização nova de onde ele usará a plataforma. 
+Um novo usuário da plataforma é reconhecido pelo sistema e para ele aparece uma mensagem inicial de boas vindas, e que informa a ele sobre a necessidade de pareamento com o sistema eletrônico antes de usar o App. Na sequência, o usuário deve registrar uma localização nova de onde ele usará a plataforma (Figura \ref{telasiniciais})
 
 
 \begin{figure}[H]
@@ -153,7 +153,7 @@ Um novo usuário da plataforma é reconhecido pelo sistema e para ele aparece um
 
 
 \subsubsection{Manipulação de Perfis de Localização}
-A partir de configurado uma primeira vez, o App irá abrir sempre na tela de perfil, carregando dados do último que foi usado, ignorando as telas anteriores. Ainda é possível que o usuário edite as informações neste perfil, ou adicione novos, edite os novos, e carregue outros perfis no aplicativo. O usuário ainda pode apagar todos os perfis de localização, mas ele é obrigado a criar um perfil para usar o aplicativo.
+Após configurado uma primeira vez, o aplicativo irá abrir sempre na tela de perfil, carregando dados da última utilização, ignorando as telas anteriores. Ainda é possível que o usuário edite as informações neste perfil, ou adicione novos, edite os novos, e carregue outros perfis no aplicativo (Figura \ref{telasperfis}). O usuário ainda pode apagar todos os perfis de localização, mas ele é obrigado a criar um perfil para usar o aplicativo.
 
 \begin{figure}[H]
 	\centering
@@ -162,20 +162,20 @@ A partir de configurado uma primeira vez, o App irá abrir sempre na tela de per
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=0.6\textwidth]{figuras/desAplicativo/edit}
-		\caption{Editar Perfil}
+		\caption{Editar perfil}
 		\label{edit}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=0.6\textwidth]{figuras/desAplicativo/load}
-		\caption{Carregar Perfil}
+		\caption{Carregar perfil}
 		\label{load}
 	\end{subfigure}
 \end{figure}
 
 \subsubsection{Botão de Conectar em 3 estágios}
-O botão de conexão bluetooth oscila em 3 estados que indicam o estado da conexão bluetooth. (Figura \ref{conect})
+O botão de conexão Bluetooth oscila em 3 estados que indicam o estado da conexão. (Figura \ref{conect})
 
 \begin{figure}[!htb]
 	\centering
@@ -204,37 +204,37 @@ O botão de conexão bluetooth oscila em 3 estados que indicam o estado da conex
 
 
 \subsubsection{Realização do Alinhamento}
-As 4 telas de alinhamento consistem de 3 telas guias e uma tela final (Figura \ref{endalignment}) com dicas e instruções, com um controle de ligar ou desligar o rastreamento da plataforma. O usuário deve realizar o alinhamento pelas 3 telas tendo como base a vista superior da plataforma que está presente nas telas, guiando para nivelar e alinhar a plataforma com o polo celeste. 
+As 4 telas de alinhamento consistem de 3 telas guias e uma tela final (Figura \ref{endalignment}) com dicas e instruções, e com um controle de ligar ou desligar o rastreamento da plataforma. O usuário deve realizar o alinhamento pelas 3 telas tendo como base a vista superior da plataforma que está presente nas telas, guiando para nivelar e alinhar a plataforma com o polo celeste. 
 
 \begin{figure}[!htb]
 	\centering
 	\caption{Telas de Alinhamento}
-	\label{alinhamento}
+	\label{endalignment}
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/nivel}
-		\caption{Nivel da plataforma}
-		\label{menu}
+		\caption{Nível da plataforma}
+		\label{nivelplataforma}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/azimute}
 		\caption{Azimute da Plataforma}
-		\label{menu1st}
+		\label{azimuteplataforma}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/elevacao}
 		\caption{Angulo Da plataforma}
-		\label{menubus}
+		\label{elevacaoplataforma}
 	\end{subfigure}
 \end{figure}
 
 \subsection{Outras Telas}
 
-Ainda existem telas com Guias e tutoriais (Figura \ref{faq}), que pode ser expandida com mais questões, telas sobre o aplicativo (Figura \ref{about}), que redirecionam para links externos de documentação open-source.
+Ainda existem telas com guias e tutoriais (Figura \ref{about}), que pode ser expandida com mais questões, telas sobre o aplicativo (Figura \ref{faq}), que redirecionam para \textit{links} externos de documentação \textit{open-source.}
 
 \begin{figure}[!htb]
 	\centering
@@ -242,21 +242,21 @@ Ainda existem telas com Guias e tutoriais (Figura \ref{faq}), que pode ser expan
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/about}
-		\caption{Menu de Navegação Lateral}
+		\caption{Tela de informações}
 		\label{about}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/faq}
-		\caption{Questões Comuns}
+		\caption{Questões comuns}
 		\label{faq}
 	\end{subfigure}
 \end{figure}
 
 \subsection{Menus}
 
-O sistema ainda é composto por menus. O menu lateral (Figura \ref{menu}) pode ser acessível somente na tela inicial da atividade que é a tela com o perfil principal. O menu superior é configurável e foi melhorado trazendo soluções especificas para cada tela do app, de forma geral, oferecendo a possibilidade de acessar a seção de dúvidas sobre o sistema. Os principais menus constam na tela inicial (Figura \ref{menu1st}) e na tela de bússola (Figura \ref{menubus}).
+O sistema ainda é composto por menus. O menu lateral (Figura \ref{menu}) pode ser acessível somente na tela inicial da atividade que é a tela com o perfil principal. O menu superior é configurável e foi melhorado trazendo soluções específicas para cada tela, de forma geral, oferecendo a possibilidade de acessar a seção de dúvidas sobre o sistema. Os principais menus constam na tela inicial (Figura \ref{menuperfilv}) e na tela de bússola (Figura \ref{menubus}).
 
 \begin{figure}[!htb]
 	\centering
@@ -267,21 +267,21 @@ O sistema ainda é composto por menus. O menu lateral (Figura \ref{menu}) pode s
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/menu}
 		\caption{Menu de Navegação}
-		\label{nivel}
+		\label{menu}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/overflow}
 		\caption{Menu de perfil}
-		\label{azim}
+		\label{menuperfilv}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{figuras/desAplicativo/overbus}
-		\caption{Menu da Bússola}
-		\label{elevacao}
+		\caption{Menu da bússola}
+		\label{menubus}
 		
 	\end{subfigure}
 \end{figure}

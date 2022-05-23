@@ -2,6 +2,12 @@ Library/
 Electronics/CADs/
 CAD/Imported/
 Documentação/Fotos/
+Documentação/JAI/
+Documentação/Videos/
+Documentação/Portal de Projetos/
+Documentação/Relatórios de Progresso/
+Documentação/Atas/
+Documentação/TCC/
 Documentação/Teste Vibração/
 src/main_Cmake/
 *.csv
@@ -20,4 +26,6 @@ src/main_Cmake/
 *.gif
 *.psd
 *.avi
-*.pdf
+*.psd
+*.ai
+*.JPG
