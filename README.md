@@ -5,7 +5,7 @@ Este repositório armazena os arquivos desenvolvidos durante o Trabalho de Concl
 
 
 ## Aplicativo Android
-* Os arquivos do  _software_ Android, que opera junto com a eletrônica arquivada neste repositório, pode ser encontrado [neste link.](https://github.com/Eugenio-Pozzobon/EasyTracker-Android)
+* Os arquivos do  _software_ Android, que opera junto com a eletrônica arquivada neste repositório, pode ser encontrado [neste link.](https://github.com/Eugenio-Pozzobon/EasyTracker-Android-App)
 * Para apenas instalar, acesse [este link para a Google Play](https://play.google.com/store/apps/details?id=com.epp.com.easytracker) 
 
 ## Licença
