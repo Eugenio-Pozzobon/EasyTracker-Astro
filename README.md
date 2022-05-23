@@ -1,5 +1,4 @@
 # Desenvolvimento de uma Plataforma Equatorial de Baixo Custo para Astrofotografia
-[English Bellow]
 
 Este repositório armazena os arquivos desenvolvidos durante o Trabalho de Conclusão de Curso do Aluno Eugênio Pozzobon, sob orientação do professor Rafael Beltrame.
 
