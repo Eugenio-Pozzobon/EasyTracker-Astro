@@ -1,3 +1,22 @@
+/*
+sensorData.ino - file that process sensor data at EasyTracker
+
+Version: 1.0.0
+Copyright (C) 2022  Eugênio Pozzobon
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the version 3 GNU General Public License as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 void getData() {
   if (((millis() - timerMpuData) >= 0) && !stepperState) {
 
@@ -38,7 +57,7 @@ void angleCalculation() { //900us usando int_16t e 1300us usando float
   angleY = accelGyroRelation * (-angleY + accelgyro.ngy * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
            (atan2(accelgyro.nay, sqrt(pow(accelgyro.nax, 2) + pow(accelgyro.naz, 2))) * 180) / 3.14;
   angleY = - angleY;
-  //(atan2(accelgyro.nay, accelgyro.naz) * 180) / 3.14;
+
 
   // Yaw Angle based on acelerometer
   //angleZ = accelGyroRelation * (angleZ + accelgyro.ngz * (float(dT) / 1000000)) + (1 - accelGyroRelation) *
@@ -65,9 +84,34 @@ void angleCalculation() { //900us usando int_16t e 1300us usando float
 */
 void compassCalculation() { //256us
   //calculation
-  compassAngle = atan2(my - ((myMax + myMin) / 2.0), mx - ((mxMax + mxMin) / 2.0)) * (180 / PI);
-  compassAngle = compassAngle + 180;
+  //Soft Iron and Hard Iron alibration
+  float Sx = (float(myMax) - float(myMin))/(float(mxMax) - float(mxMin));
+  float Sy = (float(mxMax) - float(mxMin))/(float(myMax) - float(myMin));
 
+  if(Sx<1){
+    Sx = 1;
+  }
+  if(Sy<1){
+    Sy = 1;
+  }
+  
+  float Ox = (float(mxMax - mxMin) / 2.0 - float(mxMax)) * Sx;
+  float Oy = (float(myMax - myMin) / 2.0 - float(myMax)) * Sy;
+  
+//  Just Hard Iron
+//  float Sx = 1;
+//  float Sy = 1;
+//  float Ox = float(mxMax + mxMin) / 2.0;
+//  float Oy = float(myMax + myMin) / 2.0;
+  compassAngle = atan2(Sy * (my + Oy), Sx * ( mx + Ox)) * (180 / PI);
+  compassAngle = compassAngle - 180;
+
+
+  Serial.print("\tSx: "); Serial.print(Sx);
+  Serial.print("\tSy: "); Serial.print(Sy);
+  Serial.print("\tOx: "); Serial.print(Ox);
+  Serial.print("\tOy: "); Serial.println(Oy);
+  
   //check if it north
   if (compassAngle >= 360) {
     compassAngle -= 360;

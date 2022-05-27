@@ -1,7 +1,7 @@
 /*
 MPU6050.h - Header file for the MPU6050 Triple Axis Gyroscope & Accelerometer Arduino Library.
 
-Version: 1.0.3.1
+Version: 1.0.4
 Copyright (C) 2020  Eugênio Pozzobon
 
 Version: 1.0.3
