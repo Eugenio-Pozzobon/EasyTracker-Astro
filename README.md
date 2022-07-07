@@ -1,7 +1,7 @@
 # Desenvolvimento de uma Plataforma Equatorial de Baixo Custo para Astrofotografia
 
 Este repositório armazena os arquivos desenvolvidos durante o Trabalho de Conclusão de Curso do Aluno Eugênio Pozzobon, sob orientação do professor Rafael Beltrame.
-
+O TCC pode ser obtido neste link: https://repositorio.ufsm.br/handle/1/25238
 
 ## Aplicativo Android
 * Os arquivos do  _software_ Android, que opera junto com a eletrônica arquivada neste repositório, pode ser encontrado [neste link.](https://github.com/Eugenio-Pozzobon/EasyTracker-Android-App)
